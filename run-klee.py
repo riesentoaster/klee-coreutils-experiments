@@ -24,6 +24,12 @@ def get_sym_args(util):
         return "--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout"
     else:
         return "--sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout"
+    
+def get_custom_args():
+    if "KLEE_OUT_DIR" in os.environ:
+        return f"--output-dir={os.environ['KLEE_OUT_DIR']}"
+    else:
+        return ""
 
 def get_util_CLAs(util):
     # if util == "sort":
@@ -37,12 +43,15 @@ def construct_command(util, path_to_utils):
             --use-cex-cache --libc=uclibc --posix-runtime \
             --external-calls=all --only-output-states-covering-new \
             --env-file=test.env --run-in-dir=/tmp/sandbox \
-            --max-sym-array-size=4096 --max-solver-time=30s --max-time=60min \
+            --max-sym-array-size=4096 --max-solver-time=30s --max-time={os.environ['KLEE_MAX_TIME_MIN']}min \
             --watchdog --max-memory-inhibit=false --max-static-fork-pct=1 \
             --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal \
             --search=random-path --search=nurs:covnew \
             --use-batching-search --batch-instructions=10000 \
-            {path_to_utils}{util}.bc {get_util_CLAs(util)} {get_sym_args(util)}"
+            {get_custom_args()} \
+            {path_to_utils}{util}.bc \
+            {get_util_CLAs(util)} \
+            {get_sym_args(util)}"
     
     return [e for e in cmd.split(" ") if len(e) > 0]
 

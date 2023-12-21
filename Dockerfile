@@ -62,7 +62,14 @@ RUN wget "http://www.doc.ic.ac.uk/~cristic/klee/testing-env.sh" \
 COPY --from=build --chown=klee /coreutils coreutils
 ENV CORETUILS_BC_PATH ./coreutils/obj-llvm/src/
 
+ARG KLEE_MAX_TIME_MIN=60
+
 # copying run scripts
 COPY run-klee.py ./
 
-# you might want to run python3 ./run-klee.py <util>
+# you might want to run `python3 ./run-klee.py <util>`
+# to keep files output by klee, run the container as follows:
+# `docker run [docker_args] \
+# -e KLEE_OUT_DIR=/home/klee/klee_out \
+# -v <path/on/your/system>:/home/klee/klee_out` \
+# <image-name>
