@@ -1,0 +1,111 @@
+#!/bin/bash
+
+POSITIONAL_ARGS=()
+
+echo "UTIL in env: ${UTIL}"
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --llvm-dir)
+      LLVM_DIR="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    --klee-max-time)
+      KLEE_MAX_TIME_MIN="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    --out-dir)
+      OUT_DIR="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+echo "UTIL after parsing: ${UTIL}"
+
+if [ 1 -gt $# ]; then
+    echo "Usage: $0 <util>"
+    echo "Args:"
+    echo "--llvm-dir             The directory where the llvm .bc files are stored"
+    echo "--klee-max-time        The timeout after which KLEE stops its analysis"
+    echo "--out-dir              The output directory"
+    exit 1
+fi
+
+UTIL=$1
+echo "Testing util \"${UTIL}\""
+
+LLVM_DIR=${LLVM_DIR-./llvm}
+KLEE_MAX_TIME_MIN=${KLEE_MAX_TIME_MIN-60}
+OUT_DIR=${OUT_DIR-./out}
+echo "Assuming input directory for llvm files ${LLVM_DIR}"
+
+echo "Setting KLEE's timeout to ${KLEE_MAX_TIME_MIN}"
+echo "Setting output directory for KLEE: ${OUT_DIR}"
+
+mkdir -p $OUT_DIR
+# if [ ! -w $OUT_DIR ]; then
+#   echo "ERROR: Missing write permissions on output directory."
+#   echo -e "This is likely because you didn't manually create the folder\nbefore mounting it to the docker container."
+#   exit 1
+# fi
+
+case $UTIL in
+    dd)
+        UTIL_ARGS="--sym-args 0 3 10 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+    dircolors)
+        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+    echo)
+        UTIL_ARGS="--sym-args 0 4 300 --sym-files 2 30 --sym-stdin 30 --sym-stdout" ;;
+    expr)
+        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-stdout" ;;
+    mknod)
+        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+    od)
+        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+    pathchk)
+        UTIL_ARGS="--sym-args 0 1 2 --sym-args 0 1 300 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+    printf)
+        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+    *)
+        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+esac
+
+KLEE_COMMAND="klee --simplify-sym-indices --write-cvcs --write-cov --output-module \
+            --max-memory=1000 --disable-inlining --optimize --use-forked-solver \
+            --use-cex-cache --libc=uclibc --posix-runtime \
+            --external-calls=all --only-output-states-covering-new \
+            --env-file=test.env --run-in-dir=/tmp/sandbox \
+            --max-sym-array-size=4096 --max-solver-time=30s --max-time=${KLEE_MAX_TIME_MIN}min \
+            --watchdog --max-memory-inhibit=false --max-static-fork-pct=1 \
+            --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal \
+            --search=random-path --search=nurs:covnew \
+            --use-batching-search --batch-instructions=10000 \
+            --output-dir=${OUT_DIR}/klee \
+            ${LLVM_DIR}/${UTIL}.bc \
+            ${UTIL_ARGS}"
+
+echo -e "\n---\n"
+echo -e "Running KLEE as follows:\n${KLEE_COMMAND}\n\n\n"
+
+eval "$KLEE_COMMAND" > $OUT_DIR/klee-stdout.log 2> $OUT_DIR/klee-stderr.log
+KLEE_EXIT_CODE=$?
+
+if [ $KLEE_EXIT_CODE -ne 0 ]; then
+    echo "KLEE failed, check logs in ${OUT_DIR}/klee-stderr.log"
+    echo -e "Here are the last few lines of the logs:\n\n"
+    tail -n 10 $OUT_DIR/klee-stderr.log
+    exit $KLEE_EXIT_CODE
+fi
