@@ -89,7 +89,6 @@ RUN wget "http://www.doc.ic.ac.uk/~cristic/klee/testing-env.sh" \
 
 # copying files from build stage
 COPY --from=klee-coreutils-llvm --chown=klee /coreutils/ ./coreutils-llvm/
-COPY --from=klee-coreutils-gcov --chown=klee /coreutils/ ./coreutils-gcov/
 
 # copying run scripts
 COPY run-and-analyze-with-klee.sh ./
@@ -102,8 +101,8 @@ CMD bash ./run-and-analyze-with-klee.sh \
     --klee-max-time ${KLEE_MAX_TIME_MIN} \
     --out-dir ./out \
     ${UTIL} \
-    && cp -r ./coreutils-llvm/obj-llvm/src ./out/src-llvm/ \
-    && cp -r ./coreutils-gcov/obj-gcov/src ./out/src-gcov/
+    && cp -r ./coreutils-llvm/obj-llvm/src ./out/src-llvm/
+
 # to keep files output by klee, run the container as follows:
 # `docker run [docker_args] \
 # -v <path/on/your/system>:/home/klee/out \
