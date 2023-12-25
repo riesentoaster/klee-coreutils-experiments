@@ -1,0 +1,99 @@
+array A_data[8] : w32 -> w8 = symbolic
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[3] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array const_arr3[24] : w32 -> w8 = [8 0 0 0 171 171 171 171 8 89 217 149 190 85 0 0 240 94 61 148 190 85 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Eq false (Slt 0 N0))
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false (Eq 1 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 N2:(ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N3:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N3))
+         (Eq 99
+             (Extract w8 0 (SExt w32 N3)))
+         (Eq 0 (Read w8 1 arg01))
+         (Eq 65 (Read w8 0 arg01))
+         (Eq 8192
+             (And w32 (Concat w32 N4:(Extract w8 24 N5:(And w32 (ReadLSB w32 N6:(Extract w32 0 (Add w64 18446649796690354472
+                                                                                                        (ReadLSB w64 N7:(Extract w32 0 (Add w64 18446649796653538064
+                                                                                                                                                N8:(Select w64 (Eq 0 N2) 0 94277056013568))) const_arr3))) U0:[71=0, 70=0, 69=0, 68=0, 67=0, 66=0, 65=0, 64=8, 55=0, 54=0, 53=0, 52=0, 51=0, 50=0, 49=0, 48=8] @ A_data_stat)
+                                                                4294966784))
+                                  (ReadLSB w24 N6 U1:[N9:(Add w32 3 N6)=N4,
+                                                      N10:(Add w32 2 N6)=(Extract w8 16 N5),
+                                                      N11:(Add w32 1 N6)=(Extract w8 8 N5),
+                                                      N6=(Extract w8 0 N5)] @ U0))
+                      61440))
+         (Eq false
+             (Eq 10
+                 N12:(Read w8 (Extract w32 0 (Add w64 18446649796663355128
+                                                      N13:(ReadLSB w64 N14:(Extract w32 0 (Add w64 18446649796653538056 N8)) const_arr3)))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N15:(Read w8 (Extract w32 0 (Add w64 18446649796663355129 N13))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N16:(Read w8 (Extract w32 0 (Add w64 18446649796663355130 N13))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N17:(Read w8 (Extract w32 0 (Add w64 18446649796663355131 N13))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N18:(Read w8 (Extract w32 0 (Add w64 18446649796663355132 N13))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N19:(Read w8 (Extract w32 0 (Add w64 18446649796663355133 N13))
+                              A_data)))
+         (Eq false
+             (Eq 10
+                 N20:(Read w8 (Extract w32 0 (Add w64 18446649796663355134 N13))
+                              A_data)))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649796663355135 N13))
+                      A_data))
+         (Eq 77
+             (Extract w8 0 (ZExt w32 N12)))
+         (Eq 68
+             (Extract w8 0 (ZExt w32 N15)))
+         (Eq 53
+             (Extract w8 0 (ZExt w32 N16)))
+         (Eq 32
+             (Extract w8 0 (ZExt w32 N17)))
+         (Eq 40
+             (Extract w8 0 (ZExt w32 N18)))
+         (Eq 41
+             (Extract w8 0 (ZExt w32 N19)))
+         (Eq 61
+             (Extract w8 0 (ZExt w32 N20)))]
+        false)

@@ -1,0 +1,71 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array B_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Eq 1
+             (ReadLSB w32 0 n_args))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 B_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 B_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 37 (Read w8 0 arg00))
+         (Eq false
+             (Eq 73 N0:(Read w8 2 arg00)))
+         (Eq false (Eq 32 N0))
+         (Eq false (Eq 35 N0))
+         (Eq false (Eq 39 N0))
+         (Eq false (Eq 43 N0))
+         (Eq false (Eq 45 N0))
+         (Eq false (Eq 48 N0))
+         (Eq false (Eq 42 N0))
+         (Ult N1:(Add w32 4294967248 (SExt w32 N0))
+              10)
+         (Ult (Add w32 4294967248
+                       N2:(SExt w32 (Read w8 3 arg00)))
+              10)
+         (Eq 46 (Read w8 4 arg00))
+         (Eq 42 (Read w8 5 arg00))
+         (Or (Eq 76 N3:(Read w8 6 arg00))
+             (Or (Eq 108 N3)
+                 (Or (Eq 106 N3)
+                     (Or (Eq 104 N3)
+                         (Or (Eq 116 N3) (Eq 122 N3))))))
+         (Eq 117 (Read w8 7 arg00))
+         (Eq 39 (Read w8 1 arg00))
+         (Eq false
+             (Eq 10
+                 N4:(Extract w32 0 (SExt w64 (Add w32 4294967248
+                                                      (Add w32 (Mul w32 10 N1) N2))))))
+         (Eq false (Eq 11 N4))
+         (Eq false (Eq 12 N4))
+         (Eq false (Eq 13 N4))
+         (Eq false (Eq 14 N4))
+         (Eq false (Eq 15 N4))
+         (Eq false (Eq 16 N4))
+         (Eq false (Eq 17 N4))
+         (Eq false (Eq 18 N4))
+         (Eq false (Eq 19 N4))
+         (Eq false (Eq 20 N4))]
+        false)
