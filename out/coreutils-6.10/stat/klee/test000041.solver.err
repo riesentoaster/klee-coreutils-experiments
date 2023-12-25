@@ -1,0 +1,12 @@
+Error: Query timed out (fork).
+Stack: 
+	#000007577 in strftime_case_(upcase=false, s=94837305545744, maxsize=44, format=94837305521952, tp=94837289515904, ns=2880154539)
+	#100006799 in nstrftime(tp=94837289515904, ns=2880154539)
+	#200006686 in human_time(t.coerce0=symbolic, t.coerce1=12370169555311111083)
+	#300005287 in print_stat(pformat=94837263537408, prefix_len=1, m=120, filename=94837305472912, data=94837266681936)
+	#400005407 in print_it(format=94837277908704, filename=94837305472912, print_func=94837305425912, data=94837266681936)
+	#500005042 in do_stat(filename=94837305472912, terse=false, format=0)
+	#600004914 in __klee_posix_wrapped_main(argc=2, argv=94837306830272)
+	#700003138 in __user_main(argcPtr=15, argvPtr=94837263543344, envp=94837263543472) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#800000684 in __uClibc_main(15, 94837263543344) at libc/misc/internals/__uClibc_main.c:401
+	#900000850 in main(15, 94837263543344)
