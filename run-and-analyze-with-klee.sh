@@ -104,8 +104,14 @@ eval "$KLEE_COMMAND" > $OUT_DIR/klee-stdout.log 2> $OUT_DIR/klee-stderr.log
 KLEE_EXIT_CODE=$?
 
 if [ $KLEE_EXIT_CODE -ne 0 ]; then
-    echo "KLEE failed, check logs in ${OUT_DIR}/klee-stderr.log"
+    echo "WARNING: KLEE failed, check logs in ${OUT_DIR}/klee-stderr.log"
     echo -e "Here are the last few lines of the logs:\n\n"
     tail -n 10 $OUT_DIR/klee-stderr.log
-    exit $KLEE_EXIT_CODE
 fi
+
+for f in $(ls "${OUT_DIR}/klee" | grep -e "\.err$"); do
+    TEST_NR=$(echo $f | cut --d="." --f=1 )
+    ktest-tool "${OUT_DIR}/klee/${TEST_NR}.ktest" > "${OUT_DIR}/klee/${TEST_NR}.err.ktest.txt"
+done
+
+klee-stats "${OUT_DIR}/klee" --print-all --table-format=csv > "${OUT_DIR}/klee-stats.csv"

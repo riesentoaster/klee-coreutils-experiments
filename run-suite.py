@@ -1,7 +1,15 @@
 import argparse
 import os
 from concurrent.futures import ThreadPoolExecutor
+import threading
 import subprocess
+import sys
+
+print_lock = threading.Lock()
+
+def thread_safe_print(*args, **kwargs):
+    with print_lock:
+        print(*args, **kwargs)
 
 # Function to run klee-coreutils for a given util
 def run_klee_coreutils(image_name, util, env_vars):
@@ -21,9 +29,7 @@ def run_klee_coreutils(image_name, util, env_vars):
     stderr_file = os.path.join(util_output_dir, "orchestration-stderr.txt")
     
     # Command to run klee-coreutils docker image and direct output to the util-specific folder
-    command = [
-        "docker", "run", "--rm", "-it",
-    ]
+    command = ["docker", "run", "--rm", "-it"]
     
     # Append environment variables to the command
     for key, value in env.items():
@@ -33,13 +39,13 @@ def run_klee_coreutils(image_name, util, env_vars):
     command += ["-v", f"{abs_util_output_dir}:/home/klee/out", image_name]
     
     # Execute the command using subprocess.run
-    print(f"--- running command: {' '.join(command)}")
+    thread_safe_print(f"--- running command: {' '.join(command)}")
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
         process = subprocess.run(command, stdout=stdout_f, stderr=stderr_f, text=True)
     
     # Check return code
     if process.returncode != 0:
-        print(f"Failed to execute {util}")
+        thread_safe_print(f"Failed to execute {util} with exit code {process.returncode}", file=sys.stderr)
 
 if __name__ == "__main__":
     # Parse command-line arguments
@@ -55,12 +61,11 @@ if __name__ == "__main__":
 
     # Check if the output directory exists and is empty
     if os.path.exists(output_dir) and os.path.isdir(output_dir) and os.listdir(output_dir):
-        print("Output directory is not empty, this will not work")
+        thread_safe_print("Output directory is not empty, this will not work", file=sys.stderr)
         exit(1)
 
-
     # Make sure the docker image is up to date
-    subprocess.run(["docker", "build", "-t", image_name, "--target", "exec", "."])
+    subprocess.run(["docker", "build", "-t", image_name, "--target", "exec", "--progress=plain", "."])
 
     # Complete list of coreutils from the KLEE paper
     coreutils = ["base64", "basename", "cat", "chcon", "chgrp", "chmod", "chown", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd", "df", "dircolors", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "hostname", "id", "ginstall", "join", "kill", "link", "ln", "logname", "ls", "md5sum", "mkdir", "mkfifo", "mknod", "mktemp", "mv", "nice", "nl", "nohup", "od", "paste", "pathchk", "pinky", "pr", "printenv", "printf", "ptx", "pwd", "readlink", "rm", "rmdir", "runcon", "seq", "setuidgid", "shred", "shuf", "sleep", "sort", "split", "stat", "stty", "sum", "sync", "tac", "tail", "tee", "touch", "tr", "tsort", "tty", "uname", "unexpand", "uniq", "unlink", "uptime", "users", "wc", "whoami", "who", "yes"]
@@ -81,4 +86,4 @@ if __name__ == "__main__":
     for future in futures:
         future.result()  # Wait for each task to complete
 
-    print("All tasks completed.")
+    thread_safe_print("All tasks completed.")
