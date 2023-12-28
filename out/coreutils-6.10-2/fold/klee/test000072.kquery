@@ -1,0 +1,74 @@
+array A_data[8] : w32 -> w8 = symbolic
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[3] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array const_arr1[24] : w32 -> w8 = [8 0 0 0 171 171 171 171 144 207 121 95 67 86 0 0 64 52 74 93 67 86 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Eq false (Slt 0 N0))
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false (Eq 1 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 N2:(ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 0 (Read w8 1 arg00))
+         (Eq 65 (Read w8 0 arg00))
+         (Eq false
+             (Eq 8192
+                 (And w32 (Concat w32 N3:(Extract w8 24 N4:(And w32 (ReadLSB w32 N5:(Extract w32 0 (Add w64 18446649226381609944
+                                                                                                            (ReadLSB w64 N6:(Extract w32 0 (Add w64 18446649226343815952
+                                                                                                                                                    N7:(Select w64 (Eq 0 N2) 0 94847365735680))) const_arr1))) U0:[71=0, 70=0, 69=0, 68=0, 67=0, 66=0, 65=0, 64=8, 55=0, 54=0, 53=0, 52=0, 51=0, 50=0, 49=0, 48=8] @ A_data_stat)
+                                                                    4294966784))
+                                      (ReadLSB w24 N5 U1:[N8:(Add w32 3 N5)=N3,
+                                                          N9:(Add w32 2 N5)=(Extract w8 16 N4),
+                                                          N10:(Add w32 1 N5)=(Extract w8 8 N4),
+                                                          N5=(Extract w8 0 N4)] @ U0))
+                          61440)))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935536
+                                              N11:(ReadLSB w64 N12:(Extract w32 0 (Add w64 18446649226343815944 N7)) const_arr1)))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935537 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935538 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935539 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935540 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935541 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935542 N11))
+                      A_data))
+         (Eq 10
+             (Read w8 (Extract w32 0 (Add w64 18446649226344935543 N11))
+                      A_data))
+         (Eq 47 (Read w8 0 arg01))]
+        false)

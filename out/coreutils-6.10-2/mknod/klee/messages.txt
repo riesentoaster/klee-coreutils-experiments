@@ -1,0 +1,12 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: (location information missing) memory error: null page access
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 6.990716
+
+KLEE: increased time budget from 6.990716 to 10.795383
+
+KLEE: increased time budget from 10.795383 to 12.842644
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states
