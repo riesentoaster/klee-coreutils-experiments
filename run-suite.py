@@ -4,12 +4,13 @@ from concurrent.futures import ThreadPoolExecutor
 import threading
 import subprocess
 import sys
+import datetime
 
 print_lock = threading.Lock()
 
 def thread_safe_print(*args, **kwargs):
     with print_lock:
-        print(*args, **kwargs)
+        print(datetime.datetime.now().isoformat(), *args, **kwargs)
 
 # Function to run klee-coreutils for a given util
 def run_klee_coreutils(image_name, util, env_vars):
@@ -39,7 +40,7 @@ def run_klee_coreutils(image_name, util, env_vars):
     command += ["-v", f"{abs_util_output_dir}:/home/klee/out", image_name]
     
     # Execute the command using subprocess.run
-    thread_safe_print(f"--- running command: {' '.join(command)}")
+    thread_safe_print(f"running command: {' '.join(command)}")
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
         process = subprocess.run(command, stdout=stdout_f, stderr=stderr_f, text=True)
     
