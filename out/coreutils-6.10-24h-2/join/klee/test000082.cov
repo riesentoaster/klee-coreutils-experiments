@@ -1,0 +1,15 @@
+klee_src/runtime/POSIX/fd.c:410
+klee_src/runtime/POSIX/fd.c:466
+klee_src/runtime/POSIX/fd.c:468
+klee_src/runtime/POSIX/fd.c:471
+klee_src/runtime/POSIX/fd.c:472
+klee_src/runtime/POSIX/fd.c:474
+klee_src/runtime/POSIX/fd.c:475
+:0
+libc/stdio/fputc.c:31
+libc/stdio/fputc.c:32
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+libc/stdio/putchar.c:16
+libc/stdio/putchar.c:18
+libc/stdio/putchar.c:20

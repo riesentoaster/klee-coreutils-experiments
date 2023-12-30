@@ -1,0 +1,12 @@
+:0
+libc/stdio/sprintf.c:18
+libc/stdio/sprintf.c:20
+libc/stdio/sprintf.c:21
+libc/stdio/sprintf.c:23
+libc/stdio/sprintf.c:24
+libc/stdio/sprintf.c:25
+libc/stdio/sprintf.c:27
+libc/stdio/_vfprintf.c:956
+libc/stdio/_vfprintf.c:957
+libc/stdio/vsnprintf.c:53
+libc/stdio/vsnprintf.c:54
