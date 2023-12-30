@@ -1,0 +1,84 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 116
+             (Extract w8 0 (SExt w32 N2)))
+         (Eq false
+             (Eq 0 N3:(Read w8 2 arg00)))
+         (Eq false
+             (Eq 0 N4:(Read w8 3 arg00)))
+         (Eq false
+             (Eq 0 N5:(Read w8 4 arg00)))
+         (Eq false
+             (Eq 0 N6:(Read w8 5 arg00)))
+         (Eq false
+             (Eq 0 N7:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N8:(Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 N9:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 N10:(Read w8 9 arg00)))
+         (Eq false (Eq 46 N3))
+         (Eq false (Eq 46 N4))
+         (Eq false (Eq 46 N5))
+         (Eq false (Eq 46 N6))
+         (Eq false (Eq 46 N7))
+         (Eq false (Eq 46 N8))
+         (Eq false (Eq 46 N9))
+         (Eq false (Eq 46 N10))
+         (Ult (Add w32 4294967248 N11:(SExt w32 N3))
+              10)
+         (Ult (Add w32 4294967248 N12:(SExt w32 N4))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N5))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N6))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N7))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N8))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N9))
+              10)
+         (Ult (Add w32 4294967248 (SExt w32 N10))
+              10)
+         (Slt (Add w32 4294966767
+                       (Sub w32 N13:(Add w32 (Mul w32 10 N11) N12)
+                                (Mul w32 12
+                                         (SDiv w32 (Add w32 4294966767 N13) 12))))
+              0)]
+        false)

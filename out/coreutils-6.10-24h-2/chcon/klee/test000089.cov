@@ -1,0 +1,11 @@
+:0
+klee_src/runtime/POSIX/fd.c:747
+klee_src/runtime/POSIX/fd.c:748
+klee_src/runtime/POSIX/fd.c:789
+klee_src/runtime/POSIX/fd.c:790
+klee_src/runtime/POSIX/fd.c:791
+klee_src/runtime/POSIX/fd.c:1042
+klee_src/runtime/POSIX/fd.c:1050
+klee_src/runtime/POSIX/fd.c:1051
+klee_src/runtime/POSIX/fd.c:1052
+libc/misc/dirent/opendir.c:72
