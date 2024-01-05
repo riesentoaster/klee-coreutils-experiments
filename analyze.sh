@@ -156,4 +156,13 @@ find "${OUT_DIR}/klee" -type f -name "*.ktest" | while read f; do
         2>> "${OUT_DIR}/klee-replay-stderr.log"
 done
 
+# ========================================
+# Compressing excessive data
+# ========================================
+echo "zipping large text files"
+gzip ${OUT_DIR}/klee-stdout.log
+gzip ${OUT_DIR}/klee-stderr.log
+gzip ${OUT_DIR}/klee/run.stats
+gzip ${OUT_DIR}/klee/warnings.txt
+
 echo "Done"
