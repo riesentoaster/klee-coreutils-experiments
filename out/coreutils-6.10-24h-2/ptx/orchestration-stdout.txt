@@ -1,0 +1,11 @@
+Testing util "ptx"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 16 errors: test000009 test000010 test000017 test000018 test000021 test000024 test000027 test000029 test000030 test000031 test000032 test000035 test000037 test000038 test000039 test000040
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done

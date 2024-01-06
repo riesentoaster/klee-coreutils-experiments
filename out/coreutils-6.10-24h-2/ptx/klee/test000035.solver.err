@@ -1,0 +1,12 @@
+Error: Query timed out (bounds check).
+Stack: 
+	#000010653 in check_halt_state_context(mctx=94621803983616, state=symbolic, idx=1)
+	#100010507 in check_matching(mctx=94621803983616, fl_longest_match=true, p_match_first=94621918913456)
+	#200009133 in re_search_internal(preg=94621586719784, string=94621591797762, length=6, last_start=6, stop=6, nmatch=2, pmatch=94621924138848, eflags=0)
+	#300008593 in re_search_stub(bufp=94621586719784, string=94621591797762, length=6, range=6, stop=6, regs=94621586976608, ret_len=false)
+	#400020175 in rpl_re_search(bufp=94621586719784, string=94621591797762, length=6, range=6, regs=94621586976608)
+	#500006027 in find_occurs_in_text()
+	#600005095 in __klee_posix_wrapped_main(argc=1, argv=94621588120400)
+	#700003033 in __user_main(argcPtr=15, argvPtr=94621575329648, envp=94621575329776) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#800000743 in __uClibc_main(15, 94621575329648) at libc/misc/internals/__uClibc_main.c:401
+	#900000909 in main(15, 94621575329648)
