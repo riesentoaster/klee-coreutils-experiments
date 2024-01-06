@@ -1,0 +1,8 @@
+File '../../src/yes.c'
+Lines executed:64.00% of 25
+Creating 'yes.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
