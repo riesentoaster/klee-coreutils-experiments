@@ -1,0 +1,8 @@
+File '../../src/df.c'
+Lines executed:78.44% of 371
+Creating 'df.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
