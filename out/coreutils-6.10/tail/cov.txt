@@ -1,0 +1,16 @@
+File '../../src/tail.c'
+Lines executed:74.39% of 613
+Creating 'tail.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:100.00% of 2
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:0.00% of 3
+Creating 'system.h.gcov'
+
+File '../../lib/timespec.h'
+Lines executed:0.00% of 4
+Creating 'timespec.h.gcov'
+
