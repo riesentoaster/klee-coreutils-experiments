@@ -1,5 +1,0 @@
-:0
-libc/string/strerror.c:15
-libc/string/strerror.c:19
-libc/string/__xpg_strerror_r.c:165
-libc/misc/error/error.c:61

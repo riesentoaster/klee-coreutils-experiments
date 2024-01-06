@@ -1,8 +1,0 @@
-:0
-klee_src/runtime/POSIX/fd.c:0
-klee_src/runtime/POSIX/fd.c:588
-klee_src/runtime/POSIX/fd.c:595
-klee_src/runtime/POSIX/fd.c:600
-klee_src/runtime/POSIX/fd_32.c:0
-klee_src/runtime/POSIX/fd_32.c:123
-klee_src/runtime/POSIX/fd_32.c:124

@@ -1,8 +1,0 @@
-:0
-libc/stdio/fclose.c:29
-libc/stdio/fclose.c:30
-libc/stdio/fclose.c:92
-libc/stdio/fclose.c:101
-libc/stdio/fgetc.c:22
-libc/stdio/_READ.c:49
-libc/stdio/_READ.c:50

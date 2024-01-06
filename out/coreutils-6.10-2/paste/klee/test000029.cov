@@ -1,7 +1,0 @@
-:0
-libc/stdio/fgetc.c:28
-libc/stdio/fgetc.c:63
-libc/stdio/fgetc.c:64
-libc/stdio/fwrite.c:27
-libc/stdio/fwrite.c:28
-libc/stdio/fwrite.c:29

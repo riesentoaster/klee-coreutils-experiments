@@ -1,6 +1,0 @@
-:0
-libc/stdio/fclose.c:29
-libc/stdio/fclose.c:30
-libc/stdio/puts.c:28
-libc/stdio/puts.c:31
-libc/stdio/puts.c:35

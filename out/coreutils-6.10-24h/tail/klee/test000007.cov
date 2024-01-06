@@ -1,8 +1,0 @@
-libc/stdio/fputc.c:19
-libc/stdio/fputc.c:63
-libc/stdio/fputc.c:67
-libc/stdio/fputc.c:72
-:0
-libc/misc/error/error.c:63
-libc/misc/error/error.c:64
-libc/misc/error/error.c:66
