@@ -6,6 +6,8 @@ import subprocess
 import sys
 import datetime
 
+
+all_coreutils = ["base64", "basename", "cat", "chcon", "chgrp", "chmod", "chown", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd", "df", "dircolors", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "hostname", "id", "ginstall", "join", "kill", "link", "ln", "logname", "ls", "md5sum", "mkdir", "mkfifo", "mknod", "mktemp", "mv", "nice", "nl", "nohup", "od", "paste", "pathchk", "pinky", "pr", "printenv", "printf", "ptx", "pwd", "readlink", "rm", "rmdir", "runcon", "seq", "setuidgid", "shred", "shuf", "sleep", "sort", "split", "stat", "stty", "sum", "sync", "tac", "tail", "tee", "touch", "tr", "tsort", "tty", "uname", "unexpand", "uniq", "unlink", "uptime", "users", "wc", "whoami", "who", "yes"]
 print_lock = threading.Lock()
 
 def thread_safe_print(*args, **kwargs):
@@ -30,23 +32,31 @@ def run_klee_coreutils(image_name, util, env_vars):
     stderr_file = os.path.join(util_output_dir, "orchestration-stderr.txt")
     
     # Command to run klee-coreutils docker image and direct output to the util-specific folder
-    command = ["docker", "run", "--rm", "-it"]
+    exec_command = ["docker", "run", "--rm", "-it"]
     
     # Append environment variables to the command
     for key, value in env.items():
-        command += ["-e", f"{key}={value}"]
+        exec_command += ["-e", f"{key}={value}"]
     
     # Append image name and output directory volume mapping to the command
-    command += ["-v", f"{abs_util_output_dir}:/home/klee/out", image_name]
+    exec_command += ["-v", f"{abs_util_output_dir}:/home/klee/out", image_name]
     
+    # Command to gather coverage information
+    cov_command = ["docker", "run", "--rm", "-it", "-e", f"UTIL={util}", "-v", f"{abs_util_output_dir}:/out", f"{image_name}-cov"]
+
     # Execute the command using subprocess.run
-    thread_safe_print(f"running command: {' '.join(command)}")
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
-        process = subprocess.run(command, stdout=stdout_f, stderr=stderr_f, text=True)
+        thread_safe_print(f"starting run for util \"{util}\"")
+        process = subprocess.run(exec_command, stdout=stdout_f, stderr=stderr_f, text=True)
+        if process.returncode != 0:
+            thread_safe_print(f"=== ERROR: Failed to execute {util} with exit code {process.returncode}", file=sys.stderr)
     
-    # Check return code
-    if process.returncode != 0:
-        thread_safe_print(f"Failed to execute {util} with exit code {process.returncode}", file=sys.stderr)
+        thread_safe_print(f"starting coverage gathering for util \"{util}\"")
+        process = subprocess.run(cov_command, stdout=stdout_f, stderr=stderr_f, text=True)
+        if process.returncode != 0:
+            thread_safe_print(f"=== ERROR: Failed to gather coverage for {util} with exit code {process.returncode}", file=sys.stderr)
+        thread_safe_print(f"done with util \"{util}\"")
+    
 
 if __name__ == "__main__":
     # Parse command-line arguments
@@ -54,6 +64,7 @@ if __name__ == "__main__":
     parser.add_argument('output_dir', help='Output directory')
     parser.add_argument('--max-threads', type=int, help='Maximum number of threads', default=1)
     parser.add_argument('--image-name', help='Name of the image built', default="klee-coreutils")
+    parser.add_argument('--util', action='append', help='Utils to test')
     parser.add_argument('--env', '-e', action='append', nargs=2, metavar=('key', 'value'), help='Environment variables')
 
     args = parser.parse_args()
@@ -62,14 +73,25 @@ if __name__ == "__main__":
 
     # Check if the output directory exists and is empty
     if os.path.exists(output_dir) and os.path.isdir(output_dir) and os.listdir(output_dir):
-        thread_safe_print("Output directory is not empty, this will not work", file=sys.stderr)
-        exit(1)
+        response = input("Output directory is not empty, this might not work. Continue anyway? (y/n) ").lower().strip()
+        if response not in ['y', 'yes']:
+            thread_safe_print("Exiting")
+            exit(1)
 
     # Make sure the docker image is up to date
-    subprocess.run(["docker", "build", "-t", image_name, "--target", "exec", "--progress=plain", "."])
+    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-exec", "-t", f"{image_name}", "."])
+    if process.returncode != 0:
+        thread_safe_print(f"=== ERROR: Failed to build docker image exec with exit code {process.returncode}", file=sys.stderr)
+    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-gcov", "-t", f"{image_name}-cov", "."])
+    if process.returncode != 0:
+        thread_safe_print(f"=== ERROR: Failed to build docker image cov with exit code {process.returncode}", file=sys.stderr)
 
     # Complete list of coreutils from the KLEE paper
-    coreutils = ["base64", "basename", "cat", "chcon", "chgrp", "chmod", "chown", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd", "df", "dircolors", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "hostname", "id", "ginstall", "join", "kill", "link", "ln", "logname", "ls", "md5sum", "mkdir", "mkfifo", "mknod", "mktemp", "mv", "nice", "nl", "nohup", "od", "paste", "pathchk", "pinky", "pr", "printenv", "printf", "ptx", "pwd", "readlink", "rm", "rmdir", "runcon", "seq", "setuidgid", "shred", "shuf", "sleep", "sort", "split", "stat", "stty", "sum", "sync", "tac", "tail", "tee", "touch", "tr", "tsort", "tty", "uname", "unexpand", "uniq", "unlink", "uptime", "users", "wc", "whoami", "who", "yes"]
+    
+    coreutils = all_coreutils
+    if args.util is not None:
+        coreutils = [e for e in args.util if e in all_coreutils]
+        thread_safe_print(f"Only running the following coreutils: {coreutils}")
 
     # Prepare environment variables
     env_vars = {}
