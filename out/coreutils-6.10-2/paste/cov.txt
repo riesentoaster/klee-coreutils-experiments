@@ -1,0 +1,8 @@
+File '../../src/paste.c'
+Lines executed:91.11% of 180
+Creating 'paste.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
