@@ -1,0 +1,8 @@
+libc/stdio/_vfprintf.c:1231
+libc/stdio/_vfprintf.c:1430
+libc/stdio/_fpmaxtostr.c:205
+libc/stdio/_fpmaxtostr.c:676
+libc/stdio/_fpmaxtostr.c:681
+libc/stdio/_fpmaxtostr.c:682
+libc/stdio/_fpmaxtostr.c:683
+libc/stdio/_fpmaxtostr.c:686
