@@ -1,0 +1,8 @@
+File '../../src/expr.c'
+Lines executed:86.98% of 338
+Creating 'expr.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 7
+Creating 'system.h.gcov'
+
