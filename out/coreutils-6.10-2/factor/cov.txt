@@ -1,0 +1,8 @@
+File '../../src/factor.c'
+Lines executed:97.01% of 67
+Creating 'factor.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
