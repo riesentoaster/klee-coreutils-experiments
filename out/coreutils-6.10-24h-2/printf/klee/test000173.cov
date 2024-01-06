@@ -1,9 +1,0 @@
-libc/stdio/_vfprintf.c:1573
-libc/stdio/_vfprintf.c:1574
-libc/stdio/_vfprintf.c:1575
-libc/stdio/_vfprintf.c:1576
-libc/stdio/_uintmaxtostr.c:39
-libc/stdio/_uintmaxtostr.c:40
-libc/stdio/_uintmaxtostr.c:41
-libc/stdio/_uintmaxtostr.c:149
-libc/stdio/_uintmaxtostr.c:150

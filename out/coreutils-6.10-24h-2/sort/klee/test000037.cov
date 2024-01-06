@@ -1,8 +1,0 @@
-libc/misc/error/error.c:65
-libc/stdio/_vfprintf.c:668
-libc/stdio/_vfprintf.c:669
-libc/stdio/_vfprintf.c:1438
-libc/stdio/_vfprintf.c:1689
-libc/stdio/_vfprintf.c:1690
-libc/stdio/_vfprintf.c:1691
-libc/stdio/_vfprintf.c:1692

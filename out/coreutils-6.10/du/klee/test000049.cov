@@ -1,6 +1,0 @@
-:0
-klee_src/runtime/POSIX/fd.c:1410
-klee_src/runtime/POSIX/fd.c:1411
-libc/stdio/fopen.c:20
-libc/stdio/_fopen.c:60
-libc/stdio/_vfprintf.c:1817
