@@ -1,0 +1,8 @@
+File '../../src/tac.c'
+Lines executed:71.95% of 221
+Creating 'tac.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
