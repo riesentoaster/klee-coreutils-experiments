@@ -1,0 +1,7 @@
+:0
+libc/stdio/fread.c:71
+libc/stdio/_READ.c:26
+libc/stdio/_READ.c:48
+libc/stdio/_READ.c:52
+libc/stdio/_READ.c:53
+libc/stdio/_READ.c:65
