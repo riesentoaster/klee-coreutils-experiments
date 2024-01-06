@@ -1,0 +1,14 @@
+:0
+libc/stdio/fputc.c:19
+libc/stdio/fputc.c:24
+libc/stdio/fputc.c:31
+libc/stdio/fputc.c:32
+libc/stdio/fputc.c:34
+libc/stdio/fputc.c:38
+libc/stdio/fputc.c:62
+libc/stdio/fputc.c:63
+libc/stdio/fputc.c:67
+libc/stdio/fputc.c:72
+libc/stdio/putchar.c:16
+libc/stdio/putchar.c:18
+libc/stdio/putchar.c:20
