@@ -1,0 +1,8 @@
+File '../../src/users.c'
+Lines executed:73.08% of 52
+Creating 'users.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
