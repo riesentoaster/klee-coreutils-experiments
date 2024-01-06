@@ -1,0 +1,8 @@
+File '../../src/tsort.c'
+Lines executed:78.82% of 203
+Creating 'tsort.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+

@@ -1,0 +1,8 @@
+File '../../src/chgrp.c'
+Lines executed:96.67% of 90
+Creating 'chgrp.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+

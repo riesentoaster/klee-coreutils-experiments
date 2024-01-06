@@ -1,0 +1,12 @@
+File '../../src/runcon.c'
+Lines executed:56.86% of 102
+Creating 'runcon.c.gcov'
+
+File '../lib/selinux/context.h'
+Lines executed:0.00% of 12
+Creating 'context.h.gcov'
+
+File '../lib/selinux/selinux.h'
+Lines executed:10.00% of 10
+Creating 'selinux.h.gcov'
+

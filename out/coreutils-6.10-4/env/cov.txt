@@ -1,0 +1,8 @@
+File '../../src/env.c'
+Lines executed:93.33% of 45
+Creating 'env.c.gcov'
+
+File '../../src/system.h'
+Lines executed:85.71% of 7
+Creating 'system.h.gcov'
+
