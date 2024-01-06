@@ -1,0 +1,8 @@
+File '../../src/wc.c'
+Lines executed:70.61% of 262
+Creating 'wc.c.gcov'
+
+File '../../src/system.h'
+Lines executed:25.00% of 4
+Creating 'system.h.gcov'
+
