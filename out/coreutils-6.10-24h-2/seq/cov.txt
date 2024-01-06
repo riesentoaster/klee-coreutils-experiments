@@ -1,0 +1,8 @@
+File '../../src/seq.c'
+Lines executed:91.52% of 165
+Creating 'seq.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
