@@ -1,0 +1,8 @@
+File '../../src/fold.c'
+Lines executed:82.30% of 113
+Creating 'fold.c.gcov'
+
+File '../../src/system.h'
+Lines executed:75.00% of 4
+Creating 'system.h.gcov'
+

@@ -1,0 +1,8 @@
+File '../../src/base64.c'
+Lines executed:90.48% of 105
+Creating 'base64.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
