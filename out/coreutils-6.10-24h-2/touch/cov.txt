@@ -1,0 +1,12 @@
+File '../../src/touch.c'
+Lines executed:78.47% of 144
+Creating 'touch.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:100.00% of 4
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
