@@ -1,0 +1,8 @@
+File '../../src/fmt.c'
+Lines executed:86.52% of 319
+Creating 'fmt.c.gcov'
+
+File '../../src/system.h'
+Lines executed:0.00% of 3
+Creating 'system.h.gcov'
+
