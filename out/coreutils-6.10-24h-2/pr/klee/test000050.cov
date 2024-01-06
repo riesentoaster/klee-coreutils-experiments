@@ -1,0 +1,8 @@
+:0
+libc/stdio/fgetc.c:22
+libc/stdio/_READ.c:49
+libc/stdio/_READ.c:50
+libc/stdio/fflush.c:106
+libc/stdio/fflush.c:107
+libc/stdio/fflush.c:108
+libc/stdio/fflush.c:118
