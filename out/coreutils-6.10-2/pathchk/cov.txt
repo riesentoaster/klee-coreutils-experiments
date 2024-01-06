@@ -1,0 +1,8 @@
+File '../../src/pathchk.c'
+Lines executed:93.94% of 132
+Creating 'pathchk.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
