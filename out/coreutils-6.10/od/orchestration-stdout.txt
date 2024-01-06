@@ -1,0 +1,11 @@
+Testing util "od"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 1 errors: test000085
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
