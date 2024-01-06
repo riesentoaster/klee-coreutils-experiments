@@ -1,0 +1,16 @@
+File '../../src/du.c'
+Lines executed:84.11% of 302
+Creating 'du.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:33.33% of 6
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
+File '../../lib/timespec.h'
+Lines executed:100.00% of 4
+Creating 'timespec.h.gcov'
+
