@@ -1,0 +1,12 @@
+File '../../src/date.c'
+Lines executed:90.91% of 154
+Creating 'date.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:100.00% of 2
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
