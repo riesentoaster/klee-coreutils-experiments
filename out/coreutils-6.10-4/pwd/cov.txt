@@ -1,0 +1,8 @@
+File '../../src/pwd.c'
+Lines executed:20.34% of 118
+Creating 'pwd.c.gcov'
+
+File '../../src/system.h'
+Lines executed:23.08% of 13
+Creating 'system.h.gcov'
+

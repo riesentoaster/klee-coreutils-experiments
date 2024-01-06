@@ -1,0 +1,8 @@
+libc/stdio/fclose.c:14
+libc/stdio/fclose.c:31
+libc/stdio/fclose.c:32
+libc/stdio/fclose.c:33
+libc/stdio/fclose.c:34
+libc/stdio/_stdio.c:258
+libc/stdio/_stdio.c:261
+libc/stdio/_stdio.c:271

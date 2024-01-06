@@ -1,0 +1,385 @@
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ ls out/coreutils-6.10-3/ln[7Ppip3 install pandas[9Pscreen -lsfind out -name ginstall.gcnosudo apt install python3-pippip3[Kython3 run-suite.py --max-threads 50 out/coreutils-6.10-3[A[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-e SKIP_KLEE_ANALYSIS TRUE out/coreutils-6.10-24h-2[A[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cout/[31Pcoreutils-6.10-3[K4
+[?2004l#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.97kB done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/klee/klee:latest
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:14.04
+#4 DONE 0.9s
+
+#5 [klee-coreutils-base 1/4] FROM docker.io/library/ubuntu:14.04@sha256:64483f3496c1373bfd55348e88694d1c4d0c9b660dee6bfef5e12f43b9933b30
+#5 DONE 0.0s
+
+#6 [klee-coreutils-exec 1/5] FROM docker.io/klee/klee
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 32B done
+#7 DONE 0.0s
+
+#8 [klee-coreutils-gcov 1/3] WORKDIR /coreutils/obj-cov
+#8 CACHED
+
+#9 [klee-coreutils-exec 2/5] RUN wget "http://www.doc.ic.ac.uk/~cristic/klee/testing-env.sh"     && env -i /bin/bash -c '(source testing-env.sh; env >test.env)'     && wget "http://www.doc.ic.ac.uk/~cristic/klee/sandbox.tgz"     && tar xzfv sandbox.tgz     && mv sandbox.tgz /tmp     && mv sandbox /tmp
+#9 CACHED
+
+#10 [klee-coreutils-exec 4/5] COPY --from=klee-coreutils-gcov --chown=klee /coreutils/ ./coreutils-gcov/
+#10 CACHED
+
+#11 [klee-coreutils-llvm 1/6] RUN apt-get install -y     clang     llvm     python3-pip
+#11 CACHED
+
+#12 [klee-coreutils-gcov 3/3] WORKDIR /coreutils/obj-cov/src
+#12 CACHED
+
+#13 [klee-coreutils-llvm 2/6] RUN pip3 install --upgrade -v "wllvm==1.1.5"
+#13 CACHED
+
+#14 [klee-coreutils-exec 3/5] COPY --from=klee-coreutils-llvm --chown=klee /coreutils/ ./coreutils-llvm/
+#14 CACHED
+
+#15 [klee-coreutils-llvm 3/6] WORKDIR /coreutils/obj-llvm
+#15 CACHED
+
+#16 [klee-coreutils-base 4/4] RUN sed -i     's/^#define INPUT_FILE_SIZE_GUESS (1024 \* 1024)$/#define INPUT_FILE_SIZE_GUESS 1024/g'     coreutils/src/sort.c
+#16 CACHED
+
+#17 [klee-coreutils-llvm 5/6] WORKDIR /coreutils/obj-llvm/src
+#17 CACHED
+
+#18 [klee-coreutils-llvm 4/6] RUN ../configure     --build x86_64-pc-linux-gnu     --disable-nls     LLVM_COMPILER=clang     CC=wllvm     CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__"     && make     && make -C src arch hostname
+#18 CACHED
+
+#19 [klee-coreutils-base 3/4] RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-6.10.tar.gz"     && tar -xf "coreutils-6.10.tar.gz"     && mv "coreutils-6.10" coreutils
+#19 CACHED
+
+#20 [klee-coreutils-llvm 6/6] RUN find . -executable -type f | xargs -I '{}' extract-bc '{}'
+#20 CACHED
+
+#21 [klee-coreutils-base 2/4] RUN apt-get update     && apt-get install -y     wget     build-essential
+#21 CACHED
+
+#22 [klee-coreutils-gcov 2/3] RUN ../configure     --build x86_64-pc-linux-gnu     --disable-nls     CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__ --coverage"    && make     && make -C src arch hostname
+#22 CACHED
+
+#23 [klee-coreutils-exec 5/5] COPY analyze.sh ./
+#23 CACHED
+
+#24 exporting to image
+#24 exporting layers done
+#24 writing image sha256:b03025bb6d4b44004b823def76a448a7ad786f4ace979371c6fc06c66da2b5fc done
+#24 naming to docker.io/library/klee-coreutils done
+#24 DONE 0.0s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.97kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:14.04
+#3 DONE 0.2s
+
+#4 [klee-coreutils-base 1/4] FROM docker.io/library/ubuntu:14.04@sha256:64483f3496c1373bfd55348e88694d1c4d0c9b660dee6bfef5e12f43b9933b30
+#4 DONE 0.0s
+
+#5 [klee-coreutils-base 2/4] RUN apt-get update     && apt-get install -y     wget     build-essential
+#5 CACHED
+
+#6 [klee-coreutils-base 3/4] RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-6.10.tar.gz"     && tar -xf "coreutils-6.10.tar.gz"     && mv "coreutils-6.10" coreutils
+#6 CACHED
+
+#7 [klee-coreutils-base 4/4] RUN sed -i     's/^#define INPUT_FILE_SIZE_GUESS (1024 \* 1024)$/#define INPUT_FILE_SIZE_GUESS 1024/g'     coreutils/src/sort.c
+#7 CACHED
+
+#8 [klee-coreutils-gcov 1/3] WORKDIR /coreutils/obj-cov
+#8 CACHED
+
+#9 [klee-coreutils-gcov 2/3] RUN ../configure     --build x86_64-pc-linux-gnu     --disable-nls     CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__ --coverage"    && make     && make -C src arch hostname
+#9 CACHED
+
+#10 [klee-coreutils-gcov 3/3] WORKDIR /coreutils/obj-cov/src
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 writing image sha256:528f0fa90688da4c683258a295e4eaf98844b7cc3a1270fb088a2e22061d0e49 done
+#11 naming to docker.io/library/klee-coreutils-cov done
+#11 DONE 0.0s
+2024-01-06T12:44:57.102877 starting run for util "base64"
+2024-01-06T12:44:57.104885 starting run for util "basename"
+2024-01-06T12:44:57.106506 starting run for util "chcon"
+2024-01-06T12:44:57.107753 starting run for util "cat"
+2024-01-06T12:44:57.110559 starting run for util "chmod"
+2024-01-06T12:44:57.112638 starting run for util "chown"
+2024-01-06T12:44:57.114160 starting run for util "chgrp"
+2024-01-06T12:44:57.115091 starting run for util "chroot"
+2024-01-06T12:44:57.118460 starting run for util "comm"
+2024-01-06T12:44:57.120186 starting run for util "cksum"
+2024-01-06T12:44:57.121862 starting run for util "cp"
+2024-01-06T12:44:57.124969 starting run for util "cut"
+2024-01-06T12:44:57.126940 starting run for util "csplit"
+2024-01-06T12:44:57.128433 starting run for util "date"
+2024-01-06T12:44:57.131539 starting run for util "dircolors"
+2024-01-06T12:44:57.132704 starting run for util "df"
+2024-01-06T12:44:57.134530 starting run for util "dd"
+2024-01-06T12:44:57.136463 starting run for util "dirname"
+2024-01-06T12:44:57.140065 starting run for util "du"
+2024-01-06T12:44:57.144222 starting run for util "expand"
+2024-01-06T12:44:57.147821 starting run for util "echo"
+2024-01-06T12:44:57.149769 starting run for util "env"
+2024-01-06T12:44:57.151965 starting run for util "expr"
+2024-01-06T12:44:57.155906 starting run for util "false"
+2024-01-06T12:44:57.158568 starting run for util "factor"
+2024-01-06T12:44:57.160742 starting run for util "fold"
+2024-01-06T12:44:57.165193 starting run for util "head"
+2024-01-06T12:44:57.168203 starting run for util "fmt"
+2024-01-06T12:44:57.169337 starting run for util "hostid"
+2024-01-06T12:44:57.173526 starting run for util "id"
+2024-01-06T12:44:57.174465 starting run for util "hostname"
+2024-01-06T12:44:57.175121 starting run for util "ginstall"
+2024-01-06T12:44:57.182423 starting run for util "link"
+2024-01-06T12:44:57.184238 starting run for util "join"
+2024-01-06T12:44:57.187785 starting run for util "kill"
+2024-01-06T12:44:57.191968 starting run for util "logname"
+2024-01-06T12:44:57.196322 starting run for util "mkdir"
+2024-01-06T12:44:57.197846 starting run for util "ln"
+2024-01-06T12:44:57.199091 starting run for util "md5sum"
+2024-01-06T12:44:57.203520 starting run for util "mknod"
+2024-01-06T12:44:57.207371 starting run for util "mkfifo"
+2024-01-06T12:44:57.210147 starting run for util "ls"
+2024-01-06T12:44:57.211313 starting run for util "nice"
+2024-01-06T12:44:57.214077 starting run for util "nl"
+2024-01-06T12:44:57.215409 starting run for util "mv"
+2024-01-06T12:44:57.218508 starting run for util "mktemp"
+2024-01-06T12:44:57.220148 starting run for util "od"
+2024-01-06T12:44:57.221486 starting run for util "nohup"
+2024-01-06T12:44:57.221719 starting run for util "pathchk"
+2024-01-06T12:44:57.224085 starting run for util "paste"
+2024-01-06T12:45:11.910013 starting coverage gathering for util "false"
+2024-01-06T12:45:27.094939 done with util "false"
+2024-01-06T12:45:27.095399 starting run for util "pinky"
+2024-01-06T12:45:30.063627 starting coverage gathering for util "chroot"
+2024-01-06T12:45:31.121135 done with util "chroot"
+2024-01-06T12:45:31.121720 starting run for util "pr"
+2024-01-06T12:46:52.840922 starting coverage gathering for util "dirname"
+2024-01-06T12:47:07.367310 done with util "dirname"
+2024-01-06T12:47:07.367727 starting run for util "printenv"
+2024-01-06T12:47:50.970862 starting coverage gathering for util "cksum"
+2024-01-06T12:47:59.915442 done with util "cksum"
+2024-01-06T12:47:59.915952 starting run for util "printf"
+2024-01-06T12:49:17.957622 starting coverage gathering for util "printenv"
+2024-01-06T12:49:31.124691 done with util "printenv"
+2024-01-06T12:49:31.125136 starting run for util "ptx"
+2024-01-06T12:54:50.876083 starting coverage gathering for util "basename"
+2024-01-06T12:54:56.082237 done with util "basename"
+2024-01-06T12:54:56.082663 starting run for util "pwd"
+2024-01-06T12:55:09.657341 starting coverage gathering for util "pwd"
+2024-01-06T12:55:13.887363 done with util "pwd"
+2024-01-06T12:55:13.887768 starting run for util "readlink"
+2024-01-06T13:47:47.335400 starting coverage gathering for util "hostname"
+2024-01-06T13:47:47.379609 starting coverage gathering for util "chown"
+2024-01-06T13:47:51.271268 starting coverage gathering for util "chcon"
+2024-01-06T13:47:51.278276 starting coverage gathering for util "base64"
+2024-01-06T13:47:51.280360 starting coverage gathering for util "cut"
+2024-01-06T13:47:51.603846 starting coverage gathering for util "fmt"
+2024-01-06T13:47:51.626713 starting coverage gathering for util "echo"
+2024-01-06T13:47:57.013525 starting coverage gathering for util "env"
+2024-01-06T13:47:59.782221 starting coverage gathering for util "expr"
+2024-01-06T13:47:59.784286 starting coverage gathering for util "dd"
+2024-01-06T13:47:59.785682 starting coverage gathering for util "hostid"
+2024-01-06T13:48:00.720542 starting coverage gathering for util "expand"
+2024-01-06T13:48:03.194236 starting coverage gathering for util "mkfifo"
+2024-01-06T13:48:06.530667 starting coverage gathering for util "comm"
+2024-01-06T13:48:06.558000 starting coverage gathering for util "logname"
+2024-01-06T13:48:07.199889 starting coverage gathering for util "dircolors"
+2024-01-06T13:48:07.201587 starting coverage gathering for util "ls"
+2024-01-06T13:48:08.589686 starting coverage gathering for util "od"
+2024-01-06T13:48:08.592949 starting coverage gathering for util "id"
+2024-01-06T13:48:08.594422 starting coverage gathering for util "mktemp"
+2024-01-06T13:48:09.327385 starting coverage gathering for util "factor"
+2024-01-06T13:48:09.329357 starting coverage gathering for util "pathchk"
+2024-01-06T13:48:10.346295 starting coverage gathering for util "fold"
+2024-01-06T13:48:10.504144 starting coverage gathering for util "join"
+2024-01-06T13:48:10.867326 starting coverage gathering for util "date"
+2024-01-06T13:48:11.101584 starting coverage gathering for util "csplit"
+2024-01-06T13:48:11.664848 starting coverage gathering for util "ln"
+2024-01-06T13:48:11.666556 starting coverage gathering for util "du"
+2024-01-06T13:48:11.911598 starting coverage gathering for util "df"
+2024-01-06T13:48:11.943553 starting coverage gathering for util "paste"
+2024-01-06T13:48:12.606259 starting coverage gathering for util "pinky"
+2024-01-06T13:48:18.400790 starting coverage gathering for util "chgrp"
+2024-01-06T13:48:18.595658 starting coverage gathering for util "ginstall"
+2024-01-06T13:48:19.237645 starting coverage gathering for util "mkdir"
+2024-01-06T13:48:19.243283 starting coverage gathering for util "mv"
+2024-01-06T13:48:19.889137 starting coverage gathering for util "head"
+2024-01-06T13:48:20.324130 starting coverage gathering for util "cat"
+2024-01-06T13:48:20.324420 starting coverage gathering for util "kill"
+2024-01-06T13:48:21.126263 starting coverage gathering for util "link"
+2024-01-06T13:48:21.127775 starting coverage gathering for util "pr"
+2024-01-06T13:48:21.526179 starting coverage gathering for util "nl"
+2024-01-06T13:48:21.819686 starting coverage gathering for util "nice"
+2024-01-06T13:48:23.301949 starting coverage gathering for util "nohup"
+2024-01-06T13:48:23.303795 starting coverage gathering for util "md5sum"
+2024-01-06T13:48:24.273616 starting coverage gathering for util "chmod"
+2024-01-06T13:48:24.274872 starting coverage gathering for util "mknod"
+2024-01-06T13:48:24.276133 starting coverage gathering for util "cp"
+2024-01-06T13:48:32.480664 starting coverage gathering for util "printf"
+2024-01-06T13:48:33.823706 done with util "hostname"
+2024-01-06T13:48:33.824182 starting run for util "rm"
+2024-01-06T13:48:39.584259 done with util "chown"
+2024-01-06T13:48:39.584849 starting run for util "rmdir"
+2024-01-06T13:48:43.109114 done with util "chcon"
+2024-01-06T13:48:43.109815 starting run for util "runcon"
+2024-01-06T13:48:43.111755 done with util "echo"
+2024-01-06T13:48:43.112151 starting run for util "seq"
+2024-01-06T13:48:44.407998 done with util "base64"
+2024-01-06T13:48:44.408593 starting run for util "setuidgid"
+2024-01-06T13:48:49.615688 done with util "fmt"
+2024-01-06T13:48:49.616232 starting run for util "shred"
+2024-01-06T13:48:52.563466 done with util "cut"
+2024-01-06T13:48:52.563980 starting run for util "shuf"
+2024-01-06T13:48:53.741100 done with util "env"
+2024-01-06T13:48:53.741586 starting run for util "sleep"
+2024-01-06T13:49:05.862220 done with util "dd"
+2024-01-06T13:49:05.862739 starting run for util "sort"
+2024-01-06T13:49:10.408538 done with util "mkfifo"
+2024-01-06T13:49:10.409097 starting run for util "split"
+2024-01-06T13:49:10.410668 done with util "expand"
+2024-01-06T13:49:10.411307 starting run for util "stat"
+2024-01-06T13:49:18.609849 done with util "expr"
+2024-01-06T13:49:18.610422 starting run for util "stty"
+2024-01-06T13:49:18.612678 done with util "hostid"
+2024-01-06T13:49:18.613413 starting run for util "sum"
+2024-01-06T13:49:19.727807 done with util "logname"
+2024-01-06T13:49:19.728172 starting run for util "sync"
+2024-01-06T13:49:23.074651 done with util "comm"
+2024-01-06T13:49:23.075100 starting run for util "tac"
+2024-01-06T13:49:27.398715 done with util "dircolors"
+2024-01-06T13:49:27.399196 starting run for util "tail"
+2024-01-06T13:49:28.786432 done with util "ls"
+2024-01-06T13:49:28.787000 starting run for util "tee"
+2024-01-06T13:49:33.147540 done with util "mktemp"
+2024-01-06T13:49:33.148286 starting run for util "touch"
+2024-01-06T13:49:33.152204 done with util "pathchk"
+2024-01-06T13:49:33.152878 starting run for util "tr"
+2024-01-06T13:49:35.084873 done with util "od"
+2024-01-06T13:49:35.085281 starting run for util "tsort"
+2024-01-06T13:49:37.388853 done with util "id"
+2024-01-06T13:49:37.389638 starting run for util "tty"
+2024-01-06T13:49:46.195579 done with util "factor"
+2024-01-06T13:49:46.196314 starting run for util "uname"
+2024-01-06T13:49:53.412463 done with util "join"
+2024-01-06T13:49:53.413136 starting run for util "unexpand"
+2024-01-06T13:49:53.415209 done with util "fold"
+2024-01-06T13:49:53.415633 starting run for util "uniq"
+2024-01-06T13:49:53.436892 done with util "date"
+2024-01-06T13:49:53.437594 starting run for util "unlink"
+2024-01-06T13:49:58.717276 done with util "csplit"
+2024-01-06T13:49:58.717897 starting run for util "uptime"
+2024-01-06T13:49:58.727616 done with util "du"
+2024-01-06T13:49:58.728099 starting run for util "users"
+2024-01-06T13:50:01.896854 done with util "ln"
+2024-01-06T13:50:01.897584 starting run for util "wc"
+2024-01-06T13:50:07.582122 done with util "df"
+2024-01-06T13:50:07.582534 starting run for util "whoami"
+2024-01-06T13:50:22.582623 done with util "paste"
+2024-01-06T13:50:22.583075 starting run for util "who"
+2024-01-06T13:50:22.821966 done with util "pinky"
+2024-01-06T13:50:22.822418 starting run for util "yes"
+2024-01-06T13:50:39.639748 done with util "chgrp"
+2024-01-06T13:50:39.907166 done with util "ginstall"
+2024-01-06T13:50:41.760685 starting coverage gathering for util "ptx"
+2024-01-06T13:50:47.501562 done with util "kill"
+2024-01-06T13:50:49.985448 done with util "head"
+2024-01-06T13:50:59.660523 done with util "mkdir"
+2024-01-06T13:51:00.728258 done with util "mv"
+2024-01-06T13:51:03.632315 done with util "nice"
+2024-01-06T13:51:05.431444 done with util "cat"
+2024-01-06T13:51:10.222423 done with util "nl"
+2024-01-06T13:51:10.233304 done with util "link"
+2024-01-06T13:51:10.644590 done with util "md5sum"
+2024-01-06T13:51:11.148267 done with util "nohup"
+2024-01-06T13:51:11.704814 done with util "pr"
+2024-01-06T13:51:17.793623 done with util "cp"
+2024-01-06T13:51:18.474400 done with util "mknod"
+2024-01-06T13:51:18.477106 done with util "chmod"
+2024-01-06T13:51:23.448822 done with util "printf"
+2024-01-06T13:51:59.248865 starting coverage gathering for util "sync"
+2024-01-06T13:53:09.719558 done with util "sync"
+2024-01-06T13:53:10.167199 done with util "ptx"
+2024-01-06T13:53:10.180075 starting coverage gathering for util "runcon"
+2024-01-06T13:53:21.631969 done with util "runcon"
+2024-01-06T13:53:23.557025 starting coverage gathering for util "users"
+2024-01-06T13:53:28.608330 done with util "users"
+2024-01-06T13:54:01.864059 starting coverage gathering for util "uptime"
+2024-01-06T13:54:14.744139 done with util "uptime"
+2024-01-06T13:55:31.221617 starting coverage gathering for util "readlink"
+2024-01-06T13:55:41.780024 done with util "readlink"
+2024-01-06T14:38:38.912448 starting coverage gathering for util "tee"
+2024-01-06T14:38:53.764139 done with util "tee"
+2024-01-06T14:52:09.770460 starting coverage gathering for util "rmdir"
+2024-01-06T15:00:53.890930 starting coverage gathering for util "setuidgid"
+2024-01-06T15:00:53.892200 starting coverage gathering for util "stty"
+2024-01-06T15:00:53.893553 starting coverage gathering for util "shuf"
+2024-01-06T15:00:53.893829 starting coverage gathering for util "rm"
+2024-01-06T15:00:53.895847 starting coverage gathering for util "tr"
+2024-01-06T15:00:54.606850 starting coverage gathering for util "split"
+2024-01-06T15:00:55.065218 starting coverage gathering for util "sum"
+2024-01-06T15:00:58.423373 starting coverage gathering for util "tty"
+2024-01-06T15:00:58.715038 starting coverage gathering for util "seq"
+2024-01-06T15:01:08.631335 starting coverage gathering for util "unlink"
+2024-01-06T15:01:08.632506 starting coverage gathering for util "uname"
+2024-01-06T15:01:08.849039 starting coverage gathering for util "touch"
+2024-01-06T15:01:09.673093 starting coverage gathering for util "unexpand"
+2024-01-06T15:01:12.312446 starting coverage gathering for util "tsort"
+2024-01-06T15:01:13.949984 starting coverage gathering for util "who"
+2024-01-06T15:01:13.958063 starting coverage gathering for util "sort"
+2024-01-06T15:01:14.766613 starting coverage gathering for util "stat"
+2024-01-06T15:01:14.861618 starting coverage gathering for util "sleep"
+2024-01-06T15:01:14.868042 starting coverage gathering for util "wc"
+2024-01-06T15:01:15.054224 starting coverage gathering for util "uniq"
+2024-01-06T15:01:15.445134 starting coverage gathering for util "yes"
+2024-01-06T15:01:15.484653 starting coverage gathering for util "tail"
+2024-01-06T15:01:15.601632 starting coverage gathering for util "whoami"
+2024-01-06T15:01:15.603572 starting coverage gathering for util "shred"
+2024-01-06T15:01:15.931113 starting coverage gathering for util "tac"
+2024-01-06T15:01:17.528443 done with util "stty"
+2024-01-06T15:01:17.696071 done with util "rmdir"
+2024-01-06T15:01:18.124106 done with util "split"
+2024-01-06T15:01:18.229693 done with util "shuf"
+2024-01-06T15:01:18.375753 done with util "tr"
+2024-01-06T15:01:18.440870 done with util "setuidgid"
+2024-01-06T15:01:18.626340 done with util "sum"
+2024-01-06T15:01:19.115592 done with util "tty"
+2024-01-06T15:01:20.047617 done with util "rm"
+2024-01-06T15:01:20.119629 done with util "seq"
+2024-01-06T15:01:20.140039 done with util "unexpand"
+2024-01-06T15:01:20.299014 done with util "touch"
+2024-01-06T15:01:21.146601 done with util "uname"
+2024-01-06T15:01:21.162814 done with util "tsort"
+2024-01-06T15:01:21.412440 done with util "unlink"
+2024-01-06T15:01:22.062586 done with util "stat"
+2024-01-06T15:01:22.085512 done with util "sort"
+2024-01-06T15:01:22.451459 done with util "who"
+2024-01-06T15:01:23.234013 done with util "sleep"
+2024-01-06T15:01:23.244578 done with util "wc"
+2024-01-06T15:01:23.328789 done with util "uniq"
+2024-01-06T15:01:23.481193 done with util "tac"
+2024-01-06T15:01:24.091618 done with util "whoami"
+2024-01-06T15:01:24.336459 done with util "yes"
+2024-01-06T15:01:24.407645 done with util "tail"
+2024-01-06T15:01:24.477361 done with util "shred"
+2024-01-06T15:01:24.478536 All tasks completed.
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ 
