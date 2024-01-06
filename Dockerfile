@@ -19,7 +19,7 @@ ARG COREUTILS_VERSION=6.10
 
 # downloading source code
 RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-${COREUTILS_VERSION}.tar.gz" \
-    && tar -xf "coreutils-${COREUTILS_VERSION}.tar.gz" \
+    && tar xf "coreutils-${COREUTILS_VERSION}.tar.gz" \
     && mv "coreutils-${COREUTILS_VERSION}" coreutils
 
 # modifying source code according to the documentation of the original experiment
@@ -86,7 +86,7 @@ WORKDIR /coreutils/obj-cov/src
 # CMD ls $COVERAGE_DATA_DIR/*
 CMD cp -r "$COVERAGE_DATA_DIR"/* "/coreutils/obj-cov/src/" \
     && gcov "$UTIL" > "/out/cov.txt" \
-    && cp -r "/coreutils/obj-cov/src" "/out/src-gcov"
+    && tar czf "/out/src-gcov.tar.gz" "/coreutils/obj-cov/src"
 
 # ========================================
 # exec
@@ -122,7 +122,7 @@ CMD bash ./analyze.sh \
     --klee-max-time "${KLEE_MAX_TIME_MIN}" \
     --out-dir ./out \
     "${UTIL}" \
-    && cp -r ./coreutils-llvm/obj-llvm/src ./out/src-llvm/
+    && tar czf ./out/src-llvm.tar.gz ./coreutils-llvm/obj-llvm/src
 
 # to keep files output by klee, run the container as follows:
 # `docker run [docker_args] \

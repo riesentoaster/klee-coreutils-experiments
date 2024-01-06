@@ -76,10 +76,9 @@ mkdir -p $OUT_DIR
 if [ -n "$SKIP_KLEE_ANALYSIS" ]; then
   echo "Skipping KLEE analysis."
   echo "Unzipping necessary usually zipped files"
-  # if [ -f "${OUT_DIR}/klee-stdout.log.gz" ];   then gunzip "${OUT_DIR}/klee-stdout.log.gz";   fi
-  # if [ -f "${OUT_DIR}/klee-stderr.log.gz" ];   then gunzip "${OUT_DIR}/klee-stderr.log.gz";   fi
   if [ -f "${OUT_DIR}/klee/run.stats.gz" ];    then gunzip "${OUT_DIR}/klee/run.stats.gz";    fi
-  # if [ -f "${OUT_DIR}/klee/warnings.txt.gz" ]; then gunzip "${OUT_DIR}/klee/warnings.txt.gz"; fi
+  if [ -f "${OUT_DIR}/klee-replay-stdout.log.gz" ];    then gunzip "${OUT_DIR}/klee-replay-stdout.log.gz";    fi
+  if [ -f "${OUT_DIR}/klee-replay-stderr.log.gz" ];    then gunzip "${OUT_DIR}/klee-replay-stderr.log.gz";    fi
 else
   echo "Assuming input directory for llvm files ${LLVM_DIR}"
   echo "Setting KLEE's timeout to ${KLEE_MAX_TIME_MIN}"
@@ -173,6 +172,9 @@ find "${OUT_DIR}/klee" -type f -name "*.ktest" | while read f; do
         >> "${OUT_DIR}/klee-replay-stdout.log" \
         2>> "${OUT_DIR}/klee-replay-stderr.log"
 done
+
+gzip "${OUT_DIR}/klee-replay-stdout.log"
+gzip "${OUT_DIR}/klee-replay-stderr.log"
 
 # ========================================
 # Compressing excessive data
