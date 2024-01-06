@@ -1,0 +1,2 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat

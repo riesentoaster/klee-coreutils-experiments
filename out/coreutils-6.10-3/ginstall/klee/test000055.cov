@@ -1,0 +1,7 @@
+:0
+libc/stdio/fwrite.c:27
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+libc/unistd/getopt.c:632
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696

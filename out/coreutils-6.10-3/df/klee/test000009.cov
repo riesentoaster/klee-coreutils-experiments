@@ -1,0 +1,17 @@
+:0
+libc/stdlib/stdlib.c:382
+libc/stdlib/stdlib.c:383
+libc/stdlib/stdlib.c:386
+libc/stdlib/stdlib.c:538
+libc/stdlib/stdlib.c:539
+libc/stdlib/stdlib.c:548
+libc/stdlib/stdlib.c:551
+libc/stdlib/stdlib.c:584
+libc/stdlib/stdlib.c:585
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580
+libc/stdio/_vfprintf.c:1899
+libc/stdio/_vfprintf.c:1900
+libc/stdio/_vfprintf.c:1904
+libc/stdio/_vfprintf.c:1908
+libc/stdio/_vfprintf.c:1909

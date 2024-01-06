@@ -1,0 +1,8 @@
+File '../../src/shuf.c'
+Lines executed:94.19% of 172
+Creating 'shuf.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
