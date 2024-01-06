@@ -1,0 +1,134 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array const_arr9[11] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))
+         (Eq 47 (Read w8 0 arg02))
+         (Eq 0 (Read w8 1 arg02))
+         (Eq false
+             (Eq 0 N2:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 47
+                 N3:(Read w8 N4:(Extract w32 0 (Add w64 18446649211936976160
+                                                        N5:(Select w64 (Eq 0
+                                                                           (And w8 (Select w8 N6:(Eq 47 N2) 1 0)
+                                                                                   1))
+                                                                       94861772575462
+                                                                       94861772575465))) U0:[10=0, 9=N7:(Read w8 9 arg00),
+                                                                                             8=N2,
+                                                                                             7=N8:(Read w8 7 arg00),
+                                                                                             6=N9:(Read w8 6 arg00),
+                                                                                             5=N10:(Read w8 5 arg00),
+                                                                                             4=N11:(Read w8 4 arg00),
+                                                                                             3=N12:(Read w8 3 arg00),
+                                                                                             2=N13:(Read w8 2 arg00),
+                                                                                             1=N14:(Read w8 1 arg00),
+                                                                                             0=N15:(Read w8 0 arg00)] @ const_arr9)))
+         (Eq false (Eq 0 N3))
+         (Eq 0
+             (Read w8 (Extract w32 0 (Add w64 18446649211936976161 N5))
+                      U0))
+         (Eq 46
+             (Read w8 N4 [(Extract w32 0 (Add w64 18446649211936976161
+                                                  (Select w64 (Or (Eq 47 N7)
+                                                                  (Eq 0
+                                                                      (And w8 (Select w8 N6
+                                                                                         1
+                                                                                         (Select w8 N16:(Eq 0
+                                                                                                            (And w8 N17:(Select w8 N18:(Eq 47 N8)
+                                                                                                                                   1
+                                                                                                                                   (Select w8 N19:(Eq 0
+                                                                                                                                                      (And w8 N20:(Select w8 N21:(Eq 47 N9)
+                                                                                                                                                                             1
+                                                                                                                                                                             (Select w8 N22:(Eq 0
+                                                                                                                                                                                                (And w8 N23:(Select w8 N24:(Eq 47 N10)
+                                                                                                                                                                                                                       1
+                                                                                                                                                                                                                       (Select w8 N25:(Eq 0
+                                                                                                                                                                                                                                          (And w8 N26:(Select w8 N27:(Eq 47 N11)
+                                                                                                                                                                                                                                                                 1
+                                                                                                                                                                                                                                                                 (Select w8 N28:(Eq 0
+                                                                                                                                                                                                                                                                                    (And w8 N29:(Select w8 N30:(Eq 47 N12)
+                                                                                                                                                                                                                                                                                                           1
+                                                                                                                                                                                                                                                                                                           (Select w8 N31:(Eq 0
+                                                                                                                                                                                                                                                                                                                              (And w8 N32:(Select w8 N33:(Eq 47 N13)
+                                                                                                                                                                                                                                                                                                                                                     1
+                                                                                                                                                                                                                                                                                                                                                     (Select w8 N34:(Eq 0
+                                                                                                                                                                                                                                                                                                                                                                        (And w8 N35:(Select w8 N36:(Eq 47 N14) 1 0)
+                                                                                                                                                                                                                                                                                                                                                                                1))
+                                                                                                                                                                                                                                                                                                                                                                N35
+                                                                                                                                                                                                                                                                                                                                                                0))
+                                                                                                                                                                                                                                                                                                                                      1))
+                                                                                                                                                                                                                                                                                                                      N32
+                                                                                                                                                                                                                                                                                                                      0))
+                                                                                                                                                                                                                                                                                            1))
+                                                                                                                                                                                                                                                                            N29
+                                                                                                                                                                                                                                                                            0))
+                                                                                                                                                                                                                                                  1))
+                                                                                                                                                                                                                                  N26
+                                                                                                                                                                                                                                  0))
+                                                                                                                                                                                                        1))
+                                                                                                                                                                                        N23
+                                                                                                                                                                                        0))
+                                                                                                                                                              1))
+                                                                                                                                              N20
+                                                                                                                                              0))
+                                                                                                                    1))
+                                                                                                    N17
+                                                                                                    0))
+                                                                              1)))
+                                                              (Select w64 (Or N6 N16)
+                                                                          (Select w64 (Or N18 N19)
+                                                                                      (Select w64 (Or N21 N22)
+                                                                                                  (Select w64 (Or N24 N25)
+                                                                                                              (Select w64 (Or N27 N28)
+                                                                                                                          (Select w64 (Or N30 N31)
+                                                                                                                                      (Select w64 (Or N33 N34) 94861772575456 94861772575458)
+                                                                                                                                      94861772575459)
+                                                                                                                          94861772575460)
+                                                                                                              94861772575461)
+                                                                                                  94861772575462)
+                                                                                      94861772575463)
+                                                                          94861772575464)
+                                                              94861772575465)))=0] @ U0))
+         N36
+         N33
+         N30
+         N27
+         N24
+         (Eq 46 N9)
+         (Eq 4 N8)
+         (Eq 46 N7)
+         (Eq 39 N15)]
+        false)
