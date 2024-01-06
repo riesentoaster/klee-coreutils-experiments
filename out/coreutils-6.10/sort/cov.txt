@@ -1,0 +1,8 @@
+File '../../src/sort.c'
+Lines executed:49.08% of 1196
+Creating 'sort.c.gcov'
+
+File '../../src/system.h'
+Lines executed:62.50% of 8
+Creating 'system.h.gcov'
+
