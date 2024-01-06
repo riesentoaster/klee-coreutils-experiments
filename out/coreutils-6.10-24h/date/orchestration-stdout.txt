@@ -1,0 +1,11 @@
+Testing util "date"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 6 errors: test000085 test000111 test000120 test000121 test000123 test000152
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
