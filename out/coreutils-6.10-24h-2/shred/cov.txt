@@ -1,0 +1,12 @@
+File '../../src/shred.c'
+Lines executed:61.07% of 375
+Creating 'shred.c.gcov'
+
+File '../../lib/randint.h'
+Lines executed:100.00% of 2
+Creating 'randint.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
