@@ -1,0 +1,12 @@
+File '../../src/pr.c'
+Lines executed:71.48% of 901
+Creating 'pr.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:100.00% of 2
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:25.00% of 4
+Creating 'system.h.gcov'
+
