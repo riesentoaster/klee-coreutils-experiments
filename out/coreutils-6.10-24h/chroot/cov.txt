@@ -1,0 +1,8 @@
+File '../../src/chroot.c'
+Lines executed:62.16% of 37
+Creating 'chroot.c.gcov'
+
+File '../../src/system.h'
+Lines executed:85.71% of 7
+Creating 'system.h.gcov'
+
