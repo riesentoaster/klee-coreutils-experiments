@@ -1,0 +1,4 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states
