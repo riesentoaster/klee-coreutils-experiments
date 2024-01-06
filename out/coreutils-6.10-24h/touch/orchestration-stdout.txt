@@ -1,0 +1,11 @@
+Testing util "touch"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 5 errors: test000039 test000051 test000065 test000066 test000067
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
