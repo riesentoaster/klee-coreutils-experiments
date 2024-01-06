@@ -1,0 +1,7 @@
+libc/stdio/fgetc.c:22
+libc/stdio/fgetc.c:72
+libc/stdio/fgetc.c:74
+libc/stdio/_READ.c:48
+libc/stdio/_READ.c:49
+libc/stdio/_READ.c:50
+libc/stdio/_READ.c:65
