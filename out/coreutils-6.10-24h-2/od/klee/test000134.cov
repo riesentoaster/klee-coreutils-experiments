@@ -1,0 +1,10 @@
+libc/stdio/fgetc.c:61
+libc/stdio/fgetc.c:62
+libc/stdio/fgetc.c:66
+libc/stdio/_rfill.c:22
+libc/stdio/_rfill.c:24
+libc/stdio/_rfill.c:36
+libc/stdio/_rfill.c:37
+libc/stdio/_rfill.c:38
+libc/stdio/_rfill.c:39
+libc/stdio/_rfill.c:42
