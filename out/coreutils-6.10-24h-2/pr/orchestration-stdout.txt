@@ -1,0 +1,11 @@
+Testing util "pr"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 10 errors: test000015 test000025 test000026 test000027 test000033 test000041 test000057 test000058 test000059 test000068
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
