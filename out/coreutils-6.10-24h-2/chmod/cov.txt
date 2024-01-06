@@ -1,0 +1,12 @@
+File '../../src/chmod.c'
+Lines executed:80.57% of 175
+Creating 'chmod.c.gcov'
+
+File '../../lib/openat.h'
+Lines executed:100.00% of 2
+Creating 'openat.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
