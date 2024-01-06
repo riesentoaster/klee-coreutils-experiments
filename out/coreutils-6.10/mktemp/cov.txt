@@ -1,0 +1,8 @@
+File '../../src/mktemp.c'
+Lines executed:97.98% of 99
+Creating 'mktemp.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
