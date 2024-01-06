@@ -18,6 +18,11 @@ while [[ $# -gt 0 ]]; do
       shift # past argument
       shift # past value
       ;;
+    --skip-klee-analysis)
+      SKIP_KLEE_ANALYSIS="$2"
+      shift # past argument
+      shift # past value
+      ;;
     --klee-max-time)
       KLEE_MAX_TIME_MIN="$2"
       shift # past argument
@@ -46,6 +51,7 @@ if [ 1 -gt $# ]; then
   echo "Args:"
   echo "--llvm-dir             The directory where the llvm .bc files are stored"
   echo "--cov-dir              The directory where the binaries instrumented with gcov are stored"
+  echo "--skip-klee-analysis   If set to a non-empty string, KLEE analysis will be skipped"
   echo "--klee-max-time        The timeout after which KLEE stops its analysis"
   echo "--out-dir              The output directory"
   exit 1
@@ -63,62 +69,71 @@ COV_DIR=${COV_DIR-./cov}
 KLEE_MAX_TIME_MIN=${KLEE_MAX_TIME_MIN-60}
 OUT_DIR=${OUT_DIR-./out}
 
-echo "Assuming input directory for llvm files ${LLVM_DIR}"
 echo "Assuming input directory for gcov instrumented files ${COV_DIR}"
 echo "Setting output directory: ${OUT_DIR}"
-echo "Setting KLEE's timeout to ${KLEE_MAX_TIME_MIN}"
-
 mkdir -p $OUT_DIR
 
-# according to the documentation from the original experiment
-case $UTIL in
-    dd)
-        UTIL_ARGS="--sym-args 0 3 10 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
-    dircolors)
-        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
-    echo)
-        UTIL_ARGS="--sym-args 0 4 300 --sym-files 2 30 --sym-stdin 30 --sym-stdout" ;;
-    expr)
-        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-stdout" ;;
-    mknod)
-        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
-    od)
-        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
-    pathchk)
-        UTIL_ARGS="--sym-args 0 1 2 --sym-args 0 1 300 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
-    printf)
-        UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
-    *)
-        UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
-esac
+if [ -n "$SKIP_KLEE_ANALYSIS" ]; then
+  echo "Skipping KLEE analysis."
+  echo "Unzipping necessary usually zipped files"
+  # if [ -f "${OUT_DIR}/klee-stdout.log.gz" ];   then gunzip "${OUT_DIR}/klee-stdout.log.gz";   fi
+  # if [ -f "${OUT_DIR}/klee-stderr.log.gz" ];   then gunzip "${OUT_DIR}/klee-stderr.log.gz";   fi
+  if [ -f "${OUT_DIR}/klee/run.stats.gz" ];    then gunzip "${OUT_DIR}/klee/run.stats.gz";    fi
+  # if [ -f "${OUT_DIR}/klee/warnings.txt.gz" ]; then gunzip "${OUT_DIR}/klee/warnings.txt.gz"; fi
+else
+  echo "Assuming input directory for llvm files ${LLVM_DIR}"
+  echo "Setting KLEE's timeout to ${KLEE_MAX_TIME_MIN}"
 
-# taken from the documentation with a few differences:
-# --max-time is usually fixed on `60min`
-# --output-dir is usually not set
-KLEE_COMMAND="\
-  klee --simplify-sym-indices --write-cvcs --write-cov --output-module \
-  --max-memory=1000 --disable-inlining --optimize --use-forked-solver \
-  --use-cex-cache --libc=uclibc --posix-runtime \
-  --external-calls=all --only-output-states-covering-new \
-  --env-file=test.env --run-in-dir=/tmp/sandbox \
-  --max-sym-array-size=4096 --max-solver-time=30s --max-time=${KLEE_MAX_TIME_MIN}min \
-  --watchdog --max-memory-inhibit=false --max-static-fork-pct=1 \
-  --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal \
-  --search=random-path --search=nurs:covnew \
-  --use-batching-search --batch-instructions=10000 \
-  --output-dir=${OUT_DIR}/klee \
-  ${LLVM_DIR}/${UTIL}.bc \
-  ${UTIL_ARGS}"
+  # according to the documentation from the original experiment
+  case $UTIL in
+      dd)
+          UTIL_ARGS="--sym-args 0 3 10 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+      dircolors)
+          UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+      echo)
+          UTIL_ARGS="--sym-args 0 4 300 --sym-files 2 30 --sym-stdin 30 --sym-stdout" ;;
+      expr)
+          UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-stdout" ;;
+      mknod)
+          UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+      od)
+          UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+      pathchk)
+          UTIL_ARGS="--sym-args 0 1 2 --sym-args 0 1 300 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+      printf)
+          UTIL_ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout" ;;
+      *)
+          UTIL_ARGS="--sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout" ;;
+  esac
 
-echo -e "\nRunning KLEE as follows:\n${KLEE_COMMAND}\n"
+  # taken from the documentation with a few differences:
+  # --max-time is usually fixed on `60min`
+  # --output-dir is usually not set
+  KLEE_COMMAND="\
+    klee --simplify-sym-indices --write-cvcs --write-cov --output-module \
+    --max-memory=1000 --disable-inlining --optimize --use-forked-solver \
+    --use-cex-cache --libc=uclibc --posix-runtime \
+    --external-calls=all --only-output-states-covering-new \
+    --env-file=test.env --run-in-dir=/tmp/sandbox \
+    --max-sym-array-size=4096 --max-solver-time=30s --max-time=${KLEE_MAX_TIME_MIN}min \
+    --watchdog --max-memory-inhibit=false --max-static-fork-pct=1 \
+    --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal \
+    --search=random-path --search=nurs:covnew \
+    --use-batching-search --batch-instructions=10000 \
+    --output-dir=${OUT_DIR}/klee \
+    ${LLVM_DIR}/${UTIL}.bc \
+    ${UTIL_ARGS}"
 
-eval "$KLEE_COMMAND" > $OUT_DIR/klee-stdout.log 2> $OUT_DIR/klee-stderr.log
-KLEE_EXIT_CODE=$?
+  echo -e "\nRunning KLEE as follows:\n${KLEE_COMMAND}\n"
 
-if [ $KLEE_EXIT_CODE -ne 0 ]; then
-  echo "WARNING: KLEE failed, check logs in ${OUT_DIR}/klee-stderr.log"
-  echo -e "Here are the last few lines of the logs:\n\n"
-  tail -n 10 $OUT_DIR/klee-stderr.log
+  eval "$KLEE_COMMAND" > $OUT_DIR/klee-stdout.log 2> $OUT_DIR/klee-stderr.log
+  KLEE_EXIT_CODE=$?
+
+  if [ $KLEE_EXIT_CODE -ne 0 ]; then
+    echo "WARNING: KLEE failed, check logs in ${OUT_DIR}/klee-stderr.log"
+    echo -e "Here are the last few lines of the logs:\n\n"
+    tail -n 10 $OUT_DIR/klee-stderr.log
+  fi
 fi
 
 # ========================================
@@ -126,10 +141,13 @@ fi
 # ========================================
 
 echo "Exporting args for crashing test cases using ktest-tool"
+ERRORS=()
 for f in $(ls "${OUT_DIR}/klee" | grep -e "\.err$"); do
   TEST_NR=$(echo $f | cut --d="." --f=1 )
+  ERRORS+=("${TEST_NR}")
   ktest-tool "${OUT_DIR}/klee/${TEST_NR}.ktest" > "${OUT_DIR}/klee/${TEST_NR}.err.ktest.txt"
 done
+echo "Found ${#ERRORS[@]} errors: ${ERRORS[@]}"
 
 # ========================================
 # Exporting global stats
@@ -160,9 +178,9 @@ done
 # Compressing excessive data
 # ========================================
 echo "zipping large text files"
-gzip ${OUT_DIR}/klee-stdout.log
-gzip ${OUT_DIR}/klee-stderr.log
-gzip ${OUT_DIR}/klee/run.stats
-gzip ${OUT_DIR}/klee/warnings.txt
+if [ -f "${OUT_DIR}/klee-stdout.log" ];   then gzip "${OUT_DIR}/klee-stdout.log";   fi
+if [ -f "${OUT_DIR}/klee-stderr.log" ];   then gzip "${OUT_DIR}/klee-stderr.log";   fi
+if [ -f "${OUT_DIR}/klee/run.stats" ];    then gzip "${OUT_DIR}/klee/run.stats";    fi
+if [ -f "${OUT_DIR}/klee/warnings.txt" ]; then gzip "${OUT_DIR}/klee/warnings.txt"; fi
 
 echo "Done"
