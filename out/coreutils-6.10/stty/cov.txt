@@ -1,0 +1,8 @@
+File '../../src/stty.c'
+Lines executed:80.94% of 530
+Creating 'stty.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 4
+Creating 'system.h.gcov'
+
