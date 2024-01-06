@@ -1,0 +1,22 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 5.668588
+
+KLEE: increased time budget from 5.668588 to 7.660335
+
+KLEE: ERROR: (location information missing) concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 7.660335 to 9.944528
+
+KLEE: increased time budget from 9.944528 to 13.229798
+
+KLEE: increased time budget from 13.229798 to 21.305039
+
+KLEE: increased time budget from 21.305039 to 28.159314
+
+KLEE: increased time budget from 28.159314 to 32.725311
+
+KLEE: increased time budget from 32.725311 to 40.791934
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states
