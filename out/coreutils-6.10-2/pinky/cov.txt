@@ -1,0 +1,8 @@
+File '../../src/pinky.c'
+Lines executed:56.41% of 234
+Creating 'pinky.c.gcov'
+
+File '../../src/system.h'
+Lines executed:75.00% of 4
+Creating 'system.h.gcov'
+
