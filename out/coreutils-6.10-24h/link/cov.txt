@@ -1,0 +1,8 @@
+File '../../src/link.c'
+Lines executed:96.43% of 28
+Creating 'link.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
