@@ -1,0 +1,327 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array const_arr3[768] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 3 32 2 32 2 32 2 32 2 32 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 1 96 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 4 192 4 192 4 192 4 192 4 192 4 192 4 192 8 213 8 213 8 213 8 213 8 213 8 213 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 4 192 4 192 4 192 4 192 4 192 4 192 8 214 8 214 8 214 8 214 8 214 8 214 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 4 192 4 192 4 192 4 192 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq 61 (Read w8 3 arg00))
+         (Eq 105 (Read w8 2 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 4 arg00)))
+         (Eq false
+             (Eq 0 N3:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N4:(Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 N5:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 N6:(Read w8 9 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 45 (Read w8 5 arg00))
+         (Eq 0
+             (And w16 (ReadLSB w16 N7:(Extract w32 0 (Add w64 256
+                                                              (Mul w64 2 (ZExt w64 N2)))) const_arr3)
+                      8192))
+         (Eq false (Eq 43 N2))
+         (Sle (ZExt w32 N8:(Extract w8 0 (Add w32 4294967248 (SExt w32 N2))))
+              9)
+         (Eq 0
+             (And w16 (ReadLSB w16 N9:(Extract w32 0 (Add w64 256
+                                                              (Mul w64 2 (ZExt w64 N3)))) const_arr3)
+                      8192))
+         (Eq false (Eq 45 N3))
+         (Eq false (Eq 43 N3))
+         (Sle (ZExt w32 N10:(Extract w8 0 (Add w32 4294967248 (SExt w32 N3))))
+              9)
+         (Sle (ZExt w32 N11:(Extract w8 0 (Add w32 4294967248 (SExt w32 N4))))
+              9)
+         (Sle (ZExt w32 N12:(Extract w8 0 (Add w32 4294967248 (SExt w32 N5))))
+              9)
+         (Eq false
+             (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248 N13:(SExt w32 N6))))
+                  9))
+         (Sle 65 N13)
+         (Sle 10
+              (ZExt w32 (Extract w8 0 (Add w32 4294967209 (Or w32 N13 32)))))
+         (Eq false
+             (Xor (Ult N14:(Add w64 (Mul w64 10
+                                             (Add w64 (Mul w64 10 (ZExt w64 N10))
+                                                      (ZExt w64 N11)))
+                                    (ZExt w64 N12))
+                       N15:(ZExt w64 N8))
+                  (Eq 18446744073709551615 N16:(Sub w64 N14 N15))))
+         (Eq false (Eq 0 N16))
+         (Eq false (Ult N16 2))
+         (Eq false
+             (Ult N17:(LShr w64 N16 1) 2))
+         (Eq false
+             (Ult N18:(LShr w64 N17 1) 2))
+         (Eq false
+             (Ult N19:(LShr w64 N18 1) 2))
+         (Eq false
+             (Ult N20:(LShr w64 N19 1) 2))
+         (Eq false
+             (Ult N21:(LShr w64 N20 1) 2))
+         (Eq false
+             (Ult N22:(LShr w64 N21 1) 2))
+         (Eq false
+             (Ult N23:(LShr w64 N22 1) 2))
+         (Eq false
+             (Ult N24:(LShr w64 N23 1) 2))
+         (Ult (LShr w64 N24 1) 2)
+         (Eq false
+             (Eq 0
+                 N25:(Select w64 (Ult 18446744073709551615 N26:(Add w64 1 N16))
+                                 18446744073709551615
+                                 N26)))
+         (Eq false (Eq 1 N25))
+         (Eq 4808 (Shl w64 N26 3))
+         (Eq 3784
+             (Mul w64 8 (URem w64 40740 N26)))
+         (Eq 4000
+             (Mul w64 8
+                      (Add w64 1
+                               (URem w64 N27:(Add w64 147
+                                                      (Shl w64 (UDiv w64 40740 N26) 8))
+                                         N16))))
+         (Eq 248
+             (Mul w64 8
+                      (Add w64 2
+                               (URem w64 N28:(Add w64 49
+                                                      (Shl w64 (UDiv w64 N27 N16) 8))
+                                         N29:(Add w64 18446744073709551615 N16)))))
+         (Eq 2656
+             (Mul w64 8
+                      (Add w64 3
+                               (URem w64 N30:(Add w64 247
+                                                      (Shl w64 (UDiv w64 N28 N29) 8))
+                                         N31:(Add w64 18446744073709551614 N16)))))
+         (Eq 2080
+             (Mul w64 8
+                      (Add w64 4
+                               (URem w64 N32:(Add w64 170
+                                                      (Shl w64 (UDiv w64 N30 N31) 8))
+                                         N33:(Add w64 18446744073709551613 N16)))))
+         (Eq 4248
+             (Mul w64 8
+                      (Add w64 5
+                               (URem w64 N34:(Add w64 14
+                                                      (Shl w64 (UDiv w64 N32 N33) 8))
+                                         N35:(Add w64 18446744073709551612 N16)))))
+         (Eq 3464
+             (Mul w64 8
+                      (Add w64 6
+                               (URem w64 N36:(Add w64 198
+                                                      (Shl w64 (Add w64 59
+                                                                        (Shl w64 (UDiv w64 N34 N35) 8))
+                                                               8))
+                                         N37:(Add w64 18446744073709551611 N16)))))
+         (Eq 816
+             (Mul w64 8
+                      (Add w64 7
+                               (URem w64 N38:(Add w64 229
+                                                      (Shl w64 (UDiv w64 N36 N37) 8))
+                                         N39:(Add w64 18446744073709551610 N16)))))
+         (Eq 112
+             (Mul w64 8
+                      (Add w64 8
+                               (URem w64 N40:(Add w64 155
+                                                      (Shl w64 (UDiv w64 N38 N39) 8))
+                                         N41:(Add w64 18446744073709551609 N16)))))
+         (Eq 2056
+             (Mul w64 8
+                      (Add w64 9
+                               (URem w64 N42:(Add w64 152
+                                                      (Shl w64 (UDiv w64 N40 N41) 8))
+                                         N43:(Add w64 18446744073709551608 N16)))))
+         (Eq 488
+             (Mul w64 8
+                      (Add w64 10
+                               (URem w64 N44:(Add w64 130
+                                                      (Shl w64 (UDiv w64 N42 N43) 8))
+                                         N45:(Add w64 18446744073709551607 N16)))))
+         (Eq 3776
+             (Mul w64 8
+                      (Add w64 11
+                               (URem w64 N46:(Add w64 205
+                                                      (Shl w64 (UDiv w64 N44 N45) 8))
+                                         N47:(Add w64 18446744073709551606 N16)))))
+         (Eq 1376
+             (Mul w64 8
+                      (Add w64 12
+                               (URem w64 N48:(Add w64 220
+                                                      (Shl w64 (Add w64 101
+                                                                        (Shl w64 (UDiv w64 N46 N47) 8))
+                                                               8))
+                                         N49:(Add w64 18446744073709551605 N16)))))
+         (Eq 2096
+             (Mul w64 8
+                      (Add w64 13
+                               (URem w64 N50:(Add w64 157
+                                                      (Shl w64 (UDiv w64 N48 N49) 8))
+                                         N51:(Add w64 18446744073709551604 N16)))))
+         (Eq 2624
+             (Mul w64 8
+                      (Add w64 14
+                               (URem w64 N52:(Add w64 146
+                                                      (Shl w64 (UDiv w64 N50 N51) 8))
+                                         N53:(Add w64 18446744073709551603 N16)))))
+         (Eq 3040
+             (Mul w64 8
+                      (Add w64 15
+                               (URem w64 N54:(Add w64 75
+                                                      (Shl w64 (UDiv w64 N52 N53) 8))
+                                         N55:(Add w64 18446744073709551602 N16)))))
+         (Eq 3312
+             (Mul w64 8
+                      (Add w64 16
+                               (URem w64 N56:(Add w64 215
+                                                      (Shl w64 (UDiv w64 N54 N55) 8))
+                                         N57:(Add w64 18446744073709551601 N16)))))
+         (Eq 3968
+             (Mul w64 8
+                      (Add w64 17
+                               (URem w64 N58:(Add w64 223
+                                                      (Shl w64 (UDiv w64 N56 N57) 8))
+                                         N59:(Add w64 18446744073709551600 N16)))))
+         (Eq 4256
+             (Mul w64 8
+                      (Add w64 18
+                               (URem w64 N60:(Add w64 48
+                                                      (Shl w64 (Add w64 225
+                                                                        (Shl w64 (UDiv w64 N58 N59) 8))
+                                                               8))
+                                         N61:(Add w64 18446744073709551599 N16)))))
+         (Eq 1008
+             (Mul w64 8
+                      (Add w64 19
+                               (URem w64 N62:(Add w64 45
+                                                      (Shl w64 (UDiv w64 N60 N61) 8))
+                                         N63:(Add w64 18446744073709551598 N16)))))
+         (Eq 1472
+             (Mul w64 8
+                      (Add w64 20
+                               (URem w64 N64:(Add w64 195
+                                                      (Shl w64 (UDiv w64 N62 N63) 8))
+                                         N65:(Add w64 18446744073709551597 N16)))))
+         (Eq 2528
+             (Mul w64 8
+                      (Add w64 21
+                               (URem w64 N66:(Add w64 71
+                                                      (Shl w64 (UDiv w64 N64 N65) 8))
+                                         N67:(Add w64 18446744073709551596 N16)))))
+         (Eq 1544
+             (Mul w64 8
+                      (Add w64 22
+                               (URem w64 N68:(Add w64 58
+                                                      (Shl w64 (URem w64 (Add w64 135
+                                                                                  (Shl w64 (UDiv w64 N66 N67) 8))
+                                                                         N69:(Add w64 18446744073709551595 N16))
+                                                               8))
+                                         N69))))
+         (Eq 3240
+             (Mul w64 8
+                      (Add w64 23
+                               (URem w64 N70:(Add w64 236
+                                                      (Shl w64 (UDiv w64 N68 N69) 8))
+                                         N71:(Add w64 18446744073709551594 N16)))))
+         (Eq 3584
+             (Mul w64 8
+                      (Add w64 24
+                               (URem w64 N72:(Add w64 78
+                                                      (Shl w64 (UDiv w64 N70 N71) 8))
+                                         N73:(Add w64 18446744073709551593 N16)))))
+         (Eq 1184
+             (Mul w64 8
+                      (Add w64 25
+                               (URem w64 N74:(Add w64 187
+                                                      (Shl w64 (UDiv w64 N72 N73) 8))
+                                         N75:(Add w64 18446744073709551592 N16)))))
+         (Eq 3472
+             (Mul w64 8
+                      (Add w64 26
+                               (URem w64 N76:(Add w64 81
+                                                      (Shl w64 (UDiv w64 N74 N75) 8))
+                                         N77:(Add w64 18446744073709551591 N16)))))
+         (Eq 2552
+             (Mul w64 8
+                      (Add w64 27
+                               (URem w64 N78:(Add w64 222
+                                                      (Shl w64 (UDiv w64 N76 N77) 8))
+                                         N79:(Add w64 18446744073709551590 N16)))))
+         (Eq 288
+             (Mul w64 8
+                      (Add w64 28
+                               (URem w64 N80:(Add w64 14
+                                                      (Shl w64 (URem w64 (Add w64 87
+                                                                                  (Shl w64 (UDiv w64 N78 N79) 8))
+                                                                         N81:(Add w64 18446744073709551589 N16))
+                                                               8))
+                                         N81))))
+         (Eq 2408
+             (Mul w64 8
+                      (Add w64 29
+                               (URem w64 N82:(Add w64 48
+                                                      (Shl w64 (UDiv w64 N80 N81) 8))
+                                         N83:(Add w64 18446744073709551588 N16)))))
+         (Eq 1368
+             (Mul w64 8
+                      (Add w64 30
+                               (URem w64 N84:(Add w64 80
+                                                      (Shl w64 (UDiv w64 N82 N83) 8))
+                                         N85:(Add w64 18446744073709551587 N16)))))
+         (Eq 1696
+             (Mul w64 8
+                      (Add w64 31
+                               (URem w64 N86:(Add w64 51
+                                                      (Shl w64 (UDiv w64 N84 N85) 8))
+                                         N87:(Add w64 18446744073709551586 N16)))))
+         (Eq 1944
+             (Mul w64 8
+                      (Add w64 32
+                               (URem w64 N88:(Add w64 240
+                                                      (Shl w64 (UDiv w64 N86 N87) 8))
+                                         N89:(Add w64 18446744073709551585 N16)))))
+         (Eq 1424
+             (Mul w64 8
+                      (Add w64 33
+                               (URem w64 N90:(Add w64 1
+                                                      (Shl w64 (UDiv w64 N88 N89) 8))
+                                         N91:(Add w64 18446744073709551584 N16)))))
+         (Eq 2880
+             (Mul w64 8
+                      (Add w64 34
+                               (URem w64 (Add w64 237
+                                                  (Shl w64 (URem w64 (Add w64 93
+                                                                              (Shl w64 (UDiv w64 N90 N91) 8))
+                                                                     N92:(Add w64 18446744073709551583 N16))
+                                                           8))
+                                         N92))))]
+        false)
