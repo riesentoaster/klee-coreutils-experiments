@@ -1,0 +1,8 @@
+File '../../src/head.c'
+Lines executed:65.80% of 383
+Creating 'head.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
