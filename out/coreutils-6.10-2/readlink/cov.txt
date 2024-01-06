@@ -1,0 +1,8 @@
+File '../../src/readlink.c'
+Lines executed:100.00% of 50
+Creating 'readlink.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
