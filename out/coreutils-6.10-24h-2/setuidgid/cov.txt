@@ -1,0 +1,8 @@
+File '../../src/setuidgid.c'
+Lines executed:80.26% of 76
+Creating 'setuidgid.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 7
+Creating 'system.h.gcov'
+
