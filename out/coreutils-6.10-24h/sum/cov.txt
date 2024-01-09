@@ -1,8 +1,16 @@
 File '../../src/sum.c'
-Lines executed:90.53% of 95
+Lines executed:90.36% of 83
 Creating 'sum.c.gcov'
 
-File '../../src/system.h'
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:100.00% of 1
+Creating 'fcntl2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
 Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+Creating 'stdio.h.gcov'
 
