@@ -1,0 +1,14 @@
+:0
+libc/stdio/snprintf.c:18
+libc/stdio/snprintf.c:19
+libc/stdio/snprintf.c:21
+libc/stdio/snprintf.c:22
+libc/stdio/snprintf.c:24
+libc/stdio/snprintf.c:25
+libc/stdio/_fpmaxtostr.c:205
+libc/stdio/_fpmaxtostr.c:550
+libc/stdio/_fpmaxtostr.c:595
+libc/stdio/_fpmaxtostr.c:596
+libc/stdio/_fpmaxtostr.c:597
+libc/stdio/_fpmaxtostr.c:598
+libc/stdio/_fpmaxtostr.c:599

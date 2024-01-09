@@ -1,0 +1,8 @@
+File '../../src/echo.c'
+Lines executed:98.06% of 103
+Creating 'echo.c.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 3
+Creating 'system.h.gcov'
+
