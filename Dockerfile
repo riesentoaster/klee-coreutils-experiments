@@ -75,7 +75,8 @@ WORKDIR /coreutils/obj-cov
 RUN ../configure \
     --build x86_64-pc-linux-gnu \
     --disable-nls \
-    CFLAGS="${CFLAGS} --coverage"\
+    CFLAGS="-O2 -g -fprofile-arcs -ftest-coverage"
+RUN find .. -type f -name '*.c' -exec sed -i -E 's/\b_exit\(/exit(/g' {} + \
     && make \
     && make -C src arch hostname
 
@@ -83,9 +84,13 @@ ENV COVERAGE_DATA_DIR /out/cov/src
 ENV UTIL echo
 
 WORKDIR /coreutils/obj-cov/src
-# CMD ls $COVERAGE_DATA_DIR/*
-CMD cp -r "$COVERAGE_DATA_DIR"/* "/coreutils/obj-cov/src/" \
+
+CMD echo "Starting coverage gathering" \
+    && echo "Copying coverage files" \
+    && cp -r "$COVERAGE_DATA_DIR"/* "/coreutils/obj-cov/src/" \
+    && echo "Running gcov" \
     && gcov "$UTIL" > "/out/cov.txt" \
+    && echo "Coverage gathering done" \
     && tar czf "/out/src-gcov.tar.gz" "/coreutils/obj-cov/src"
 
 # ========================================
