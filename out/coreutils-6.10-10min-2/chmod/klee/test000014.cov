@@ -1,0 +1,12 @@
+:0
+libc/misc/error/error.c:61
+libc/misc/error/error.c:62
+libc/string/memmove.c:41
+libc/string/memmove.c:42
+libc/string/memmove.c:43
+libc/string/memmove.c:45
+libc/string/strerror.c:21
+libc/string/__xpg_strerror_r.c:230
+libc/string/__xpg_strerror_r.c:231
+libc/string/__xpg_strerror_r.c:233
+libc/string/__xpg_strerror_r.c:237

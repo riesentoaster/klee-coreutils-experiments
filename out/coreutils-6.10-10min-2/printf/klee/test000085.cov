@@ -1,0 +1,5 @@
+:0
+libc/stdio/_vfprintf.c:1541
+libc/stdio/_vfprintf.c:1542
+libc/stdio/_uintmaxtostr.c:53
+libc/stdio/_uintmaxtostr.c:56

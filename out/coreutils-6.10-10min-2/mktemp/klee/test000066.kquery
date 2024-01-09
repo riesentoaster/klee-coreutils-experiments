@@ -1,0 +1,82 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array const_arr249[17] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq 61 (Read w8 4 arg00))
+         (Eq 116 (Read w8 2 arg00))
+         (Eq 109 (Read w8 3 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 5 arg00)))
+         (Eq false
+             (Eq 0 N3:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N4:(Read w8 7 arg00)))
+         (Eq 0 (Read w8 8 arg00))
+         (Eq false (Eq 47 N2))
+         (Eq 47
+             (Read w8 (Extract w32 0 (Add w64 18446649923479230946
+                                              N5:(Select w64 (Or (Eq 47 N4)
+                                                                 (Eq 0
+                                                                     (And w8 (Select w8 (Eq 47 N3) 1 0)
+                                                                             1)))
+                                                             94150230320677
+                                                             94150230320679)))
+                      U0:[10=0] @ arg00))
+         (Eq 47
+             (Read w8 (Extract w32 0 (Add w64 18446649923479230945 N5))
+                      U0))
+         (Eq 109
+             (Read w8 3 U1:[(Extract w32 0 (Add w64 18446649923479230954
+                                                    N6:(Add w64 N5
+                                                                (ZExt w64 (Eq false
+                                                                              (Eq 47
+                                                                                  (Read w8 (Extract w32 0 (Add w64 18446649923479230944 N5))
+                                                                                           U0)))))))=0,
+                            (Extract w32 0 (Add w64 18446649923479230953 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230952 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230951 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230950 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230949 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230948 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230947 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230946 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230945 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230944 N6))=88,
+                            (Extract w32 0 (Add w64 18446649923479230943 N6))=46,
+                            (Extract w32 0 (Add w64 18446649923479230942 N6))=112,
+                            (Extract w32 0 (Add w64 18446649923479230941 N6))=109,
+                            (Extract w32 0 (Add w64 18446649923479230940 N6))=116,
+                            (Extract w32 0 (Add w64 18446649923479230940 N5))=47,
+                            16=171, 15=171, 14=171, 13=171, 12=171, 11=171, 10=171, 9=171, 8=171, 7=171, 6=171, 5=171, 4=171, 3=171, 2=171, 1=171, 0=N2] @ const_arr249))
+         (Eq 46 (Read w8 5 U1))
+         (Eq 39 (Read w8 0 U1))]
+        false)
