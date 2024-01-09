@@ -9,3 +9,8 @@ Exporting stats about the test run
 Collecting coverage data
 zipping large text files
 Done
+Starting coverage gathering
+Copying coverage files
+Running gcov
+Coverage gathering done
+tar: Removing leading `/' from member names

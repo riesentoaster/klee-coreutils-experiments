@@ -1,8 +1,12 @@
 File '../../src/uniq.c'
-Lines executed:91.89% of 185
+Lines executed:92.98% of 171
 Creating 'uniq.c.gcov'
 
-File '../../src/system.h'
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
 Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+Creating 'stdio.h.gcov'
 
