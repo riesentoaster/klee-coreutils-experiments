@@ -1,12 +1,16 @@
 File '../../src/chcon.c'
-Lines executed:70.26% of 195
+Lines executed:77.78% of 171
 Creating 'chcon.c.gcov'
 
 File '../lib/selinux/context.h'
-Lines executed:15.38% of 13
+Lines executed:50.00% of 2
 Creating 'context.h.gcov'
 
 File '../lib/selinux/selinux.h'
-Lines executed:66.67% of 3
+Lines executed:100.00% of 1
 Creating 'selinux.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 
