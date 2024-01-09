@@ -1,8 +1,16 @@
 File '../../src/tee.c'
-Lines executed:86.96% of 69
+Lines executed:86.36% of 66
 Creating 'tee.c.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/unistd.h'
+Lines executed:100.00% of 1
+Creating 'unistd.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../../lib/xalloc.h'
+Lines executed:75.00% of 4
+Creating 'xalloc.h.gcov'
 

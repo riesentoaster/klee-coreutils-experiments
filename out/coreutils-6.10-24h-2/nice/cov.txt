@@ -1,8 +1,8 @@
 File '../../src/nice.c'
-Lines executed:94.92% of 59
+Lines executed:94.34% of 53
 Creating 'nice.c.gcov'
 
-File '../../src/system.h'
-Lines executed:85.71% of 7
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 

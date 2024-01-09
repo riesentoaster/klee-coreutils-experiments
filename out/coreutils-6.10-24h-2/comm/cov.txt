@@ -1,8 +1,12 @@
 File '../../src/comm.c'
-Lines executed:94.90% of 98
+Lines executed:94.19% of 86
 Creating 'comm.c.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 
