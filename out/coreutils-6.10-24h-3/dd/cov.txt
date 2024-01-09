@@ -1,0 +1,8 @@
+File '../../src/dd.c'
+Lines executed:53.18% of 551
+Creating 'dd.c.gcov'
+
+File '../../src/system.h'
+Lines executed:90.00% of 10
+Creating 'system.h.gcov'
+

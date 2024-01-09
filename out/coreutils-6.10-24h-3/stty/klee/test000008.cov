@@ -1,0 +1,8 @@
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580
+:0
+libc/unistd/getopt.c:436
+libc/unistd/getopt.c:517
+libc/unistd/getopt.c:519
+libc/unistd/getopt.c:521
+libc/unistd/getopt.c:522

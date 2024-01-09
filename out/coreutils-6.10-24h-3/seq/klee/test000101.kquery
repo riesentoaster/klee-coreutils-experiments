@@ -1,0 +1,72 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq (Add w32 1 N0) (Add w32 N1 N0))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 46 N2:(Read w8 1 arg00)))
+         (Eq false
+             (Ult (Add w32 4294967248 N3:(SExt w32 N2))
+                  10))
+         (Eq false (Eq 45 N2))
+         (Eq false (Eq 0 N2))
+         (Eq 102 (Extract w8 0 N3))
+         (Eq 37 (Read w8 2 arg00))
+         (Eq 43 (Read w8 3 arg00))
+         (Eq 45 (Read w8 4 arg00))
+         (Eq 43 (Read w8 5 arg00))
+         (Eq 35 (Read w8 6 arg00))
+         (Eq 45 (Read w8 7 arg00))
+         (Eq 32 (Read w8 8 arg00))
+         (Eq false
+             (Eq 45 N4:(Read w8 9 arg00)))
+         (Eq false (Eq 43 N4))
+         (Eq false (Eq 35 N4))
+         (Eq false (Eq 48 N4))
+         (Eq false (Eq 32 N4))
+         (Eq false (Eq 39 N4))
+         (Eq false (Eq 49 N4))
+         (Eq false (Eq 50 N4))
+         (Eq false (Eq 51 N4))
+         (Eq false (Eq 52 N4))
+         (Eq false (Eq 53 N4))
+         (Eq false (Eq 54 N4))
+         (Eq false (Eq 55 N4))
+         (Eq false (Eq 56 N4))
+         (Eq false (Eq 57 N4))
+         (Eq false (Eq 46 N4))
+         (Eq 101
+             (Extract w8 0 (SExt w32 (Read w8 (Extract w32 0 (Add w64 9
+                                                                      (ZExt w64 (Eq 76 N4))))
+                                              [10=0] @ arg00))))
+         (Eq 43 (Read w8 0 arg01))
+         (Eq 52 (Read w8 1 arg01))]
+        false)

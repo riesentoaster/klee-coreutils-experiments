@@ -1,0 +1,5 @@
+libc/stdio/fgetc.c:22
+libc/stdio/fgetc.c:67
+libc/stdio/fgetc.c:68
+libc/stdio/fgetc.c:69
+libc/unistd/getopt.c:478

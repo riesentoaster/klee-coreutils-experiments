@@ -1,0 +1,16 @@
+File '../../src/stat.c'
+Lines executed:68.25% of 359
+Creating 'stat.c.gcov'
+
+File '../../lib/stat-time.h'
+Lines executed:100.00% of 6
+Creating 'stat-time.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 4
+Creating 'system.h.gcov'
+
+File '../lib/selinux/selinux.h'
+Lines executed:0.00% of 5
+Creating 'selinux.h.gcov'
+

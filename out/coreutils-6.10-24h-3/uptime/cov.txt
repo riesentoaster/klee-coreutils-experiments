@@ -1,0 +1,8 @@
+File '../../src/uptime.c'
+Lines executed:84.62% of 78
+Creating 'uptime.c.gcov'
+
+File '../../src/system.h'
+Lines executed:60.00% of 5
+Creating 'system.h.gcov'
+

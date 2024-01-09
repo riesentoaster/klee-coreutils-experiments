@@ -1,0 +1,14 @@
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:134
+klee_src/runtime/POSIX/fd_32.c:135
+klee_src/runtime/POSIX/fd_32.c:136
+:0
+klee_src/runtime/POSIX/fd.c:0
+klee_src/runtime/POSIX/fd.c:732
+klee_src/runtime/POSIX/fd.c:734
+klee_src/runtime/POSIX/fd.c:739
+klee_src/runtime/POSIX/fd.c:747
+libc/stdio/fileno.c:14
+libc/stdio/fileno.c:18
+libc/stdio/fileno.c:19
+libc/stdio/fileno.c:24
