@@ -1,8 +1,12 @@
 File '../../src/mv.c'
-Lines executed:85.12% of 168
+Lines executed:84.57% of 162
 Creating 'mv.c.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:100.00% of 1
+Creating 'stat.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 
