@@ -1,0 +1,17 @@
+Testing util "ginstall"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Skipping KLEE analysis.
+Unzipping necessary usually zipped files
+Exporting args for crashing test cases using ktest-tool
+Found 0 errors: 
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
+Starting coverage gathering
+Copying coverage files
+Running gcov
+ginstall.gcno:cannot open notes file
+Coverage gathering done
+tar: Removing leading `/' from member names

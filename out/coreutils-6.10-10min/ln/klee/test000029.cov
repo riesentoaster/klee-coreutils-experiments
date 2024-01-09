@@ -1,0 +1,14 @@
+:0
+libc/stdio/fwrite.c:27
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+libc/unistd/getopt.c:572
+libc/unistd/getopt.c:573
+libc/unistd/getopt.c:574
+libc/unistd/getopt.c:575
+libc/unistd/getopt.c:632
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696
+klee_src/runtime/Intrinsic/klee_div_zero_check.c:0
+klee_src/runtime/Intrinsic/klee_div_zero_check.c:13
+klee_src/runtime/Intrinsic/klee_div_zero_check.c:15

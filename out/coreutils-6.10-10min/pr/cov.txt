@@ -1,0 +1,32 @@
+File '../../src/pr.c'
+Lines executed:69.47% of 855
+Creating 'pr.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 3
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 3
+Creating 'stdio.h.gcov'
+
+File '../../src/system.h'
+Lines executed:100.00% of 1
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:100.00% of 1
+Creating 'stat.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:100.00% of 1
+Creating 'string3.h.gcov'
+
+File '../../lib/stat-time.h'
+No executable lines
+Removing 'stat-time.h.gcov'
+
+File '../../lib/xalloc.h'
+Lines executed:75.00% of 4
+Creating 'xalloc.h.gcov'
+
