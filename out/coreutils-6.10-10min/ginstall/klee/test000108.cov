@@ -1,0 +1,12 @@
+:0
+libc/pwd_grp/pwd_grp.c:378
+libc/pwd_grp/pwd_grp.c:382
+libc/pwd_grp/pwd_grp.c:384
+libc/pwd_grp/pwd_grp_internal.c:59
+libc/pwd_grp/pwd_grp_internal.c:60
+libc/pwd_grp/pwd_grp_internal.c:61
+libc/pwd_grp/pwd_grp_internal.c:62
+libc/pwd_grp/pwd_grp_internal.c:64
+libc/pwd_grp/pwd_grp_internal.c:65
+libc/pwd_grp/pwd_grp_internal.c:67
+libc/pwd_grp/pwd_grp_internal.c:69

@@ -1,0 +1,9 @@
+Error: Query timed out (resolve).
+Stack: 
+	#000009109 in yylex(lvalp=94900409885504, pc=94900401441024)
+	#100008109 in yyparse(pc=94900401441024)
+	#200005641 in get_date(result=94900392691280, p=94900392689906)
+	#300005045 in __klee_posix_wrapped_main(argc=2, argv=94900393112896)
+	#400003089 in __user_main(argcPtr=15, argvPtr=94900350355808, envp=94900350355936) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#500000781 in __uClibc_main(15, 94900350355808) at libc/misc/internals/__uClibc_main.c:401
+	#600000947 in main(15, 94900350355808)
