@@ -1,8 +1,12 @@
 File '../../src/dirname.c'
-Lines executed:100.00% of 31
+Lines executed:100.00% of 29
 Creating 'dirname.c.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 1
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 
