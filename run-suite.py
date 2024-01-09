@@ -5,10 +5,25 @@ import threading
 import subprocess
 import sys
 import datetime
+from enum import Enum
 
 
 all_coreutils = ["base64", "basename", "cat", "chcon", "chgrp", "chmod", "chown", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd", "df", "dircolors", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "hostname", "id", "ginstall", "join", "kill", "link", "ln", "logname", "ls", "md5sum", "mkdir", "mkfifo", "mknod", "mktemp", "mv", "nice", "nl", "nohup", "od", "paste", "pathchk", "pinky", "pr", "printenv", "printf", "ptx", "pwd", "readlink", "rm", "rmdir", "runcon", "seq", "setuidgid", "shred", "shuf", "sleep", "sort", "split", "stat", "stty", "sum", "sync", "tac", "tail", "tee", "touch", "tr", "tsort", "tty", "uname", "unexpand", "uniq", "unlink", "uptime", "users", "wc", "whoami", "who", "yes"]
+class State(Enum):
+    STARTED = 1
+    FINISHED_ANALYSIS = 2
+    FINISHED_COVERAGE = 3
+
 print_lock = threading.Lock()
+counter_lock = threading.Lock()
+
+states: dict[str, State] = {e: State.STARTED for e in all_coreutils}
+
+def update_counter(util: str, state: State) -> str:
+    with counter_lock:
+        global states
+        states[util] = state
+        return f"({list(states.values()).count(State.STARTED)}, {list(states.values()).count(State.FINISHED_ANALYSIS)}, {list(states.values()).count(State.FINISHED_COVERAGE)})"
 
 def thread_safe_print(*args, **kwargs):
     with print_lock:
@@ -46,16 +61,16 @@ def run_klee_coreutils(image_name, util, env_vars):
 
     # Execute the command using subprocess.run
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
-        thread_safe_print(f"starting run for util \"{util}\"")
+        thread_safe_print(f"starting run for util \"{util}\". State: {update_counter(util, State.STARTED)}")
         process = subprocess.run(exec_command, stdout=stdout_f, stderr=stderr_f, text=True)
         if process.returncode != 0:
             thread_safe_print(f"=== ERROR: Failed to execute {util} with exit code {process.returncode}", file=sys.stderr)
     
-        thread_safe_print(f"starting coverage gathering for util \"{util}\"")
+        thread_safe_print(f"starting coverage gathering for util \"{util}\". State: {update_counter(util, State.FINISHED_ANALYSIS)}")
         process = subprocess.run(cov_command, stdout=stdout_f, stderr=stderr_f, text=True)
         if process.returncode != 0:
             thread_safe_print(f"=== ERROR: Failed to gather coverage for {util} with exit code {process.returncode}", file=sys.stderr)
-        thread_safe_print(f"done with util \"{util}\"")
+        thread_safe_print(f"done with util \"{util}\". State: {update_counter(util, State.FINISHED_COVERAGE)}")
     
 
 if __name__ == "__main__":
@@ -66,23 +81,27 @@ if __name__ == "__main__":
     parser.add_argument('--image-name', help='Name of the image built', default="klee-coreutils")
     parser.add_argument('--util', action='append', help='Utils to test')
     parser.add_argument('--env', '-e', action='append', nargs=2, metavar=('key', 'value'), help='Environment variables')
+    parser.add_argument('--force', '-f', action='store_true', help='Force execution, even if target directory already exists')
 
     args = parser.parse_args()
+    thread_safe_print(f"Analyzing with the following args: {args}")
+
     output_dir = args.output_dir
     image_name = args.image_name
 
     # Check if the output directory exists and is empty
-    if os.path.exists(output_dir) and os.path.isdir(output_dir) and os.listdir(output_dir):
+    if (not args.force) and (os.path.exists(output_dir) and os.path.isdir(output_dir) and os.listdir(output_dir)):
         response = input("Output directory is not empty, this might not work. Continue anyway? (y/n) ").lower().strip()
         if response not in ['y', 'yes']:
             thread_safe_print("Exiting")
             exit(1)
 
     # Make sure the docker image is up to date
-    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-exec", "-t", f"{image_name}", "."])
+    thread_safe_print("Building docker image")
+    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-exec", "-t", f"{image_name}", "."], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if process.returncode != 0:
         thread_safe_print(f"=== ERROR: Failed to build docker image exec with exit code {process.returncode}", file=sys.stderr)
-    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-gcov", "-t", f"{image_name}-cov", "."])
+    process = subprocess.run(["docker", "build", "--progress=plain", "--target", "klee-coreutils-gcov", "-t", f"{image_name}-cov", "."], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if process.returncode != 0:
         thread_safe_print(f"=== ERROR: Failed to build docker image cov with exit code {process.returncode}", file=sys.stderr)
 
