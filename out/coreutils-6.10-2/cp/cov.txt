@@ -1,12 +1,20 @@
 File '../../src/cp.c'
-Lines executed:65.49% of 368
+Lines executed:66.95% of 354
 Creating 'cp.c.gcov'
 
-File '../../lib/stat-time.h'
-Lines executed:0.00% of 4
-Creating 'stat-time.h.gcov'
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:50.00% of 2
+Creating 'stat.h.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:100.00% of 1
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../../lib/stat-time.h'
+No executable lines
+Removing 'stat-time.h.gcov'
 

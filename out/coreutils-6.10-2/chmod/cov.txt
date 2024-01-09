@@ -1,12 +1,20 @@
 File '../../src/chmod.c'
-Lines executed:79.43% of 175
+Lines executed:79.01% of 162
 Creating 'chmod.c.gcov'
 
-File '../../lib/openat.h'
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:100.00% of 1
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
 Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../../lib/openat.h'
+Lines executed:100.00% of 1
 Creating 'openat.h.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:0.00% of 1
+Creating 'stat.h.gcov'
 

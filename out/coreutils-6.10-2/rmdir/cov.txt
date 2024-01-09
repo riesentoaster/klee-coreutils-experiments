@@ -1,8 +1,8 @@
 File '../../src/rmdir.c'
-Lines executed:78.46% of 65
+Lines executed:81.03% of 58
 Creating 'rmdir.c.gcov'
 
-File '../../src/system.h'
-Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
 

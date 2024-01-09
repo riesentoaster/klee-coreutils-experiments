@@ -1,8 +1,12 @@
 File '../../src/cksum.c'
-Lines executed:91.94% of 62
+Lines executed:91.23% of 57
 Creating 'cksum.c.gcov'
 
-File '../../src/system.h'
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
 Lines executed:100.00% of 3
-Creating 'system.h.gcov'
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
 
