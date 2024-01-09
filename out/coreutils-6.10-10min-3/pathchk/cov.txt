@@ -1,0 +1,16 @@
+File '../../src/pathchk.c'
+Lines executed:80.73% of 109
+Creating 'pathchk.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:100.00% of 1
+Creating 'stat.h.gcov'
+
+File '/usr/include/wchar.h'
+Lines executed:0.00% of 1
+Creating 'wchar.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

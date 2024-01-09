@@ -1,0 +1,921 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array B_data_stat[144] : w32 -> w8 = symbolic
+array arg00[301] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Eq 1
+             (ReadLSB w32 0 n_args))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 B_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 B_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq false
+             (Eq 0 N0:(Read w8 6 arg00)))
+         (Eq false (Eq 61 N0))
+         (Eq false
+             (Eq 0 N1:(Read w8 7 arg00)))
+         (Eq false (Eq 61 N1))
+         (Eq false
+             (Eq 0 N2:(Read w8 8 arg00)))
+         (Eq false (Eq 61 N2))
+         (Eq false
+             (Eq 0 N3:(Read w8 9 arg00)))
+         (Eq false (Eq 61 N3))
+         (Eq false
+             (Eq 0 N4:(Read w8 10 arg00)))
+         (Eq false (Eq 61 N4))
+         (Eq false
+             (Eq 0 N5:(Read w8 11 arg00)))
+         (Eq false (Eq 61 N5))
+         (Eq false
+             (Eq 0 N6:(Read w8 12 arg00)))
+         (Eq false (Eq 61 N6))
+         (Eq false
+             (Eq 0 N7:(Read w8 13 arg00)))
+         (Eq false (Eq 61 N7))
+         (Eq false
+             (Eq 0 N8:(Read w8 14 arg00)))
+         (Eq false (Eq 61 N8))
+         (Eq false
+             (Eq 0 N9:(Read w8 15 arg00)))
+         (Eq false (Eq 61 N9))
+         (Eq false
+             (Eq 0 N10:(Read w8 16 arg00)))
+         (Eq false (Eq 61 N10))
+         (Eq false
+             (Eq 0 N11:(Read w8 17 arg00)))
+         (Eq false (Eq 61 N11))
+         (Eq false
+             (Eq 0 N12:(Read w8 18 arg00)))
+         (Eq false (Eq 61 N12))
+         (Eq false
+             (Eq 0 N13:(Read w8 19 arg00)))
+         (Eq false (Eq 61 N13))
+         (Eq false
+             (Eq 0 N14:(Read w8 20 arg00)))
+         (Eq false (Eq 61 N14))
+         (Eq false
+             (Eq 0 N15:(Read w8 21 arg00)))
+         (Eq false (Eq 61 N15))
+         (Eq false
+             (Eq 0 N16:(Read w8 22 arg00)))
+         (Eq false (Eq 61 N16))
+         (Eq false
+             (Eq 0 N17:(Read w8 23 arg00)))
+         (Eq false (Eq 61 N17))
+         (Eq false
+             (Eq 0 N18:(Read w8 24 arg00)))
+         (Eq false (Eq 61 N18))
+         (Eq false
+             (Eq 0 N19:(Read w8 25 arg00)))
+         (Eq false (Eq 61 N19))
+         (Eq false
+             (Eq 0 N20:(Read w8 26 arg00)))
+         (Eq false (Eq 61 N20))
+         (Eq false
+             (Eq 0 N21:(Read w8 27 arg00)))
+         (Eq false (Eq 61 N21))
+         (Eq false
+             (Eq 0 N22:(Read w8 28 arg00)))
+         (Eq false (Eq 61 N22))
+         (Eq false
+             (Eq 0 N23:(Read w8 29 arg00)))
+         (Eq false (Eq 61 N23))
+         (Eq false
+             (Eq 0 N24:(Read w8 30 arg00)))
+         (Eq false (Eq 61 N24))
+         (Eq false
+             (Eq 0 N25:(Read w8 31 arg00)))
+         (Eq false (Eq 61 N25))
+         (Eq false
+             (Eq 0 N26:(Read w8 32 arg00)))
+         (Eq false (Eq 61 N26))
+         (Eq false
+             (Eq 0 N27:(Read w8 33 arg00)))
+         (Eq false (Eq 61 N27))
+         (Eq false
+             (Eq 0 N28:(Read w8 34 arg00)))
+         (Eq false (Eq 61 N28))
+         (Eq false
+             (Eq 0 N29:(Read w8 35 arg00)))
+         (Eq false (Eq 61 N29))
+         (Eq false
+             (Eq 0 N30:(Read w8 36 arg00)))
+         (Eq false (Eq 61 N30))
+         (Eq false
+             (Eq 0 N31:(Read w8 37 arg00)))
+         (Eq false (Eq 61 N31))
+         (Eq false
+             (Eq 0 N32:(Read w8 38 arg00)))
+         (Eq false (Eq 61 N32))
+         (Eq false
+             (Eq 0 N33:(Read w8 39 arg00)))
+         (Eq false (Eq 61 N33))
+         (Eq false
+             (Eq 0 N34:(Read w8 40 arg00)))
+         (Eq false (Eq 61 N34))
+         (Eq false
+             (Eq 0 N35:(Read w8 41 arg00)))
+         (Eq false (Eq 61 N35))
+         (Eq false
+             (Eq 0 N36:(Read w8 42 arg00)))
+         (Eq false (Eq 61 N36))
+         (Eq false
+             (Eq 0 N37:(Read w8 43 arg00)))
+         (Eq false (Eq 61 N37))
+         (Eq false
+             (Eq 0 N38:(Read w8 44 arg00)))
+         (Eq false (Eq 61 N38))
+         (Eq false
+             (Eq 0 N39:(Read w8 45 arg00)))
+         (Eq false (Eq 61 N39))
+         (Eq false
+             (Eq 0 N40:(Read w8 46 arg00)))
+         (Eq false (Eq 61 N40))
+         (Eq false
+             (Eq 0 N41:(Read w8 47 arg00)))
+         (Eq false (Eq 61 N41))
+         (Eq false
+             (Eq 0 N42:(Read w8 48 arg00)))
+         (Eq false (Eq 61 N42))
+         (Eq false
+             (Eq 0 N43:(Read w8 49 arg00)))
+         (Eq false (Eq 61 N43))
+         (Eq false
+             (Eq 0 N44:(Read w8 50 arg00)))
+         (Eq false (Eq 61 N44))
+         (Eq false
+             (Eq 0 N45:(Read w8 51 arg00)))
+         (Eq false (Eq 61 N45))
+         (Eq false
+             (Eq 0 N46:(Read w8 52 arg00)))
+         (Eq false (Eq 61 N46))
+         (Eq false
+             (Eq 0 N47:(Read w8 53 arg00)))
+         (Eq false (Eq 61 N47))
+         (Eq false
+             (Eq 0 N48:(Read w8 54 arg00)))
+         (Eq false (Eq 61 N48))
+         (Eq false
+             (Eq 0 N49:(Read w8 55 arg00)))
+         (Eq false (Eq 61 N49))
+         (Eq false
+             (Eq 0 N50:(Read w8 56 arg00)))
+         (Eq false (Eq 61 N50))
+         (Eq false
+             (Eq 0 N51:(Read w8 57 arg00)))
+         (Eq false (Eq 61 N51))
+         (Eq false
+             (Eq 0 N52:(Read w8 58 arg00)))
+         (Eq false (Eq 61 N52))
+         (Eq false
+             (Eq 0 N53:(Read w8 59 arg00)))
+         (Eq false (Eq 61 N53))
+         (Eq false
+             (Eq 0 N54:(Read w8 60 arg00)))
+         (Eq false (Eq 61 N54))
+         (Eq false
+             (Eq 0 N55:(Read w8 61 arg00)))
+         (Eq false (Eq 61 N55))
+         (Eq false
+             (Eq 0 N56:(Read w8 62 arg00)))
+         (Eq false (Eq 61 N56))
+         (Eq false
+             (Eq 0 N57:(Read w8 63 arg00)))
+         (Eq false (Eq 61 N57))
+         (Eq false
+             (Eq 0 N58:(Read w8 64 arg00)))
+         (Eq false (Eq 61 N58))
+         (Eq false
+             (Eq 0 N59:(Read w8 65 arg00)))
+         (Eq false (Eq 61 N59))
+         (Eq false
+             (Eq 0 N60:(Read w8 66 arg00)))
+         (Eq false (Eq 61 N60))
+         (Eq false
+             (Eq 0 N61:(Read w8 67 arg00)))
+         (Eq false (Eq 61 N61))
+         (Eq false
+             (Eq 0 N62:(Read w8 68 arg00)))
+         (Eq false (Eq 61 N62))
+         (Eq false
+             (Eq 0 N63:(Read w8 69 arg00)))
+         (Eq false (Eq 61 N63))
+         (Eq false
+             (Eq 0 N64:(Read w8 70 arg00)))
+         (Eq false (Eq 61 N64))
+         (Eq false
+             (Eq 0 N65:(Read w8 71 arg00)))
+         (Eq false (Eq 61 N65))
+         (Eq false
+             (Eq 0 N66:(Read w8 72 arg00)))
+         (Eq false (Eq 61 N66))
+         (Eq false
+             (Eq 0 N67:(Read w8 73 arg00)))
+         (Eq false (Eq 61 N67))
+         (Eq false
+             (Eq 0 N68:(Read w8 74 arg00)))
+         (Eq false (Eq 61 N68))
+         (Eq false
+             (Eq 0 N69:(Read w8 75 arg00)))
+         (Eq false (Eq 61 N69))
+         (Eq false
+             (Eq 0 N70:(Read w8 76 arg00)))
+         (Eq false (Eq 61 N70))
+         (Eq false
+             (Eq 0 N71:(Read w8 77 arg00)))
+         (Eq false (Eq 61 N71))
+         (Eq false
+             (Eq 0 N72:(Read w8 78 arg00)))
+         (Eq false (Eq 61 N72))
+         (Eq false
+             (Eq 0 N73:(Read w8 79 arg00)))
+         (Eq false (Eq 61 N73))
+         (Eq false
+             (Eq 0 N74:(Read w8 80 arg00)))
+         (Eq false (Eq 61 N74))
+         (Eq false
+             (Eq 0 N75:(Read w8 81 arg00)))
+         (Eq false (Eq 61 N75))
+         (Eq false
+             (Eq 0 N76:(Read w8 82 arg00)))
+         (Eq false (Eq 61 N76))
+         (Eq false
+             (Eq 0 N77:(Read w8 83 arg00)))
+         (Eq false (Eq 61 N77))
+         (Eq false
+             (Eq 0 N78:(Read w8 84 arg00)))
+         (Eq false (Eq 61 N78))
+         (Eq false
+             (Eq 0 N79:(Read w8 85 arg00)))
+         (Eq false (Eq 61 N79))
+         (Eq false
+             (Eq 0 N80:(Read w8 86 arg00)))
+         (Eq false (Eq 61 N80))
+         (Eq false
+             (Eq 0 N81:(Read w8 87 arg00)))
+         (Eq false (Eq 61 N81))
+         (Eq false
+             (Eq 0 N82:(Read w8 88 arg00)))
+         (Eq false (Eq 61 N82))
+         (Eq false
+             (Eq 0 N83:(Read w8 89 arg00)))
+         (Eq false (Eq 61 N83))
+         (Eq false
+             (Eq 0 N84:(Read w8 90 arg00)))
+         (Eq false (Eq 61 N84))
+         (Eq false
+             (Eq 0 N85:(Read w8 91 arg00)))
+         (Eq false (Eq 61 N85))
+         (Eq false
+             (Eq 0 N86:(Read w8 92 arg00)))
+         (Eq false (Eq 61 N86))
+         (Eq false
+             (Eq 0 N87:(Read w8 93 arg00)))
+         (Eq false (Eq 61 N87))
+         (Eq false
+             (Eq 0 N88:(Read w8 94 arg00)))
+         (Eq false (Eq 61 N88))
+         (Eq false
+             (Eq 0 N89:(Read w8 95 arg00)))
+         (Eq false (Eq 61 N89))
+         (Eq false
+             (Eq 0 N90:(Read w8 96 arg00)))
+         (Eq false (Eq 61 N90))
+         (Eq false
+             (Eq 0 N91:(Read w8 97 arg00)))
+         (Eq false (Eq 61 N91))
+         (Eq false
+             (Eq 0 N92:(Read w8 98 arg00)))
+         (Eq false (Eq 61 N92))
+         (Eq false
+             (Eq 0 N93:(Read w8 99 arg00)))
+         (Eq false (Eq 61 N93))
+         (Eq false
+             (Eq 0 N94:(Read w8 100 arg00)))
+         (Eq false (Eq 61 N94))
+         (Eq false
+             (Eq 0 N95:(Read w8 101 arg00)))
+         (Eq false (Eq 61 N95))
+         (Eq false
+             (Eq 0 N96:(Read w8 102 arg00)))
+         (Eq false (Eq 61 N96))
+         (Eq false
+             (Eq 0 N97:(Read w8 103 arg00)))
+         (Eq false (Eq 61 N97))
+         (Eq false
+             (Eq 0 N98:(Read w8 104 arg00)))
+         (Eq false (Eq 61 N98))
+         (Eq false
+             (Eq 0 N99:(Read w8 105 arg00)))
+         (Eq false (Eq 61 N99))
+         (Eq false
+             (Eq 0 N100:(Read w8 106 arg00)))
+         (Eq false (Eq 61 N100))
+         (Eq false
+             (Eq 0 N101:(Read w8 107 arg00)))
+         (Eq false (Eq 61 N101))
+         (Eq false
+             (Eq 0 N102:(Read w8 108 arg00)))
+         (Eq false (Eq 61 N102))
+         (Eq false
+             (Eq 0 N103:(Read w8 109 arg00)))
+         (Eq false (Eq 61 N103))
+         (Eq false
+             (Eq 0 N104:(Read w8 110 arg00)))
+         (Eq false (Eq 61 N104))
+         (Eq false
+             (Eq 0 N105:(Read w8 111 arg00)))
+         (Eq false (Eq 61 N105))
+         (Eq false
+             (Eq 0 N106:(Read w8 112 arg00)))
+         (Eq false (Eq 61 N106))
+         (Eq false
+             (Eq 0 N107:(Read w8 113 arg00)))
+         (Eq false (Eq 61 N107))
+         (Eq false
+             (Eq 0 N108:(Read w8 114 arg00)))
+         (Eq false (Eq 61 N108))
+         (Eq false
+             (Eq 0 N109:(Read w8 115 arg00)))
+         (Eq false (Eq 61 N109))
+         (Eq false
+             (Eq 0 N110:(Read w8 116 arg00)))
+         (Eq false (Eq 61 N110))
+         (Eq false
+             (Eq 0 N111:(Read w8 117 arg00)))
+         (Eq false (Eq 61 N111))
+         (Eq false
+             (Eq 0 N112:(Read w8 118 arg00)))
+         (Eq false (Eq 61 N112))
+         (Eq false
+             (Eq 0 N113:(Read w8 119 arg00)))
+         (Eq false (Eq 61 N113))
+         (Eq false
+             (Eq 0 N114:(Read w8 120 arg00)))
+         (Eq false (Eq 61 N114))
+         (Eq false
+             (Eq 0 N115:(Read w8 121 arg00)))
+         (Eq false (Eq 61 N115))
+         (Eq false
+             (Eq 0 N116:(Read w8 122 arg00)))
+         (Eq false (Eq 61 N116))
+         (Eq false
+             (Eq 0 N117:(Read w8 123 arg00)))
+         (Eq false (Eq 61 N117))
+         (Eq false
+             (Eq 0 N118:(Read w8 124 arg00)))
+         (Eq false (Eq 61 N118))
+         (Eq false
+             (Eq 0 N119:(Read w8 125 arg00)))
+         (Eq false (Eq 61 N119))
+         (Eq false
+             (Eq 0 N120:(Read w8 126 arg00)))
+         (Eq false (Eq 61 N120))
+         (Eq false
+             (Eq 0 N121:(Read w8 127 arg00)))
+         (Eq false (Eq 61 N121))
+         (Eq false
+             (Eq 0 N122:(Read w8 128 arg00)))
+         (Eq false (Eq 61 N122))
+         (Eq false
+             (Eq 0 N123:(Read w8 129 arg00)))
+         (Eq false (Eq 61 N123))
+         (Eq false
+             (Eq 0 N124:(Read w8 130 arg00)))
+         (Eq false (Eq 61 N124))
+         (Eq false
+             (Eq 0 N125:(Read w8 131 arg00)))
+         (Eq false (Eq 61 N125))
+         (Eq false
+             (Eq 0 N126:(Read w8 132 arg00)))
+         (Eq false (Eq 61 N126))
+         (Eq false
+             (Eq 0 N127:(Read w8 133 arg00)))
+         (Eq false (Eq 61 N127))
+         (Eq false
+             (Eq 0 N128:(Read w8 134 arg00)))
+         (Eq false (Eq 61 N128))
+         (Eq false
+             (Eq 0 N129:(Read w8 135 arg00)))
+         (Eq false (Eq 61 N129))
+         (Eq false
+             (Eq 0 N130:(Read w8 136 arg00)))
+         (Eq false (Eq 61 N130))
+         (Eq false
+             (Eq 0 N131:(Read w8 137 arg00)))
+         (Eq false (Eq 61 N131))
+         (Eq false
+             (Eq 0 N132:(Read w8 138 arg00)))
+         (Eq false (Eq 61 N132))
+         (Eq false
+             (Eq 0 N133:(Read w8 139 arg00)))
+         (Eq false (Eq 61 N133))
+         (Eq false
+             (Eq 0 N134:(Read w8 140 arg00)))
+         (Eq false (Eq 61 N134))
+         (Eq false
+             (Eq 0 N135:(Read w8 141 arg00)))
+         (Eq false (Eq 61 N135))
+         (Eq false
+             (Eq 0 N136:(Read w8 142 arg00)))
+         (Eq false (Eq 61 N136))
+         (Eq false
+             (Eq 0 N137:(Read w8 143 arg00)))
+         (Eq false (Eq 61 N137))
+         (Eq false
+             (Eq 0 N138:(Read w8 144 arg00)))
+         (Eq false (Eq 61 N138))
+         (Eq false
+             (Eq 0 N139:(Read w8 145 arg00)))
+         (Eq false (Eq 61 N139))
+         (Eq false
+             (Eq 0 N140:(Read w8 146 arg00)))
+         (Eq false (Eq 61 N140))
+         (Eq false
+             (Eq 0 N141:(Read w8 147 arg00)))
+         (Eq false (Eq 61 N141))
+         (Eq false
+             (Eq 0 N142:(Read w8 148 arg00)))
+         (Eq false (Eq 61 N142))
+         (Eq false
+             (Eq 0 N143:(Read w8 149 arg00)))
+         (Eq false (Eq 61 N143))
+         (Eq false
+             (Eq 0 N144:(Read w8 150 arg00)))
+         (Eq false (Eq 61 N144))
+         (Eq false
+             (Eq 0 N145:(Read w8 151 arg00)))
+         (Eq false (Eq 61 N145))
+         (Eq false
+             (Eq 0 N146:(Read w8 152 arg00)))
+         (Eq false (Eq 61 N146))
+         (Eq false
+             (Eq 0 N147:(Read w8 153 arg00)))
+         (Eq false (Eq 61 N147))
+         (Eq false
+             (Eq 0 N148:(Read w8 154 arg00)))
+         (Eq false (Eq 61 N148))
+         (Eq false
+             (Eq 0 N149:(Read w8 155 arg00)))
+         (Eq false (Eq 61 N149))
+         (Eq false
+             (Eq 0 N150:(Read w8 156 arg00)))
+         (Eq false (Eq 61 N150))
+         (Eq false
+             (Eq 0 N151:(Read w8 157 arg00)))
+         (Eq false (Eq 61 N151))
+         (Eq false
+             (Eq 0 N152:(Read w8 158 arg00)))
+         (Eq false (Eq 61 N152))
+         (Eq false
+             (Eq 0 N153:(Read w8 159 arg00)))
+         (Eq false (Eq 61 N153))
+         (Eq false
+             (Eq 0 N154:(Read w8 160 arg00)))
+         (Eq false (Eq 61 N154))
+         (Eq false
+             (Eq 0 N155:(Read w8 161 arg00)))
+         (Eq false (Eq 61 N155))
+         (Eq false
+             (Eq 0 N156:(Read w8 162 arg00)))
+         (Eq false (Eq 61 N156))
+         (Eq false
+             (Eq 0 N157:(Read w8 163 arg00)))
+         (Eq false (Eq 61 N157))
+         (Eq false
+             (Eq 0 N158:(Read w8 164 arg00)))
+         (Eq false (Eq 61 N158))
+         (Eq false
+             (Eq 0 N159:(Read w8 165 arg00)))
+         (Eq false (Eq 61 N159))
+         (Eq false
+             (Eq 0 N160:(Read w8 166 arg00)))
+         (Eq false (Eq 61 N160))
+         (Eq false
+             (Eq 0 N161:(Read w8 167 arg00)))
+         (Eq false (Eq 61 N161))
+         (Eq false
+             (Eq 0 N162:(Read w8 168 arg00)))
+         (Eq false (Eq 61 N162))
+         (Eq false
+             (Eq 0 N163:(Read w8 169 arg00)))
+         (Eq false (Eq 61 N163))
+         (Eq false
+             (Eq 0 N164:(Read w8 170 arg00)))
+         (Eq false (Eq 61 N164))
+         (Eq false
+             (Eq 0 N165:(Read w8 171 arg00)))
+         (Eq false (Eq 61 N165))
+         (Eq false
+             (Eq 0 N166:(Read w8 172 arg00)))
+         (Eq false (Eq 61 N166))
+         (Eq false
+             (Eq 0 N167:(Read w8 173 arg00)))
+         (Eq false (Eq 61 N167))
+         (Eq false
+             (Eq 0 N168:(Read w8 174 arg00)))
+         (Eq false (Eq 61 N168))
+         (Eq false
+             (Eq 0 N169:(Read w8 175 arg00)))
+         (Eq false (Eq 61 N169))
+         (Eq false
+             (Eq 0 N170:(Read w8 176 arg00)))
+         (Eq false (Eq 61 N170))
+         (Eq false
+             (Eq 0 N171:(Read w8 177 arg00)))
+         (Eq false (Eq 61 N171))
+         (Eq false
+             (Eq 0 N172:(Read w8 178 arg00)))
+         (Eq false (Eq 61 N172))
+         (Eq false
+             (Eq 0 N173:(Read w8 179 arg00)))
+         (Eq false (Eq 61 N173))
+         (Eq false
+             (Eq 0 N174:(Read w8 180 arg00)))
+         (Eq false (Eq 61 N174))
+         (Eq false
+             (Eq 0 N175:(Read w8 181 arg00)))
+         (Eq false (Eq 61 N175))
+         (Eq false
+             (Eq 0 N176:(Read w8 182 arg00)))
+         (Eq false (Eq 61 N176))
+         (Eq false
+             (Eq 0 N177:(Read w8 183 arg00)))
+         (Eq false (Eq 61 N177))
+         (Eq false
+             (Eq 0 N178:(Read w8 184 arg00)))
+         (Eq false (Eq 61 N178))
+         (Eq false
+             (Eq 0 N179:(Read w8 185 arg00)))
+         (Eq false (Eq 61 N179))
+         (Eq false
+             (Eq 0 N180:(Read w8 186 arg00)))
+         (Eq false (Eq 61 N180))
+         (Eq false
+             (Eq 0 N181:(Read w8 187 arg00)))
+         (Eq false (Eq 61 N181))
+         (Eq false
+             (Eq 0 N182:(Read w8 188 arg00)))
+         (Eq false (Eq 61 N182))
+         (Eq false
+             (Eq 0 N183:(Read w8 189 arg00)))
+         (Eq false (Eq 61 N183))
+         (Eq false
+             (Eq 0 N184:(Read w8 190 arg00)))
+         (Eq false (Eq 61 N184))
+         (Eq false
+             (Eq 0 N185:(Read w8 191 arg00)))
+         (Eq false (Eq 61 N185))
+         (Eq false
+             (Eq 0 N186:(Read w8 192 arg00)))
+         (Eq false (Eq 61 N186))
+         (Eq false
+             (Eq 0 N187:(Read w8 193 arg00)))
+         (Eq false (Eq 61 N187))
+         (Eq false
+             (Eq 0 N188:(Read w8 194 arg00)))
+         (Eq false (Eq 61 N188))
+         (Eq false
+             (Eq 0 N189:(Read w8 195 arg00)))
+         (Eq false (Eq 61 N189))
+         (Eq false
+             (Eq 0 N190:(Read w8 196 arg00)))
+         (Eq false (Eq 61 N190))
+         (Eq false
+             (Eq 0 N191:(Read w8 197 arg00)))
+         (Eq false (Eq 61 N191))
+         (Eq false
+             (Eq 0 N192:(Read w8 198 arg00)))
+         (Eq false (Eq 61 N192))
+         (Eq false
+             (Eq 0 N193:(Read w8 199 arg00)))
+         (Eq false (Eq 61 N193))
+         (Eq false
+             (Eq 0 N194:(Read w8 200 arg00)))
+         (Eq false (Eq 61 N194))
+         (Eq false
+             (Eq 0 N195:(Read w8 201 arg00)))
+         (Eq false (Eq 61 N195))
+         (Eq false
+             (Eq 0 N196:(Read w8 202 arg00)))
+         (Eq false (Eq 61 N196))
+         (Eq false
+             (Eq 0 N197:(Read w8 203 arg00)))
+         (Eq false (Eq 61 N197))
+         (Eq false
+             (Eq 0 N198:(Read w8 204 arg00)))
+         (Eq false (Eq 61 N198))
+         (Eq false
+             (Eq 0 N199:(Read w8 205 arg00)))
+         (Eq false (Eq 61 N199))
+         (Eq false
+             (Eq 0 N200:(Read w8 206 arg00)))
+         (Eq false (Eq 61 N200))
+         (Eq false
+             (Eq 0 N201:(Read w8 207 arg00)))
+         (Eq false (Eq 61 N201))
+         (Eq false
+             (Eq 0 N202:(Read w8 208 arg00)))
+         (Eq false (Eq 61 N202))
+         (Eq false
+             (Eq 0 N203:(Read w8 209 arg00)))
+         (Eq false (Eq 61 N203))
+         (Eq false
+             (Eq 0 N204:(Read w8 210 arg00)))
+         (Eq false (Eq 61 N204))
+         (Eq false
+             (Eq 0 N205:(Read w8 211 arg00)))
+         (Eq false (Eq 61 N205))
+         (Eq false
+             (Eq 0 N206:(Read w8 212 arg00)))
+         (Eq false (Eq 61 N206))
+         (Eq false
+             (Eq 0 N207:(Read w8 213 arg00)))
+         (Eq false (Eq 61 N207))
+         (Eq false
+             (Eq 0 N208:(Read w8 214 arg00)))
+         (Eq false (Eq 61 N208))
+         (Eq false
+             (Eq 0 N209:(Read w8 215 arg00)))
+         (Eq false (Eq 61 N209))
+         (Eq false
+             (Eq 0 N210:(Read w8 216 arg00)))
+         (Eq false (Eq 61 N210))
+         (Eq false
+             (Eq 0 N211:(Read w8 217 arg00)))
+         (Eq false (Eq 61 N211))
+         (Eq false
+             (Eq 0 N212:(Read w8 218 arg00)))
+         (Eq false (Eq 61 N212))
+         (Eq false
+             (Eq 0 N213:(Read w8 219 arg00)))
+         (Eq false (Eq 61 N213))
+         (Eq false
+             (Eq 0 N214:(Read w8 220 arg00)))
+         (Eq false (Eq 61 N214))
+         (Eq false
+             (Eq 0 N215:(Read w8 221 arg00)))
+         (Eq false (Eq 61 N215))
+         (Eq false
+             (Eq 0 N216:(Read w8 222 arg00)))
+         (Eq false (Eq 61 N216))
+         (Eq false
+             (Eq 0 N217:(Read w8 223 arg00)))
+         (Eq false (Eq 61 N217))
+         (Eq false
+             (Eq 0 N218:(Read w8 224 arg00)))
+         (Eq false (Eq 61 N218))
+         (Eq false
+             (Eq 0 N219:(Read w8 225 arg00)))
+         (Eq false (Eq 61 N219))
+         (Eq false
+             (Eq 0 N220:(Read w8 226 arg00)))
+         (Eq false (Eq 61 N220))
+         (Eq false
+             (Eq 0 N221:(Read w8 227 arg00)))
+         (Eq false (Eq 61 N221))
+         (Eq false
+             (Eq 0 N222:(Read w8 228 arg00)))
+         (Eq false (Eq 61 N222))
+         (Eq false
+             (Eq 0 N223:(Read w8 229 arg00)))
+         (Eq false (Eq 61 N223))
+         (Eq false
+             (Eq 0 N224:(Read w8 230 arg00)))
+         (Eq false (Eq 61 N224))
+         (Eq false
+             (Eq 0 N225:(Read w8 231 arg00)))
+         (Eq false (Eq 61 N225))
+         (Eq false
+             (Eq 0 N226:(Read w8 232 arg00)))
+         (Eq false (Eq 61 N226))
+         (Eq false
+             (Eq 0 N227:(Read w8 233 arg00)))
+         (Eq false (Eq 61 N227))
+         (Eq false
+             (Eq 0 N228:(Read w8 234 arg00)))
+         (Eq false (Eq 61 N228))
+         (Eq false
+             (Eq 0 N229:(Read w8 235 arg00)))
+         (Eq false (Eq 61 N229))
+         (Eq false
+             (Eq 0 N230:(Read w8 236 arg00)))
+         (Eq false (Eq 61 N230))
+         (Eq false
+             (Eq 0 N231:(Read w8 237 arg00)))
+         (Eq false (Eq 61 N231))
+         (Eq false
+             (Eq 0 N232:(Read w8 238 arg00)))
+         (Eq false (Eq 61 N232))
+         (Eq false
+             (Eq 0 N233:(Read w8 239 arg00)))
+         (Eq false (Eq 61 N233))
+         (Eq false
+             (Eq 0 N234:(Read w8 240 arg00)))
+         (Eq false (Eq 61 N234))
+         (Eq false
+             (Eq 0 N235:(Read w8 241 arg00)))
+         (Eq false (Eq 61 N235))
+         (Eq false
+             (Eq 0 N236:(Read w8 242 arg00)))
+         (Eq false (Eq 61 N236))
+         (Eq false
+             (Eq 0 N237:(Read w8 243 arg00)))
+         (Eq false (Eq 61 N237))
+         (Eq false
+             (Eq 0 N238:(Read w8 244 arg00)))
+         (Eq false (Eq 61 N238))
+         (Eq false
+             (Eq 0 N239:(Read w8 245 arg00)))
+         (Eq false (Eq 61 N239))
+         (Eq false
+             (Eq 0 N240:(Read w8 246 arg00)))
+         (Eq false (Eq 61 N240))
+         (Eq false
+             (Eq 0 N241:(Read w8 247 arg00)))
+         (Eq false (Eq 61 N241))
+         (Eq false
+             (Eq 0 N242:(Read w8 248 arg00)))
+         (Eq false (Eq 61 N242))
+         (Eq false
+             (Eq 0 N243:(Read w8 249 arg00)))
+         (Eq false (Eq 61 N243))
+         (Eq false
+             (Eq 0 N244:(Read w8 250 arg00)))
+         (Eq false (Eq 61 N244))
+         (Eq false
+             (Eq 0 N245:(Read w8 251 arg00)))
+         (Eq false (Eq 61 N245))
+         (Eq false
+             (Eq 0 N246:(Read w8 252 arg00)))
+         (Eq false (Eq 61 N246))
+         (Eq false
+             (Eq 0 N247:(Read w8 253 arg00)))
+         (Eq false (Eq 61 N247))
+         (Eq false
+             (Eq 0 N248:(Read w8 254 arg00)))
+         (Eq false (Eq 61 N248))
+         (Eq false
+             (Eq 0 N249:(Read w8 255 arg00)))
+         (Eq false (Eq 61 N249))
+         (Eq false
+             (Eq 0 N250:(Read w8 256 arg00)))
+         (Eq false (Eq 61 N250))
+         (Eq false
+             (Eq 0 N251:(Read w8 257 arg00)))
+         (Eq false (Eq 61 N251))
+         (Eq false
+             (Eq 0 N252:(Read w8 258 arg00)))
+         (Eq false (Eq 61 N252))
+         (Eq false
+             (Eq 0 N253:(Read w8 259 arg00)))
+         (Eq false (Eq 61 N253))
+         (Eq false
+             (Eq 0 N254:(Read w8 260 arg00)))
+         (Eq false (Eq 61 N254))
+         (Eq false
+             (Eq 0 N255:(Read w8 261 arg00)))
+         (Eq false (Eq 61 N255))
+         (Eq false
+             (Eq 0 N256:(Read w8 262 arg00)))
+         (Eq false (Eq 61 N256))
+         (Eq false
+             (Eq 0 N257:(Read w8 263 arg00)))
+         (Eq false (Eq 61 N257))
+         (Eq false
+             (Eq 0 N258:(Read w8 264 arg00)))
+         (Eq false (Eq 61 N258))
+         (Eq false
+             (Eq 0 N259:(Read w8 265 arg00)))
+         (Eq false (Eq 61 N259))
+         (Eq false
+             (Eq 0 N260:(Read w8 266 arg00)))
+         (Eq false (Eq 61 N260))
+         (Eq false
+             (Eq 0 N261:(Read w8 267 arg00)))
+         (Eq false (Eq 61 N261))
+         (Eq false
+             (Eq 0 N262:(Read w8 268 arg00)))
+         (Eq false (Eq 61 N262))
+         (Eq false
+             (Eq 0 N263:(Read w8 269 arg00)))
+         (Eq false (Eq 61 N263))
+         (Eq false
+             (Eq 0 N264:(Read w8 270 arg00)))
+         (Eq false (Eq 61 N264))
+         (Eq false
+             (Eq 0 N265:(Read w8 271 arg00)))
+         (Eq false (Eq 61 N265))
+         (Eq false
+             (Eq 0 N266:(Read w8 272 arg00)))
+         (Eq false (Eq 61 N266))
+         (Eq false
+             (Eq 0 N267:(Read w8 273 arg00)))
+         (Eq false (Eq 61 N267))
+         (Eq false
+             (Eq 0 N268:(Read w8 274 arg00)))
+         (Eq false (Eq 61 N268))
+         (Eq false
+             (Eq 0 N269:(Read w8 275 arg00)))
+         (Eq false (Eq 61 N269))
+         (Eq false
+             (Eq 0 N270:(Read w8 276 arg00)))
+         (Eq false (Eq 61 N270))
+         (Eq false
+             (Eq 0 N271:(Read w8 277 arg00)))
+         (Eq false (Eq 61 N271))
+         (Eq false
+             (Eq 0 N272:(Read w8 278 arg00)))
+         (Eq false (Eq 61 N272))
+         (Eq false
+             (Eq 0 N273:(Read w8 279 arg00)))
+         (Eq false (Eq 61 N273))
+         (Eq false
+             (Eq 0 N274:(Read w8 280 arg00)))
+         (Eq false (Eq 61 N274))
+         (Eq false
+             (Eq 0 N275:(Read w8 281 arg00)))
+         (Eq false (Eq 61 N275))
+         (Eq false
+             (Eq 0 N276:(Read w8 282 arg00)))
+         (Eq false (Eq 61 N276))
+         (Eq false
+             (Eq 0 N277:(Read w8 283 arg00)))
+         (Eq false (Eq 61 N277))
+         (Eq false
+             (Eq 0 N278:(Read w8 284 arg00)))
+         (Eq false (Eq 61 N278))
+         (Eq false
+             (Eq 0 N279:(Read w8 285 arg00)))
+         (Eq false (Eq 61 N279))
+         (Eq false
+             (Eq 0 N280:(Read w8 286 arg00)))
+         (Eq false (Eq 61 N280))
+         (Eq false
+             (Eq 0 N281:(Read w8 287 arg00)))
+         (Eq false (Eq 61 N281))
+         (Eq false
+             (Eq 0 N282:(Read w8 288 arg00)))
+         (Eq false (Eq 61 N282))
+         (Eq false
+             (Eq 0 N283:(Read w8 289 arg00)))
+         (Eq false (Eq 61 N283))
+         (Eq false
+             (Eq 0 N284:(Read w8 290 arg00)))
+         (Eq false (Eq 61 N284))
+         (Eq false
+             (Eq 0 N285:(Read w8 291 arg00)))
+         (Eq false (Eq 61 N285))
+         (Eq false
+             (Eq 0 N286:(Read w8 292 arg00)))
+         (Eq false (Eq 61 N286))
+         (Eq false
+             (Eq 0 N287:(Read w8 293 arg00)))
+         (Eq false (Eq 61 N287))
+         (Eq false
+             (Eq 0 N288:(Read w8 294 arg00)))
+         (Eq false (Eq 61 N288))
+         (Eq false
+             (Eq 0 N289:(Read w8 295 arg00)))
+         (Eq false (Eq 61 N289))
+         (Eq false
+             (Eq 0 N290:(Read w8 296 arg00)))
+         (Eq false (Eq 61 N290))
+         (Eq false
+             (Eq 0 N291:(Read w8 297 arg00)))
+         (Eq false (Eq 61 N291))
+         (Eq false
+             (Eq 0 N292:(Read w8 298 arg00)))
+         (Eq false (Eq 61 N292))
+         (Eq false
+             (Eq 0 N293:(Read w8 299 arg00)))
+         (Eq false (Eq 61 N293))
+         (Eq 104 (Read w8 2 arg00))
+         (Eq 101 (Read w8 3 arg00))
+         (Eq 108 (Read w8 4 arg00))
+         (Eq 112 (Read w8 5 arg00))]
+        false)

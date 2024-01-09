@@ -1,0 +1,12 @@
+File '../../src/mkfifo.c'
+Lines executed:93.48% of 46
+Creating 'mkfifo.c.gcov'
+
+File '../lib/selinux/selinux.h'
+Lines executed:0.00% of 1
+Creating 'selinux.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
