@@ -1,0 +1,18 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 8.034174
+
+KLEE: increased time budget from 8.034174 to 9.854329
+
+KLEE: increased time budget from 9.854329 to 11.698897
+
+KLEE: increased time budget from 11.698897 to 24.215689
+
+KLEE: increased time budget from 24.215689 to 27.233244
+
+KLEE: increased time budget from 27.233244 to 30.156940
+
+KLEE: ERROR: libc/stdio/_vfprintf.c:572: Query timed out (resolve).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

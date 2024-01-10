@@ -1,0 +1,43 @@
+Error: concretized symbolic size
+File: libc/misc/dirent/opendir.c
+Line: 74
+assembly.ll line: 15289
+State: 939776
+Stack: 
+	#000015289 in opendir(94711296753664) at libc/misc/dirent/opendir.c:74
+	#100008628 in fts_build(sp=94710935133824)
+	#200005640 in fts_read(sp=94710935133824)
+	#300005405 in process_files(files=94710943342192, bit_flags=10)
+	#400005289 in __klee_posix_wrapped_main(argc=3, argv=94710943342176)
+	#500003373 in __user_main(argcPtr=15, argvPtr=94710909728384, envp=94710909728512) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#600000619 in __uClibc_main(15, 94710909728384) at libc/misc/internals/__uClibc_main.c:401
+	#700000785 in main(15, 94710909728384)
+Info: 
+  size expr: (Concat w64 (Read w8 (Extract w32 0 (Add w64 18446649362773713951
+                                                           N0:(ReadLSB w64 N1:(Extract w32 0 (Add w64 18446649362765717072
+                                                                                                      (Select w64 (Eq 0
+                                                                                                                      (ReadLSB w64 8 A_data_stat))
+                                                                                                                  0
+                                                                                                                  94710943834560))) const_arr94)))
+                                   U0:[N2:(Add w32 3
+                                                   N3:(Extract w32 0 (Add w64 18446649362773713912 N0)))=(Extract w8 24 N4:(And w32 (ReadLSB w32 N3 U1:[71=0, 70=0, 69=0, 68=0, 67=0, 66=0, 65=0, 64=8, 55=0, 54=0, 53=0, 52=0, 51=0, 50=0, 49=0, 48=8] @ A_data_stat)
+                                                                                                                                    4294966784)),
+                                       N5:(Add w32 2 N3)=(Extract w8 16 N4),
+                                       N6:(Add w32 1 N3)=(Extract w8 8 N4),
+                                       N3=(Extract w8 0 N4)] @ U1)
+                          (Concat w56 (Read w8 (Extract w32 0 (Add w64 18446649362773713950 N0))
+                                               U0)
+                                      (Concat w48 (Read w8 (Extract w32 0 (Add w64 18446649362773713949 N0))
+                                                           U0)
+                                                  (Concat w40 (Read w8 (Extract w32 0 (Add w64 18446649362773713948 N0))
+                                                                       U0)
+                                                              (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649362773713947 N0))
+                                                                                   U0)
+                                                                          (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649362773713946 N0))
+                                                                                               U0)
+                                                                                      (Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649362773713945 N0))
+                                                                                                           U0)
+                                                                                                  (Read w8 (Extract w32 0 (Add w64 18446649362773713944 N0))
+                                                                                                           U0))))))))
+  concretization : 1023
+  unbound example: 65535
