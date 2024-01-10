@@ -1,0 +1,20 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: (location information missing) concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: (location information missing) illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: (location information missing) illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 6.536436
+
+KLEE: increased time budget from 6.536436 to 9.046985
+
+KLEE: increased time budget from 9.046985 to 15.554204
+
+KLEE: increased time budget from 15.554204 to 22.100858
+
+KLEE: increased time budget from 22.100858 to 25.372935
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

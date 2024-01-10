@@ -1,0 +1,11 @@
+Error: Query timed out (fork).
+Stack: 
+	#000012242 in hash_lookup(table=94721426829696, entry=94722540839488)
+	#100009082 in seen_file(ht=94721426829696, file=94721408960368, stats=94721366976192)
+	#200007773 in copy_internal(src_name=94721408960368, dst_name=94722029669320, new_dst=false, device=0, ancestors=0, x=94721409931008, command_line_arg=true, copy_into_self=94721408962224)
+	#300006970 in copy(src_name=94721408960368, dst_name=94722029669320, nonexistent_dst=false, options=94721409931008, copy_into_self=94721408962224)
+	#400006463 in do_copy(n_files=3, file=94721410120696, target_directory=0, no_target_directory=false, x=94721409931008)
+	#500006064 in __klee_posix_wrapped_main(argc=4, argv=94721410120688)
+	#600004028 in __user_main(argcPtr=15, argvPtr=94721366627488, envp=94721366627616) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000743 in __uClibc_main(15, 94721366627488) at libc/misc/internals/__uClibc_main.c:401
+	#800000909 in main(15, 94721366627488)

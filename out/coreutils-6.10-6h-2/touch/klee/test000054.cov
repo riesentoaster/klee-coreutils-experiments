@@ -1,0 +1,15 @@
+klee_src/runtime/POSIX/fd.c:304
+klee_src/runtime/POSIX/fd.c:308
+klee_src/runtime/POSIX/fd.c:309
+klee_src/runtime/POSIX/fd.c:321
+klee_src/runtime/POSIX/fd.c:322
+klee_src/runtime/POSIX/fd.c:1410
+klee_src/runtime/POSIX/fd.c:1411
+:0
+libc/string/strerror.c:21
+libc/string/__xpg_strerror_r.c:230
+libc/string/__xpg_strerror_r.c:231
+libc/string/__xpg_strerror_r.c:233
+libc/string/__xpg_strerror_r.c:237
+libc/misc/error/error.c:61
+libc/misc/error/error.c:62
