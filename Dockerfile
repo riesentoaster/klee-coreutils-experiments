@@ -69,14 +69,13 @@ RUN find . -executable -type f | xargs -I '{}' extract-bc '{}'
 
 FROM klee-coreutils-base as klee-coreutils-gcov
 
-ARG CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__"
 # compiling code to binaries instrumented with gcov
 WORKDIR /coreutils/obj-cov
 RUN ../configure \
     --build x86_64-pc-linux-gnu \
     --disable-nls \
-    CFLAGS="-O2 -g -fprofile-arcs -ftest-coverage"
-RUN find .. -type f -name '*.c' -exec sed -i -E 's/\b_exit\(/exit(/g' {} + \
+    CFLAGS="-O2 -g -fprofile-arcs -ftest-coverage" \
+    && find .. -type f -name '*.c' -exec sed -i -E 's/\b_exit\(/exit(/g' {} + \
     && make \
     && make -C src arch hostname
 
