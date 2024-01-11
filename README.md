@@ -4,6 +4,8 @@
 
 > WARNING: I kept fairly expensive records of each experiment, so this repository is >50GB.
 
+All experiments were run on a virtuallized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+
 ## Running KLEE on the Correct Coreutils Version
 
 I'm basing my experiment setup on the [original paper](http://www.doc.ic.ac.uk/~cristic/papers/klee-osdi-08.pdf), the [FAQs in the docs](http://klee.github.io/docs/coreutils-experiments/) and the [tutorial on testing a more recent version of coreutils](http://klee.github.io/tutorials/testing-coreutils/).
