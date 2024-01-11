@@ -1,0 +1,11 @@
+:0
+libc/stdio/sprintf.c:24
+libc/stdio/sprintf.c:25
+libc/stdio/sprintf.c:27
+libc/stdio/vsnprintf.c:64
+libc/stdio/vsnprintf.c:65
+libc/stdio/vsnprintf.c:66
+libc/stdio/vsnprintf.c:69
+libc/stdio/vsnprintf.c:70
+libc/stdio/vsnprintf.c:71
+libc/stdio/_uintmaxtostr.c:142
