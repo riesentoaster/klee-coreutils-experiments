@@ -1,0 +1,12 @@
+libc/misc/locale/locale.c:1053
+libc/misc/locale/locale.c:1055
+libc/misc/locale/locale.c:1065
+libc/misc/locale/locale.c:1067
+libc/misc/locale/locale.c:1068
+libc/misc/locale/locale.c:1070
+libc/misc/locale/locale.c:1075
+libc/misc/locale/locale.c:1076
+:0
+libc/unistd/getopt.c:699
+libc/unistd/getopt.c:700
+libc/unistd/getopt.c:735

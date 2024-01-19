@@ -1,0 +1,27 @@
+Error: concretized symbolic size
+Stack: 
+	#000005282 in xmalloc(n=symbolic)
+	#100005914 in init_parameters(number_of_files=1)
+	#200005538 in print_files(number_of_files=1, av=94618732097056)
+	#300005181 in __klee_posix_wrapped_main(argc=4, argv=94618732072416)
+	#400003040 in __user_main(argcPtr=15, argvPtr=94618690668656, envp=94618690668784) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#500000737 in __uClibc_main(15, 94618690668656) at libc/misc/internals/__uClibc_main.c:401
+	#600000903 in main(15, 94618690668656)
+Info: 
+  size expr: (ZExt w64 (Select w32 (Slt 8
+                                         N0:(Extract w32 0 (Add w64 (Mul w64 10
+                                                                             (Add w64 (Mul w64 10
+                                                                                               (Add w64 (Mul w64 10
+                                                                                                                 (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                  (SExt w32 (Read w8 6 arg00))))))
+                                                                                                        (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                         (SExt w32 (Read w8 7 arg00)))))))
+                                                                                      (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                       (SExt w32 (Read w8 8 arg00)))))))
+                                                                    (ZExt w64 (Extract w8 0 (Add w32 4294967209
+                                                                                                     (Or w32 (SExt w32 (Read w8 9 arg00))
+                                                                                                             32)))))))
+                                    N0
+                                    8))
+  concretization : 9
+  unbound example: 1009

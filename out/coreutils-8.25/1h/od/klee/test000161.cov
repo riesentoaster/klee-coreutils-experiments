@@ -1,0 +1,9 @@
+:0
+libc/stdio/_vfprintf.c:680
+libc/stdio/_vfprintf.c:681
+libc/stdio/_vfprintf.c:1033
+libc/stdio/_vfprintf.c:1034
+libc/stdio/_vfprintf.c:1626
+libc/stdio/_vfprintf.c:1627
+libc/stdlib/_strtod.c:600
+libc/stdlib/_strtod.c:603

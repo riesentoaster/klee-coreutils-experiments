@@ -1,0 +1,69 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array B_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Eq 1
+             (ReadLSB w32 0 n_args))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 B_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 B_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq 61 (Read w8 4 arg00))
+         (Eq 115 (Read w8 2 arg00))
+         (Eq 116 (Read w8 3 arg00))
+         (Eq false
+             (Eq 0 N0:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N1:(Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 N2:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 N3:(Read w8 9 arg00)))
+         (Eq 48 (Read w8 5 arg00))
+         (Eq 120
+             (Or w32 (SExt w32 N0) 32))
+         (Eq false
+             (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248 N4:(SExt w32 N1))))
+                  9))
+         (Sle 65 N4)
+         (Eq false
+             (Sle 16
+                  (ZExt w32 N5:(Extract w8 0 (Add w32 4294967209 (Or w32 N4 32))))))
+         (Sle (ZExt w32 N6:(Extract w8 0 (Add w32 4294967248 (SExt w32 N2))))
+              9)
+         (Sle (ZExt w32 N7:(Extract w8 0 (Add w32 4294967248 (SExt w32 N3))))
+              9)
+         (Eq false
+             (Eq 2560
+                 (Select w64 (Ult 100
+                                  N8:(Add w64 (Mul w64 16
+                                                       (Add w64 (Mul w64 16 (ZExt w64 N5))
+                                                                (ZExt w64 N6)))
+                                              (ZExt w64 N7)))
+                             N8
+                             100)))]
+        false)

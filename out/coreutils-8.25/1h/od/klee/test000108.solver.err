@@ -1,0 +1,15 @@
+Error: Query timed out (resolve).
+File: libc/stdio/_vfprintf.c
+Line: 572
+assembly.ll line: 21270
+State: 41325
+Stack: 
+	#000021270 in _ppfs_init(94687401128960, symbolic) at libc/stdio/_vfprintf.c:572
+	#100014588 in vfprintf(94686759455728, symbolic, 94687401032064) at libc/stdio/_vfprintf.c:1888
+	#200011497 in __error(1, 0, symbolic) at libc/misc/error/error.c:57
+	#300010669 in xstrtol_error(err=symbolic, opt_idx=0, c=106, arg=94686775267568, exit_status=1)
+	#400005809 in xstrtol_fatal(err=symbolic, opt_idx=0, c=106, arg=94686775267568)
+	#500004862 in __klee_posix_wrapped_main(argc=3, argv=94686776488448)
+	#600003013 in __user_main(argcPtr=11, argvPtr=94686736826992, envp=94686736827088) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000713 in __uClibc_main(11, 94686736826992) at libc/misc/internals/__uClibc_main.c:401
+	#800000879 in main(11, 94686736826992)

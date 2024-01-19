@@ -1,0 +1,205 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array const_arr10[56] : w32 -> w8 = [3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin[8] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 102
+             (Extract w8 0 (SExt w32 N2)))
+         (Eq false
+             (Eq 0 N3:(Read w8 2 arg00)))
+         (Eq 45 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))
+         (Eq 0 (Read w8 7 arg00))
+         (Eq 37 (Read w8 1 arg02))
+         (Eq 37 (Read w8 0 arg02))
+         (Eq 10 (Read w8 0 stdin))
+         (Eq 10 (Read w8 1 stdin))
+         (Eq 10 (Read w8 2 stdin))
+         (Eq 10 (Read w8 3 stdin))
+         (Eq 10 (Read w8 4 stdin))
+         (Eq 10 (Read w8 5 stdin))
+         (Eq false
+             (Eq 10 (Read w8 6 stdin)))
+         (Eq 10 (Read w8 7 stdin))
+         (Eq false (Eq 47 N3))
+         (Eq 47 (Read w8 3 arg00))
+         (Eq 47 (Read w8 4 arg00))
+         (Eq 1 (Read w8 5 arg00))
+         (Eq 47 (Read w8 6 arg00))
+         (Or N4:(Eq 71 N3)
+             (Or N5:(Eq 70 N3)
+                 (Or N6:(Eq 69 N3)
+                     (Or N7:(Eq 68 N3)
+                         (Or N8:(Eq 67 N3)
+                             (Or N9:(Eq 66 N3)
+                                 (Or N10:(Eq 65 N3)
+                                     (Or N11:(Eq 79 N3)
+                                         (Or N12:(Eq 78 N3)
+                                             (Or N13:(Eq 77 N3)
+                                                 (Or N14:(Eq 76 N3)
+                                                     (Or N15:(Eq 75 N3)
+                                                         (Or N16:(Eq 74 N3)
+                                                             (Or N17:(Eq 73 N3)
+                                                                 (Or N18:(Eq 72 N3)
+                                                                     (Or N19:(Eq 87 N3)
+                                                                         (Or N20:(Eq 86 N3)
+                                                                             (Or N21:(Eq 85 N3)
+                                                                                 (Or N22:(Eq 84 N3)
+                                                                                     (Or N23:(Eq 83 N3)
+                                                                                         (Or N24:(Eq 82 N3)
+                                                                                             (Or N25:(Eq 81 N3)
+                                                                                                 (Or N26:(Eq 80 N3)
+                                                                                                     (Or N27:(Eq 95 N3)
+                                                                                                         (Or N28:(Eq 93 N3)
+                                                                                                             (Or N29:(Eq 90 N3)
+                                                                                                                 (Or N30:(Eq 89 N3)
+                                                                                                                     (Or N31:(Eq 88 N3)
+                                                                                                                         (Or N32:(Eq 103 N3)
+                                                                                                                             (Or N33:(Eq 102 N3)
+                                                                                                                                 (Or N34:(Eq 101 N3)
+                                                                                                                                     (Or N35:(Eq 100 N3)
+                                                                                                                                         (Or N36:(Eq 99 N3)
+                                                                                                                                             (Or N37:(Eq 98 N3)
+                                                                                                                                                 (Or N38:(Eq 97 N3)
+                                                                                                                                                     (Or N39:(Eq 111 N3)
+                                                                                                                                                         (Or N40:(Eq 110 N3)
+                                                                                                                                                             (Or N41:(Eq 109 N3)
+                                                                                                                                                                 (Or N42:(Eq 108 N3)
+                                                                                                                                                                     (Or N43:(Eq 107 N3)
+                                                                                                                                                                         (Or N44:(Eq 106 N3)
+                                                                                                                                                                             (Or N45:(Eq 105 N3)
+                                                                                                                                                                                 (Or N46:(Eq 104 N3)
+                                                                                                                                                                                     (Or N47:(Eq 119 N3)
+                                                                                                                                                                                         (Or N48:(Eq 118 N3)
+                                                                                                                                                                                             (Or N49:(Eq 117 N3)
+                                                                                                                                                                                                 (Or N50:(Eq 116 N3)
+                                                                                                                                                                                                     (Or N51:(Eq 115 N3)
+                                                                                                                                                                                                         (Or N52:(Eq 114 N3)
+                                                                                                                                                                                                             (Or N53:(Eq 113 N3)
+                                                                                                                                                                                                                 (Or N54:(Eq 112 N3)
+                                                                                                                                                                                                                     (Or N55:(Eq 122 N3)
+                                                                                                                                                                                                                         (Or N56:(Eq 121 N3)
+                                                                                                                                                                                                                             (Or N57:(Eq 120 N3)
+                                                                                                                                                                                                                                 (Or N58:(Eq 37 N3)
+                                                                                                                                                                                                                                     (Or N59:(Eq 46 N3)
+                                                                                                                                                                                                                                         (Or N60:(Eq 45 N3)
+                                                                                                                                                                                                                                             (Or N61:(Eq 44 N3)
+                                                                                                                                                                                                                                                 (Or N62:(Eq 43 N3)
+                                                                                                                                                                                                                                                     (Or N63:(Eq 55 N3)
+                                                                                                                                                                                                                                                         (Or N64:(Eq 54 N3)
+                                                                                                                                                                                                                                                             (Or N65:(Eq 53 N3)
+                                                                                                                                                                                                                                                                 (Or N66:(Eq 52 N3)
+                                                                                                                                                                                                                                                                     (Or N67:(Eq 51 N3)
+                                                                                                                                                                                                                                                                         (Or N68:(Eq 50 N3)
+                                                                                                                                                                                                                                                                             (Or N69:(Eq 49 N3)
+                                                                                                                                                                                                                                                                                 (Or N70:(Eq 48 N3)
+                                                                                                                                                                                                                                                                                     (Or (Eq 58 N3)
+                                                                                                                                                                                                                                                                                         N71:(Or (Eq 57 N3) (Eq 56 N3))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+         (Eq 0
+             (And w32 (ReadLSB w32 N72:(Extract w32 0 (Add w64 8
+                                                               (Mul w64 4
+                                                                        (ZExt w64 (LShr w8 N3 5))))) const_arr10)
+                      (Shl w32 1
+                               (ZExt w32 (And w8 N3 31)))))
+         (Or N4
+             (Or N5
+                 (Or N6
+                     (Or N7
+                         (Or N8
+                             (Or N9
+                                 (Or N10
+                                     (Or N11
+                                         (Or N12
+                                             (Or N13
+                                                 (Or N14
+                                                     (Or N15
+                                                         (Or N16
+                                                             (Or N17
+                                                                 (Or N18
+                                                                     (Or N19
+                                                                         (Or N20
+                                                                             (Or N21
+                                                                                 (Or N22
+                                                                                     (Or N23
+                                                                                         (Or N24
+                                                                                             (Or N25
+                                                                                                 (Or N26
+                                                                                                     (Or N27
+                                                                                                         (Or N28
+                                                                                                             (Or N29
+                                                                                                                 (Or N30
+                                                                                                                     (Or N31
+                                                                                                                         (Or N32
+                                                                                                                             (Or N33
+                                                                                                                                 (Or N34
+                                                                                                                                     (Or N35
+                                                                                                                                         (Or N36
+                                                                                                                                             (Or N37
+                                                                                                                                                 (Or N38
+                                                                                                                                                     (Or N39
+                                                                                                                                                         (Or N40
+                                                                                                                                                             (Or N41
+                                                                                                                                                                 (Or N42
+                                                                                                                                                                     (Or N43
+                                                                                                                                                                         (Or N44
+                                                                                                                                                                             (Or N45
+                                                                                                                                                                                 (Or N46
+                                                                                                                                                                                     (Or N47
+                                                                                                                                                                                         (Or N48
+                                                                                                                                                                                             (Or N49
+                                                                                                                                                                                                 (Or N50
+                                                                                                                                                                                                     (Or N51
+                                                                                                                                                                                                         (Or N52
+                                                                                                                                                                                                             (Or N53
+                                                                                                                                                                                                                 (Or N54
+                                                                                                                                                                                                                     (Or N55
+                                                                                                                                                                                                                         (Or N56
+                                                                                                                                                                                                                             (Or N57
+                                                                                                                                                                                                                                 (Or N58
+                                                                                                                                                                                                                                     (Or N59
+                                                                                                                                                                                                                                         (Or N60
+                                                                                                                                                                                                                                             (Or N61
+                                                                                                                                                                                                                                                 (Or N62
+                                                                                                                                                                                                                                                     (Or N63
+                                                                                                                                                                                                                                                         (Or N64
+                                                                                                                                                                                                                                                             (Or N65
+                                                                                                                                                                                                                                                                 (Or N66
+                                                                                                                                                                                                                                                                     (Or N67
+                                                                                                                                                                                                                                                                         (Or N68
+                                                                                                                                                                                                                                                                             (Or N69 (Or N70 N71)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))]
+        false)

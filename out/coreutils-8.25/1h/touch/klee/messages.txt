@@ -1,0 +1,12 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 13.873662
+
+KLEE: increased time budget from 13.873662 to 27.133285
+
+KLEE: ERROR: (location information missing) Query timed out (resolve).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 27.133285 to 30.238683
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

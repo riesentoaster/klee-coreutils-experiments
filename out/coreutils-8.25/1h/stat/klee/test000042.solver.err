@@ -1,0 +1,18 @@
+Error: Query timed out (fork).
+File: libc/misc/time/time.c
+Line: 2188
+assembly.ll line: 23649
+State: 2738
+Stack: 
+	#000023649 in _time_t2tm(94535301434608, 4294967289, 94535293860096) at libc/misc/time/time.c:2188
+	#100022685 in __time_localtime_tzi(94535296233616, 94535293860096, 94535293860224) at libc/misc/time/time.c:763
+	#200015568 in localtime_r(94535296233616, 94535293860096) at libc/misc/time/time.c:609
+	#300015548 in localtime(94535296233616) at libc/misc/time/time.c:592
+	#400008360 in human_time(t.coerce0=symbolic, t.coerce1=12370169555311111083)
+	#500005810 in print_stat(pformat=94535296824128, prefix_len=1, m=120, fd=0, filename=94535293919184, data=94535255292672)
+	#600005971 in print_it(format=94535296822112, fd=0, filename=94535293919184, print_func=94535293911064, data=94535255292672)
+	#700005546 in do_stat(filename=94535293919184, format=94535252231808, format2=94535296822112)
+	#800005294 in __klee_posix_wrapped_main(argc=2, argv=94535295208800)
+	#900003476 in __user_main(argcPtr=15, argvPtr=94535251936912, envp=94535251937040) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#1000000830 in __uClibc_main(15, 94535251936912) at libc/misc/internals/__uClibc_main.c:401
+	#1100000996 in main(15, 94535251936912)

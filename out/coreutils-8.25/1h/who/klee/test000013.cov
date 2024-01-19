@@ -1,0 +1,9 @@
+klee_src/runtime/POSIX/fd.c:928
+klee_src/runtime/POSIX/fd.c:929
+:0
+libc/termios/ttyname.c:73
+libc/termios/ttyname.c:124
+libc/termios/ttyname.c:125
+libc/termios/ttyname.c:127
+libc/termios/ttyname.c:128
+libc/termios/ttyname.c:135

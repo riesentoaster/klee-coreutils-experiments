@@ -1,0 +1,10 @@
+:0
+klee_src/runtime/POSIX/fd.c:321
+klee_src/runtime/POSIX/fd.c:322
+libc/stdio/fclose.c:14
+libc/stdio/fclose.c:31
+libc/stdio/fclose.c:36
+libc/stdio/fclose.c:57
+libc/stdio/fclose.c:58
+libc/stdio/fileno.c:22
+libc/stdio/fileno.c:23
