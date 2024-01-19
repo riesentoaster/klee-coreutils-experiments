@@ -1,9 +1,0 @@
-Error: illegal instruction
-Stack: 
-	#000005784 in cut_fields(stream=94069368403584)
-	#100005569 in cut_stream(stream=94069368403584)
-	#200005406 in cut_file(file=94069381174392)
-	#300004789 in __klee_posix_wrapped_main(argc=3, argv=94069382607456)
-	#400002892 in __user_main(argcPtr=15, argvPtr=94069344224672, envp=94069344224800) at klee_src/runtime/POSIX/klee_init_env.c:245
-	#500000602 in __uClibc_main(15, 94069344224672) at libc/misc/internals/__uClibc_main.c:401
-	#600000768 in main(15, 94069344224672)

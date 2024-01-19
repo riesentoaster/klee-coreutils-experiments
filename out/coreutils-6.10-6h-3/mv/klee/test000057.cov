@@ -1,6 +1,0 @@
-:0
-klee_src/runtime/POSIX/fd.c:590
-klee_src/runtime/POSIX/stubs.c:0
-klee_src/runtime/POSIX/stubs.c:143
-klee_src/runtime/POSIX/stubs.c:144
-klee_src/runtime/POSIX/stubs.c:145

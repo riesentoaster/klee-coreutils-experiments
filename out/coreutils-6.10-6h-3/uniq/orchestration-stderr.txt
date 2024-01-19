@@ -1,1 +1,0 @@
-docker: Error response from daemon: failed to create endpoint silly_nobel on network bridge: failed to save bridge endpoint c1bc1f2 to store: failed to update bridge store for object type *bridge.bridgeEndpoint: timeout.

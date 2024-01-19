@@ -1,8 +1,0 @@
-File '../../src/hostname.c'
-Lines executed:96.15% of 26
-Creating 'hostname.c.gcov'
-
-File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
-Lines executed:100.00% of 2
-Creating 'stdio2.h.gcov'
-

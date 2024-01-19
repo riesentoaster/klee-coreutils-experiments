@@ -1,7 +1,0 @@
-:0
-libc/stdio/fopen.c:18
-libc/stdio/fopen.c:20
-libc/stdio/_fopen.c:102
-libc/stdio/_fopen.c:105
-libc/stdio/_fopen.c:107
-libc/stdio/_fopen.c:114

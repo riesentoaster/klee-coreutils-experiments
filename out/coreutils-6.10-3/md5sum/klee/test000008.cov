@@ -1,7 +1,0 @@
-:0
-libc/stdio/_vfprintf.c:1899
-libc/stdio/_vfprintf.c:1900
-libc/stdio/_vfprintf.c:1904
-libc/stdio/_vfprintf.c:1908
-libc/stdio/_vfprintf.c:1909
-libc/stdio/getdelim.c:68

@@ -1,9 +1,0 @@
-:0
-libc/stdio/fclose.c:29
-libc/stdio/fclose.c:30
-libc/stdio/fclose.c:92
-libc/stdio/fclose.c:101
-libc/stdio/fflush.c:106
-libc/stdio/fflush.c:107
-libc/stdio/fflush.c:108
-libc/stdio/fflush.c:118

@@ -1,7 +1,0 @@
-:0
-libc/stdio/fwrite.c:23
-libc/stdio/fwrite.c:24
-libc/unistd/getopt.c:572
-libc/unistd/getopt.c:573
-libc/unistd/getopt.c:574
-libc/unistd/getopt.c:575

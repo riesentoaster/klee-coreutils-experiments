@@ -1,8 +1,0 @@
-File '../../src/env.c'
-Lines executed:92.86% of 42
-Creating 'env.c.gcov'
-
-File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
-Lines executed:100.00% of 2
-Creating 'stdio2.h.gcov'
-

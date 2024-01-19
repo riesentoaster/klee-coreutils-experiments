@@ -1,8 +1,0 @@
-:0
-klee_src/runtime/POSIX/fd.c:187
-klee_src/runtime/POSIX/fd.c:188
-klee_src/runtime/POSIX/fd.c:321
-klee_src/runtime/POSIX/fd.c:322
-libc/stdio/fclose.c:14
-libc/stdio/fclose.c:57
-libc/stdio/fclose.c:58

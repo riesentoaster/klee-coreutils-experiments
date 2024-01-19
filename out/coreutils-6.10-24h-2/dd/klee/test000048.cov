@@ -1,5 +1,0 @@
-:0
-klee_src/runtime/POSIX/fd.c:204
-klee_src/runtime/POSIX/fd.c:205
-libc/stdio/_fpmaxtostr.c:486
-libc/stdio/_fpmaxtostr.c:487

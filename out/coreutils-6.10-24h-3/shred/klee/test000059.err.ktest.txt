@@ -1,1 +1,0 @@
-ERROR: file ./out/klee/test000059.ktest not found
