@@ -1,0 +1,13 @@
+klee_src/runtime/POSIX/fd.c:0
+klee_src/runtime/POSIX/fd.c:1088
+:0
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:164
+libc/stdio/sprintf.c:18
+libc/stdio/sprintf.c:20
+libc/stdio/sprintf.c:21
+libc/stdio/sprintf.c:23
+libc/stdio/sprintf.c:24
+libc/unistd/getopt.c:453
+libc/stdio/vsnprintf.c:53
+libc/stdio/vsnprintf.c:54

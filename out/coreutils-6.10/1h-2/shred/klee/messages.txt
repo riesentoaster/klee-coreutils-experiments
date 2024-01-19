@@ -1,0 +1,24 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: (location information missing) illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.520463
+
+KLEE: ERROR: (location information missing) Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.520463 to 6.628662
+
+KLEE: increased time budget from 6.628662 to 9.854911
+
+KLEE: increased time budget from 9.854911 to 19.899106
+
+KLEE: increased time budget from 19.899106 to 31.252306
+
+KLEE: ERROR: (location information missing) Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 31.252306 to 61.930359
+
+KLEE: ERROR: (location information missing) concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

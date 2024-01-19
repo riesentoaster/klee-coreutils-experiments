@@ -1,0 +1,14 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 5.908280
+
+KLEE: increased time budget from 5.908280 to 7.657145
+
+KLEE: increased time budget from 7.657145 to 9.632833
+
+KLEE: increased time budget from 9.632833 to 13.358886
+
+KLEE: ERROR: (location information missing) illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

@@ -1,0 +1,17 @@
+:0
+libc/stdio/fclose.c:31
+libc/stdio/fclose.c:36
+libc/stdio/freopen.c:16
+libc/stdio/freopen.c:17
+libc/stdio/freopen.c:32
+libc/stdio/freopen.c:33
+libc/stdio/freopen.c:44
+libc/stdio/freopen.c:46
+libc/stdio/freopen.c:49
+libc/stdio/freopen.c:50
+libc/stdio/freopen.c:52
+libc/stdio/freopen.c:59
+libc/stdio/freopen.c:61
+libc/stdio/_fopen.c:51
+libc/stdio/_fopen.c:52
+libc/stdio/_fopen.c:65

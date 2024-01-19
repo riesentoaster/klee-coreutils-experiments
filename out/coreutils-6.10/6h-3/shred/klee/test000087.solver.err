@@ -1,0 +1,15 @@
+Error: Query timed out (fork).
+File: klee_src/runtime/POSIX/fd.c
+Line: 489
+assembly.ll line: 1657
+State: 112204
+Stack: 
+	#000001657 in __fd_lseek(fd=4, offset=0, whence=0) at klee_src/runtime/POSIX/fd.c:489
+	#100002357 in lseek(fd=4, off=0, whence=0) at klee_src/runtime/POSIX/fd_32.c:96
+	#200006136 in dopass(fd=4, qname=94808025220600, sizep=94808134010040, type=273, s=94808019203584, k=2, n=0)
+	#300005591 in do_wipefd(fd=4, qname=94808025220600, s=94808020930752, flags=94807992890944)
+	#400005388 in wipefile(name=94807992566992, qname=94808025220600, s=94808020930752, flags=94807992890944)
+	#500005017 in __klee_posix_wrapped_main(argc=3, argv=94807992658560)
+	#600003151 in __user_main(argcPtr=15, argvPtr=94807958140544, envp=94807958140672) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000610 in __uClibc_main(15, 94807958140544) at libc/misc/internals/__uClibc_main.c:401
+	#800000776 in main(15, 94807958140544)

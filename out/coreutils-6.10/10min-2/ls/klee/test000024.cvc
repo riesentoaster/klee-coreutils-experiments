@@ -1,0 +1,733 @@
+n_args0  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+n_args_11  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+A_data_stat2  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+stdin_stat3  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+stdout_stat4  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+arg005  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+arg016  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+arg027  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+arg008  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+const_arr19  : ARRAY BITVECTOR(32) OF BITVECTOR(8);
+%----------------------------------------------------
+ASSERT( BVGT(0x00000002,(n_args0[0x00000003] @ (n_args0[0x00000002] @ (n_args0[0x00000001] @ n_args0[0x00000000]
+)
+)
+))
+ );
+ASSERT( SBVGT((n_args0[0x00000003] @ (n_args0[0x00000002] @ (n_args0[0x00000001] @ n_args0[0x00000000]
+)
+)
+),0x00000000)
+ );
+ASSERT( BVGT(0x00000003,(n_args_11[0x00000003] @ (n_args_11[0x00000002] @ (n_args_11[0x00000001] @ n_args_11[0x00000000]
+)
+)
+))
+ );
+ASSERT( ( NOT( SBVGT((n_args_11[0x00000003] @ (n_args_11[0x00000002] @ (n_args_11[0x00000001] @ n_args_11[0x00000000]
+)
+)
+),0x00000000)
+)) );
+ASSERT( ( NOT( (0b0000000000000000000000000000000 = (A_data_stat2[0x0000000B] @ (A_data_stat2[0x0000000A] @ (A_data_stat2[0x00000009] @ A_data_stat2[0x00000008]
+)
+)
+)[30:0]
+))) );
+ASSERT( BVGT(0x0000000000010000,(A_data_stat2[0x0000003F] @ (A_data_stat2[0x0000003E] @ (A_data_stat2[0x0000003D] @ (A_data_stat2[0x0000003C] @ (A_data_stat2[0x0000003B] @ (A_data_stat2[0x0000003A] @ (A_data_stat2[0x00000039] @ A_data_stat2[0x00000038]
+)
+)
+)
+)
+)
+)
+))
+ );
+ASSERT( ( NOT( (0b0000000000000000000000000000000 = (stdin_stat3[0x0000000B] @ (stdin_stat3[0x0000000A] @ (stdin_stat3[0x00000009] @ stdin_stat3[0x00000008]
+)
+)
+)[30:0]
+))) );
+ASSERT( BVGT(0x0000000000010000,(stdin_stat3[0x0000003F] @ (stdin_stat3[0x0000003E] @ (stdin_stat3[0x0000003D] @ (stdin_stat3[0x0000003C] @ (stdin_stat3[0x0000003B] @ (stdin_stat3[0x0000003A] @ (stdin_stat3[0x00000039] @ stdin_stat3[0x00000038]
+)
+)
+)
+)
+)
+)
+))
+ );
+ASSERT( ( NOT( (0b0000000000000000000000000000000 = (stdout_stat4[0x0000000B] @ (stdout_stat4[0x0000000A] @ (stdout_stat4[0x00000009] @ stdout_stat4[0x00000008]
+)
+)
+)[30:0]
+))) );
+ASSERT( BVGT(0x0000000000010000,(stdout_stat4[0x0000003F] @ (stdout_stat4[0x0000003E] @ (stdout_stat4[0x0000003D] @ (stdout_stat4[0x0000003C] @ (stdout_stat4[0x0000003B] @ (stdout_stat4[0x0000003A] @ (stdout_stat4[0x00000039] @ stdout_stat4[0x00000038]
+)
+)
+)
+)
+)
+)
+))
+ );
+ASSERT( ( NOT( (0x2 = stdout_stat4[0x00000019][7:4]
+))) );
+ASSERT( (0x2D = arg005[0x00000000]
+) );
+ASSERT( (0x2D = arg005[0x00000001]
+) );
+ASSERT( (0x3D = arg005[0x00000003]
+) );
+ASSERT( (0x77 = arg005[0x00000002]
+) );
+ASSERT( ( NOT( (0x00 = arg005[0x00000005]
+))) );
+ASSERT( ( NOT( (0x00 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x00 = arg005[0x00000007]
+))) );
+ASSERT( ( NOT( (0x00 = arg005[0x00000008]
+))) );
+ASSERT( ( NOT( (0x00 = arg005[0x00000009]
+))) );
+ASSERT( (0x2D = arg005[0x00000004]
+) );
+ASSERT( (LET let_k_0 = arg005[0x00000005] IN 
+((0x47 = let_k_0
+) OR ((0x46 = let_k_0
+) OR ((0x45 = let_k_0
+) OR ((0x44 = let_k_0
+) OR ((0x43 = let_k_0
+) OR ((0x42 = let_k_0
+) OR ((0x41 = let_k_0
+) OR ((0x4F = let_k_0
+) OR ((0x4E = let_k_0
+) OR ((0x4D = let_k_0
+) OR ((0x4C = let_k_0
+) OR ((0x4B = let_k_0
+) OR ((0x4A = let_k_0
+) OR ((0x49 = let_k_0
+) OR ((0x48 = let_k_0
+) OR ((0x57 = let_k_0
+) OR ((0x56 = let_k_0
+) OR ((0x55 = let_k_0
+) OR ((0x54 = let_k_0
+) OR ((0x53 = let_k_0
+) OR ((0x52 = let_k_0
+) OR ((0x51 = let_k_0
+) OR ((0x50 = let_k_0
+) OR ((0x5F = let_k_0
+) OR ((0x5D = let_k_0
+) OR ((0x5A = let_k_0
+) OR ((0x59 = let_k_0
+) OR ((0x58 = let_k_0
+) OR ((0x67 = let_k_0
+) OR ((0x66 = let_k_0
+) OR ((0x65 = let_k_0
+) OR ((0x64 = let_k_0
+) OR ((0x63 = let_k_0
+) OR ((0x62 = let_k_0
+) OR ((0x61 = let_k_0
+) OR ((0x6F = let_k_0
+) OR ((0x6E = let_k_0
+) OR ((0x6D = let_k_0
+) OR ((0x6C = let_k_0
+) OR ((0x6B = let_k_0
+) OR ((0x6A = let_k_0
+) OR ((0x69 = let_k_0
+) OR ((0x68 = let_k_0
+) OR ((0x77 = let_k_0
+) OR ((0x76 = let_k_0
+) OR ((0x75 = let_k_0
+) OR ((0x74 = let_k_0
+) OR ((0x73 = let_k_0
+) OR ((0x72 = let_k_0
+) OR ((0x71 = let_k_0
+) OR ((0x70 = let_k_0
+) OR ((0x7A = let_k_0
+) OR ((0x79 = let_k_0
+) OR ((0x78 = let_k_0
+) OR ((0x25 = let_k_0
+) OR ((0x2F = let_k_0
+) OR ((0x2E = let_k_0
+) OR ((0x2D = let_k_0
+) OR ((0x2C = let_k_0
+) OR ((0x2B = let_k_0
+) OR ((0x37 = let_k_0
+) OR ((0x36 = let_k_0
+) OR ((0x35 = let_k_0
+) OR ((0x34 = let_k_0
+) OR ((0x33 = let_k_0
+) OR ((0x32 = let_k_0
+) OR ((0x31 = let_k_0
+) OR ((0x30 = let_k_0
+) OR ((0x3A = let_k_0
+) OR ((0x39 = let_k_0
+) OR (0x38 = let_k_0
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+))  );
+ASSERT( ( NOT( (0x38 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x39 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x3F = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x30 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x31 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x32 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x33 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x34 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x35 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x36 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x37 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x28 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x29 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x2F = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x20 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x21 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x22 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x23 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x24 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x25 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x26 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x27 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x08 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x09 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x0A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x0B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x0C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x0D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x07 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x78 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x79 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x7A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x7B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x7C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x7D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x7E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x70 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x71 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x72 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x73 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x74 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x75 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x76 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x77 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x68 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x69 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x6F = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x60 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x61 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x62 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x63 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x64 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x65 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x66 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x67 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x58 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x59 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x5F = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x50 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x51 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x52 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x53 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x54 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x55 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x56 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x57 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x48 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x49 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4A = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4B = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4C = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4D = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4E = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x4F = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x41 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x42 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x43 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x44 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x45 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x46 = arg005[0x00000006]
+))) );
+ASSERT( ( NOT( (0x47 = arg005[0x00000006]
+))) );
+ASSERT( (LET let_k_0 = arg005[0x00000007] IN 
+((0x47 = let_k_0
+) OR ((0x46 = let_k_0
+) OR ((0x45 = let_k_0
+) OR ((0x44 = let_k_0
+) OR ((0x43 = let_k_0
+) OR ((0x42 = let_k_0
+) OR ((0x41 = let_k_0
+) OR ((0x4F = let_k_0
+) OR ((0x4E = let_k_0
+) OR ((0x4D = let_k_0
+) OR ((0x4C = let_k_0
+) OR ((0x4B = let_k_0
+) OR ((0x4A = let_k_0
+) OR ((0x49 = let_k_0
+) OR ((0x48 = let_k_0
+) OR ((0x57 = let_k_0
+) OR ((0x56 = let_k_0
+) OR ((0x55 = let_k_0
+) OR ((0x54 = let_k_0
+) OR ((0x53 = let_k_0
+) OR ((0x52 = let_k_0
+) OR ((0x51 = let_k_0
+) OR ((0x50 = let_k_0
+) OR ((0x5F = let_k_0
+) OR ((0x5D = let_k_0
+) OR ((0x5A = let_k_0
+) OR ((0x59 = let_k_0
+) OR ((0x58 = let_k_0
+) OR ((0x67 = let_k_0
+) OR ((0x66 = let_k_0
+) OR ((0x65 = let_k_0
+) OR ((0x64 = let_k_0
+) OR ((0x63 = let_k_0
+) OR ((0x62 = let_k_0
+) OR ((0x61 = let_k_0
+) OR ((0x6F = let_k_0
+) OR ((0x6E = let_k_0
+) OR ((0x6D = let_k_0
+) OR ((0x6C = let_k_0
+) OR ((0x6B = let_k_0
+) OR ((0x6A = let_k_0
+) OR ((0x69 = let_k_0
+) OR ((0x68 = let_k_0
+) OR ((0x77 = let_k_0
+) OR ((0x76 = let_k_0
+) OR ((0x75 = let_k_0
+) OR ((0x74 = let_k_0
+) OR ((0x73 = let_k_0
+) OR ((0x72 = let_k_0
+) OR ((0x71 = let_k_0
+) OR ((0x70 = let_k_0
+) OR ((0x7A = let_k_0
+) OR ((0x79 = let_k_0
+) OR ((0x78 = let_k_0
+) OR ((0x25 = let_k_0
+) OR ((0x2F = let_k_0
+) OR ((0x2E = let_k_0
+) OR ((0x2D = let_k_0
+) OR ((0x2C = let_k_0
+) OR ((0x2B = let_k_0
+) OR ((0x37 = let_k_0
+) OR ((0x36 = let_k_0
+) OR ((0x35 = let_k_0
+) OR ((0x34 = let_k_0
+) OR ((0x33 = let_k_0
+) OR ((0x32 = let_k_0
+) OR ((0x31 = let_k_0
+) OR ((0x30 = let_k_0
+) OR ((0x3A = let_k_0
+) OR ((0x39 = let_k_0
+) OR (0x38 = let_k_0
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+))  );
+ASSERT( (LET let_k_0 = arg005[0x00000008] IN 
+((0x47 = let_k_0
+) OR ((0x46 = let_k_0
+) OR ((0x45 = let_k_0
+) OR ((0x44 = let_k_0
+) OR ((0x43 = let_k_0
+) OR ((0x42 = let_k_0
+) OR ((0x41 = let_k_0
+) OR ((0x4F = let_k_0
+) OR ((0x4E = let_k_0
+) OR ((0x4D = let_k_0
+) OR ((0x4C = let_k_0
+) OR ((0x4B = let_k_0
+) OR ((0x4A = let_k_0
+) OR ((0x49 = let_k_0
+) OR ((0x48 = let_k_0
+) OR ((0x57 = let_k_0
+) OR ((0x56 = let_k_0
+) OR ((0x55 = let_k_0
+) OR ((0x54 = let_k_0
+) OR ((0x53 = let_k_0
+) OR ((0x52 = let_k_0
+) OR ((0x51 = let_k_0
+) OR ((0x50 = let_k_0
+) OR ((0x5F = let_k_0
+) OR ((0x5D = let_k_0
+) OR ((0x5A = let_k_0
+) OR ((0x59 = let_k_0
+) OR ((0x58 = let_k_0
+) OR ((0x67 = let_k_0
+) OR ((0x66 = let_k_0
+) OR ((0x65 = let_k_0
+) OR ((0x64 = let_k_0
+) OR ((0x63 = let_k_0
+) OR ((0x62 = let_k_0
+) OR ((0x61 = let_k_0
+) OR ((0x6F = let_k_0
+) OR ((0x6E = let_k_0
+) OR ((0x6D = let_k_0
+) OR ((0x6C = let_k_0
+) OR ((0x6B = let_k_0
+) OR ((0x6A = let_k_0
+) OR ((0x69 = let_k_0
+) OR ((0x68 = let_k_0
+) OR ((0x77 = let_k_0
+) OR ((0x76 = let_k_0
+) OR ((0x75 = let_k_0
+) OR ((0x74 = let_k_0
+) OR ((0x73 = let_k_0
+) OR ((0x72 = let_k_0
+) OR ((0x71 = let_k_0
+) OR ((0x70 = let_k_0
+) OR ((0x7A = let_k_0
+) OR ((0x79 = let_k_0
+) OR ((0x78 = let_k_0
+) OR ((0x25 = let_k_0
+) OR ((0x2F = let_k_0
+) OR ((0x2E = let_k_0
+) OR ((0x2D = let_k_0
+) OR ((0x2C = let_k_0
+) OR ((0x2B = let_k_0
+) OR ((0x37 = let_k_0
+) OR ((0x36 = let_k_0
+) OR ((0x35 = let_k_0
+) OR ((0x34 = let_k_0
+) OR ((0x33 = let_k_0
+) OR ((0x32 = let_k_0
+) OR ((0x31 = let_k_0
+) OR ((0x30 = let_k_0
+) OR ((0x3A = let_k_0
+) OR ((0x39 = let_k_0
+) OR (0x38 = let_k_0
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+))  );
+ASSERT( (LET let_k_0 = arg005[0x00000009] IN 
+((0x7E = let_k_0
+) OR (0x23 = let_k_0
+)
+))  );
+%----------------------------------------------------
+QUERY( FALSE  );

@@ -1,0 +1,16 @@
+File '../../src/fmt.c'
+Lines executed:86.09% of 302
+Creating 'fmt.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:0.00% of 1
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:50.00% of 2
+Creating 'stdio2.h.gcov'
+

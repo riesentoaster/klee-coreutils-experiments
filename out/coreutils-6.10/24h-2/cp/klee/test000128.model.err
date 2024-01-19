@@ -1,0 +1,53 @@
+Error: concretized symbolic size
+Stack: 
+	#000007167 in xmalloc(n=symbolic)
+	#100010552 in copy_reg(src_name=94425630984048, dst_name=94425924223920, x=94425631955904, dst_mode=symbolic, omitted_permissions=symbolic, new_dst=94426461630448, src_sb=94426365517552)
+	#200008674 in copy_internal(src_name=94425630984048, dst_name=94425924223920, new_dst=false, device=0, ancestors=0, x=94425631955904, command_line_arg=true, copy_into_self=94426450359984)
+	#300006970 in copy(src_name=94425630984048, dst_name=94425924223920, nonexistent_dst=false, options=94425631955904, copy_into_self=94426450359984)
+	#400006463 in do_copy(n_files=1, file=94425632057200, target_directory=94425631892276, no_target_directory=false, x=94425631955904)
+	#500006064 in __klee_posix_wrapped_main(argc=3, argv=94425632057184)
+	#600004028 in __user_main(argcPtr=15, argvPtr=94425589103888, envp=94425589104016) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000743 in __uClibc_main(15, 94425589103888) at libc/misc/internals/__uClibc_main.c:401
+	#800000909 in main(15, 94425589103888)
+Info: 
+  size expr: (Add w64 4103
+                       (Select w64 (Or (Eq 1
+                                           N0:(Sub w64 N1:(Add w64 N2:(Extract w64 0 (Mul w128 4096
+                                                                                               (ZExt w128 (UDiv w64 (Select w64 (And (Slt 0
+                                                                                                                                          N3:(Concat w64 (Read w8 (Extract w32 0 (Add w64 18446649648095240815
+                                                                                                                                                                                          N4:(ReadLSB w64 N5:(Extract w32 0 (Add w64 18446649648077493584
+                                                                                                                                                                                                                                     (Select w64 (Eq 0
+                                                                                                                                                                                                                                                     (ReadLSB w64 8 A_data_stat))
+                                                                                                                                                                                                                                                 0
+                                                                                                                                                                                                                                                 94425632058048))) const_arr13)))
+                                                                                                                                                                  U0:[N6:(Add w32 3
+                                                                                                                                                                                  N7:(Extract w32 0 (Add w64 18446649648095240776 N4)))=(Extract w8 24 N8:(And w32 (ReadLSB w32 N7 U1:[71=0, 70=0, 69=0, 68=0, 67=0, 66=0, 65=0, 64=8, 55=0, 54=0, 53=0, 52=0, 51=0, 50=0, 49=0, 48=8] @ A_data_stat)
+                                                                                                                                                                                                                                                                   4294966784)),
+                                                                                                                                                                      N9:(Add w32 2 N7)=(Extract w8 16 N8),
+                                                                                                                                                                      N10:(Add w32 1 N7)=(Extract w8 8 N8),
+                                                                                                                                                                      N7=(Extract w8 0 N8)] @ U1)
+                                                                                                                                                         (Concat w56 (Read w8 (Extract w32 0 (Add w64 18446649648095240814 N4))
+                                                                                                                                                                              U0)
+                                                                                                                                                                     (Concat w48 (Read w8 (Extract w32 0 (Add w64 18446649648095240813 N4))
+                                                                                                                                                                                          U0)
+                                                                                                                                                                                 (Concat w40 (Read w8 (Extract w32 0 (Add w64 18446649648095240812 N4))
+                                                                                                                                                                                                      U0)
+                                                                                                                                                                                             (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649648095240811 N4))
+                                                                                                                                                                                                                  U0)
+                                                                                                                                                                                                         (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649648095240810 N4))
+                                                                                                                                                                                                                              U0)
+                                                                                                                                                                                                                     (Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649648095240809 N4))
+                                                                                                                                                                                                                                          U0)
+                                                                                                                                                                                                                                 (Read w8 (Extract w32 0 (Add w64 18446649648095240808 N4))
+                                                                                                                                                                                                                                          U0)))))))))
+                                                                                                                                     (Ult N3 2305843009213693953))
+                                                                                                                                N3
+                                                                                                                                512)
+                                                                                                                    4096))))
+                                                                   (Select w64 (Ult 8192 N2) N2 8192))
+                                                       (URem w64 (Add w64 18446744073709551615 N1) N2)))
+                                       (Ult 9223372036854771704 N11:(Add w64 18446744073709551615 N0)))
+                                   N2
+                                   N11))
+  concretization : 12295
+  unbound example: 16391

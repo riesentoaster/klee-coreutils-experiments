@@ -1,0 +1,164 @@
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ python[K[K[K[K[K[K(reverse-i-search)`': [Kp': python3 ./run-suite.[7mp[27my --max-threads 50  out/coreutils-6.10-2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@y': python3 ./run-suite.[7mpy[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@t': [7mpyt[27mhon3 ./run-suite.py[1@h': [7mpyth[27m[1@o': [7mpytho[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C35 --env KLEE_MAX_TIME_MIN 1440 out/coreutils-6.10-24h-2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ python3 ./run-suite.py --max-threads 35 --env KLEE_MAX_TIME_MIN 1440 out/coreutils-6.10-24h-2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1@5[1@0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.28kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/klee/klee:latest
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:14.04
+#4 DONE 1.0s
+
+#5 [klee-coreutils-base 1/4] FROM docker.io/library/ubuntu:14.04@sha256:64483f3496c1373bfd55348e88694d1c4d0c9b660dee6bfef5e12f43b9933b30
+#5 DONE 0.0s
+
+#6 [exec 1/4] FROM docker.io/klee/klee
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 50B done
+#7 DONE 0.0s
+
+#8 [klee-coreutils-llvm 2/8] RUN pip3 install --upgrade -v "wllvm==1.1.5"
+#8 CACHED
+
+#9 [klee-coreutils-llvm 1/8] RUN apt-get install -y     clang     llvm     python3-pip
+#9 CACHED
+
+#10 [klee-coreutils-llvm 8/8] RUN find . -executable -type f | xargs -I '{}' extract-bc '{}'
+#10 CACHED
+
+#11 [klee-coreutils-base 4/4] RUN sed -i     's/^#define INPUT_FILE_SIZE_GUESS (1024 \* 1024)$/#define INPUT_FILE_SIZE_GUESS 1024/g'     coreutils/src/sort.c
+#11 CACHED
+
+#12 [klee-coreutils-base 3/4] RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-6.10.tar.gz"     && tar -xf "coreutils-6.10.tar.gz"     && mv "coreutils-6.10" coreutils
+#12 CACHED
+
+#13 [klee-coreutils-llvm 6/8] RUN make -C src arch hostname
+#13 CACHED
+
+#14 [klee-coreutils-llvm 4/8] RUN ../configure     --build x86_64-pc-linux-gnu     --disable-nls     LLVM_COMPILER=clang     CC=wllvm     CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__"
+#14 CACHED
+
+#15 [klee-coreutils-llvm 7/8] WORKDIR /coreutils/obj-llvm/src
+#15 CACHED
+
+#16 [klee-coreutils-llvm 5/8] RUN make
+#16 CACHED
+
+#17 [klee-coreutils-base 2/4] RUN apt-get update     && apt-get install -y     wget     build-essential
+#17 CACHED
+
+#18 [exec 3/4] COPY --from=klee-coreutils-llvm --chown=klee /coreutils/ ./coreutils-llvm/
+#18 CACHED
+
+#19 [exec 2/4] RUN wget "http://www.doc.ic.ac.uk/~cristic/klee/testing-env.sh"     && env -i /bin/bash -c '(source testing-env.sh; env >test.env)'     && wget "http://www.doc.ic.ac.uk/~cristic/klee/sandbox.tgz"     && tar xzfv sandbox.tgz     && mv sandbox.tgz /tmp     && mv sandbox /tmp
+#19 CACHED
+
+#20 [klee-coreutils-llvm 3/8] WORKDIR /coreutils/obj-llvm
+#20 CACHED
+
+#21 [exec 4/4] COPY run-and-analyze-with-klee.sh ./
+#21 CACHED
+
+#22 exporting to image
+#22 exporting layers done
+#22 writing image sha256:ec8daa92326d723d00bb4b13ec185e724adb49578f996c3eb7651f289da30dee done
+#22 naming to docker.io/library/klee-coreutils 0.0s done
+#22 DONE 0.0s
+--- running command: docker run --rm -it -e UTIL=base64 -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/base64:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=cat -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/cat:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=basename -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/basename:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=chcon -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/chcon:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=chgrp -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/chgrp:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=chmod -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/chmod:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=chown -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/chown:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=chroot -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/chroot:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=cksum -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/cksum:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=csplit -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/csplit:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=cp -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/cp:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=comm -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/comm:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=cut -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/cut:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=date -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/date:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=df -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/df:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=dd -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/dd:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=dircolors -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/dircolors:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=dirname -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/dirname:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=du -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/du:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=echo -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/echo:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=env -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/env:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=expr -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/expr:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=factor -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/factor:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=expand -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/expand:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=false -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/false:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=fmt -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/fmt:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=fold -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/fold:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=head -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/head:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=hostname -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/hostname:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=hostid -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/hostid:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=id -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/id:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=ginstall -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/ginstall:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=join -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/join:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=kill -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/kill:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=ln -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/ln:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=link -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/link:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=logname -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/logname:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=ls -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/ls:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=md5sum -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/md5sum:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=mkdir -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/mkdir:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=mkfifo -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/mkfifo:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=mknod -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/mknod:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=mktemp -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/mktemp:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=mv -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/mv:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=nl -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/nl:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=nice -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/nice:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=od -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/od:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=nohup -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/nohup:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=pathchk -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/pathchk:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=paste -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/paste:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=pinky -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/pinky:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=pr -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/pr:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=printenv -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/printenv:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=printf -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/printf:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=ptx -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/ptx:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=pwd -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/pwd:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=readlink -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/readlink:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=rm -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/rm:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=rmdir -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/rmdir:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=runcon -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/runcon:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=seq -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/seq:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=setuidgid -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/setuidgid:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=shred -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/shred:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=shuf -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/shuf:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=sleep -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/sleep:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=sort -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/sort:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=split -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/split:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=stat -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/stat:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=stty -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/stty:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=sum -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/sum:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=sync -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/sync:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tac -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tac:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tail -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tail:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tee -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tee:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=touch -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/touch:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tr -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tr:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tsort -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tsort:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=tty -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/tty:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=uname -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/uname:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=unexpand -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/unexpand:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=uniq -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/uniq:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=unlink -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/unlink:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=uptime -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/uptime:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=users -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/users:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=wc -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/wc:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=whoami -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/whoami:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=who -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/who:/home/klee/out klee-coreutils
+--- running command: docker run --rm -it -e UTIL=yes -e KLEE_MAX_TIME_MIN=1440 -v /home/ubuntu/klee-coreutils-experiments/out/coreutils-6.10-24h-2/yes:/home/klee/out klee-coreutils
+All tasks completed.
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ 

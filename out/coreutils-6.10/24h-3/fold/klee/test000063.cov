@@ -1,0 +1,11 @@
+:0
+libc/stdio/putchar.c:16
+libc/stdio/putchar.c:18
+libc/stdio/putchar.c:20
+libc/string/memmove.c:17
+libc/string/memmove.c:37
+libc/string/memmove.c:38
+libc/string/memmove.c:40
+libc/string/memmove.c:41
+libc/string/memmove.c:45
+libc/string/memmove.c:52

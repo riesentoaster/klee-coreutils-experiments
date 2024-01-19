@@ -1,0 +1,44 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin[8] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Eq false (Slt 0 N0))
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 12 (Read w8 0 stdin))
+         (Eq 10 (Read w8 1 stdin))
+         (Eq 12 (Read w8 2 stdin))
+         (Eq 10 (Read w8 3 stdin))
+         (Eq 10 (Read w8 4 stdin))
+         (Eq false
+             (Eq 12 N2:(Read w8 5 stdin)))
+         (Eq false (Eq 10 N2))
+         (Or N3:(Eq 9
+                    (Extract w8 0 (ZExt w32 N2)))
+             N3)
+         (Eq 10 (Read w8 6 stdin))
+         (Eq 12 (Read w8 7 stdin))]
+        false)

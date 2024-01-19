@@ -1,0 +1,12 @@
+File '../../src/yes.c'
+Lines executed:65.22% of 23
+Creating 'yes.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:0.00% of 1
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

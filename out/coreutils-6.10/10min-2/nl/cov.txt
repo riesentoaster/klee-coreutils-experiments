@@ -1,0 +1,16 @@
+File '../../src/nl.c'
+Lines executed:81.38% of 188
+Creating 'nl.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:80.00% of 5
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

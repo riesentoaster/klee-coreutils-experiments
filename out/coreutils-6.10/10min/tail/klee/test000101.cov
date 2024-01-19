@@ -1,0 +1,8 @@
+:0
+klee_src/runtime/POSIX/stubs.c:0
+klee_src/runtime/POSIX/stubs.c:155
+klee_src/runtime/POSIX/stubs.c:157
+klee_src/runtime/POSIX/stubs.c:158
+klee_src/runtime/POSIX/stubs.c:159
+klee_src/runtime/POSIX/stubs.c:160
+klee_src/runtime/POSIX/stubs.c:161

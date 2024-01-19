@@ -1,0 +1,120 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq false
+             (Eq 45 (Read w8 0 arg01)))
+         (Eq false
+             (Eq 45 (Read w8 0 arg02)))
+         (Eq 58 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0
+                 N2:(Select w64 (Eq 0 (Read w8 1 arg00))
+                                0
+                                94682434449569)))
+         (Eq 43
+             (Read w8 (Extract w32 0 (Add w64 18446649391275102048 N2))
+                      U0:[10=0] @ arg00))
+         (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                               (SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102049 N2))
+                                                                  U0)))))
+              9)
+         (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                               (SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102050 N2))
+                                                                  U0)))))
+              9)
+         (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                               (SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102051 N2))
+                                                                  U0)))))
+              9)
+         (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                               (SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102052 N2))
+                                                                  U0)))))
+              9)
+         (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                               (SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102053 N2))
+                                                                  U0)))))
+              9)
+         (Eq false
+             (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248
+                                                   N3:(SExt w32 (Read w8 (Extract w32 0 (Add w64 18446649391275102054 N2))
+                                                                         U0)))))
+                  9))
+         (Sle 65 N3)
+         (Sle 10
+              (ZExt w32 (Extract w8 0 (Add w32 4294967209 (Or w32 N3 32)))))
+         (Eq false
+             (Eq 0
+                 (Read w8 (Extract w32 0 (Add w64 18446649391275102055 N2))
+                          U0)))
+         (Eq false
+             (Eq 0
+                 (Read w8 (Extract w32 0 (Add w64 18446649391275102056 N2))
+                          U0)))
+         (Or (Eq 55 N4:(Read w8 2 arg00))
+             (Or (Eq 54 N4)
+                 (Or (Eq 53 N4)
+                     (Or (Eq 52 N4)
+                         (Or (Eq 51 N4)
+                             (Or (Eq 50 N4)
+                                 (Or (Eq 49 N4)
+                                     (Or (Eq 48 N4)
+                                         (Or (Eq 57 N4) (Eq 56 N4))))))))))
+         (Or (Eq 55 N5:(Read w8 3 arg00))
+             (Or (Eq 54 N5)
+                 (Or (Eq 53 N5)
+                     (Or (Eq 52 N5)
+                         (Or (Eq 51 N5)
+                             (Or (Eq 50 N5)
+                                 (Or (Eq 49 N5)
+                                     (Or (Eq 48 N5)
+                                         (Or (Eq 57 N5) (Eq 56 N5))))))))))
+         (Or (Eq 55 N6:(Read w8 4 arg00))
+             (Or (Eq 54 N6)
+                 (Or (Eq 53 N6)
+                     (Or (Eq 52 N6)
+                         (Or (Eq 51 N6)
+                             (Or (Eq 50 N6)
+                                 (Or (Eq 49 N6)
+                                     (Or (Eq 48 N6)
+                                         (Or (Eq 57 N6) (Eq 56 N6))))))))))
+         (Or (Eq 55 N7:(Read w8 5 arg00))
+             (Or (Eq 54 N7)
+                 (Or (Eq 53 N7)
+                     (Or (Eq 52 N7)
+                         (Or (Eq 51 N7)
+                             (Or (Eq 50 N7)
+                                 (Or (Eq 49 N7)
+                                     (Or (Eq 48 N7)
+                                         (Or (Eq 57 N7) (Eq 56 N7))))))))))]
+        false)

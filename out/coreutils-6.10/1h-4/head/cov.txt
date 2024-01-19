@@ -1,0 +1,24 @@
+File '../../src/head.c'
+Lines executed:64.59% of 353
+Creating 'head.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:100.00% of 1
+Creating 'fcntl2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:100.00% of 1
+Creating 'stat.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:0.00% of 1
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../../lib/xalloc.h'
+Lines executed:75.00% of 4
+Creating 'xalloc.h.gcov'
+

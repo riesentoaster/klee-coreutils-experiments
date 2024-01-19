@@ -1,0 +1,16 @@
+:0
+libc/string/strerror.c:15
+libc/string/strerror.c:19
+libc/string/__xpg_strerror_r.c:165
+libc/string/__xpg_strerror_r.c:167
+libc/string/__xpg_strerror_r.c:168
+libc/string/__xpg_strerror_r.c:169
+libc/string/__xpg_strerror_r.c:174
+libc/string/__xpg_strerror_r.c:194
+libc/string/__xpg_strerror_r.c:197
+libc/string/__xpg_strerror_r.c:202
+libc/string/__xpg_strerror_r.c:203
+libc/string/__xpg_strerror_r.c:204
+libc/string/__xpg_strerror_r.c:205
+libc/string/__xpg_strerror_r.c:206
+libc/misc/error/error.c:61

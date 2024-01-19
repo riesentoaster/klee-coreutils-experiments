@@ -1,0 +1,15 @@
+Error: Query timed out (fork).
+Stack: 
+	#000012783 in re_acquire_state(err=94317419202552, dfa=94317168137376, nodes=94317419970432)
+	#100013774 in add_epsilon_src_nodes(dfa=94317168137376, dest_nodes=94317419970432, candidates=symbolic)
+	#200013235 in update_cur_sifted_state(mctx=94317209182464, sctx=94317419756352, str_idx=3, dest_nodes=94317419970432)
+	#300012461 in sift_states_backward(mctx=94317209182464, sctx=94317419756352)
+	#400010785 in prune_impossible_nodes(mctx=94317209182464)
+	#500009180 in re_search_internal(preg=94317203825704, string=94317208506368, length=8, last_start=8, stop=8, nmatch=2, pmatch=94317207488064, eflags=0)
+	#600008593 in re_search_stub(bufp=94317203825704, string=94317208506368, length=8, range=8, stop=8, regs=94317204082528, ret_len=false)
+	#700020175 in rpl_re_search(bufp=94317203825704, string=94317208506368, length=8, range=8, regs=94317204082528)
+	#800006027 in find_occurs_in_text()
+	#900005095 in __klee_posix_wrapped_main(argc=1, argv=94317205259088)
+	#1000003033 in __user_main(argcPtr=15, argvPtr=94317166122864, envp=94317166122992) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#1100000743 in __uClibc_main(15, 94317166122864) at libc/misc/internals/__uClibc_main.c:401
+	#1200000909 in main(15, 94317166122864)

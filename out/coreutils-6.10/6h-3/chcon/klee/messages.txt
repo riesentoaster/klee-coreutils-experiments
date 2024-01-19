@@ -1,0 +1,4 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: libc/misc/dirent/opendir.c:74: concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location

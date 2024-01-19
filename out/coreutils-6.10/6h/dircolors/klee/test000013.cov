@@ -1,0 +1,9 @@
+libc/unistd/getopt.c:549
+libc/unistd/getopt.c:811
+libc/unistd/getopt.c:812
+libc/unistd/getopt.c:815
+libc/unistd/getopt.c:816
+libc/unistd/getopt.c:818
+libc/unistd/getopt.c:1085
+libc/unistd/getopt.c:1152
+libc/string/strchr.c:22

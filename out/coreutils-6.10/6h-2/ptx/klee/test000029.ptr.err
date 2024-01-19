@@ -1,0 +1,11 @@
+Error: memory error: out of bound pointer
+Stack: 
+	#000005329 in copy_unescaped_string(string=94165582216162)
+	#100004830 in __klee_posix_wrapped_main(argc=2, argv=94165583256704)
+	#200003033 in __user_main(argcPtr=15, argvPtr=94165543827312, envp=94165543827440) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000743 in __uClibc_main(15, 94165543827312) at libc/misc/internals/__uClibc_main.c:401
+	#400000909 in main(15, 94165543827312)
+Info: 
+	address: 94165622183474
+	next: object at 94165541047808 of size 418
+		MO526[418] allocated at global:.str6

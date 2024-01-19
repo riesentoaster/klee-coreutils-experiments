@@ -1,0 +1,260 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array const_arr2226[232] : w32 -> w8 = [64 213 171 235 21 86 0 0 5 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 176 77 12 198 21 86 0 0 0 0 0 0 0 0 0 0 128 65 12 2 22 86 0 0 128 94 12 2 22 86 0 0 0 0 0 0 0 0 0 0 0 105 28 212 21 86 0 0 144 230 215 209 21 86 0 0 192 207 195 248 21 86 0 0 80 207 193 238 21 86 0 0 128 177 70 242 21 86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 0 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 0 0 0 1 0 0 0 0 0 0 0 0 0 255 3 254 255 255 135 254 255 255 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array const_arr2227[32] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array const_arr8[768] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 3 32 2 32 2 32 2 32 2 32 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 1 96 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 4 192 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 8 216 4 192 4 192 4 192 4 192 4 192 4 192 4 192 8 213 8 213 8 213 8 213 8 213 8 213 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 8 197 4 192 4 192 4 192 4 192 4 192 4 192 8 214 8 214 8 214 8 214 8 214 8 214 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 8 198 4 192 4 192 4 192 4 192 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin[8] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 98
+             (Extract w8 0 (SExt w32 N2)))
+         (Eq false
+             (Eq 0 N3:(Read w8 2 arg00)))
+         (Eq 114
+             (Extract w8 0 (SExt w32 N3)))
+         (Eq false
+             (Eq 0 N4:(Read w8 3 arg00)))
+         (Eq 98
+             (Extract w8 0 (SExt w32 N4)))
+         (Eq false
+             (Eq 0 N5:(Read w8 4 arg00)))
+         (Eq 114
+             (Extract w8 0 (SExt w32 N5)))
+         (Eq false
+             (Eq 0 N6:(Read w8 5 arg00)))
+         (Eq 115
+             (Extract w8 0 (SExt w32 N6)))
+         (Eq false
+             (Eq 0 N7:(Read w8 9 arg00)))
+         (Eq 92 (Read w8 6 arg00))
+         (Eq 62 (Read w8 7 arg00))
+         (Eq 92 (Read w8 8 arg00))
+         (Eq false (Eq 56 N7))
+         (Eq false (Eq 57 N7))
+         (Eq false (Eq 60 N7))
+         (Eq false (Eq 62 N7))
+         (Eq false (Eq 63 N7))
+         (Eq false (Eq 49 N7))
+         (Eq false (Eq 50 N7))
+         (Eq false (Eq 51 N7))
+         (Eq false (Eq 52 N7))
+         (Eq false (Eq 53 N7))
+         (Eq false (Eq 54 N7))
+         (Eq false (Eq 55 N7))
+         (Eq false (Eq 40 N7))
+         (Eq false (Eq 41 N7))
+         (Eq false (Eq 43 N7))
+         (Eq false (Eq 39 N7))
+         (Eq false (Eq 123 N7))
+         (Eq false (Eq 124 N7))
+         (Eq false (Eq 125 N7))
+         (Eq false (Eq 115 N7))
+         (Eq false (Eq 119 N7))
+         (Eq false (Eq 96 N7))
+         (Eq false (Eq 98 N7))
+         (Eq false (Eq 83 N7))
+         (Eq false (Eq 87 N7))
+         (Eq false (Eq 66 N7))
+         (Eq false
+             (Eq 8192
+                 (And w32 (ReadLSB w32 24 stdin_stat)
+                          61440)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 N8:(Extract w32 0 (Add w64 184
+                                                                  (Mul w64 8
+                                                                           (LShr w64 N9:(ZExt w64 (Read w8 6 stdin))
+                                                                                     6)))) const_arr2226)
+                          (Shl w64 1 (And w64 N9 63)))))
+         (Eq 0
+             (And w32 (Or w32 (Or w32 (And w32 (Or w32 (And w32 (And w32 N10:(Or w32 (And w32 (And w32 N11:(And w32 (Or w32 (Select w32 (Or (Eq false
+                                                                                                                                                (Eq 0
+                                                                                                                                                    (And w16 (ReadLSB w16 N12:(Extract w32 0 (Add w64 256
+                                                                                                                                                                                                      (Mul w64 2 N13:(ZExt w64 N7)))) const_arr8)
+                                                                                                                                                             8)))
+                                                                                                                                            (Eq 95 N7))
+                                                                                                                                        4194304
+                                                                                                                                        0)
+                                                                                                                            2878057217)
+                                                                                                                    4294180863)
+                                                                                                       4294705407)
+                                                                                              4293918719)
+                                                                                     (Select w32 (Eq 6 (And w32 N11 255))
+                                                                                                 1048576
+                                                                                                 0))
+                                                                         4294705407)
+                                                                4293918719)
+                                                       (Select w32 (Eq 6 (And w32 N10 255))
+                                                                   1048576
+                                                                   0))
+                                               4294705407)
+                                      2304)
+                              262144)
+                      4194304))
+         (Eq 0
+             (And w64 (ReadLSB w64 0 U0:[N14:(Add w32 7
+                                                      N15:(Extract w32 0 (Mul w64 8 (LShr w64 N13 6))))=(Extract w8 56 N16:(Or w64 (ReadLSB w64 N15 const_arr2227)
+                                                                                                                                   (Shl w64 1 (And w64 N13 63)))),
+                                         N17:(Add w32 6 N15)=(Extract w8 48 N16),
+                                         N18:(Add w32 5 N15)=(Extract w8 40 N16),
+                                         N19:(Add w32 4 N15)=(Extract w8 32 N16),
+                                         N20:(Add w32 3 N15)=(Extract w8 24 N16),
+                                         N21:(Add w32 2 N15)=(Extract w8 16 N16),
+                                         N22:(Add w32 1 N15)=(Extract w8 8 N16),
+                                         N15=(Extract w8 0 N16)] @ const_arr2227)
+                      18158795172534550527))
+         (Eq 0
+             (And w64 (ReadLSB w64 8 U0)
+                      17870283327714361345))
+         (Eq 0
+             (ReadLSB w64 16 U0))
+         (Eq 0
+             (And w64 N23:(ReadLSB w64 24 U0)
+                      1))
+         (Eq 0
+             (And w64 N24:(LShr w64 N23 1) 1))
+         (Eq 0
+             (And w64 N25:(LShr w64 N24 1) 1))
+         (Eq 0
+             (And w64 N26:(LShr w64 N25 1) 1))
+         (Eq 0
+             (And w64 N27:(LShr w64 N26 1) 1))
+         (Eq 0
+             (And w64 N28:(LShr w64 N27 1) 1))
+         (Eq 0
+             (And w64 N29:(LShr w64 N28 1) 1))
+         (Eq 0
+             (And w64 N30:(LShr w64 N29 1) 1))
+         (Eq 0
+             (And w64 N31:(LShr w64 N30 1) 1))
+         (Eq 0
+             (And w64 N32:(LShr w64 N31 1) 1))
+         (Eq 0
+             (And w64 N33:(LShr w64 N32 1) 1))
+         (Eq 0
+             (And w64 N34:(LShr w64 N33 1) 1))
+         (Eq 0
+             (And w64 N35:(LShr w64 N34 1) 1))
+         (Eq 0
+             (And w64 N36:(LShr w64 N35 1) 1))
+         (Eq 0
+             (And w64 N37:(LShr w64 N36 1) 1))
+         (Eq 0
+             (And w64 N38:(LShr w64 N37 1) 1))
+         (Eq 0
+             (And w64 N39:(LShr w64 N38 1) 1))
+         (Eq 0
+             (And w64 N40:(LShr w64 N39 1) 1))
+         (Eq 0
+             (And w64 N41:(LShr w64 N40 1) 1))
+         (Eq 0
+             (And w64 N42:(LShr w64 N41 1) 1))
+         (Eq 0
+             (And w64 N43:(LShr w64 N42 1) 1))
+         (Eq 0
+             (And w64 N44:(LShr w64 N43 1) 1))
+         (Eq 0
+             (And w64 N45:(LShr w64 N44 1) 1))
+         (Eq 0
+             (And w64 N46:(LShr w64 N45 1) 1))
+         (Eq 0
+             (And w64 N47:(LShr w64 N46 1) 1))
+         (Eq 0
+             (And w64 N48:(LShr w64 N47 1) 1))
+         (Eq 0
+             (And w64 N49:(LShr w64 N48 1) 1))
+         (Eq 0
+             (And w64 N50:(LShr w64 N49 1) 1))
+         (Eq 0
+             (And w64 N51:(LShr w64 N50 1) 1))
+         (Eq 0
+             (And w64 N52:(LShr w64 N51 1) 1))
+         (Eq 0
+             (And w64 N53:(LShr w64 N52 1) 1))
+         (Eq 0
+             (And w64 N54:(LShr w64 N53 1) 1))
+         (Eq 0
+             (And w64 N55:(LShr w64 N54 1) 1))
+         (Eq 0
+             (And w64 N56:(LShr w64 N55 1) 1))
+         (Eq 0
+             (And w64 N57:(LShr w64 N56 1) 1))
+         (Eq 0
+             (And w64 N58:(LShr w64 N57 1) 1))
+         (Eq 0
+             (And w64 N59:(LShr w64 N58 1) 1))
+         (Eq 0
+             (And w64 N60:(LShr w64 N59 1) 1))
+         (Eq 0
+             (And w64 N61:(LShr w64 N60 1) 1))
+         (Eq 0
+             (And w64 N62:(LShr w64 N61 1) 1))
+         (Eq 0
+             (And w64 N63:(LShr w64 N62 1) 1))
+         (Eq 0
+             (And w64 N64:(LShr w64 N63 1) 1))
+         (Eq 0
+             (And w64 N65:(LShr w64 N64 1) 1))
+         (Eq 0
+             (And w64 N66:(LShr w64 N65 1) 1))
+         (Eq 0
+             (And w64 N67:(LShr w64 N66 1) 1))
+         (Eq 0
+             (And w64 N68:(LShr w64 N67 1) 1))
+         (Eq 0
+             (And w64 N69:(LShr w64 N68 1) 1))
+         (Eq 0
+             (And w64 N70:(LShr w64 N69 1) 1))
+         (Eq 0
+             (And w64 N71:(LShr w64 N70 1) 1))
+         (Eq 0
+             (And w64 N72:(LShr w64 N71 1) 1))
+         (Eq 0
+             (And w64 N73:(LShr w64 N72 1) 1))
+         (Eq 0
+             (And w64 N74:(LShr w64 N73 1) 1))
+         (Eq 0
+             (And w64 N75:(LShr w64 N74 1) 1))
+         (Eq 0
+             (And w64 N76:(LShr w64 N75 1) 1))
+         (Eq 0
+             (And w64 N77:(LShr w64 N76 1) 1))
+         (Eq 0
+             (And w64 N78:(LShr w64 N77 1) 1))
+         (Eq 0
+             (And w64 N79:(LShr w64 N78 1) 1))
+         (Eq 0
+             (And w64 N80:(LShr w64 N79 1) 1))
+         (Eq 0
+             (And w64 (LShr w64 N80 1) 1))]
+        false)

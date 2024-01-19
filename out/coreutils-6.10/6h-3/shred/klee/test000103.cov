@@ -1,0 +1,11 @@
+:0
+libc/stdio/_vfprintf.c:660
+libc/stdio/_vfprintf.c:661
+libc/stdio/_vfprintf.c:1033
+libc/stdio/_vfprintf.c:1034
+libc/stdio/_vfprintf.c:1037
+libc/stdio/_vfprintf.c:1540
+libc/stdio/_vfprintf.c:1543
+libc/stdio/_vfprintf.c:1546
+libc/stdio/_load_inttype.c:18
+libc/stdio/_load_inttype.c:22

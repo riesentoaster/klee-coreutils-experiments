@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+Stack: 
+	#000007323 in re_copy_regs(regs=94547734952192, pmatch=94547603878848, nregs=1, regs_allocated=1)
+	#100006420 in re_search_stub(string=94547809890305, length=8, start=7, range=18446744073709551609, stop=8, regs=94547734952192)
+	#200006313 in rpl_re_search(string=94547809890305, length=8, start=7, range=18446744073709551609, regs=94547734952192)
+	#300005219 in tac_seekable(input_fd=0, file=94547214156304)
+	#400005018 in tac_file(filename=94547214145448)
+	#500004860 in __klee_posix_wrapped_main(argc=4, argv=94547215346016)
+	#600003027 in __user_main(argcPtr=15, argvPtr=94547180054880, envp=94547180055008) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000663 in __uClibc_main(15, 94547180054880) at libc/misc/internals/__uClibc_main.c:401
+	#800000829 in main(15, 94547180054880)
+Info: 
+	address: 12370169555311111083
+	next: object at 94547174261504 of size 256
+		MO534[256] allocated at global:compiled_separator_fastmap
