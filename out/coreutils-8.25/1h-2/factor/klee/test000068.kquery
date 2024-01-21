@@ -1,0 +1,73 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq false
+             (Eq 45 (Read w8 0 arg02)))
+         (Eq 32 (Read w8 0 arg00))
+         (Eq 43 (Read w8 1 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 2 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N2))))
+         (Eq false
+             (Eq 0 N3:(Read w8 3 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N3))))
+         (Eq 0 (Read w8 4 arg00))
+         (Ult 9
+              N4:(Extract w64 0 N5:(Add w128 (ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N3))
+                                                                 4294967295))
+                                             (ZExt w128 N6:(Mul w64 10
+                                                                    N7:(Extract w64 0 N8:(ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N2))
+                                                                                                             4294967295))))))))
+         (Eq 0 (And w64 N4 1))
+         (Ult 6148914691236517205
+              (Mul w64 12297829382473034411
+                       N9:(Or w64 (Shl w64 (Extract w64 0 (Add w128 (ZExt w128 (Add w64 (Add w64 (Add w64 (LShr w64 N7 61) (LShr w64 N7 63))
+                                                                                                 (ZExt w64 (Ult N6 (Shl w64 N7 1))))
+                                                                                        (ZExt w64 (Ult 18446744073709551615 N5))))
+                                                                    (ZExt w128 (Mul w64 10
+                                                                                        (Extract w64 0 (ZExt w128 (ZExt w64 (Ult 18446744073709551615 N8))))))))
+                                           63)
+                                  (LShr w64 N4 1))))
+         (Ult 3689348814741910323 (Mul w64 14757395258967641293 N9))
+         (Eq false
+             (Ult 2635249153387078802 N10:(Mul w64 7905747460161236407 N9)))
+         (Eq false
+             (Ult 2635249153387078802 (Mul w64 7905747460161236407 N10)))
+         (Eq 43 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))]
+        false)

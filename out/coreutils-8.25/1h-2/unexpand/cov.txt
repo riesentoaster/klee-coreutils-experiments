@@ -1,0 +1,20 @@
+File '../src/unexpand.c'
+Lines executed:90.96% of 177
+Creating 'unexpand.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 3
+Creating 'stdio.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.44% of 18
+Creating 'system.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:70.00% of 10
+Creating 'xalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

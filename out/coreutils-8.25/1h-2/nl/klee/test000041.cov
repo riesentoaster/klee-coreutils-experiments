@@ -1,0 +1,4 @@
+:0
+libc/misc/error/error.c:65
+libc/misc/regex/regex_old.c:2647
+libc/misc/regex/regex_old.c:7977

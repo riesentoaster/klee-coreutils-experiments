@@ -1,0 +1,16 @@
+File '../src/chroot.c'
+Lines executed:64.83% of 145
+Creating 'chroot.c.gcov'
+
+File '../src/system.h'
+Lines executed:94.12% of 17
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:70.00% of 10
+Creating 'xalloc.h.gcov'
+

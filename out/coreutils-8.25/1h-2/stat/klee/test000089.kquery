@@ -1,0 +1,110 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[3] : w32 -> w8 = symbolic
+array const_arr2[24] : w32 -> w8 = [8 0 0 0 171 171 171 171 48 64 147 225 17 86 0 0 176 60 250 222 17 86 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Eq false (Slt 0 N0))
+         (Eq 1
+             (ReadLSB w32 0 n_args_1))
+         (Eq false
+             (Eq 0
+                 (And w64 N1:(ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 0 (Read w8 1 arg00))
+         (Eq 65 (Read w8 0 arg00))
+         (Or (Eq 24576
+                 N2:(And w16 N3:(Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649438954177385
+                                                                             N4:(ReadLSB w64 N5:(Extract w32 0 (Add w64 18446649438910615440
+                                                                                                                        (Select w64 (Eq 0 N1) 0 94634798936192))) const_arr2)))
+                                                     U0:[71=0, 70=0, 69=0, 68=0, 67=0, 66=0, 65=0, 64=8, 55=0, 54=0, 53=0, 52=0, 51=0, 50=0, 49=0, 48=8] @ A_data_stat)
+                                            (Read w8 (Extract w32 0 (Add w64 18446649438954177384 N4))
+                                                     U0))
+                             61440))
+             (Eq 8192 N2))
+         (Eq 1
+             (LShr w32 (Add w32 4294963200
+                                (And w32 (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649438954177387 N4))
+                                                              U0)
+                                                     (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649438954177386 N4))
+                                                                          U0)
+                                                                 N3))
+                                         61440))
+                       12))
+         (Eq 0
+             (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649438954177391 N4))
+                                  U0)
+                         (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649438954177390 N4))
+                                              U0)
+                                     (Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649438954177389 N4))
+                                                          U0)
+                                                 (Read w8 (Extract w32 0 (Add w64 18446649438954177388 N4))
+                                                          U0)))))
+         (Eq 0
+             (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649438954177395 N4))
+                                  U0)
+                         (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649438954177394 N4))
+                                              U0)
+                                     (Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649438954177393 N4))
+                                                          U0)
+                                                 (Read w8 (Extract w32 0 (Add w64 18446649438954177392 N4))
+                                                          U0)))))
+         (Slt 9223372036854171007
+              N6:(Concat w64 (Read w8 (Extract w32 0 (Add w64 18446649438954177439 N4))
+                                      U0)
+                             (Concat w56 (Read w8 (Extract w32 0 (Add w64 18446649438954177438 N4))
+                                                  U0)
+                                         (Concat w48 (Read w8 (Extract w32 0 (Add w64 18446649438954177437 N4))
+                                                              U0)
+                                                     (Concat w40 (Read w8 (Extract w32 0 (Add w64 18446649438954177436 N4))
+                                                                          U0)
+                                                                 (Concat w32 (Read w8 (Extract w32 0 (Add w64 18446649438954177435 N4))
+                                                                                      U0)
+                                                                             (Concat w24 (Read w8 (Extract w32 0 (Add w64 18446649438954177434 N4))
+                                                                                                  U0)
+                                                                                         (Concat w16 (Read w8 (Extract w32 0 (Add w64 18446649438954177433 N4))
+                                                                                                              U0)
+                                                                                                     (Read w8 (Extract w32 0 (Add w64 18446649438954177432 N4))
+                                                                                                              U0)))))))))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N7:(Extract w32 0 (Sub w64 N8:(SDiv w64 N9:(SDiv w64 (Add w64 18446744073708946816 N6) 60)
+                                                                                                      60)
+                                                                                         (Mul w64 24 (SDiv w64 N8 24))))
+                                                              31))
+                                      1))
+                          N7
+                          (Sub w32 0 N7)))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N10:(Extract w32 0 (Sub w64 N9 (Mul w64 60 N8)))
+                                                              31))
+                                      1))
+                          N10
+                          (Sub w32 0 N10)))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N11:(Extract w32 0 (Add w64 18446744073708946816
+                                                                                          (Sub w64 N6 (Mul w64 60 N9))))
+                                                              31))
+                                      1))
+                          N11
+                          (Sub w32 0 N11)))]
+        false)

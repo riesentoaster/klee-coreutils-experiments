@@ -1,0 +1,20 @@
+File '../src/users.c'
+Lines executed:70.00% of 50
+Creating 'users.c.gcov'
+
+File '../src/system.h'
+Lines executed:93.33% of 15
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:66.67% of 3
+Creating 'xalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:0.00% of 1
+Creating 'stdio.h.gcov'
+

@@ -1,0 +1,16 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 5.550700
+
+KLEE: increased time budget from 5.550700 to 6.692465
+
+KLEE: increased time budget from 6.692465 to 7.629387
+
+KLEE: increased time budget from 7.629387 to 9.963130
+
+KLEE: increased time budget from 9.963130 to 11.487221
+
+KLEE: increased time budget from 11.487221 to 14.004605
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

@@ -1,0 +1,20 @@
+File '../src/fold.c'
+Lines executed:82.29% of 96
+Creating 'fold.c.gcov'
+
+File '../src/system.h'
+Lines executed:88.89% of 18
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:66.67% of 3
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:0.00% of 1
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

@@ -1,0 +1,8 @@
+:0
+libc/stdio/asprintf.c:28
+libc/stdio/asprintf.c:29
+libc/stdio/asprintf.c:31
+libc/stdio/vasprintf.c:75
+libc/stdio/vasprintf.c:79
+libc/stdio/vasprintf.c:80
+libc/stdio/vasprintf.c:84

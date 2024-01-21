@@ -1,0 +1,80 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Eq false (Slt 0 N0))
+         (Eq 1
+             (ReadLSB w32 0 n_args_1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 0 (Read w8 1 arg00))
+         (Eq false
+             (Eq 8192
+                 N1:(And w16 N2:(ReadLSB w16 24 stdin_stat)
+                             61440)))
+         (Eq false (Eq 24576 N1))
+         (Eq false
+             (Eq 40960
+                 N3:(And w32 (ReadLSB w32 24 stdin_stat)
+                             61440)))
+         (Eq false
+             (Eq 0
+                 N4:(LShr w32 (Add w32 4294963200 N3) 12)))
+         (Eq false (Eq 1 N4))
+         (Eq false (Eq 3 N4))
+         (Eq false (Eq 5 N4))
+         (Eq false (Eq 7 N4))
+         (Eq false (Eq 9 N4))
+         (Eq false (Eq 11 N4))
+         (Eq 0
+             (ReadLSB w32 28 stdin_stat))
+         (Eq 0
+             (ReadLSB w32 32 stdin_stat))
+         (Slt 9223372036854171007
+              N5:(ReadLSB w64 72 stdin_stat))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N6:(Extract w32 0 (Sub w64 N7:(SDiv w64 N8:(SDiv w64 (Add w64 18446744073708946816 N5) 60)
+                                                                                                      60)
+                                                                                         (Mul w64 24 (SDiv w64 N7 24))))
+                                                              31))
+                                      1))
+                          N6
+                          (Sub w32 0 N6)))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N9:(Extract w32 0 (Sub w64 N8 (Mul w64 60 N7)))
+                                                              31))
+                                      1))
+                          N9
+                          (Sub w32 0 N9)))
+         (Ult 9
+              (Select w32 (Eq 0
+                              (And w8 (Extract w8 0 (LShr w32 N10:(Extract w32 0 (Add w64 18446744073708946816
+                                                                                          (Sub w64 N5 (Mul w64 60 N8))))
+                                                              31))
+                                      1))
+                          N10
+                          (Sub w32 0 N10)))]
+        false)

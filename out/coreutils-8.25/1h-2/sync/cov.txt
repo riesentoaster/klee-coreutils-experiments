@@ -1,0 +1,16 @@
+File '../src/sync.c'
+Lines executed:68.18% of 66
+Creating 'sync.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:100.00% of 1
+Creating 'fcntl2.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.33% of 15
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

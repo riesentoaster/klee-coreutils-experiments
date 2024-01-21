@@ -1,0 +1,10 @@
+:0
+libc/stdio/fwrite.c:23
+libc/stdio/fwrite.c:24
+libc/stdio/fwrite.c:27
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+libc/stdio/_fwrite.c:34
+libc/stdio/_fwrite.c:46
+libc/stdio/_fwrite.c:68
+libc/stdio/_fwrite.c:77

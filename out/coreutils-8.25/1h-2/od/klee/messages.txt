@@ -1,0 +1,18 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: libc/stdio/fflush.c:103: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.859269
+
+KLEE: increased time budget from 5.859269 to 6.753658
+
+KLEE: increased time budget from 6.753658 to 12.515877
+
+KLEE: ERROR: (location information missing) concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: libc/stdio/_vfprintf.c:572: Query timed out (resolve).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 12.515877 to 35.595878
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

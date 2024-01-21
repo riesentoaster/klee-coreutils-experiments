@@ -1,0 +1,104 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq false
+             (Eq 45 (Read w8 0 arg02)))
+         (Eq 32 (Read w8 0 arg00))
+         (Eq 43 (Read w8 1 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 2 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N2))))
+         (Eq false
+             (Eq 0 N3:(Read w8 3 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N3))))
+         (Eq false
+             (Eq 0 N4:(Read w8 4 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N4))))
+         (Eq false
+             (Eq 0 N5:(Read w8 5 arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (SExt w32 N5))))
+         (Eq 0 (Read w8 6 arg00))
+         (Ult 9
+              N6:(Extract w64 0 N7:(Add w128 (ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N5))
+                                                                 4294967295))
+                                             (ZExt w128 N8:(Mul w64 10
+                                                                    N9:(Extract w64 0 N10:(Add w128 (ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N4))
+                                                                                                                        4294967295))
+                                                                                                    (ZExt w128 N11:(Mul w64 10
+                                                                                                                            N12:(Extract w64 0 N13:(Add w128 (ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N3))
+                                                                                                                                                                                 4294967295))
+                                                                                                                                                             (ZExt w128 N14:(Mul w64 10
+                                                                                                                                                                                     N15:(Extract w64 0 N16:(ZExt w128 (And w64 (Add w64 4294967248 (SExt w64 N2))
+                                                                                                                                                                                                                                4294967295))))))))))))))))
+         (Ult 9 N17:(UDiv w64 N6 10))
+         (Ult 9 (UDiv w64 N17 10))
+         (Eq 0 (And w64 N6 1))
+         (Ult 6148914691236517205
+              (Mul w64 12297829382473034411
+                       N18:(Or w64 (Shl w64 (Extract w64 0 (Add w128 (ZExt w128 (Add w64 (Add w64 (Add w64 (LShr w64 N9 61) (LShr w64 N9 63))
+                                                                                                  (ZExt w64 (Ult N8 (Shl w64 N9 1))))
+                                                                                         (ZExt w64 (Ult 18446744073709551615 N7))))
+                                                                     (ZExt w128 (Mul w64 10
+                                                                                         (Extract w64 0 (Add w128 (ZExt w128 (Add w64 (Add w64 (Add w64 (LShr w64 N12 61) (LShr w64 N12 63))
+                                                                                                                                               (ZExt w64 (Ult N11 (Shl w64 N12 1))))
+                                                                                                                                      (ZExt w64 (Ult 18446744073709551615 N10))))
+                                                                                                                  (ZExt w128 (Mul w64 10
+                                                                                                                                      (Extract w64 0 (Add w128 (ZExt w128 (Add w64 (Add w64 (Add w64 (LShr w64 N15 61) (LShr w64 N15 63))
+                                                                                                                                                                                            (ZExt w64 (Ult N14 (Shl w64 N15 1))))
+                                                                                                                                                                                   (ZExt w64 (Ult 18446744073709551615 N13))))
+                                                                                                                                                               (ZExt w128 (Mul w64 10
+                                                                                                                                                                                   (Extract w64 0 (ZExt w128 (ZExt w64 (Ult 18446744073709551615 N16))))))))))))))))
+                                            61)
+                                   (LShr w64 N6 3))))
+         (Eq false
+             (Ult 3689348814741910323 N19:(Mul w64 14757395258967641293 N18)))
+         (Ult 3689348814741910323 (Mul w64 14757395258967641293 N19))
+         (Ult 2635249153387078802 (Mul w64 7905747460161236407 N19))
+         (Ult 1676976733973595601 (Mul w64 3353953467947191203 N19))
+         (Ult 1418980313362273201 (Mul w64 5675921253449092805 N19))
+         (Eq false
+             (Ult 1085102592571150095 N20:(Mul w64 17361641481138401521 N19)))
+         (Ult N20 5)
+         (Eq false (Eq 2 N20))
+         (Eq 43 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))]
+        false)

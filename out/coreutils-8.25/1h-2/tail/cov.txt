@@ -1,0 +1,36 @@
+File '../src/tail.c'
+Lines executed:56.30% of 810
+Creating 'tail.c.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:66.67% of 3
+Creating 'xalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:33.33% of 3
+Creating 'stat.h.gcov'
+
+File '../lib/stat-time.h'
+Lines executed:100.00% of 1
+Creating 'stat-time.h.gcov'
+
+File '../src/system.h'
+Lines executed:15.79% of 19
+Creating 'system.h.gcov'
+
+File '../lib/timespec.h'
+Lines executed:0.00% of 2
+Creating 'timespec.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:100.00% of 1
+Creating 'string3.h.gcov'
+
+File '../src/fs-is-local.h'
+Lines executed:2.27% of 88
+Creating 'fs-is-local.h.gcov'
+

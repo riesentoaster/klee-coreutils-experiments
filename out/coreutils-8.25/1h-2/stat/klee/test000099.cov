@@ -1,0 +1,8 @@
+:0
+libc/pwd_grp/pwd_grp.c:1136
+libc/pwd_grp/pwd_grp.c:1143
+libc/stdio/fgets.c:38
+libc/stdio/fgets.c:56
+libc/stdio/fgets.c:57
+libc/stdio/fgets.c:58
+libc/stdio/fgets.c:63

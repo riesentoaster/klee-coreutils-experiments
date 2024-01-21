@@ -1,0 +1,44 @@
+File '../src/ls.c'
+Lines executed:56.16% of 1494
+Creating 'ls.c.gcov'
+
+File '../src/system.h'
+Lines executed:78.26% of 23
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 3
+Creating 'stdio2.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:66.67% of 6
+Creating 'xalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 1
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:44.44% of 9
+Creating 'string3.h.gcov'
+
+File '../lib/stat-time.h'
+Lines executed:66.67% of 3
+Creating 'stat-time.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/sysmacros.h'
+Lines executed:0.00% of 2
+Creating 'sysmacros.h.gcov'
+
+File '../lib/timespec.h'
+Lines executed:100.00% of 2
+Creating 'timespec.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:66.67% of 3
+Creating 'stat.h.gcov'
+
+File 'lib/selinux/selinux.h'
+Lines executed:50.00% of 2
+Creating 'selinux.h.gcov'
+

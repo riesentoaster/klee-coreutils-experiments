@@ -1,0 +1,119 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 100
+             (Extract w8 0 (SExt w32 N2)))
+         (Eq false
+             (Eq 0 N3:(Read w8 2 arg00)))
+         (Ult N4:(Add w32 4294967287 (ZExt w32 N3))
+              24)
+         (Eq false
+             (Eq 0
+                 (And w24 (LShr w24 8388639 (Extract w24 0 N4))
+                          1)))
+         (Eq 84 (Read w8 3 arg00))
+         (Eq false
+             (Eq 90 N5:(Read w8 4 arg00)))
+         (Ult N6:(Add w32 4294967231 N7:(ZExt w32 N5))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N6))
+                              1)))
+             (Eq 46 N5))
+         (Ult N8:(Add w32 4294967231
+                          N9:(ZExt w32 N10:(Read w8 5 arg00)))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N8))
+                              1)))
+             (Eq 46 N10))
+         (Ult N11:(Add w32 4294967231
+                           N12:(ZExt w32 N13:(Read w8 6 arg00)))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N11))
+                              1)))
+             (Eq 46 N13))
+         (Ult N14:(Add w32 4294967231
+                           N15:(ZExt w32 N16:(Read w8 7 arg00)))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N14))
+                              1)))
+             (Eq 46 N16))
+         (Ult N17:(Add w32 4294967231
+                           N18:(ZExt w32 N19:(Read w8 8 arg00)))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N17))
+                              1)))
+             (Eq 46 N19))
+         (Ult N20:(Add w32 4294967231
+                           N21:(ZExt w32 N22:(Read w8 9 arg00)))
+              58)
+         (Or (Eq false
+                 (Eq 0
+                     (And w58 (LShr w58 288230371923853311 (ZExt w58 N20))
+                              1)))
+             (Eq 46 N22))
+         (Eq 85
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N7) 26)
+                                       (Add w32 4294967264 N7)
+                                       N7)))
+         (Eq 69
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N9) 26)
+                                       (Add w32 4294967264 N9)
+                                       N9)))
+         (Eq 83
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N12) 26)
+                                       (Add w32 4294967264 N12)
+                                       N12)))
+         (Eq 68
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N15) 26)
+                                       (Add w32 4294967264 N15)
+                                       N15)))
+         (Eq 65
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N18) 26)
+                                       (Add w32 4294967264 N18)
+                                       N18)))
+         (Eq 89
+             (Extract w8 0 (Select w32 (Ult (Add w32 4294967199 N21) 26)
+                                       (Add w32 4294967264 N21)
+                                       N21)))]
+        false)

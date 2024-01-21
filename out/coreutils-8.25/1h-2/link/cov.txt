@@ -1,0 +1,12 @@
+File '../src/link.c'
+Lines executed:100.00% of 26
+Creating 'link.c.gcov'
+
+File '../src/system.h'
+Lines executed:93.33% of 15
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

@@ -1,0 +1,16 @@
+File '../src/chgrp.c'
+Lines executed:96.59% of 88
+Creating 'chgrp.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/sys/stat.h'
+Lines executed:100.00% of 1
+Creating 'stat.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.33% of 15
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
