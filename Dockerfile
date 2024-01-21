@@ -2,12 +2,7 @@
 # base
 # ========================================
 
-ARG BASE_IMAGE=ubuntu:14.04
-ARG COREUTILS_VERSION=6.10
-ARG WLLVM_VERSION=1.1.5
-ARG CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__"
-
-FROM ${BASE_IMAGE} as klee-coreutils-base
+FROM ubuntu:14.04 as klee-coreutils-base
 
 # installing dependencies
 RUN apt-get update \
@@ -15,12 +10,10 @@ RUN apt-get update \
     wget \
     build-essential
 
-ARG COREUTILS_VERSION=6.10
-
 # downloading source code
-RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-${COREUTILS_VERSION}.tar.gz" \
-    && tar xf "coreutils-${COREUTILS_VERSION}.tar.gz" \
-    && mv "coreutils-${COREUTILS_VERSION}" coreutils
+RUN wget "http://ftp.gnu.org/gnu/coreutils/coreutils-6.10.tar.gz" \
+    && tar xf "coreutils-6.10.tar.gz" \
+    && mv "coreutils-6.10" coreutils
 
 # modifying source code according to the documentation of the original experiment
 RUN sed -i \
@@ -38,16 +31,14 @@ RUN apt-get install -y \
     llvm \
     python3-pip
 
-ARG WLLVM_VERSION=1.1.5
 # Newer versions do not work with python 3.4 (which is the most recent version
 # available through apt for ubuntu 14.04)
-RUN pip3 install --upgrade -v "wllvm==${WLLVM_VERSION}" 
+RUN pip3 install --upgrade -v "wllvm==1.1.5" 
 
 # The version using -O1 etc. proposed in the tutorial does not work for this version of llvm
 # and does not seem necessary either (since the most recent version of clang is based on LLVM 3.4)
 ENV LLVM_COMPILER clang
 ENV CC wllvm
-ARG CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__"
 
 # compiling code to llvm bytecode (.bc)
 WORKDIR /coreutils/obj-llvm
@@ -56,7 +47,7 @@ RUN ../configure \
     --disable-nls \
     LLVM_COMPILER=clang \
     CC=wllvm \
-    CFLAGS="${CFLAGS}" \
+    CFLAGS="-O0 -D__NO_STRING_INLINES -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__" \
     && make \
     && make -C src arch hostname
 
