@@ -118,7 +118,7 @@ def update_counter(util: str, state: State) -> str:
     with counter_lock:
         global states
         states[util] = state
-        return f"({list(states.values()).count(State.WATING)}, ({list(states.values()).count(State.STARTED)}, {list(states.values()).count(State.FINISHED_ANALYSIS)}, {list(states.values()).count(State.FINISHED_COVERAGE)})"
+        return f"({list(states.values()).count(State.WATING)}, {list(states.values()).count(State.STARTED)}, {list(states.values()).count(State.FINISHED_ANALYSIS)}, {list(states.values()).count(State.FINISHED_COVERAGE)})"
 
 
 def thread_safe_print(*args, **kwargs):
@@ -198,20 +198,31 @@ def run_klee_coreutils(image_name, util, env_vars):
 
 if __name__ == "__main__":
     # Parse command-line arguments
-    parser = argparse.ArgumentParser(
-        description="Run klee-coreutils for each coreutil from the original KLEE paper."
-    )
-    parser.add_argument("output_dir", help="Output directory")
+    parser = argparse.ArgumentParser(description="Run KLEE on coreutils.")
     parser.add_argument(
-        "--max-threads", type=int, help="Maximum number of threads", default=1
+        "output_dir",
+        help="Output directory",
     )
     parser.add_argument(
-        "--image-name", help="Name of the image built", default="klee-coreutils"
+        "--max-threads",
+        type=int,
+        help="Maximum number of threads",
+        default=1,
     )
     parser.add_argument(
-        "--dockerfile", help="Path of the dockerfile to use", default="Dockerfile"
+        "--image-name",
+        help='Name of the image built, defaults to "klee-coreutils(-[name of the passed dockerfile])',
     )
-    parser.add_argument("--util", action="append", help="Utils to test")
+    parser.add_argument(
+        "--dockerfile",
+        help="Path of the dockerfile to use",
+        default="Dockerfile",
+    )
+    parser.add_argument(
+        "--util",
+        action="append",
+        help="Utils to test",
+    )
     parser.add_argument(
         "--env",
         "-e",
@@ -232,7 +243,11 @@ if __name__ == "__main__":
 
     output_dir = args.output_dir
     image_name = args.image_name
-    dockerfile = args.dockerfile
+    dockerfile: str = args.dockerfile
+    if image_name is None:
+        image_name = "klee-coreutils"
+        if len(dockerfile) > len("Dockerfile"):
+            image_name = f"{image_name}-{dockerfile.replace('.Dockerfile', '')}"
 
     # Check if the output directory exists and is empty
     if (not args.force) and (
@@ -252,7 +267,9 @@ if __name__ == "__main__":
             exit(1)
 
     # Make sure the docker image is up to date
-    thread_safe_print("Building docker image")
+    thread_safe_print(
+        f"Building docker image from dockerfile {dockerfile} to image {image_name}[-cov]"
+    )
     process = subprocess.run(
         [
             "docker",
@@ -298,11 +315,10 @@ if __name__ == "__main__":
         )
         exit(1)
 
-    # Complete list of coreutils from the KLEE paper
-
     coreutils = all_coreutils
     if args.util is not None:
         coreutils = [e for e in args.util if e in all_coreutils]
+        states = {e: State.WATING for e in coreutils}
         thread_safe_print(f"Only running the following coreutils: {coreutils}")
 
     # Prepare environment variables
