@@ -1,0 +1,8 @@
+libc/stdlib/setenv.c:52
+libc/stdlib/setenv.c:69
+libc/stdlib/setenv.c:70
+libc/stdlib/setenv.c:73
+libc/stdlib/setenv.c:74
+libc/unistd/getopt.c:517
+libc/unistd/getopt.c:519
+libc/unistd/getopt.c:520

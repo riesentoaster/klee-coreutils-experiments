@@ -1,0 +1,4 @@
+:0
+libc/stdio/getdelim.c:68
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580

@@ -1,0 +1,20 @@
+File '../src/seq.c'
+Lines executed:83.01% of 259
+Creating 'seq.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 3
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:50.00% of 4
+Creating 'string3.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.12% of 17
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string2.h'
+Lines executed:100.00% of 3
+Creating 'string2.h.gcov'
+

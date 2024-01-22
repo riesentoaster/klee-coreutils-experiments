@@ -1,0 +1,16 @@
+Error: concretized symbolic size
+Stack: 
+	#000005546 in xmalloc(n=symbolic)
+	#100005074 in unexpand()
+	#200004763 in __klee_posix_wrapped_main(argc=4, argv=94480252058704)
+	#300002897 in __user_main(argcPtr=15, argvPtr=94480214033104, envp=94480214033232) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000597 in __uClibc_main(15, 94480214033104) at libc/misc/internals/__uClibc_main.c:401
+	#500000763 in main(15, 94480214033104)
+Info: 
+  size expr: (Select w64 (Ult N0:(Add w64 18446744073709551568
+                                           (SExt w64 (Read w8 4 arg00)))
+                               0)
+                          0
+                          N0)
+  concretization : 1
+  unbound example: 2

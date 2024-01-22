@@ -1,0 +1,20 @@
+File '../src/tac.c'
+Lines executed:66.52% of 230
+Creating 'tac.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string3.h'
+Lines executed:50.00% of 2
+Creating 'string3.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:100.00% of 1
+Creating 'fcntl2.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.12% of 17
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+

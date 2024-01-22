@@ -1,0 +1,16 @@
+File '../src/rmdir.c'
+Lines executed:82.26% of 62
+Creating 'rmdir.c.gcov'
+
+File '../src/system.h'
+Lines executed:40.00% of 35
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:0.00% of 1
+Creating 'fcntl2.h.gcov'
+

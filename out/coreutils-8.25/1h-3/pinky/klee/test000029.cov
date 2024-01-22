@@ -1,0 +1,11 @@
+:0
+libc/string/stpcpy.c:17
+libc/string/stpcpy.c:24
+libc/string/stpcpy.c:27
+libc/pwd_grp/pwd_grp_internal.c:78
+libc/pwd_grp/pwd_grp_internal.c:79
+libc/stdio/_fopen.c:58
+libc/stdio/_fopen.c:60
+libc/stdio/_fopen.c:61
+libc/stdio/_fopen.c:62
+libc/stdio/_fopen.c:148

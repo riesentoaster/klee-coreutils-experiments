@@ -1,0 +1,7 @@
+klee_src/runtime/POSIX/fd.c:0
+klee_src/runtime/POSIX/fd.c:44
+klee_src/runtime/POSIX/fd.c:1088
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:164
+:0
+libc/unistd/getopt.c:453

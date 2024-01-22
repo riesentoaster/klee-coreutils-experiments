@@ -1,0 +1,68 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult N2:(ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0
+                 (Read w8 (Extract w32 0 (Select w64 (Eq 99 N3:(Read w8 1 arg00))
+                                                     2
+                                                     1))
+                          [10=0] @ arg00)))
+         (Ult N4:(Add w32 4294967248 (SExt w32 N3))
+              10)
+         (Eq 98 (Read w8 2 arg00))
+         (Eq 0 (Read w8 4 arg00))
+         (Eq false (Eq 43 N3))
+         (Eq false (Eq 45 N3))
+         (Eq 102 (Read w8 3 arg00))
+         (Eq false
+             (Eq 8192
+                 (And w32 N5:(ReadLSB w32 24 stdin_stat)
+                          61440)))
+         (Slt 18446744073709551615
+              N6:(Select w64 (Ult 18446744073709551615
+                                  (Mul w128 512
+                                            (ZExt w128 N7:(ZExt w64 (Extract w8 0 N4)))))
+                             18446744073709551615
+                             (Mul w64 512 N7)))
+         (Eq 32768 (And w32 N5 53248))
+         (Slt (Select w64 (And (Slt 0 N2) (Ult N2 2305843009213693953))
+                          N2
+                          512)
+              8)
+         (Ult N6 8)
+         (Eq false
+             (Eq 4096
+                 N8:(And w16 N9:(ReadLSB w16 24 stdin_stat)
+                             61440)))
+         (Eq false (Eq 8192 N8))
+         (Eq false (Eq 32768 N8))
+         (Eq false (Eq 49152 N8))]
+        false)

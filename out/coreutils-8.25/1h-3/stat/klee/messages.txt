@@ -1,0 +1,24 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 6.344719
+
+KLEE: increased time budget from 6.344719 to 30.992407
+
+KLEE: increased time budget from 30.992407 to 35.195817
+
+KLEE: ERROR: (location information missing) Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: libc/misc/time/time.c:2234: Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 35.195817 to 38.765710
+
+KLEE: increased time budget from 38.765710 to 50.228307
+
+KLEE: ERROR: libc/misc/time/time.c:2182: Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: libc/misc/time/time.c:2188: Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 50.228307 to 57.330348
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

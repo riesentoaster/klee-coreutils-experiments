@@ -1,0 +1,5 @@
+:0
+klee_src/runtime/POSIX/klee_init_env.c:245
+klee_src/runtime/POSIX/fd.c:1194
+klee_src/runtime/POSIX/fd.c:1195
+libc/misc/internals/__uClibc_main.c:401
