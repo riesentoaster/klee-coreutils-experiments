@@ -1,0 +1,12 @@
+Error: illegal instruction
+File: ../src/shred.c
+Line: 816
+assembly.ll line: 5744
+State: 42
+Stack: 
+	#000005744 in do_wipefd(1, 94676781792816, 94676783308576, 94676783027392) at ../src/shred.c:816
+	#100005558 in wipefd(94676781792816, 94676783308576, 94676783027392) at ../src/shred.c:973
+	#200005239 in __klee_posix_wrapped_main(4, 94676782903664) at ../src/shred.c:1259
+	#300003307 in __user_main(argcPtr=15, argvPtr=94676741534160, envp=94676741534288) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000658 in __uClibc_main(15, 94676741534160) at libc/misc/internals/__uClibc_main.c:401
+	#500000824 in main(15, 94676741534160)

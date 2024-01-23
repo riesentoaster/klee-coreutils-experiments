@@ -1,0 +1,16 @@
+libc/misc/ctype/ctype.c:333
+libc/misc/ctype/ctype.c:338
+libc/misc/regex/regex_old.c:2569
+libc/misc/regex/regex_old.c:2639
+libc/misc/regex/regex_old.c:2696
+libc/misc/regex/regex_old.c:3250
+libc/misc/regex/regex_old.c:5165
+libc/misc/regex/regex_old.c:5330
+libc/misc/regex/regex_old.c:5331
+libc/misc/regex/regex_old.c:5332
+libc/misc/regex/regex_old.c:5333
+libc/misc/regex/regex_old.c:5334
+../src/ptx.c:0
+../src/ptx.c:430
+../src/ptx.c:437
+../src/ptx.c:438

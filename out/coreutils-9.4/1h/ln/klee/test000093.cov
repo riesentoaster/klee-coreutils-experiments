@@ -1,0 +1,7 @@
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:106
+klee_src/runtime/POSIX/fd_32.c:107
+klee_src/runtime/POSIX/fd_32.c:108
+../src/ln.c:530
+../src/ln.c:534
+../src/ln.c:535

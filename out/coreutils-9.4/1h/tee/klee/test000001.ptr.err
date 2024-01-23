@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../src/tee.c
+Line: 251
+assembly.ll line: 4949
+State: 4
+Stack: 
+	#000004949 in tee_files(3, 94848216075368, false) at ../src/tee.c:251
+	#100004750 in __klee_posix_wrapped_main(4, 94848216075360) at ../src/tee.c:177
+	#200002916 in __user_main(argcPtr=15, argvPtr=94848178777616, envp=94848178777744) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000616 in __uClibc_main(15, 94848178777616) at libc/misc/internals/__uClibc_main.c:401
+	#400000782 in main(15, 94848178777616)
+Info: 
+	address: 94848216259360
+	next: object at 94848175536384 of size 256
+		MO414[256] allocated at global:slot0

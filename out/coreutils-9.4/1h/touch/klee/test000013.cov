@@ -1,0 +1,5 @@
+../src/touch.c:121
+../src/touch.c:146
+libc/unistd/getopt.c:469
+libc/unistd/getopt.c:470
+libc/unistd/getopt.c:471

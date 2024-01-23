@@ -1,0 +1,6 @@
+libc/stdio/fclose.c:92
+libc/stdio/fclose.c:101
+../src/comm.c:256
+../src/comm.c:393
+../src/comm.c:417
+../src/comm.c:421

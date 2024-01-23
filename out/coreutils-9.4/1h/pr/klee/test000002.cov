@@ -1,0 +1,11 @@
+../src/pr.c:0
+../src/pr.c:858
+../src/pr.c:891
+../src/pr.c:904
+../src/pr.c:908
+../src/pr.c:909
+../src/pr.c:910
+libc/unistd/getopt.c:517
+libc/unistd/getopt.c:519
+libc/unistd/getopt.c:521
+libc/unistd/getopt.c:522

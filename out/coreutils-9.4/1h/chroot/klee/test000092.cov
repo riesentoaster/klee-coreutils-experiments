@@ -1,0 +1,17 @@
+../src/chroot.c:0
+../src/chroot.c:305
+../src/chroot.c:308
+../lib/userspec.c:168
+../lib/userspec.c:170
+../lib/userspec.c:171
+libc/pwd_grp/pwd_grp.c:299
+libc/pwd_grp/pwd_grp.c:303
+libc/pwd_grp/pwd_grp.c:305
+libc/pwd_grp/pwd_grp_internal.c:59
+libc/pwd_grp/pwd_grp_internal.c:60
+libc/pwd_grp/pwd_grp_internal.c:61
+libc/pwd_grp/pwd_grp_internal.c:62
+libc/pwd_grp/pwd_grp_internal.c:64
+libc/pwd_grp/pwd_grp_internal.c:65
+libc/pwd_grp/pwd_grp_internal.c:67
+libc/pwd_grp/pwd_grp_internal.c:69

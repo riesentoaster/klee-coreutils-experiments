@@ -1,0 +1,103 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq 61 (Read w8 3 arg00))
+         (Eq 98 (Read w8 2 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 5 arg00)))
+         (Eq false
+             (Eq 0 N3:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N4:(Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 N5:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 N6:(Read w8 9 arg00)))
+         (Eq 45 (Read w8 4 arg00))
+         (Sle (ZExt w32 N7:(Extract w8 0 (Add w32 4294967248 (SExt w32 N2))))
+              9)
+         (Sle (ZExt w32 N8:(Extract w8 0 (Add w32 4294967248 (SExt w32 N3))))
+              9)
+         (Sle (ZExt w32 N9:(Extract w8 0 (Add w32 4294967248 (SExt w32 N4))))
+              9)
+         (Sle (ZExt w32 N10:(Extract w8 0 (Add w32 4294967248 (SExt w32 N5))))
+              9)
+         (Eq false
+             (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248 N11:(SExt w32 N6))))
+                  9))
+         (Sle 65 N11)
+         (Sle 10
+              (ZExt w32 (Extract w8 0 (Add w32 4294967209 (Or w32 N11 32)))))
+         (Eq 69 (Extract w8 0 N11))
+         (Slt N12:(Sub w64 0
+                           N13:(Add w64 (Mul w64 10
+                                                 (Add w64 (Mul w64 10
+                                                                   (Add w64 (Mul w64 10 (ZExt w64 N7))
+                                                                            (ZExt w64 N8)))
+                                                          (ZExt w64 N9)))
+                                        (ZExt w64 N10)))
+              0)
+         (Eq false (Eq 1 N13))
+         (Slt (SDiv w64 9223372036854775808
+                        (Mul w64 1024
+                                 (Mul w64 1024
+                                          (Mul w64 1024 (Mul w64 1024 N12)))))
+              1024)
+         (Or (Eq 57 N2) (Eq 56 N2))
+         (Or (Eq 55 N3)
+             (Or (Eq 54 N3)
+                 (Or (Eq 53 N3)
+                     (Or (Eq 52 N3)
+                         (Or (Eq 51 N3)
+                             (Or (Eq 50 N3)
+                                 (Or (Eq 49 N3)
+                                     (Or (Eq 48 N3)
+                                         (Or (Eq 57 N3) (Eq 56 N3))))))))))
+         (Or (Eq 55 N4)
+             (Or (Eq 54 N4)
+                 (Or (Eq 53 N4)
+                     (Or (Eq 52 N4)
+                         (Or (Eq 51 N4)
+                             (Or (Eq 50 N4)
+                                 (Or (Eq 49 N4)
+                                     (Or (Eq 48 N4)
+                                         (Or (Eq 57 N4) (Eq 56 N4))))))))))
+         (Or (Eq 55 N5)
+             (Or (Eq 54 N5)
+                 (Or (Eq 53 N5)
+                     (Or (Eq 52 N5)
+                         (Or (Eq 51 N5)
+                             (Or (Eq 50 N5)
+                                 (Or (Eq 49 N5)
+                                     (Or (Eq 48 N5)
+                                         (Or (Eq 57 N5) (Eq 56 N5))))))))))]
+        false)

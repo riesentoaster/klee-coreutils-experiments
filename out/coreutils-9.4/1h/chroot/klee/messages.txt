@@ -1,0 +1,20 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 6.097260
+
+KLEE: increased time budget from 6.097260 to 7.225639
+
+KLEE: increased time budget from 7.225639 to 9.628463
+
+KLEE: ERROR: ../src/chroot.c:146: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 9.628463 to 10.997669
+
+KLEE: increased time budget from 10.997669 to 12.279137
+
+KLEE: ERROR: ../src/chroot.c:146: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 12.279137 to 25.490842
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

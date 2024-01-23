@@ -1,0 +1,17 @@
+libc/misc/error/error.c:58
+libc/misc/error/error.c:59
+libc/misc/error/error.c:60
+libc/misc/error/error.c:63
+libc/misc/error/error.c:64
+libc/misc/error/error.c:65
+libc/stdio/_vfprintf.c:1853
+libc/stdio/_vfprintf.c:1858
+libc/stdio/_vfprintf.c:1859
+libc/stdio/_vfprintf.c:1864
+libc/stdio/_vfprintf.c:1912
+libc/stdio/_vfprintf.c:1919
+libc/stdio/_vfprintf.c:1923
+libc/stdio/_vfprintf.c:1924
+libc/stdio/_vfprintf.c:1928
+libc/stdio/_vfprintf.c:1930
+libc/stdio/_vfprintf.c:1939

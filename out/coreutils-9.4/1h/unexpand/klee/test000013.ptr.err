@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../src/expand-common.c
+Line: 81
+assembly.ll line: 5144
+State: 468
+Stack: 
+	#000005144 in add_tab_stop(symbolic) at ../src/expand-common.c:81
+	#100004778 in __klee_posix_wrapped_main(2, 94655765524480) at ../src/unexpand.c:312
+	#200002909 in __user_main(argcPtr=15, argvPtr=94655728111360, envp=94655728111488) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000609 in __uClibc_main(15, 94655728111360) at libc/misc/internals/__uClibc_main.c:401
+	#400000775 in main(15, 94655728111360)
+Info: 
+	address: 94655727998976
+	next: object at 94655724147200 of size 256
+		MO408[256] allocated at global:slot0

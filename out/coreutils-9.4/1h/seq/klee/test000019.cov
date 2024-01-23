@@ -1,0 +1,6 @@
+../src/seq.c:0
+../src/seq.c:587
+../src/seq.c:603
+../src/seq.c:604
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148

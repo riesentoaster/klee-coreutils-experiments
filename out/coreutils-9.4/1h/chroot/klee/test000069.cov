@@ -1,0 +1,8 @@
+../src/chroot.c:0
+../src/chroot.c:383
+../src/chroot.c:413
+../src/chroot.c:414
+klee_src/runtime/POSIX/stubs.c:0
+klee_src/runtime/POSIX/stubs.c:460
+klee_src/runtime/POSIX/stubs.c:461
+klee_src/runtime/POSIX/stubs.c:462

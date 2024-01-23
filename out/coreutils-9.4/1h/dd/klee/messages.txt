@@ -1,0 +1,26 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: libc/string/memcpy.c:29: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.518336
+
+KLEE: increased time budget from 5.518336 to 6.620324
+
+KLEE: ERROR: klee_src/runtime/POSIX/fd.c:379: check_memory_access: memory error
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 6.620324 to 8.106493
+
+KLEE: increased time budget from 8.106493 to 12.244627
+
+KLEE: increased time budget from 12.244627 to 13.597160
+
+KLEE: increased time budget from 13.597160 to 16.590593
+
+KLEE: increased time budget from 16.590593 to 22.546783
+
+KLEE: increased time budget from 22.546783 to 25.169028
+
+KLEE: increased time budget from 25.169028 to 30.549167
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

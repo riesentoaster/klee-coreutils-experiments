@@ -1,0 +1,19 @@
+Error: Query timed out (fork).
+File: libc/misc/time/time.c
+Line: 2182
+assembly.ll line: 33128
+State: 11867
+Stack: 
+	#000033128 in _time_t2tm(94564221441672, 4294967289, 94564088758528) at libc/misc/time/time.c:2182
+	#100032169 in __time_localtime_tzi(94564086192600, 94564088758528, 94563601036480) at libc/misc/time/time.c:763
+	#200032961 in _time_mktime_tzi(94563977056832, 0, 94563601036480) at libc/misc/time/time.c:2389
+	#300032661 in _time_mktime(94563977056832, 0) at libc/misc/time/time.c:2283
+	#400033405 in strftime_l(94564011917312, 1024, 94564009603464, 94563977056832) at libc/misc/time/time.c:1046
+	#500026221 in strftime(94564011917312, 94564009603464, 94563977056832) at libc/misc/time/time.c:822
+	#600006930 in __strftime_internal(94563581567928, 94563601129376, 94563977056832, false, 0, 4294967295, 94563548734720, 2880154539) at ../lib/nstrftime.c:883
+	#700006234 in fprintftime(94563581567928, 94563601129376, 94563977056832, 94563548734720, 2880154539) at ../lib/nstrftime.c:424
+	#800006163 in show_date(94563601129376, symbolic, 12370169555311111083, 94563548734720) at ../src/date.c:666
+	#900005465 in __klee_posix_wrapped_main(3, 94563603419712) at ../src/date.c:645
+	#1000003262 in __user_main(argcPtr=15, argvPtr=94563576999680, envp=94563576999808) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#1100000944 in __uClibc_main(15, 94563576999680) at libc/misc/internals/__uClibc_main.c:401
+	#1200001110 in main(15, 94563576999680)

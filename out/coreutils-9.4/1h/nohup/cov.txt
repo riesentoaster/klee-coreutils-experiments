@@ -1,0 +1,25 @@
+File '../src/nohup.c'
+Lines executed:75.00% of 84
+Creating 'nohup.c.gcov'
+
+File '../src/system.h'
+Lines executed:95.24% of 21
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:80.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:0.00% of 5
+Creating 'fcntl2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+Lines executed:76.86% of 121

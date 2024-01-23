@@ -1,0 +1,5 @@
+../src/shuf.c:301
+../src/shuf.c:304
+../src/shuf.c:308
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29

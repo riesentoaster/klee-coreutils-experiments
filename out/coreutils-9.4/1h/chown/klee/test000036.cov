@@ -1,0 +1,5 @@
+klee_src/runtime/POSIX/fd.c:567
+klee_src/runtime/POSIX/fd.c:568
+../src/chown-core.c:288
+../src/chown-core.c:481
+../src/chown-core.c:482

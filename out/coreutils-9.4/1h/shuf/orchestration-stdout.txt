@@ -1,0 +1,38 @@
+Testing util "shuf"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Assuming input directory for llvm files ./coreutils-llvm/obj-llvm/src
+Setting KLEE's timeout to 60
+
+Running KLEE as follows:
+    klee --simplify-sym-indices --write-cvcs --write-cov --output-module     --max-memory=1000 --disable-inlining --optimize --use-forked-solver     --use-cex-cache --libc=uclibc --posix-runtime     --external-calls=all --only-output-states-covering-new     --env-file=test.env --run-in-dir=/tmp/sandbox     --max-sym-array-size=4096 --max-solver-time=30s --max-time=60min     --watchdog --max-memory-inhibit=false --max-static-fork-pct=1     --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal     --search=random-path --search=nurs:covnew     --use-batching-search --batch-instructions=10000     --output-dir=./out/klee     ./coreutils-llvm/obj-llvm/src/shuf.bc     --sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout
+
+WARNING: KLEE failed, check logs in ./out/klee-stderr.log
+Here are the last few lines of the logs:
+
+
+#10 0x000056002a59a128 std::__uniq_ptr_impl<klee::PTree, std::default_delete<klee::PTree> >::reset(klee::PTree*) /usr/include/c++/11/bits/unique_ptr.h:179:16
+#11 0x000056002a59a128 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::reset(klee::PTree*) /usr/include/c++/11/bits/unique_ptr.h:456:12
+#12 0x000056002a59a128 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::operator=(std::nullptr_t) /usr/include/c++/11/bits/unique_ptr.h:397:7
+#13 0x000056002a59a128 klee::Executor::runFunctionAsMain(llvm::Function*, int, char**, char**) /tmp/klee_src/lib/Core/Executor.cpp:4597:17
+#14 0x000056002a55d6bf main /tmp/klee_src/tools/klee/main.cpp:1522:5
+#15 0x00007f1c9e97dd90 (/lib/x86_64-linux-gnu/libc.so.6+0x29d90)
+#16 0x00007f1c9e97de40 __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e40)
+#17 0x000056002a56d595 _start (/tmp/klee_build130stp_z3/bin/klee+0x3b595)
+KLEE: WARNING: KLEE: watchdog exiting (no child)
+
+Exporting args for crashing test cases using ktest-tool
+Found 4 errors: test000004 test000013 test000056 test000062
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
+Starting coverage gathering
+Copying coverage files
+Running gcov
+Cannot open source file ../src/shuf.c
+Cannot open source file ../lib/randint.h
+Cannot open source file ../lib/xalloc.h
+Cannot open source file ../src/system.h
+Coverage gathering done
+tar: Removing leading `/' from member names

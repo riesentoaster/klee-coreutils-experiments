@@ -1,0 +1,12 @@
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1090
+libc/unistd/getopt.c:1096
+libc/unistd/getopt.c:1097
+libc/unistd/getopt.c:1098
+../src/date.c:0
+../src/date.c:396
+../src/date.c:422
+../src/date.c:456
+../src/date.c:466
+../src/date.c:469
+../src/date.c:500

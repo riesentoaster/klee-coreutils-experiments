@@ -1,0 +1,25 @@
+File '../src/env.c'
+Lines executed:73.67% of 376
+Creating 'env.c.gcov'
+
+File '../src/system.h'
+Lines executed:95.83% of 24
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:75.00% of 4
+Creating 'string_fortified.h.gcov'
+
+File '../lib/c-ctype.h'
+Lines executed:0.00% of 6
+Creating 'c-ctype.h.gcov'
+
+Lines executed:74.46% of 419

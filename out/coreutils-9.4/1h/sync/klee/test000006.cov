@@ -1,0 +1,12 @@
+../src/sync.c:0
+../src/sync.c:57
+../src/sync.c:58
+../src/sync.c:81
+../src/sync.c:203
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:820
+libc/unistd/getopt.c:827
+libc/unistd/getopt.c:843
+libc/unistd/getopt.c:863
+libc/unistd/getopt.c:864
+libc/unistd/getopt.c:865

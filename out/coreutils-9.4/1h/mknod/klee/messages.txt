@@ -1,0 +1,16 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../lib/modechange.c:308: memory error: invalid pointer: free
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: ../lib/modechange.c:288: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.527691
+
+KLEE: increased time budget from 5.527691 to 6.720397
+
+KLEE: increased time budget from 6.720397 to 8.601232
+
+KLEE: increased time budget from 8.601232 to 14.926014
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

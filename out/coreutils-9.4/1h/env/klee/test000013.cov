@@ -1,0 +1,14 @@
+../src/env.c:0
+../src/env.c:797
+../src/env.c:798
+../src/env.c:857
+../src/env.c:858
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580
+libc/stdio/_vfprintf.c:1899
+libc/stdio/_vfprintf.c:1900
+libc/stdio/_vfprintf.c:1904
+libc/stdio/_vfprintf.c:1908
+libc/stdio/_vfprintf.c:1909

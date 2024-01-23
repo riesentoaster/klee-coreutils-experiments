@@ -1,0 +1,14 @@
+../src/pathchk.c:0
+../src/pathchk.c:180
+../src/pathchk.c:182
+../src/pathchk.c:265
+../src/pathchk.c:266
+../src/pathchk.c:278
+libc/string/strspn.c:18
+libc/string/strspn.c:20
+libc/string/strspn.c:21
+libc/string/strspn.c:23
+libc/string/strspn.c:24
+libc/string/strspn.c:25
+libc/string/strspn.c:26
+libc/string/strspn.c:27

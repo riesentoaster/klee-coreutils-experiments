@@ -1,0 +1,4 @@
+../src/cp.c:618
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:495
+libc/unistd/getopt.c:496

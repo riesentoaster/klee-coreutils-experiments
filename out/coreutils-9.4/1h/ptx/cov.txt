@@ -1,0 +1,29 @@
+File '../src/ptx.c'
+Lines executed:69.67% of 732
+Creating 'ptx.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:75.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 6
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '../src/system.h'
+Lines executed:95.65% of 23
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 4
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/ctype.h'
+Lines executed:100.00% of 2
+Creating 'ctype.h.gcov'
+
+Lines executed:71.02% of 773

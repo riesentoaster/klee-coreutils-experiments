@@ -1,0 +1,40 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 7.640469
+
+KLEE: increased time budget from 7.640469 to 8.856659
+
+KLEE: increased time budget from 8.856659 to 12.946376
+
+KLEE: increased time budget from 12.946376 to 16.519084
+
+KLEE: increased time budget from 16.519084 to 21.422967
+
+KLEE: increased time budget from 21.422967 to 25.575824
+
+KLEE: increased time budget from 25.575824 to 30.325387
+
+KLEE: increased time budget from 30.325387 to 33.488196
+
+KLEE: increased time budget from 33.488196 to 43.374594
+
+KLEE: increased time budget from 43.374594 to 65.123226
+
+KLEE: increased time budget from 65.123226 to 74.624197
+
+KLEE: increased time budget from 74.624197 to 100.543592
+
+KLEE: ERROR: ../lib/mini-gmp.c:676: Query timed out (bounds check).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 100.543592 to 123.007347
+
+KLEE: ERROR: ../lib/mini-gmp.c:680: Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 123.007347 to 145.565721
+
+KLEE: increased time budget from 145.565721 to 160.801166
+
+KLEE: ERROR: ../lib/mini-gmp.c:4236: Query timed out (fork).
+KLEE: NOTE: now ignoring this error at this location
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

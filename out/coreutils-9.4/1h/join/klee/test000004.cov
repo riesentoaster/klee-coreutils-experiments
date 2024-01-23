@@ -1,0 +1,12 @@
+klee_src/runtime/POSIX/fd.c:1410
+klee_src/runtime/POSIX/fd.c:1411
+../src/join.c:0
+../src/join.c:1168
+../src/join.c:1169
+../lib/quotearg.c:0
+../lib/quotearg.c:248
+../lib/quotearg.c:379
+../lib/quotearg.c:759
+../lib/quotearg.c:762
+../lib/quotearg.c:764
+../lib/quotearg.c:766

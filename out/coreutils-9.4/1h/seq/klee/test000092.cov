@@ -1,0 +1,13 @@
+../src/seq.c:78
+../src/seq.c:82
+../src/seq.c:83
+../src/seq.c:87
+../src/seq.c:89
+../src/seq.c:94
+../src/seq.c:614
+../src/system.h:587
+../src/system.h:590
+libc/unistd/getopt.c:572
+libc/unistd/getopt.c:573
+libc/unistd/getopt.c:574
+libc/unistd/getopt.c:575

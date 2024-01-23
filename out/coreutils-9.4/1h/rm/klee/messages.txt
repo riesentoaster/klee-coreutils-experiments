@@ -1,0 +1,20 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 5.636364
+
+KLEE: increased time budget from 5.636364 to 6.989908
+
+KLEE: increased time budget from 6.989908 to 8.878373
+
+KLEE: increased time budget from 8.878373 to 10.011247
+
+KLEE: increased time budget from 10.011247 to 11.717922
+
+KLEE: increased time budget from 11.717922 to 12.958634
+
+KLEE: ERROR: ../lib/quotearg.c:261: external call with errno value symbolic: __ctype_get_mb_cur_max
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 12.958634 to 16.304889
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

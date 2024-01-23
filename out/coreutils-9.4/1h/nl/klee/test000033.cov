@@ -1,0 +1,6 @@
+../src/nl.c:268
+libc/misc/error/error.c:65
+libc/misc/regex/regex_old.c:2642
+libc/misc/regex/regex_old.c:2645
+libc/misc/regex/regex_old.c:2647
+libc/misc/regex/regex_old.c:7977

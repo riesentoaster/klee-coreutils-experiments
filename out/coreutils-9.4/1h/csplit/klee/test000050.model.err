@@ -1,0 +1,25 @@
+Error: concretized symbolic size
+File: ../lib/ialloc.h
+Line: 57
+assembly.ll line: 10131
+State: 3326
+Stack: 
+	#000010131 in imalloc(symbolic) at ../lib/ialloc.h:57
+	#100007665 in ximalloc(symbolic) at ../lib/xmalloc.c:51
+	#200007324 in __klee_posix_wrapped_main(4, 94674621644992) at ../src/csplit.c:1375
+	#300003062 in __user_main(argcPtr=15, argvPtr=94674573390048, envp=94674573390176) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000676 in __uClibc_main(15, 94674573390048) at libc/misc/internals/__uClibc_main.c:401
+	#500000842 in main(15, 94674573390048)
+Info: 
+  size expr: (Extract w64 0 (Add w128 2
+                                       (SExt w128 (Add w64 1
+                                                           (SExt w64 (Extract w32 0 (Add w64 (Mul w64 10
+                                                                                                      (Add w64 (Mul w64 10
+                                                                                                                        (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                         (SExt w32 (Read w8 7 arg00))))))
+                                                                                                               (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                (SExt w32 (Read w8 8 arg00)))))))
+                                                                                             (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                              (SExt w32 (Read w8 9 arg00))))))))))))
+  concretization : 103
+  unbound example: 203

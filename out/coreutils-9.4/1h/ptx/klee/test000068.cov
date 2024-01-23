@@ -1,0 +1,4 @@
+../src/ptx.c:1093
+../src/ptx.c:1155
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148

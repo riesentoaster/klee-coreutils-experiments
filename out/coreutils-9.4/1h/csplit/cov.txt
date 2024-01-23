@@ -1,0 +1,25 @@
+File '../src/csplit.c'
+Lines executed:84.87% of 595
+Creating 'csplit.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 8
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:50.00% of 4
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 4
+Creating 'string_fortified.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.74% of 19
+Creating 'system.h.gcov'
+
+Lines executed:85.35% of 635

@@ -1,0 +1,21 @@
+Error: check_memory_access: memory error
+File: klee_src/runtime/POSIX/fd.c
+Line: 379
+assembly.ll line: 1376
+State: 18336
+Stack: 
+	#000001376 in read(fd=3, buf=94092147900416, count=symbolic) at klee_src/runtime/POSIX/fd.c:379
+	#100005635 in safe_read(3, 94092147900416, symbolic) at ../lib/safe-read.c:60
+	#200008066 in full_read(3, 94092147900416, symbolic) at ../lib/full-write.c:65
+	#300005734 in elide_tail_bytes_pipe(94091166917712, 3, symbolic, 18446744073709551615) at ../src/head.c:302
+	#400005433 in elide_tail_bytes_file(94091166917712, 3, symbolic, .0.8.val=4096, .0.9.val=4096, 18446744073709551615) at ../src/head.c:470
+	#500005308 in head(94091166917712, 3, symbolic, false, symbolic) at ../src/head.c:862
+	#600005216 in head_file(94091166917712, symbolic, false, symbolic) at ../src/head.c:895
+	#700004992 in __klee_posix_wrapped_main(4, 94091167053440) at ../src/head.c:1091
+	#800002911 in __user_main(argcPtr=15, argvPtr=94091130355200, envp=94091130355328) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#900000613 in __uClibc_main(15, 94091130355200) at libc/misc/internals/__uClibc_main.c:401
+	#1000000779 in main(15, 94091130355200)
+Info: 
+	address: 94092147900416
+	next: object at 94091125996032 of size 256
+		MO415[256] allocated at global:slot0

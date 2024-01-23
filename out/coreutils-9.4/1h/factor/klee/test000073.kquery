@@ -1,0 +1,70 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq false
+             (Eq 45 N2:(Read w8 0 arg00)))
+         (Eq false (Eq 32 N2))
+         (Eq false
+             (Eq 0
+                 N3:(Read w8 (Extract w32 0 N4:(ZExt w64 (Eq 43 N2)))
+                             U0:[10=0] @ arg00)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (ZExt w32 N3))))
+         (Eq false
+             (Eq 0
+                 N5:(Read w8 (Extract w32 0 (Add w64 1 N4))
+                             U0)))
+         (Eq false
+             (Ult 9
+                  (Add w32 4294967248 (ZExt w32 N5))))
+         (Eq 0
+             (Read w8 (Extract w32 0 (Add w64 2 N4))
+                      U0))
+         (Eq false
+             (Ult N6:(Add w64 N7:(Mul w64 10
+                                          N8:(ZExt w64 (Add w8 208 N3)))
+                              N9:(ZExt w64 (Add w8 208 N5)))
+                  10))
+         (Eq 0 (And w64 N6 1))
+         (Ult 6148914691236517205
+              (Mul w64 12297829382473034411
+                       N10:(Or w64 (Shl w64 (Add w64 (Mul w64 10
+                                                              (ZExt w64 (Ult N8 N8)))
+                                                     (Add w64 (Add w64 (Add w64 (LShr w64 N8 61) (LShr w64 N8 63))
+                                                                       (ZExt w64 (Ult N7 (Shl w64 N8 1))))
+                                                              (ZExt w64 (Ult N6 N9))))
+                                            63)
+                                   (LShr w64 N6 1))))
+         (Eq false
+             (Ult 3689348814741910323 N11:(Mul w64 14757395258967641293 N10)))
+         (Eq false
+             (Ult 3689348814741910323 (Mul w64 14757395258967641293 N11)))]
+        false)

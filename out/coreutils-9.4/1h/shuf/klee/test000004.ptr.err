@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../src/shuf.c
+Line: 289
+assembly.ll line: 5933
+State: 9
+Stack: 
+	#000005933 in read_input(94558734287424, 10, 94558777724216) at ../src/shuf.c:289
+	#100005043 in __klee_posix_wrapped_main(1, 94558778640384) at ../src/shuf.c:529
+	#200002964 in __user_main(argcPtr=15, argvPtr=94558738666896, envp=94558738667024) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000621 in __uClibc_main(15, 94558738666896) at libc/misc/internals/__uClibc_main.c:401
+	#400000787 in main(15, 94558738666896)
+Info: 
+	address: 94558778644176
+	next: object at 94558734057984 of size 256
+		MO468[256] allocated at global:slot0

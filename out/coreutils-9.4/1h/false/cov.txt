@@ -1,0 +1,13 @@
+File '../src/true.c'
+Lines executed:100.00% of 21
+Creating 'true.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 2
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.75% of 16
+Creating 'system.h.gcov'
+
+Lines executed:97.44% of 39

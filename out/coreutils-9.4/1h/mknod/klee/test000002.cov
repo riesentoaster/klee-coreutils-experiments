@@ -1,0 +1,16 @@
+../src/mknod.c:0
+../src/mknod.c:49
+../src/mknod.c:50
+../src/mknod.c:87
+../src/mknod.c:173
+../src/mknod.c:174
+../src/mknod.c:177
+../src/mknod.c:180
+libc/misc/error/error.c:66
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580
+libc/stdio/_vfprintf.c:1899
+libc/stdio/_vfprintf.c:1900
+libc/stdio/_vfprintf.c:1904
+libc/stdio/_vfprintf.c:1908
+libc/stdio/_vfprintf.c:1909

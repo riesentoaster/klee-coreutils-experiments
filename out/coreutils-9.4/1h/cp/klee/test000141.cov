@@ -1,0 +1,15 @@
+../lib/argmatch.c:148
+../lib/quotearg.c:897
+../lib/quotearg.c:910
+../lib/quotearg.c:911
+../lib/quotearg.c:912
+../lib/quotearg.c:913
+../lib/quotearg.c:914
+../lib/quotearg.c:916
+../lib/quotearg.c:917
+../lib/quotearg.c:918
+../lib/quotearg.c:1058
+../lib/quotearg.c:1070
+../lib/xmalloc.c:0
+../lib/xmalloc.c:45
+../lib/xmalloc.c:57

@@ -1,0 +1,25 @@
+File '../src/chmod.c'
+Lines executed:78.30% of 212
+Creating 'chmod.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../lib/openat.h'
+Lines executed:100.00% of 2
+Creating 'openat.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.75% of 16
+Creating 'system.h.gcov'
+
+Lines executed:80.50% of 241

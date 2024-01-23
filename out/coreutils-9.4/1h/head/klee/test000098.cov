@@ -1,0 +1,9 @@
+../src/head.c:0
+../src/head.c:800
+../src/head.c:896
+libc/misc/error/error.c:63
+libc/misc/error/error.c:64
+libc/misc/error/error.c:66
+libc/stdio/fputc.c:19
+libc/stdio/fputc.c:67
+libc/stdio/fputc.c:72

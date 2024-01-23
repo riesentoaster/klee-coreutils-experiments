@@ -1,0 +1,25 @@
+File '../src/date.c'
+Lines executed:91.63% of 227
+Creating 'date.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 6
+Creating 'stdio.h.gcov'
+
+File '../src/system.h'
+Lines executed:81.82% of 22
+Creating 'system.h.gcov'
+
+File '../lib/stat-time.h'
+Lines executed:100.00% of 2
+Creating 'stat-time.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+Lines executed:91.35% of 266

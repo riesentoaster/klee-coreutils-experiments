@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../src/chroot.c
+Line: 146
+assembly.ll line: 7416
+State: 99952
+Stack: 
+	#000007416 in parse_additional_groups(94200226008896, 94200226010216, 94200226009920, true) at ../src/chroot.c:146
+	#100007043 in __klee_posix_wrapped_main(4, 94200227103056) at ../src/chroot.c:385
+	#200003027 in __user_main(argcPtr=15, argvPtr=94200210537504, envp=94200210537632) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000621 in __uClibc_main(15, 94200210537504) at libc/misc/internals/__uClibc_main.c:401
+	#400000787 in main(15, 94200210537504)
+Info: 
+	address: 94200185775872
+	next: object at 94200185015552 of size 256
+		MO497[256] allocated at global:getpwnam.buffer

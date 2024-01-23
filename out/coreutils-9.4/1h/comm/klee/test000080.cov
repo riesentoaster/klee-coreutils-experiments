@@ -1,0 +1,6 @@
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696
+../src/comm.c:475
+../src/comm.c:477
+../src/comm.c:478
+../src/comm.c:479

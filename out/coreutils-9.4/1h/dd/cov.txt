@@ -1,0 +1,33 @@
+File '../src/dd.c'
+Lines executed:46.50% of 899
+Creating 'dd.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 3
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:66.67% of 6
+Creating 'string_fortified.h.gcov'
+
+File '../src/system.h'
+Lines executed:50.00% of 36
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/unistd.h'
+Lines executed:100.00% of 2
+Creating 'unistd.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 6
+Creating 'stdio2.h.gcov'
+
+File '../lib/alignalloc.h'
+Lines executed:100.00% of 4
+Creating 'alignalloc.h.gcov'
+
+Lines executed:47.70% of 958

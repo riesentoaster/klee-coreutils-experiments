@@ -1,0 +1,205 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[3] : w32 -> w8 = symbolic
+array arg01[301] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              2)
+         (Slt 0 N1)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 0 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 (Read w8 0 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 1 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 2 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 3 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 4 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 5 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 6 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 7 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 8 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 9 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 10 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 11 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 12 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 13 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 14 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 15 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 16 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 17 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 18 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 19 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 20 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 21 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 22 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 23 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 24 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 25 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 26 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 27 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 28 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 29 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 30 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 31 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 32 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 33 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 34 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 35 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 36 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 37 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 38 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 39 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 40 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 41 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 42 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 43 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 44 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 45 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 46 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 47 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 48 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 49 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 50 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 51 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 52 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 53 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 54 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 55 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 56 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 57 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 58 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 59 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 60 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 61 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 62 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 63 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 64 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 65 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 66 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 67 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 68 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 69 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 70 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 71 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 72 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 73 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 74 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 75 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 76 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 77 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 78 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 79 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 80 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 81 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 82 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 83 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 84 arg01)))
+         (Eq false
+             (Eq 0 (Read w8 85 arg01)))]
+        false)

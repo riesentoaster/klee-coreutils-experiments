@@ -1,0 +1,16 @@
+libc/stdio/_vfprintf.c:920
+libc/stdio/_vfprintf.c:921
+libc/stdio/_vfprintf.c:922
+libc/stdio/_vfprintf.c:923
+libc/stdio/_vfprintf.c:924
+libc/stdio/_vfprintf.c:956
+libc/stdio/_vfprintf.c:957
+../lib/printf-parse.c:0
+../lib/printf-parse.c:74
+../lib/printf-parse.c:268
+../lib/printf-parse.c:312
+../lib/printf-parse.c:315
+../lib/printf-parse.c:316
+../lib/printf-parse.c:318
+../lib/printf-parse.c:319
+../lib/printf-parse.c:320

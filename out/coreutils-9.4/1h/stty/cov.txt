@@ -1,0 +1,25 @@
+File '../src/stty.c'
+Lines executed:78.92% of 664
+Creating 'stty.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:100.00% of 2
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:80.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:0.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '../src/system.h'
+Lines executed:95.00% of 20
+Creating 'system.h.gcov'
+
+Lines executed:79.34% of 697

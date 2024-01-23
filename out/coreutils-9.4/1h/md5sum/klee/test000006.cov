@@ -1,0 +1,11 @@
+../src/digest.c:0
+../src/digest.c:411
+../src/digest.c:412
+../src/digest.c:560
+../src/digest.c:1552
+../src/digest.c:1554
+libc/stdio/_vfprintf.c:1899
+libc/stdio/_vfprintf.c:1900
+libc/stdio/_vfprintf.c:1904
+libc/stdio/_vfprintf.c:1908
+libc/stdio/_vfprintf.c:1909

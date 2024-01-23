@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../lib/modechange.c
+Line: 288
+assembly.ll line: 6076
+State: 5
+Stack: 
+	#000006076 in mode_compile(94909357609488) at ../lib/modechange.c:288
+	#100005448 in __klee_posix_wrapped_main(4, 94909358266224) at ../src/chmod.c:545
+	#200003471 in __user_main(argcPtr=15, argvPtr=94909317557056, envp=94909317557184) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000647 in __uClibc_main(15, 94909317557056) at libc/misc/internals/__uClibc_main.c:401
+	#400000813 in main(15, 94909317557056)
+Info: 
+	address: 94909359551584
+	next: object at 94909313252352 of size 256
+		MO495[256] allocated at global:slot0

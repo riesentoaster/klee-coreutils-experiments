@@ -1,0 +1,7 @@
+../src/chcon.c:0
+../src/chcon.c:500
+../src/chcon.c:502
+libc/unistd/getopt.c:572
+libc/unistd/getopt.c:573
+libc/unistd/getopt.c:574
+libc/unistd/getopt.c:575

@@ -1,0 +1,6 @@
+libc/unistd/getopt.c:1092
+libc/unistd/getopt.c:1093
+libc/unistd/getopt.c:1094
+../src/kill.c:222
+../src/kill.c:257
+../src/kill.c:259

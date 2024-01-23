@@ -1,0 +1,33 @@
+File '../src/shuf.c'
+Lines executed:76.13% of 243
+Creating 'shuf.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 4
+Creating 'error.h.gcov'
+
+File '../lib/randint.h'
+Lines executed:100.00% of 2
+Creating 'randint.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:50.00% of 4
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:50.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:100.00% of 2
+Creating 'xalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 4
+Creating 'string_fortified.h.gcov'
+
+File '../src/system.h'
+Lines executed:9.68% of 31
+Creating 'system.h.gcov'
+
+Lines executed:69.39% of 294

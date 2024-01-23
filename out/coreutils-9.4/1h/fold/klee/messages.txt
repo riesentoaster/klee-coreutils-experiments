@@ -1,0 +1,20 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../src/fold.c:151: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: ../src/fold.c:213: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: ../src/fold.c:203: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.585883
+
+KLEE: increased time budget from 5.585883 to 6.161399
+
+KLEE: increased time budget from 6.161399 to 10.354421
+
+KLEE: increased time budget from 10.354421 to 11.836177
+
+KLEE: increased time budget from 11.836177 to 14.154268
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

@@ -1,0 +1,21 @@
+Error: memory error: out of bound pointer
+File: libc/string/memcpy.c
+Line: 29
+assembly.ll line: 4564
+State: 6
+Stack: 
+	#000004564 in memcpy(94651037521168, 94651073632913, 3) at libc/string/memcpy.c:29
+	#100025210 in __stdio_fwrite(94651073632913, 3, 94651039236576) at libc/stdio/_fwrite.c:39
+	#200025955 in vfprintf(94651039236576, 94651073632912, 94651085973088) at libc/stdio/_vfprintf.c:1904
+	#300027256 in vsnprintf(94651037521168, 18446744073709551615, 94651073632912, 94651085973088) at libc/stdio/vsnprintf.c:64
+	#400021547 in sprintf(94651037521168, 94651073632912) at libc/stdio/sprintf.c:24
+	#500010771 in decode_one_format(94651072848872, 94651072848872, 94651072853288, 94651037521152) at ../src/od.c:717
+	#600006174 in decode_format_string(94651072848872) at ../src/od.c:982
+	#700005442 in __klee_posix_wrapped_main(2, 94651084977472) at ../src/od.c:1891
+	#800003022 in __user_main(argcPtr=11, argvPtr=94651037433360, envp=94651037433456) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#900000722 in __uClibc_main(11, 94651037433360) at libc/misc/internals/__uClibc_main.c:401
+	#1000000888 in main(11, 94651037433360)
+Info: 
+	address: 94651037521168
+	next: object at 94651037178368 of size 3320
+		MO392[3320] allocated at global:__global_locale_data

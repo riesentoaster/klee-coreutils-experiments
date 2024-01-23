@@ -1,0 +1,15 @@
+Error: memory error: invalid pointer: free
+File: ../lib/modechange.c
+Line: 308
+assembly.ll line: 7327
+State: 247100
+Stack: 
+	#000007327 in mode_compile(94142233427716) at ../lib/modechange.c:308
+	#100006536 in __klee_posix_wrapped_main(4, 94142234117680) at ../src/install.c:989
+	#200004394 in __user_main(argcPtr=15, argvPtr=94142210841872, envp=94142210842000) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000838 in __uClibc_main(15, 94142210841872) at libc/misc/internals/__uClibc_main.c:401
+	#400001004 in main(15, 94142210841872)
+Info: 
+	address: 94142617311712
+	next: object at 94142177347776 of size 210
+		MO623[210] allocated at global:.str.6.82

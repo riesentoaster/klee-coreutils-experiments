@@ -1,0 +1,4 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../src/users.c:76: memory error: invalid pointer: free
+KLEE: NOTE: now ignoring this error at this location

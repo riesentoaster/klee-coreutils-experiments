@@ -1,0 +1,5 @@
+libc/unistd/getopt.c:453
+libc/unistd/getopt.c:473
+../src/mkfifo.c:0
+../src/mkfifo.c:92
+../src/mkfifo.c:117

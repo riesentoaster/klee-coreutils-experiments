@@ -1,0 +1,17 @@
+../src/csplit.c:0
+../src/csplit.c:1221
+../src/csplit.c:1254
+../src/csplit.c:1258
+../src/csplit.c:1283
+../src/csplit.c:1289
+../src/csplit.c:1290
+../src/csplit.c:1292
+../src/csplit.c:1369
+libc/stdio/snprintf.c:18
+libc/stdio/snprintf.c:19
+libc/stdio/snprintf.c:21
+libc/stdio/snprintf.c:22
+libc/stdio/snprintf.c:24
+libc/stdio/snprintf.c:25
+libc/stdio/snprintf.c:26
+libc/stdio/snprintf.c:27

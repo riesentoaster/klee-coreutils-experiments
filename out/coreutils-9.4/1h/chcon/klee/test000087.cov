@@ -1,0 +1,11 @@
+../src/chcon.c:0
+../src/chcon.c:469
+../src/chcon.c:470
+../src/chcon.c:543
+../src/chcon.c:546
+../src/chcon.c:547
+./lib/selinux/selinux.h:0
+./lib/selinux/selinux.h:84
+libc/unistd/getopt.c:699
+libc/unistd/getopt.c:700
+libc/unistd/getopt.c:735

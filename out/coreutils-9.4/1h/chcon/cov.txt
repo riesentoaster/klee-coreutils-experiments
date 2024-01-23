@@ -1,0 +1,25 @@
+File '../src/chcon.c'
+Lines executed:81.69% of 213
+Creating 'chcon.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File 'lib/selinux/selinux.h'
+Lines executed:100.00% of 2
+Creating 'selinux.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File 'lib/selinux/context.h'
+Lines executed:0.00% of 4
+Creating 'context.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.74% of 19
+Creating 'system.h.gcov'
+
+Lines executed:82.19% of 247

@@ -1,0 +1,16 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../src/expand-common.c:81: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: ../lib/xmalloc.c:45: concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 6.562947
+
+KLEE: increased time budget from 6.562947 to 7.948868
+
+KLEE: increased time budget from 7.948868 to 12.135873
+
+KLEE: increased time budget from 12.135873 to 13.926484
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

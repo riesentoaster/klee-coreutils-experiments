@@ -1,0 +1,29 @@
+File '../src/fmt.c'
+Lines executed:83.78% of 370
+Creating 'fmt.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:75.00% of 8
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:0.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '../lib/c-ctype.h'
+Lines executed:100.00% of 2
+Creating 'c-ctype.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:80.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:50.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:0.00% of 22
+Creating 'system.h.gcov'
+
+Lines executed:78.45% of 413

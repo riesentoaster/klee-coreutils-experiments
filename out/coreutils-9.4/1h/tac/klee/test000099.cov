@@ -1,0 +1,4 @@
+../src/tac.c:516
+../src/tac.c:517
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148

@@ -1,0 +1,10 @@
+../src/nice.c:172
+../lib/xstrtol.c:0
+../lib/xstrtol.c:78
+../lib/xstrtol.c:130
+../lib/xstrtol.c:135
+../lib/xstrtol.c:137
+../lib/xstrtol.c:138
+libc/misc/error/error.c:65
+libc/stdlib/stdlib.c:561
+libc/stdlib/stdlib.c:562

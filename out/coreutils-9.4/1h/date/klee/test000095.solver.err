@@ -1,0 +1,15 @@
+Error: Query timed out (fork).
+File: libc/misc/time/time.c
+Line: 2188
+assembly.ll line: 33152
+State: 49616
+Stack: 
+	#000033152 in _time_t2tm(94563820968232, 4294967289, 94563977056832) at libc/misc/time/time.c:2188
+	#100032169 in __time_localtime_tzi(94564010675808, 94563977056832, 94563601036480) at libc/misc/time/time.c:763
+	#200026188 in localtime_r(94564010675808, 94563977056832) at libc/misc/time/time.c:609
+	#300006203 in localtime_rz(94563548734720, 94564010675808, 94563977056832) at ../lib/time_rz.c:275
+	#400006144 in show_date(94563601129376, symbolic, 12370169555311111083, 94563548734720) at ../src/date.c:662
+	#500005465 in __klee_posix_wrapped_main(3, 94563603419712) at ../src/date.c:645
+	#600003262 in __user_main(argcPtr=15, argvPtr=94563576999680, envp=94563576999808) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#700000944 in __uClibc_main(15, 94563576999680) at libc/misc/internals/__uClibc_main.c:401
+	#800001110 in main(15, 94563576999680)

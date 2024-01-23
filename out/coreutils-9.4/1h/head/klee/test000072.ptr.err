@@ -1,0 +1,18 @@
+Error: memory error: out of bound pointer
+File: ../src/head.c
+Line: 382
+assembly.ll line: 5902
+State: 18598
+Stack: 
+	#000005902 in elide_tail_bytes_pipe(94091159094096, 0, symbolic, 18446744073709551615) at ../src/head.c:382
+	#100005433 in elide_tail_bytes_file(94091159094096, 0, symbolic, .0.8.val=8, .0.9.val=symbolic, 18446744073709551615) at ../src/head.c:470
+	#200005308 in head(94091159094096, 0, symbolic, false, symbolic) at ../src/head.c:862
+	#300005196 in head_file(94091159032744, symbolic, false, symbolic) at ../src/head.c:895
+	#400004992 in __klee_posix_wrapped_main(2, 94091167589664) at ../src/head.c:1091
+	#500002911 in __user_main(argcPtr=15, argvPtr=94091130355200, envp=94091130355328) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#600000613 in __uClibc_main(15, 94091130355200) at libc/misc/internals/__uClibc_main.c:401
+	#700000779 in main(15, 94091130355200)
+Info: 
+	address: 94091481291264
+	next: object at 94091125996032 of size 256
+		MO415[256] allocated at global:slot0

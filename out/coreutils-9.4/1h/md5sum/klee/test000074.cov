@@ -1,0 +1,3 @@
+libc/stdio/fgetc.c:63
+libc/stdio/fgetc.c:64
+libc/stdio/getdelim.c:63
