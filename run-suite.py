@@ -7,7 +7,12 @@ import sys
 import datetime
 from enum import Enum
 
+RED = "\033[31m"  # Red text
+GREEN = "\033[32m"  # Green text
+YELLOW = "\033[33m"  # Yellow text
+RESET = "\033[0m"  # Reset to default terminal color
 
+# coreutils tested in the initial KLEE paper
 all_coreutils = [
     "[",
     "base64",
@@ -106,6 +111,7 @@ class State(Enum):
     STARTED = 1
     FINISHED_ANALYSIS = 2
     FINISHED_COVERAGE = 3
+    ERROR = 4
 
 
 print_lock = threading.Lock()
@@ -117,13 +123,74 @@ states: dict[str, State] = {e: State.WATING for e in all_coreutils}
 def update_counter(util: str, state: State) -> str:
     with counter_lock:
         global states
+        global all_coreutils
         states[util] = state
-        return f"({list(states.values()).count(State.WATING)}, {list(states.values()).count(State.STARTED)}, {list(states.values()).count(State.FINISHED_ANALYSIS)}, {list(states.values()).count(State.FINISHED_COVERAGE)})"
+        state_counts = [
+            list(states.values()).count(e) for e in State._member_map_.values()
+        ]
+        state_counts = [f"{e:>{len(str(len(all_coreutils)))}}" for e in state_counts]
+        state_counts[-1] = f"{RED}{state_counts[-1]}{RESET}"
+        state_counts = ", ".join(state_counts)
+        state_counts = f"({state_counts})"
+        return state_counts
 
 
 def thread_safe_print(*args, **kwargs):
     with print_lock:
         print(datetime.datetime.now().isoformat(), *args, **kwargs)
+
+
+def print_with_counter(util: str, newState: State, message: str):
+    if newState == State.ERROR:
+        thread_safe_print(
+            f"{update_counter(util, newState)} — {RED}{message}{RESET}",
+            file=sys.stderr,
+        )
+    else:
+        thread_safe_print(f"{update_counter(util, newState)} — {message}")
+
+
+def init_parser():
+    parser = argparse.ArgumentParser(description="Run KLEE on coreutils.")
+    parser.add_argument(
+        "output_dir",
+        help="Output directory",
+    )
+    parser.add_argument(
+        "--max-threads",
+        type=int,
+        help="Maximum number of threads",
+        default=1,
+    )
+    parser.add_argument(
+        "--image-name",
+        help='Name of the image built, defaults to "klee-coreutils(-[name of the passed dockerfile])',
+    )
+    parser.add_argument(
+        "--dockerfile",
+        help="Path of the dockerfile to use",
+        default="Dockerfile",
+    )
+    parser.add_argument(
+        "--util",
+        action="append",
+        help="Utils to test",
+    )
+    parser.add_argument(
+        "--env",
+        "-e",
+        action="append",
+        nargs=2,
+        metavar=("key", "value"),
+        help="Environment variables",
+    )
+    parser.add_argument(
+        "--force",
+        "-f",
+        action="store_true",
+        help="Force execution, even if target directory already exists",
+    )
+    return parser
 
 
 # Function to run klee-coreutils for a given util
@@ -168,77 +235,39 @@ def run_klee_coreutils(image_name, util, env_vars):
 
     # Execute the command using subprocess.run
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
-        thread_safe_print(
-            f'starting run for util "{util}". State: {update_counter(util, State.STARTED)}'
-        )
+        print_with_counter(util, f'Starting run for util "{util}".')
         process = subprocess.run(
             exec_command, stdout=stdout_f, stderr=stderr_f, text=True
         )
         if process.returncode != 0:
-            thread_safe_print(
+            print_with_counter(
+                util,
+                State.ERROR,
                 f"=== ERROR: Failed to execute {util} with exit code {process.returncode}",
-                file=sys.stderr,
             )
+            return
 
-        thread_safe_print(
-            f'starting coverage gathering for util "{util}". State: {update_counter(util, State.FINISHED_ANALYSIS)}'
+        print_with_counter(
+            util, State.FINISHED_ANALYSIS, f'Starting coverage gathering for "{util}".'
         )
+
         process = subprocess.run(
             cov_command, stdout=stdout_f, stderr=stderr_f, text=True
         )
         if process.returncode != 0:
-            thread_safe_print(
+            print_with_counter(
+                util,
+                State.ERROR,
                 f"=== ERROR: Failed to gather coverage for {util} with exit code {process.returncode}",
-                file=sys.stderr,
             )
-        thread_safe_print(
-            f'done with util "{util}". State: {update_counter(util, State.FINISHED_COVERAGE)}'
-        )
+            return
+
+        print_with_counter(util, State.FINISHED_COVERAGE, f'Done with "{util}".')
 
 
 if __name__ == "__main__":
     # Parse command-line arguments
-    parser = argparse.ArgumentParser(description="Run KLEE on coreutils.")
-    parser.add_argument(
-        "output_dir",
-        help="Output directory",
-    )
-    parser.add_argument(
-        "--max-threads",
-        type=int,
-        help="Maximum number of threads",
-        default=1,
-    )
-    parser.add_argument(
-        "--image-name",
-        help='Name of the image built, defaults to "klee-coreutils(-[name of the passed dockerfile])',
-    )
-    parser.add_argument(
-        "--dockerfile",
-        help="Path of the dockerfile to use",
-        default="Dockerfile",
-    )
-    parser.add_argument(
-        "--util",
-        action="append",
-        help="Utils to test",
-    )
-    parser.add_argument(
-        "--env",
-        "-e",
-        action="append",
-        nargs=2,
-        metavar=("key", "value"),
-        help="Environment variables",
-    )
-    parser.add_argument(
-        "--force",
-        "-f",
-        action="store_true",
-        help="Force execution, even if target directory already exists",
-    )
-
-    args = parser.parse_args()
+    args = init_parser().parse_args()
     thread_safe_print(f"Analyzing with the following args: {args}")
 
     output_dir = args.output_dir
@@ -257,7 +286,7 @@ if __name__ == "__main__":
     ):
         response = (
             input(
-                "Output directory is not empty, this might not work. Continue anyway? (y/n) "
+                f"{YELLOW}Output directory is not empty, this might not work. Continue anyway? (y/n){RESET} "
             )
             .lower()
             .strip()
@@ -288,7 +317,7 @@ if __name__ == "__main__":
     )
     if process.returncode != 0:
         thread_safe_print(
-            f"=== ERROR: Failed to build docker image exec with exit code {process.returncode}",
+            f"{RED}=== ERROR: Failed to build docker image exec with exit code {process.returncode}{RESET}",
             file=sys.stderr,
         )
         exit(1)
@@ -319,7 +348,9 @@ if __name__ == "__main__":
     if args.util is not None:
         coreutils = [e for e in args.util if e in all_coreutils]
         states = {e: State.WATING for e in coreutils}
-        thread_safe_print(f"Only running the following coreutils: {coreutils}")
+        thread_safe_print(
+            f"{YELLOW}Only running the following coreutils: {coreutils}{RESET}"
+        )
 
     # Prepare environment variables
     env_vars = {}
@@ -339,4 +370,6 @@ if __name__ == "__main__":
     for future in futures:
         future.result()  # Wait for each task to complete
 
-    thread_safe_print("All tasks completed.")
+    num_succ = list(states.values()).count(State.FINISHED_COVERAGE)
+    num_error = list(states.values()).count(State.ERROR)
+    thread_safe_print(f"All tasks completed. Successes/Errors: {num_succ}/{num_error}.")
