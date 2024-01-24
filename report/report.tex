@@ -2,6 +2,7 @@
 \usepackage[hidelinks]{hyperref}
 % \usepackage{csquotes}
 \usepackage[vmargin=25mm, hmargin=20mm]{geometry}
+\usepackage{listings}
 % \usepackage{longtable}
 % \usepackage{array}
 \usepackage[
@@ -44,7 +45,6 @@
 \begin{multicols}{2}
     \tableofcontents
 
-
     \section{Introduction}
     KLEE\cite{KLEEWebsite} is an open source, symbolic execution based, advanced fuzzing platform. It was introduced in the seminal paper titled \citetitle{KLEE} in \citeyear{KLEE}. In their article, \citeauthor{KLEE} present their work and evaluate it on a diverse set of programs. The most prominent of those is the GNU coreutils suite, in which ten fatal errors were found.
 
@@ -69,11 +69,33 @@
               \end{enumerate}
     \end{enumerate}
 
-    All experiments were run on a virtuallized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+    All experiments were run on a virtualized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+    \section{Background}
+
+    What follows is a short explanation of the application of symbolic execution in fuzzing. For more extensive background, I refer to some of my previous work\cite{EVA, BA}.
+
+    Remember that KLEE is an open-source, symbolic execution based fuzzer. It takes LLVM bytecode from the program under test (PUT) as its input, runs its analysis on it. KLEE then outputs some statistics about the run, inputs to the PUT that crash it, and inputs that, when executed, cover all branches KLEE has examined during its analysis.
+
+    \subsection{A Primer on Symbolic Execution}
+    KLEE is a fuzzer based on symbolic execution. This means that instead of executing a PUT with a concrete value, it instead runs through the instructions and maps relationships between data in memory (such as variables and user input) to mathematical formulas. So an instruction like \lstinline[language=llvm]{%result = add i32 %a, %b} would be mapped to the logical relationship $\phi_k=\phi_i+\phi_j$. Conditional jumps are mapped to conditions on these variables for both outcomes of the condition, so the instruction \lstinline[language=llvm]{%isPositive = icmp sgt i32 %result, 0} would be represented with $\phi_k>0$ and $\phi_k\le0$ respectively.
+
+    The set of all conditions along a certain path through the PUT are called the \textit{path condition}. It can be passed to s satisfiability modulo theories (SMT) solver (KLEE uses STP\cite{STP} as a default), which returns values for all user inputs, such that the PUT is forced down the exact path represented by the path condition.
+
+    This is the major advantage of symbolic execution based fuzzing, as compared to ordinary fuzzing. By not using concrete values, but instead logical representations of user input, it essentially runs through the PUT with all possible user inputs \textit{at the same time}. So if the solver returns that no inputs satisfy the passed formula, we have proven that such inputs simply do not exist. To be able to do this, it accepts the huge overhead of translating the code to formulas and then solving them.
+
+    \subsection{Symbolic Execution in Practice}
+    Symbolic execution in fuzzing has several major challenges to overcome. I have previously discussed them in detail\cite{EVA}, but would like to give a short summary here:
+
+    \begin{itemize}
+        \item Environment interactions (such as file system interactions) in general are opaque to the fuzzer and cannot be mapped to logical formulas. KLEE deals with this by solving the path constraint before the instruction in question and then uses concrete values in the call. This abandons the claim on completeness symbolic execution typically has, but is often the only feasible way to still continue analysis.
+        \item The second major challenge in symbolic execution is what is known as \textit{path explosion}. Because the number of program states grows exponentially with the number of instructions, for all but the most simple programs it is not feasible to calculate the entire state space. KLEE deals with this by reducing the search space to actually executable instructions, using advanced data structures, and examining paths through the PUT consecutively, with a user-defined timeout. To maximize the state space and code coverage as quickly as possible, it alternates between two strategies for choosing the next input to evaluate: KLEE either chooses the input that promises to increase the coverage the most and a random input to prevent the execution from getting stuck in a certain subtree of the PUT.
+        \item KLEE needs to model the entire memory of a process. This is straight-forward as long as variables are used directly but becomes a challenge when pointers are involved. This is especially true if the value of these pointers depends on user input, since this would require KLEE to model all possible addresses having all possible values, which instantly explodes the memory consumption and number of states to examine and is thus infeasible. KLEE deals with this by representing such pointer operation as array accesses where the accessed object is copied as often as necessary to model all possible results, including error states.
+        \item As programs become more complex, the path constraints become increasingly long and solving them contributes more and more to the fuzzer's runtime. KLEE applies some advanced optimizations, like query splitting and more general optimizations, or a cache of previous results, which often solve supersets the query they are a solution to. Finally, KLEE defines a timeout, after which the solver is interrupted and analysis is continued at an other branch.
+    \end{itemize}
 
     \section{Reproducing the Original Paper}
     \label{Reproducing}
-    I'm basing my experiment setup on the original paper\cite{KLEE}, the FAQs in the project's documentaition\cite{KLEEFAQ} and the tutorial on testing coreutils version 6.11\cite{KLEETutorial}.
+    I'm basing my experiment setup on the original paper\cite{KLEE}, the FAQs in the project's documentation\cite{KLEEFAQ} and the tutorial on testing coreutils version 6.11\cite{KLEETutorial}.
 
     \subsection{Project Setup}
     \subsubsection{Building coreutils 6.10 on a Current Version of Ubuntu}
@@ -100,6 +122,7 @@
     \subsection{Produced Artifacts}
     \subsection{Future Work}
 
+    \columnbreak
     \defbibheading{bibliography}[\bibname]{\section*{#1}}
     \addcontentsline{toc}{section}{\bibname}
     \printbibliography
