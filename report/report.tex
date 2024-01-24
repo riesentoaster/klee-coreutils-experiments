@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[hidelinks]{hyperref}
+% \usepackage{csquotes}
+\usepackage[vmargin=25mm, hmargin=20mm]{geometry}
+% \usepackage{longtable}
+% \usepackage{array}
+\usepackage[
+    backend=biber,
+    sorting=none,
+    style=ieee,
+    urldate=long,
+    maxcitenames=2,
+    mincitenames=1
+]{biblatex}
+\addbibresource{sources.bib}
+\usepackage{multicol}
+\setlength{\columnsep}{13mm}
+% \usepackage{float}
+% \usepackage{graphicx}
+
+\let\savedCite=\cite
+\renewcommand{\cite}{\unskip~\savedCite}
+\let\savedRef=\ref
+\renewcommand{\ref}{\unskip~\savedRef}
+\hfuzz=50px
+\hbadness=10000
+
+
+\title{Running KLEE on GNU coreutils}
+
+\begin{document}
+
+\author{%
+    Valentin Huber\vspace{5px}\\%
+    \small \href{https://www.zhaw.ch/en/engineering/institutes-centres/init/}{Institute of Applied Information Technology}\\%
+    \small \href{https://www.zhaw.ch/en}{Zürich University of Applied Sciences ZHAW}\\%
+    \small \href{mailto://contact@valentinhuber.me}{contact@valentinhuber.me}%
+    \vspace{10px}
+}
+
+\date{\today\vspace{5px}}
+
+\maketitle
+\begin{multicols}{2}
+    \tableofcontents
+
+
+    \section{Introduction}
+    KLEE\cite{KLEEWebsite} is an open source, symbolic execution based, advanced fuzzing platform. It was introduced in the seminal paper titled \citetitle{KLEE} in \citeyear{KLEE}. In their article, \citeauthor{KLEE} present their work and evaluate it on a diverse set of programs. The most prominent of those is the GNU coreutils suite, in which ten fatal errors were found.
+
+    Ever since then, KLEE has not only matured as a fuzzer, it has also been used extensively as a platform for other researchers to build on top of, as I have discovered in\cite{EVA}. As an introduction to the practical side of fuzzing, I attempted to answer the following questions about KLEE:
+
+    \begin{enumerate}
+        \item Reproducing the original paper (see Section~\ref{Reproducing})
+              \begin{enumerate}
+                  \item Can the current version of KLEE be run on coreutils version 6.10 (as tested in the original paper)?
+                  \item Can the same metrics as measured in the original paper still be measured?
+                  \item How do the measured metrics compare to what was published 15 years ago?
+              \end{enumerate}
+        \item Examining the statistical distribution of results over different fuzzing times (see Section~\ref{Timeouts})
+              \begin{enumerate}
+                  \item How does the non-determinism in KLEE influence the variance in the results between different test runs?
+                  \item How do different testing timeouts influence results?
+              \end{enumerate}
+        \item Testing more recent versions of coreutils (see Section~\ref{SoftwareEvolution})
+              \begin{enumerate}
+                  \item What needs to change in the test setup to test more recent versions of coreutils?
+                  \item How do the results from testing different versions of coreutils differ?
+              \end{enumerate}
+    \end{enumerate}
+
+    All experiments were run on a virtuallized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+
+    \section{Reproducing the Original Paper}
+    \label{Reproducing}
+    I'm basing my experiment setup on the original paper\cite{KLEE}, the FAQs in the project's documentaition\cite{KLEEFAQ} and the tutorial on testing coreutils version 6.11\cite{KLEETutorial}.
+
+    \subsection{Project Setup}
+    \subsubsection{Building coreutils 6.10 on a Current Version of Ubuntu}
+    \subsubsection{Using an Old Version of Ubuntu}
+    \subsubsection{LLVM}
+    \subsubsection{Running KLEE}
+
+    \subsection{Analyzing the Results}
+    \subsubsection{Gathered Metrics}
+    \subsubsection{Comparison to the Original Paper}
+
+    \section{Analysis of the Results}
+    \label{Timeouts}
+    \subsection{Metrics Distribution}
+    \subsection{Influence of Testing Timeout}
+
+    \section{Testing More Recent Versions of coreutils}
+    \label{SoftwareEvolution}
+    \subsection{Differences in Testing Setup}
+    \subsection{Findings}
+
+    \section{Discussion}
+    \subsection{Research Questions}
+    \subsection{Produced Artifacts}
+    \subsection{Future Work}
+
+    \defbibheading{bibliography}[\bibname]{\section*{#1}}
+    \addcontentsline{toc}{section}{\bibname}
+    \printbibliography
+
+    % \renewcommand{\thesubsection}{\arabic{subsection}}
+    % \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+    % \setcounter{subsection}{0}
+    % \setcounter{subsubsection}{0}
+    % \section*{Appendix}
+    % \addcontentsline{toc}{section}{Appendix}
+\end{multicols}
+
+\end{document}

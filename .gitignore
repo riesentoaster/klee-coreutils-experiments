@@ -1,0 +1,5 @@
+# pdflatex specific files
+report/*
+!report/report.tex
+!report/report.pdf
+!report/sources.bib
