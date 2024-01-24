@@ -1,0 +1,10 @@
+../src/fmt.c:0
+../src/fmt.c:376
+../src/fmt.c:377
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1087
+libc/unistd/getopt.c:1102
+libc/unistd/getopt.c:1109
+libc/unistd/getopt.c:1148
+libc/unistd/getopt.c:1149
+libc/unistd/getopt.c:1151

@@ -1,0 +1,7 @@
+klee_src/runtime/POSIX/fd.c:1408
+klee_src/runtime/POSIX/fd.c:1409
+../lib/fts.c:0
+../lib/fts.c:567
+../lib/fts.c:568
+../lib/fts.c:569
+../lib/fts.c:570

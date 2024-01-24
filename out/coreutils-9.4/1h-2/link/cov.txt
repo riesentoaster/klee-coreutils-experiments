@@ -1,0 +1,17 @@
+File '../src/link.c'
+Lines executed:96.43% of 28
+Creating 'link.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.75% of 16
+Creating 'system.h.gcov'
+
+Lines executed:96.23% of 53

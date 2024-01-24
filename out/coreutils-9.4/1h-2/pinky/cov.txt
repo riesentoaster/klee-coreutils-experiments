@@ -1,0 +1,29 @@
+File '../src/pinky.c'
+Lines executed:57.51% of 273
+Creating 'pinky.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:75.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:36.36% of 11
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:33.33% of 6
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:0.00% of 5
+Creating 'fcntl2.h.gcov'
+
+File '../src/system.h'
+Lines executed:75.00% of 20
+Creating 'system.h.gcov'
+
+Lines executed:57.01% of 321

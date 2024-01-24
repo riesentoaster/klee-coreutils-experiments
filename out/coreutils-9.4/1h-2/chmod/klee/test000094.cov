@@ -1,0 +1,16 @@
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:106
+klee_src/runtime/POSIX/fd_32.c:107
+klee_src/runtime/POSIX/fd_32.c:108
+../src/chmod.c:0
+../src/chmod.c:492
+../src/chmod.c:493
+../src/chmod.c:515
+../src/chmod.c:527
+../src/chmod.c:538
+../lib/modechange.c:0
+../lib/modechange.c:316
+../lib/modechange.c:318
+../lib/modechange.c:320
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696

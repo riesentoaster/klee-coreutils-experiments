@@ -1,0 +1,21 @@
+File '../src/rm.c'
+Lines executed:96.97% of 132
+Creating 'rm.c.gcov'
+
+File '../lib/priv-set.h'
+Lines executed:100.00% of 2
+Creating 'priv-set.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 4
+Creating 'error.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.74% of 19
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+Lines executed:96.89% of 161

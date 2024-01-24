@@ -1,0 +1,9 @@
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148
+../src/nl.c:0
+../src/nl.c:245
+../src/nl.c:251
+../src/nl.c:256
+../src/nl.c:257
+../src/nl.c:274
+../src/nl.c:499

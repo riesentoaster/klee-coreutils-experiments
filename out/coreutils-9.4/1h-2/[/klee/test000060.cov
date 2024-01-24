@@ -1,0 +1,12 @@
+../src/test.c:392
+../lib/xvasprintf.c:83
+../lib/xvasprintf.c:89
+../lib/xvasprintf.c:94
+../lib/xvasprintf.c:95
+../lib/xvasprintf.c:97
+../lib/xvasprintf.c:98
+../lib/vasnprintf.c:2204
+../lib/vasnprintf.c:2224
+../lib/vasnprintf.c:2300
+../lib/vasnprintf.c:6096
+../lib/vasnprintf.c:6889

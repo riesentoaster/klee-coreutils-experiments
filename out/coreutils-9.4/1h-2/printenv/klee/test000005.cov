@@ -1,0 +1,11 @@
+../src/printenv.c:0
+../src/printenv.c:81
+../src/printenv.c:120
+../src/printenv.c:124
+../src/printenv.c:131
+../src/printenv.c:133
+../src/printenv.c:134
+../src/printenv.c:135
+../src/printenv.c:147
+../src/printenv.c:148
+libc/unistd/getopt.c:517

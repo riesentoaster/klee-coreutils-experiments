@@ -1,0 +1,37 @@
+File '../src/cat.c'
+Lines executed:70.14% of 278
+Creating 'cat.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:75.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:100.00% of 5
+Creating 'fcntl2.h.gcov'
+
+File '../lib/alignalloc.h'
+Lines executed:100.00% of 3
+Creating 'alignalloc.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:50.00% of 4
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/ioblksize.h'
+Lines executed:60.00% of 10
+Creating 'ioblksize.h.gcov'
+
+File '../lib/count-leading-zeros.h'
+Lines executed:0.00% of 3
+Creating 'count-leading-zeros.h.gcov'
+
+File '../src/system.h'
+Lines executed:72.00% of 25
+Creating 'system.h.gcov'
+
+Lines executed:70.24% of 336

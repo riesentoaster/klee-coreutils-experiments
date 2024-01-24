@@ -1,0 +1,7 @@
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696
+../src/uniq.c:0
+../src/uniq.c:233
+../src/uniq.c:237
+../src/uniq.c:244
+../src/uniq.c:621

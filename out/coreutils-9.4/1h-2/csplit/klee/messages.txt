@@ -1,0 +1,24 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 6.273753
+
+KLEE: increased time budget from 6.273753 to 7.068758
+
+KLEE: ERROR: ../lib/ialloc.h:57: concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 7.068758 to 7.978568
+
+KLEE: increased time budget from 7.978568 to 9.886512
+
+KLEE: increased time budget from 9.886512 to 11.438851
+
+KLEE: increased time budget from 11.438851 to 15.223872
+
+KLEE: increased time budget from 15.223872 to 17.148207
+
+KLEE: increased time budget from 17.148207 to 19.728687
+
+KLEE: increased time budget from 19.728687 to 22.391097
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

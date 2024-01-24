@@ -1,0 +1,12 @@
+../lib/memcasecmp.c:0
+../lib/memcasecmp.c:32
+../lib/memcasecmp.c:37
+../lib/memcasecmp.c:38
+../lib/memcasecmp.c:39
+../lib/memcasecmp.c:40
+../lib/memcasecmp.c:41
+../lib/memcasecmp.c:42
+../lib/memcasecmp.c:43
+../lib/memcasecmp.c:44
+libc/misc/ctype/ctype.c:333
+libc/misc/ctype/ctype.c:338

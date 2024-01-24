@@ -1,0 +1,154 @@
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array arg03[3] : w32 -> w8 = symbolic
+array const_arr13[3] : w32 -> w8 = [0 0 0]
+array const_arr89[16] : w32 -> w8 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              4)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) N2:(Add w32 N1 N0)))
+         (Eq false
+             (Eq (Add w32 2 N0) N2))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 45 N3:(Read w8 1 arg00)))
+         (Eq false (Eq 0 N3))
+         (Eq false
+             (Eq 0 N4:(Read w8 2 arg00)))
+         (Eq false
+             (Eq 0 N5:(Read w8 3 arg00)))
+         (Eq false
+             (Eq 0 N6:(Read w8 4 arg00)))
+         (Eq false
+             (Eq 0 N7:(Read w8 5 arg00)))
+         (Eq false
+             (Eq 0 N8:(Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 N9:(Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 N10:(Read w8 8 arg00)))
+         (Eq 0 (Read w8 9 arg00))
+         (Eq 42 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))
+         (Eq 43 (Read w8 0 arg02))
+         (Eq 0 (Read w8 1 arg02))
+         (Eq false
+             (Eq 0 N11:(Read w8 0 arg03)))
+         (Eq false
+             (Eq 0 N12:(Read w8 1 arg03)))
+         (Ult N13:(Add w32 4294967248 (SExt w32 N3))
+              10)
+         (Ult N14:(Add w32 4294967248 (SExt w32 N4))
+              10)
+         (Ult N15:(Add w32 4294967248 (SExt w32 N5))
+              10)
+         (Ult N16:(Add w32 4294967248 (SExt w32 N6))
+              10)
+         (Ult N17:(Add w32 4294967248 (SExt w32 N7))
+              10)
+         (Ult N18:(Add w32 4294967248 (SExt w32 N8))
+              10)
+         (Ult N19:(Add w32 4294967248 (SExt w32 N9))
+              10)
+         (Ult N20:(Add w32 4294967248 (SExt w32 N10))
+              10)
+         (Ult N21:(Add w32 4294967248
+                           (SExt w32 (Read w8 (Extract w32 0 N22:(ZExt w64 N23:(Eq 45 N11)))
+                                              U0:[2=0, 1=N12,
+                                                  0=N11] @ const_arr13)))
+              10)
+         (Eq 0
+             (Read w8 (Extract w32 0 (Add w64 1 N22))
+                      U0))
+         (Eq false
+             (Eq 0
+                 N24:(Extract w32 0 (Sub w64 18446744073709551615
+                                             (SExt w64 (Eq 0
+                                                           N25:(Add w64 (Mul w64 10
+                                                                                 (Add w64 (Mul w64 10
+                                                                                                   (Add w64 (Mul w64 10
+                                                                                                                     (Add w64 (Mul w64 10
+                                                                                                                                       (Add w64 (Mul w64 10
+                                                                                                                                                         (Add w64 (Mul w64 10
+                                                                                                                                                                           (Add w64 (Mul w64 10
+                                                                                                                                                                                             (ZExt w64 (Extract w8 0 N13)))
+                                                                                                                                                                                    (ZExt w64 (Extract w8 0 N14))))
+                                                                                                                                                                  (ZExt w64 (Extract w8 0 N15))))
+                                                                                                                                                (ZExt w64 (Extract w8 0 N16))))
+                                                                                                                              (ZExt w64 (Extract w8 0 N17))))
+                                                                                                            (ZExt w64 (Extract w8 0 N18))))
+                                                                                          (ZExt w64 (Extract w8 0 N19))))
+                                                                        (ZExt w64 (Extract w8 0 N20)))))))))
+         (Eq false
+             (Eq 0
+                 N26:(Extract w32 0 (Select w64 N23
+                                                (Sub w64 18446744073709551615
+                                                         N27:(SExt w64 (Eq 0 N28:(Extract w8 0 N21))))
+                                                (Add w64 1 N27)))))
+         (Ult N29:(Shl w64 (Shl w64 (Shl w64 (Shl w64 (ReadLSB w64 N30:(Extract w32 0 (Mul w64 8
+                                                                                               (Add w64 18446744073709551615
+                                                                                                        (ZExt w64 (Select w32 (And (Slt N31:(Extract w32 0 (Select w64 (Slt 4294967295 (Xor w32 N26 N24))
+                                                                                                                                                                       N32:(Add w64 N33:(Add w64 (ZExt w64 (Select w32 (And (Slt N26 0)
+                                                                                                                                                                                                                            (Eq false (Eq 2147483648 N26)))
+                                                                                                                                                                                                                       (Mul w32 4294967295 N26)
+                                                                                                                                                                                                                       N26))
+                                                                                                                                                                                                 N34:(ZExt w64 (Select w32 (And (Slt N24 0)
+                                                                                                                                                                                                                                (Eq false (Eq 2147483648 N24)))
+                                                                                                                                                                                                                           (Mul w32 4294967295 N24)
+                                                                                                                                                                                                                           N24)))
+                                                                                                                                                                                    (SExt w64 (Eq 0
+                                                                                                                                                                                                  (ReadLSB w64 N35:(Extract w32 0 (Mul w64 8 (Add w64 18446744073709551615 N33))) U1:[(Add w32 7
+                                                                                                                                                                                                                                                                                               N36:(Extract w32 0 (Mul w64 8 N34)))=(Extract w8 56 N37:(Add w64 (Add w64 (Select w64 (Ult N38:(Add w64 (Add w64 N39:(Mul w64 N40:(LShr w64 N25 32)
+                                                                                                                                                                                                                                                                                                                                                                                                                             N41:(And w64 N42:(ZExt w64 N28) 4294967295))
+                                                                                                                                                                                                                                                                                                                                                                                                                (Mul w64 N43:(And w64 N25 4294967295) N44:(LShr w64 N42 32)))
+                                                                                                                                                                                                                                                                                                                                                                                                       (LShr w64 N45:(Mul w64 N43 N41) 32))
+                                                                                                                                                                                                                                                                                                                                                                                          N39)
+                                                                                                                                                                                                                                                                                                                                                                                     (Add w64 4294967296 N46:(Mul w64 N40 N44))
+                                                                                                                                                                                                                                                                                                                                                                                     N46)
+                                                                                                                                                                                                                                                                                                                                                                         (LShr w64 N38 32))
+                                                                                                                                                                                                                                                                                                                                                                (ZExt w64 (Ult N47:(Add w64 (And w64 N45 4294967295) (Shl w64 N38 32))
+                                                                                                                                                                                                                                                                                                                                                                               0)))),
+                                                                                                                                                                                                                                                                                      (Add w32 6 N36)=(Extract w8 48 N37),
+                                                                                                                                                                                                                                                                                      (Add w32 5 N36)=(Extract w8 40 N37),
+                                                                                                                                                                                                                                                                                      (Add w32 4 N36)=(Extract w8 32 N37),
+                                                                                                                                                                                                                                                                                      (Add w32 3 N36)=(Extract w8 24 N37),
+                                                                                                                                                                                                                                                                                      (Add w32 2 N36)=(Extract w8 16 N37),
+                                                                                                                                                                                                                                                                                      (Add w32 1 N36)=(Extract w8 8 N37),
+                                                                                                                                                                                                                                                                                      N36=(Extract w8 0 N37),
+                                                                                                                                                                                                                                                                                      15=171, 14=171, 13=171, 12=171, 11=171, 10=171, 9=171, 8=171, 7=(Extract w8 56 N47),
+                                                                                                                                                                                                                                                                                      6=(Extract w8 48 N47),
+                                                                                                                                                                                                                                                                                      5=(Extract w8 40 N47),
+                                                                                                                                                                                                                                                                                      4=(Extract w8 32 N47),
+                                                                                                                                                                                                                                                                                      3=(Extract w8 24 N47),
+                                                                                                                                                                                                                                                                                      2=(Extract w8 16 N47),
+                                                                                                                                                                                                                                                                                      1=(Extract w8 8 N47),
+                                                                                                                                                                                                                                                                                      0=(Extract w8 0 N47)] @ const_arr89))))
+                                                                                                                                                                       (Sub w64 0 N32)))
+                                                                                                                                        0)
+                                                                                                                                   (Eq false (Eq 2147483648 N31)))
+                                                                                                                              (Mul w32 4294967295 N31)
+                                                                                                                              N31))))) U1)
+                                                      8)
+                                             8)
+                                    8)
+                           8)
+              72057594037927936)
+         (Ult N48:(Shl w64 N29 8) 72057594037927936)
+         (Ult N49:(Shl w64 N48 8) 72057594037927936)
+         (Eq false
+             (Slt 18446744073709551615 (Shl w64 N49 8)))]
+        false)

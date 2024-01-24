@@ -1,0 +1,6 @@
+libc/unistd/getopt.c:478
+../src/head.c:0
+../src/head.c:171
+../src/head.c:172
+../src/head.c:173
+../src/head.c:841

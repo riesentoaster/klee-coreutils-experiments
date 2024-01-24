@@ -1,0 +1,9 @@
+../src/nice.c:0
+../src/nice.c:100
+../src/nice.c:144
+../lib/xstrtol.c:108
+libc/stdlib/stdlib.c:526
+libc/stdlib/stdlib.c:527
+libc/unistd/getopt.c:1104
+libc/unistd/getopt.c:1107
+libc/unistd/getopt.c:1108

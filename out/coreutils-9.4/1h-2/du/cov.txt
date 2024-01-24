@@ -1,0 +1,33 @@
+File '../src/du.c'
+Lines executed:67.48% of 409
+Creating 'du.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:50.00% of 4
+Creating 'stdio.h.gcov'
+
+File '../lib/stat-time.h'
+Lines executed:33.33% of 6
+Creating 'stat-time.h.gcov'
+
+File '../src/system.h'
+Lines executed:86.67% of 30
+Creating 'system.h.gcov'
+
+File '../lib/xalloc.h'
+Lines executed:0.00% of 2
+Creating 'xalloc.h.gcov'
+
+File '../lib/timespec.h'
+Lines executed:100.00% of 2
+Creating 'timespec.h.gcov'
+
+Lines executed:68.61% of 462

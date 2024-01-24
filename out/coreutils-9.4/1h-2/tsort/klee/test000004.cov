@@ -1,0 +1,11 @@
+../src/tsort.c:523
+../src/tsort.c:527
+../lib/fflush.c:44
+../lib/fflush.c:156
+libc/stdio/fgetc.c:22
+libc/stdio/fgetc.c:67
+libc/stdio/fgetc.c:68
+libc/stdio/fgetc.c:69
+libc/string/strcmp.c:20
+libc/string/strcmp.c:34
+libc/string/strcmp.c:35

@@ -1,0 +1,279 @@
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ python3 run-suite.py --max-threads 42 --dockerfile coreutils-9.4.Dockerfile out/coreutils-9.4/1h-2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo reboot[K[1Pcreen -lsudo rebootpython3 run-suite.py --max-threads 42 --dockerfile coreutils-9.4.Dockerfile out/coreutils-9.4/1h-2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kpython3 run-suite.py --max-threads 42 --dockerfile coreutils-9.4.Dockerfile out/coreutils-9.4/1h-2
+[?2004l2024-01-24T08:28:10.209265 Analyzing with the following args: Namespace(output_dir='out/coreutils-9.4/1h-2', max_threads=42, image_name=None, dockerfile='coreutils-9.4.Dockerfile', util=None, env=None, force=False)
+[33mOutput directory is not empty, this might not work. Continue anyway? (y/n)[0m n
+2024-01-24T08:28:15.095415 Exiting
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ rm -rf out/coreutils-9.4/1h-2/
+[?2004l[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ rm -rf out/coreutils-9.4/1h-2/python3 run-suite.py --max-threads 42 --dockerfile coreutils-9.4.Dockerfile out/coreutils-9.4/1h-2
+[?2004l2024-01-24T08:28:25.778600 Analyzing with the following args: Namespace(output_dir='out/coreutils-9.4/1h-2', max_threads=42, image_name=None, dockerfile='coreutils-9.4.Dockerfile', util=None, env=None, force=False)
+2024-01-24T08:28:25.778660 Building docker image from dockerfile coreutils-9.4.Dockerfile to image klee-coreutils-coreutils-9.4[-cov]
+2024-01-24T08:28:32.504239 (88,  1,  0,  0, [31m 0[0m) — Starting run for util "[".
+2024-01-24T08:28:32.505735 (87,  2,  0,  0, [31m 0[0m) — Starting run for util "basename".
+2024-01-24T08:28:32.507949 (86,  3,  0,  0, [31m 0[0m) — Starting run for util "base64".
+2024-01-24T08:28:32.509595 (85,  4,  0,  0, [31m 0[0m) — Starting run for util "chcon".
+2024-01-24T08:28:32.511263 (84,  5,  0,  0, [31m 0[0m) — Starting run for util "cat".
+2024-01-24T08:28:32.513073 (83,  6,  0,  0, [31m 0[0m) — Starting run for util "chgrp".
+2024-01-24T08:28:32.514220 (82,  7,  0,  0, [31m 0[0m) — Starting run for util "chmod".
+2024-01-24T08:28:32.515082 (81,  8,  0,  0, [31m 0[0m) — Starting run for util "chown".
+2024-01-24T08:28:32.519315 (80,  9,  0,  0, [31m 0[0m) — Starting run for util "chroot".
+2024-01-24T08:28:32.524235 (79, 10,  0,  0, [31m 0[0m) — Starting run for util "cp".
+2024-01-24T08:28:32.526727 (78, 11,  0,  0, [31m 0[0m) — Starting run for util "cksum".
+2024-01-24T08:28:32.528129 (77, 12,  0,  0, [31m 0[0m) — Starting run for util "csplit".
+2024-01-24T08:28:32.529373 (76, 13,  0,  0, [31m 0[0m) — Starting run for util "comm".
+2024-01-24T08:28:32.530737 (75, 14,  0,  0, [31m 0[0m) — Starting run for util "cut".
+2024-01-24T08:28:32.531784 (74, 15,  0,  0, [31m 0[0m) — Starting run for util "dd".
+2024-01-24T08:28:32.532747 (73, 16,  0,  0, [31m 0[0m) — Starting run for util "date".
+2024-01-24T08:28:32.533975 (72, 17,  0,  0, [31m 0[0m) — Starting run for util "df".
+2024-01-24T08:28:32.537651 (71, 18,  0,  0, [31m 0[0m) — Starting run for util "dirname".
+2024-01-24T08:28:32.541288 (70, 19,  0,  0, [31m 0[0m) — Starting run for util "dircolors".
+2024-01-24T08:28:32.542209 (69, 20,  0,  0, [31m 0[0m) — Starting run for util "du".
+2024-01-24T08:28:32.544578 (68, 21,  0,  0, [31m 0[0m) — Starting run for util "echo".
+2024-01-24T08:28:32.547520 (67, 22,  0,  0, [31m 0[0m) — Starting run for util "env".
+2024-01-24T08:28:32.549134 (66, 23,  0,  0, [31m 0[0m) — Starting run for util "expand".
+2024-01-24T08:28:32.550673 (65, 24,  0,  0, [31m 0[0m) — Starting run for util "expr".
+2024-01-24T08:28:32.553397 (64, 25,  0,  0, [31m 0[0m) — Starting run for util "factor".
+2024-01-24T08:28:32.556961 (63, 26,  0,  0, [31m 0[0m) — Starting run for util "false".
+2024-01-24T08:28:32.559134 (62, 27,  0,  0, [31m 0[0m) — Starting run for util "fold".
+2024-01-24T08:28:32.560512 (61, 28,  0,  0, [31m 0[0m) — Starting run for util "head".
+2024-01-24T08:28:32.564056 (60, 29,  0,  0, [31m 0[0m) — Starting run for util "fmt".
+2024-01-24T08:28:32.566449 (59, 30,  0,  0, [31m 0[0m) — Starting run for util "hostname".
+2024-01-24T08:28:32.568426 (58, 31,  0,  0, [31m 0[0m) — Starting run for util "id".
+2024-01-24T08:28:32.570226 (57, 32,  0,  0, [31m 0[0m) — Starting run for util "ginstall".
+2024-01-24T08:28:32.571592 (56, 33,  0,  0, [31m 0[0m) — Starting run for util "hostid".
+2024-01-24T08:28:32.575213 (55, 34,  0,  0, [31m 0[0m) — Starting run for util "kill".
+2024-01-24T08:28:32.577315 (54, 35,  0,  0, [31m 0[0m) — Starting run for util "ln".
+2024-01-24T08:28:32.579198 (53, 36,  0,  0, [31m 0[0m) — Starting run for util "link".
+2024-01-24T08:28:32.581002 (52, 37,  0,  0, [31m 0[0m) — Starting run for util "join".
+2024-01-24T08:28:32.581478 (51, 38,  0,  0, [31m 0[0m) — Starting run for util "logname".
+2024-01-24T08:28:32.585145 (50, 39,  0,  0, [31m 0[0m) — Starting run for util "md5sum".
+2024-01-24T08:28:32.587253 (49, 40,  0,  0, [31m 0[0m) — Starting run for util "ls".
+2024-01-24T08:28:32.588922 (48, 41,  0,  0, [31m 0[0m) — Starting run for util "mkdir".
+2024-01-24T08:28:32.590155 (47, 42,  0,  0, [31m 0[0m) — Starting run for util "mkfifo".
+2024-01-24T08:29:39.264895 (47, 41,  1,  0, [31m 0[0m) — Starting coverage gathering for "hostname".
+2024-01-24T08:29:41.631720 (47, 40,  2,  0, [31m 0[0m) — Starting coverage gathering for "false".
+2024-01-24T08:29:42.314073 (47, 39,  3,  0, [31m 0[0m) — Starting coverage gathering for "cksum".
+2024-01-24T08:29:49.604831 (47, 39,  2,  0, [31m 1[0m) — [31m=== ERROR: Failed to gather coverage for hostname with exit code 1[0m
+2024-01-24T08:29:49.605269 (47, 39,  1,  0, [31m 2[0m) — [31m=== ERROR: Failed to gather coverage for cksum with exit code 1[0m
+2024-01-24T08:29:49.605907 (46, 40,  1,  0, [31m 2[0m) — Starting run for util "mknod".
+2024-01-24T08:29:49.607102 (45, 41,  1,  0, [31m 2[0m) — Starting run for util "mktemp".
+2024-01-24T08:30:05.260961 (45, 41,  0,  1, [31m 2[0m) — Done with "false".
+2024-01-24T08:30:05.261596 (44, 42,  0,  1, [31m 2[0m) — Starting run for util "mv".
+2024-01-24T08:31:58.514887 (44, 41,  1,  1, [31m 2[0m) — Starting coverage gathering for "[".
+2024-01-24T08:32:08.163722 (44, 41,  0,  2, [31m 2[0m) — Done with "[".
+2024-01-24T08:32:08.164239 (43, 42,  0,  2, [31m 2[0m) — Starting run for util "nice".
+2024-01-24T08:32:13.853447 (43, 41,  1,  2, [31m 2[0m) — Starting coverage gathering for "dirname".
+2024-01-24T08:32:25.728270 (43, 41,  0,  3, [31m 2[0m) — Done with "dirname".
+2024-01-24T08:32:25.728717 (42, 42,  0,  3, [31m 2[0m) — Starting run for util "nl".
+2024-01-24T08:49:43.777207 (42, 41,  1,  3, [31m 2[0m) — Starting coverage gathering for "basename".
+2024-01-24T08:49:51.069079 (42, 41,  0,  4, [31m 2[0m) — Done with "basename".
+2024-01-24T08:49:51.069569 (41, 42,  0,  4, [31m 2[0m) — Starting run for util "nohup".
+2024-01-24T08:52:40.507430 (41, 41,  1,  4, [31m 2[0m) — Starting coverage gathering for "cat".
+2024-01-24T08:52:50.490669 (41, 41,  0,  5, [31m 2[0m) — Done with "cat".
+2024-01-24T08:52:50.491120 (40, 42,  0,  5, [31m 2[0m) — Starting run for util "od".
+2024-01-24T09:46:11.912886 (40, 41,  1,  5, [31m 2[0m) — Starting coverage gathering for "csplit".
+2024-01-24T09:46:11.916412 (40, 40,  2,  5, [31m 2[0m) — Starting coverage gathering for "id".
+2024-01-24T09:46:11.917647 (40, 39,  3,  5, [31m 2[0m) — Starting coverage gathering for "hostid".
+2024-01-24T09:46:11.919175 (40, 38,  4,  5, [31m 2[0m) — Starting coverage gathering for "mkfifo".
+2024-01-24T09:46:12.395538 (40, 37,  5,  5, [31m 2[0m) — Starting coverage gathering for "dircolors".
+2024-01-24T09:46:12.397356 (40, 36,  6,  5, [31m 2[0m) — Starting coverage gathering for "kill".
+2024-01-24T09:46:12.404791 (40, 35,  7,  5, [31m 2[0m) — Starting coverage gathering for "mkdir".
+2024-01-24T09:46:12.412766 (40, 34,  8,  5, [31m 2[0m) — Starting coverage gathering for "base64".
+2024-01-24T09:46:13.796372 (40, 33,  9,  5, [31m 2[0m) — Starting coverage gathering for "df".
+2024-01-24T09:46:13.801580 (40, 32, 10,  5, [31m 2[0m) — Starting coverage gathering for "fmt".
+2024-01-24T09:46:13.928215 (40, 31, 11,  5, [31m 2[0m) — Starting coverage gathering for "echo".
+2024-01-24T09:46:14.165287 (40, 30, 12,  5, [31m 2[0m) — Starting coverage gathering for "expr".
+2024-01-24T09:46:14.485300 (40, 29, 13,  5, [31m 2[0m) — Starting coverage gathering for "dd".
+2024-01-24T09:46:14.732453 (40, 28, 14,  5, [31m 2[0m) — Starting coverage gathering for "ln".
+2024-01-24T09:46:14.751227 (40, 27, 15,  5, [31m 2[0m) — Starting coverage gathering for "chmod".
+2024-01-24T09:46:15.155866 (40, 26, 16,  5, [31m 2[0m) — Starting coverage gathering for "expand".
+2024-01-24T09:46:15.318880 (40, 25, 17,  5, [31m 2[0m) — Starting coverage gathering for "fold".
+2024-01-24T09:46:15.649666 (40, 24, 18,  5, [31m 2[0m) — Starting coverage gathering for "link".
+2024-01-24T09:46:15.958464 (40, 23, 19,  5, [31m 2[0m) — Starting coverage gathering for "ls".
+2024-01-24T09:46:20.956546 (40, 22, 20,  5, [31m 2[0m) — Starting coverage gathering for "env".
+2024-01-24T09:46:22.343421 (40, 21, 21,  5, [31m 2[0m) — Starting coverage gathering for "md5sum".
+2024-01-24T09:46:22.357383 (40, 20, 22,  5, [31m 2[0m) — Starting coverage gathering for "du".
+2024-01-24T09:46:23.609777 (40, 19, 23,  5, [31m 2[0m) — Starting coverage gathering for "ginstall".
+2024-01-24T09:46:23.967092 (40, 18, 24,  5, [31m 2[0m) — Starting coverage gathering for "cut".
+2024-01-24T09:46:24.336741 (40, 17, 25,  5, [31m 2[0m) — Starting coverage gathering for "chgrp".
+2024-01-24T09:46:24.500655 (40, 16, 26,  5, [31m 2[0m) — Starting coverage gathering for "factor".
+2024-01-24T09:46:24.938941 (40, 15, 27,  5, [31m 2[0m) — Starting coverage gathering for "chcon".
+2024-01-24T09:46:24.940875 (40, 14, 28,  5, [31m 2[0m) — Starting coverage gathering for "mktemp".
+2024-01-24T09:46:25.725318 (40, 13, 29,  5, [31m 2[0m) — Starting coverage gathering for "logname".
+2024-01-24T09:46:25.728409 (40, 12, 30,  5, [31m 2[0m) — Starting coverage gathering for "head".
+2024-01-24T09:46:25.729855 (40, 11, 31,  5, [31m 2[0m) — Starting coverage gathering for "mknod".
+2024-01-24T09:46:27.227294 (40, 10, 32,  5, [31m 2[0m) — Starting coverage gathering for "comm".
+2024-01-24T09:46:27.229481 (40,  9, 33,  5, [31m 2[0m) — Starting coverage gathering for "chroot".
+2024-01-24T09:46:28.592986 (40,  8, 34,  5, [31m 2[0m) — Starting coverage gathering for "cp".
+2024-01-24T09:46:30.332464 (40,  7, 35,  5, [31m 2[0m) — Starting coverage gathering for "chown".
+2024-01-24T09:46:30.332936 (40,  6, 36,  5, [31m 2[0m) — Starting coverage gathering for "date".
+2024-01-24T09:46:30.335814 (40,  5, 37,  5, [31m 2[0m) — Starting coverage gathering for "mv".
+2024-01-24T09:46:30.710975 (40,  4, 38,  5, [31m 2[0m) — Starting coverage gathering for "join".
+2024-01-24T09:46:37.592398 (40,  3, 39,  5, [31m 2[0m) — Starting coverage gathering for "nl".
+2024-01-24T09:46:38.832664 (40,  2, 40,  5, [31m 2[0m) — Starting coverage gathering for "nice".
+2024-01-24T09:46:47.462955 (40,  2, 39,  6, [31m 2[0m) — Done with "csplit".
+2024-01-24T09:46:47.463460 (39,  3, 39,  6, [31m 2[0m) — Starting run for util "paste".
+2024-01-24T09:46:51.540233 (39,  3, 38,  7, [31m 2[0m) — Done with "hostid".
+2024-01-24T09:46:51.540747 (38,  4, 38,  7, [31m 2[0m) — Starting run for util "pathchk".
+2024-01-24T09:46:56.127215 (38,  4, 37,  8, [31m 2[0m) — Done with "mkfifo".
+2024-01-24T09:46:56.127654 (37,  5, 37,  8, [31m 2[0m) — Starting run for util "pinky".
+2024-01-24T09:46:56.846771 (37,  5, 36,  9, [31m 2[0m) — Done with "kill".
+2024-01-24T09:46:56.847395 (36,  6, 36,  9, [31m 2[0m) — Starting run for util "pr".
+2024-01-24T09:46:57.323204 (36,  6, 35, 10, [31m 2[0m) — Done with "ln".
+2024-01-24T09:46:57.323827 (35,  7, 35, 10, [31m 2[0m) — Starting run for util "printenv".
+2024-01-24T09:46:57.866596 (35,  7, 34, 11, [31m 2[0m) — Done with "id".
+2024-01-24T09:46:57.867176 (34,  8, 34, 11, [31m 2[0m) — Starting run for util "printf".
+2024-01-24T09:46:58.244009 (34,  8, 33, 12, [31m 2[0m) — Done with "dircolors".
+2024-01-24T09:46:58.244587 (33,  9, 33, 12, [31m 2[0m) — Starting run for util "ptx".
+2024-01-24T09:47:01.839931 (33,  9, 32, 13, [31m 2[0m) — Done with "base64".
+2024-01-24T09:47:01.840538 (32, 10, 32, 13, [31m 2[0m) — Starting run for util "pwd".
+2024-01-24T09:47:04.474158 (32, 10, 31, 14, [31m 2[0m) — Done with "echo".
+2024-01-24T09:47:04.474718 (31, 11, 31, 14, [31m 2[0m) — Starting run for util "readlink".
+2024-01-24T09:47:06.806933 (31, 11, 30, 15, [31m 2[0m) — Done with "df".
+2024-01-24T09:47:06.807444 (31, 11, 29, 16, [31m 2[0m) — Done with "mkdir".
+2024-01-24T09:47:06.808125 (30, 12, 29, 16, [31m 2[0m) — Starting run for util "rm".
+2024-01-24T09:47:06.809539 (29, 13, 29, 16, [31m 2[0m) — Starting run for util "rmdir".
+2024-01-24T09:47:06.819257 (29, 13, 28, 17, [31m 2[0m) — Done with "fmt".
+2024-01-24T09:47:06.819860 (28, 14, 28, 17, [31m 2[0m) — Starting run for util "runcon".
+2024-01-24T09:47:15.375232 (28, 14, 27, 18, [31m 2[0m) — Done with "fold".
+2024-01-24T09:47:15.375811 (27, 15, 27, 18, [31m 2[0m) — Starting run for util "seq".
+2024-01-24T09:47:18.556196 (27, 15, 26, 19, [31m 2[0m) — Done with "link".
+2024-01-24T09:47:18.556791 (26, 16, 26, 19, [31m 2[0m) — Starting run for util "setuidgid".
+2024-01-24T09:47:18.894598 (26, 16, 25, 20, [31m 2[0m) — Done with "dd".
+2024-01-24T09:47:18.895060 (25, 17, 25, 20, [31m 2[0m) — Starting run for util "shred".
+2024-01-24T09:47:22.284380 (25, 17, 24, 21, [31m 2[0m) — Done with "chmod".
+2024-01-24T09:47:22.284861 (24, 18, 24, 21, [31m 2[0m) — Starting run for util "shuf".
+2024-01-24T09:47:24.549407 (24, 18, 23, 22, [31m 2[0m) — Done with "ls".
+2024-01-24T09:47:24.549960 (23, 19, 23, 22, [31m 2[0m) — Starting run for util "sleep".
+2024-01-24T09:47:28.526531 (23, 19, 22, 23, [31m 2[0m) — Done with "expr".
+2024-01-24T09:47:28.526996 (22, 20, 22, 23, [31m 2[0m) — Starting run for util "sort".
+2024-01-24T09:47:28.534389 (22, 20, 21, 24, [31m 2[0m) — Done with "expand".
+2024-01-24T09:47:28.534934 (21, 21, 21, 24, [31m 2[0m) — Starting run for util "split".
+2024-01-24T09:47:32.701415 (21, 21, 20, 25, [31m 2[0m) — Done with "ginstall".
+2024-01-24T09:47:32.701872 (20, 22, 20, 25, [31m 2[0m) — Starting run for util "stat".
+2024-01-24T09:47:36.798662 (20, 22, 19, 26, [31m 2[0m) — Done with "env".
+2024-01-24T09:47:36.799254 (19, 23, 19, 26, [31m 2[0m) — Starting run for util "stty".
+2024-01-24T09:47:39.360398 (19, 23, 18, 27, [31m 2[0m) — Done with "factor".
+2024-01-24T09:47:39.360983 (18, 24, 18, 27, [31m 2[0m) — Starting run for util "sum".
+2024-01-24T09:47:42.022968 (18, 24, 17, 28, [31m 2[0m) — Done with "md5sum".
+2024-01-24T09:47:42.023450 (17, 25, 17, 28, [31m 2[0m) — Starting run for util "sync".
+2024-01-24T09:47:45.547028 (17, 25, 16, 29, [31m 2[0m) — Done with "cut".
+2024-01-24T09:47:45.547543 (16, 26, 16, 29, [31m 2[0m) — Starting run for util "tac".
+2024-01-24T09:47:45.832671 (16, 26, 15, 30, [31m 2[0m) — Done with "chcon".
+2024-01-24T09:47:45.833253 (15, 27, 15, 30, [31m 2[0m) — Starting run for util "tail".
+2024-01-24T09:47:46.424290 (15, 27, 14, 31, [31m 2[0m) — Done with "mknod".
+2024-01-24T09:47:46.424909 (14, 28, 14, 31, [31m 2[0m) — Starting run for util "tee".
+2024-01-24T09:47:49.615804 (14, 28, 13, 32, [31m 2[0m) — Done with "mktemp".
+2024-01-24T09:47:49.616310 (13, 29, 13, 32, [31m 2[0m) — Starting run for util "touch".
+2024-01-24T09:47:51.415706 (13, 29, 12, 33, [31m 2[0m) — Done with "chgrp".
+2024-01-24T09:47:51.416285 (12, 30, 12, 33, [31m 2[0m) — Starting run for util "tr".
+2024-01-24T09:47:57.382327 (12, 30, 11, 34, [31m 2[0m) — Done with "du".
+2024-01-24T09:47:57.382895 (11, 31, 11, 34, [31m 2[0m) — Starting run for util "tsort".
+2024-01-24T09:48:00.945076 (11, 31, 10, 35, [31m 2[0m) — Done with "logname".
+2024-01-24T09:48:00.945586 (10, 32, 10, 35, [31m 2[0m) — Starting run for util "tty".
+2024-01-24T09:48:05.631127 (10, 32,  9, 36, [31m 2[0m) — Done with "head".
+2024-01-24T09:48:05.631675 ( 9, 33,  9, 36, [31m 2[0m) — Starting run for util "uname".
+2024-01-24T09:48:08.242516 ( 9, 33,  8, 37, [31m 2[0m) — Done with "mv".
+2024-01-24T09:48:08.243034 ( 8, 34,  8, 37, [31m 2[0m) — Starting run for util "unexpand".
+2024-01-24T09:48:09.266730 ( 8, 34,  7, 38, [31m 2[0m) — Done with "date".
+2024-01-24T09:48:09.267246 ( 7, 35,  7, 38, [31m 2[0m) — Starting run for util "uniq".
+2024-01-24T09:48:09.435957 ( 7, 35,  6, 39, [31m 2[0m) — Done with "cp".
+2024-01-24T09:48:09.436462 ( 6, 36,  6, 39, [31m 2[0m) — Starting run for util "unlink".
+2024-01-24T09:48:09.563998 ( 6, 36,  5, 40, [31m 2[0m) — Done with "comm".
+2024-01-24T09:48:09.564549 ( 5, 37,  5, 40, [31m 2[0m) — Starting run for util "uptime".
+2024-01-24T09:48:09.995319 ( 5, 37,  4, 41, [31m 2[0m) — Done with "chroot".
+2024-01-24T09:48:09.995826 ( 4, 38,  4, 41, [31m 2[0m) — Starting run for util "users".
+2024-01-24T09:48:19.171025 ( 4, 38,  3, 42, [31m 2[0m) — Done with "join".
+2024-01-24T09:48:19.171662 ( 3, 39,  3, 42, [31m 2[0m) — Starting run for util "wc".
+2024-01-24T09:48:20.498014 ( 3, 39,  2, 43, [31m 2[0m) — Done with "nl".
+2024-01-24T09:48:20.498576 ( 2, 40,  2, 43, [31m 2[0m) — Starting run for util "whoami".
+2024-01-24T09:48:20.500642 ( 2, 40,  1, 44, [31m 2[0m) — Done with "chown".
+2024-01-24T09:48:20.501309 ( 1, 41,  1, 44, [31m 2[0m) — Starting run for util "who".
+2024-01-24T09:48:32.242795 ( 1, 41,  0, 45, [31m 2[0m) — Done with "nice".
+2024-01-24T09:48:32.243335 ( 0, 42,  0, 45, [31m 2[0m) — Starting run for util "yes".
+2024-01-24T09:48:56.758463 ( 0, 41,  1, 45, [31m 2[0m) — Starting coverage gathering for "setuidgid".
+2024-01-24T09:49:45.918652 ( 0, 40,  2, 45, [31m 2[0m) — Starting coverage gathering for "runcon".
+2024-01-24T09:50:04.842999 ( 0, 40,  1, 45, [31m 3[0m) — [31m=== ERROR: Failed to gather coverage for setuidgid with exit code 1[0m
+2024-01-24T09:50:23.327937 ( 0, 39,  2, 45, [31m 3[0m) — Starting coverage gathering for "wc".
+2024-01-24T09:51:02.602853 ( 0, 38,  3, 45, [31m 3[0m) — Starting coverage gathering for "nohup".
+2024-01-24T09:51:02.988576 ( 0, 38,  2, 46, [31m 3[0m) — Done with "runcon".
+2024-01-24T09:51:11.057532 ( 0, 37,  3, 46, [31m 3[0m) — Starting coverage gathering for "users".
+2024-01-24T09:51:21.446885 ( 0, 37,  2, 46, [31m 4[0m) — [31m=== ERROR: Failed to gather coverage for wc with exit code 1[0m
+2024-01-24T09:51:41.221348 ( 0, 37,  1, 47, [31m 4[0m) — Done with "nohup".
+2024-01-24T09:51:47.399749 ( 0, 36,  2, 47, [31m 4[0m) — Starting coverage gathering for "uptime".
+2024-01-24T09:51:47.412704 ( 0, 36,  1, 48, [31m 4[0m) — Done with "users".
+2024-01-24T09:52:04.363812 ( 0, 36,  0, 49, [31m 4[0m) — Done with "uptime".
+2024-01-24T09:53:19.298551 ( 0, 35,  1, 49, [31m 4[0m) — Starting coverage gathering for "od".
+2024-01-24T09:53:38.080000 ( 0, 35,  0, 50, [31m 4[0m) — Done with "od".
+2024-01-24T09:54:31.709227 ( 0, 34,  1, 50, [31m 4[0m) — Starting coverage gathering for "pwd".
+2024-01-24T09:54:49.499371 ( 0, 34,  0, 51, [31m 4[0m) — Done with "pwd".
+2024-01-24T09:55:21.412296 ( 0, 33,  1, 51, [31m 4[0m) — Starting coverage gathering for "printenv".
+2024-01-24T09:55:38.728298 ( 0, 33,  0, 52, [31m 4[0m) — Done with "printenv".
+2024-01-24T10:16:25.103783 ( 0, 32,  1, 52, [31m 4[0m) — Starting coverage gathering for "split".
+2024-01-24T10:16:35.644765 ( 0, 32,  0, 53, [31m 4[0m) — Done with "split".
+2024-01-24T10:48:41.994812 ( 0, 31,  1, 53, [31m 4[0m) — Starting coverage gathering for "pinky".
+2024-01-24T11:18:10.734784 ( 0, 30,  2, 53, [31m 4[0m) — Starting coverage gathering for "pr".
+2024-01-24T11:18:10.736890 ( 0, 29,  3, 53, [31m 4[0m) — Starting coverage gathering for "tee".
+2024-01-24T11:18:10.738092 ( 0, 28,  4, 53, [31m 4[0m) — Starting coverage gathering for "sort".
+2024-01-24T11:18:10.832419 ( 0, 27,  5, 53, [31m 4[0m) — Starting coverage gathering for "stat".
+2024-01-24T11:18:10.833497 ( 0, 26,  6, 53, [31m 4[0m) — Starting coverage gathering for "touch".
+2024-01-24T11:18:10.834419 ( 0, 25,  7, 53, [31m 4[0m) — Starting coverage gathering for "uname".
+2024-01-24T11:18:10.838071 ( 0, 24,  8, 53, [31m 4[0m) — Starting coverage gathering for "shred".
+2024-01-24T11:18:10.839640 ( 0, 23,  9, 53, [31m 4[0m) — Starting coverage gathering for "rm".
+2024-01-24T11:18:10.842991 ( 0, 22, 10, 53, [31m 4[0m) — Starting coverage gathering for "stty".
+2024-01-24T11:18:10.845562 ( 0, 21, 11, 53, [31m 4[0m) — Starting coverage gathering for "printf".
+2024-01-24T11:18:10.846760 ( 0, 20, 12, 53, [31m 4[0m) — Starting coverage gathering for "tac".
+2024-01-24T11:18:10.847913 ( 0, 19, 13, 53, [31m 4[0m) — Starting coverage gathering for "pathchk".
+2024-01-24T11:18:10.850650 ( 0, 18, 14, 53, [31m 4[0m) — Starting coverage gathering for "unexpand".
+2024-01-24T11:18:10.860689 ( 0, 17, 15, 53, [31m 4[0m) — Starting coverage gathering for "paste".
+2024-01-24T11:18:10.861908 ( 0, 16, 16, 53, [31m 4[0m) — Starting coverage gathering for "sum".
+2024-01-24T11:18:10.863508 ( 0, 15, 17, 53, [31m 4[0m) — Starting coverage gathering for "tail".
+2024-01-24T11:18:10.864764 ( 0, 14, 18, 53, [31m 4[0m) — Starting coverage gathering for "readlink".
+2024-01-24T11:18:10.865812 ( 0, 13, 19, 53, [31m 4[0m) — Starting coverage gathering for "rmdir".
+2024-01-24T11:18:10.867377 ( 0, 12, 20, 53, [31m 4[0m) — Starting coverage gathering for "tr".
+2024-01-24T11:18:11.690842 ( 0, 11, 21, 53, [31m 4[0m) — Starting coverage gathering for "shuf".
+2024-01-24T11:18:13.159376 ( 0, 10, 22, 53, [31m 4[0m) — Starting coverage gathering for "seq".
+2024-01-24T11:18:13.837579 ( 0,  9, 23, 53, [31m 4[0m) — Starting coverage gathering for "uniq".
+2024-01-24T11:18:16.457268 ( 0,  8, 24, 53, [31m 4[0m) — Starting coverage gathering for "whoami".
+2024-01-24T11:18:16.528862 ( 0,  7, 25, 53, [31m 4[0m) — Starting coverage gathering for "sleep".
+2024-01-24T11:18:16.872271 ( 0,  6, 26, 53, [31m 4[0m) — Starting coverage gathering for "ptx".
+2024-01-24T11:18:17.553047 ( 0,  5, 27, 53, [31m 4[0m) — Starting coverage gathering for "tsort".
+2024-01-24T11:18:17.553426 ( 0,  4, 28, 53, [31m 4[0m) — Starting coverage gathering for "unlink".
+2024-01-24T11:18:18.399529 ( 0,  3, 29, 53, [31m 4[0m) — Starting coverage gathering for "who".
+2024-01-24T11:18:20.205718 ( 0,  2, 30, 53, [31m 4[0m) — Starting coverage gathering for "tty".
+2024-01-24T11:18:20.388013 ( 0,  1, 31, 53, [31m 4[0m) — Starting coverage gathering for "sync".
+2024-01-24T11:18:21.684936 ( 0,  0, 32, 53, [31m 4[0m) — Starting coverage gathering for "yes".
+2024-01-24T11:18:41.803318 ( 0,  0, 31, 54, [31m 4[0m) — Done with "pinky".
+2024-01-24T11:18:44.550613 ( 0,  0, 30, 55, [31m 4[0m) — Done with "tee".
+2024-01-24T11:18:44.683250 ( 0,  0, 29, 56, [31m 4[0m) — Done with "stat".
+2024-01-24T11:18:45.655484 ( 0,  0, 28, 57, [31m 4[0m) — Done with "uname".
+2024-01-24T11:18:48.227271 ( 0,  0, 27, 58, [31m 4[0m) — Done with "sum".
+2024-01-24T11:18:48.746352 ( 0,  0, 26, 59, [31m 4[0m) — Done with "sort".
+2024-01-24T11:18:52.316974 ( 0,  0, 25, 60, [31m 4[0m) — Done with "pr".
+2024-01-24T11:19:02.910895 ( 0,  0, 24, 61, [31m 4[0m) — Done with "stty".
+2024-01-24T11:19:02.925550 ( 0,  0, 23, 62, [31m 4[0m) — Done with "unexpand".
+2024-01-24T11:19:03.318558 ( 0,  0, 22, 63, [31m 4[0m) — Done with "touch".
+2024-01-24T11:19:03.345671 ( 0,  0, 21, 64, [31m 4[0m) — Done with "tac".
+2024-01-24T11:19:03.895897 ( 0,  0, 20, 65, [31m 4[0m) — Done with "printf".
+2024-01-24T11:19:05.090252 ( 0,  0, 19, 66, [31m 4[0m) — Done with "readlink".
+2024-01-24T11:19:05.106484 ( 0,  0, 18, 67, [31m 4[0m) — Done with "paste".
+2024-01-24T11:19:05.921924 ( 0,  0, 17, 68, [31m 4[0m) — Done with "shred".
+2024-01-24T11:19:07.472475 ( 0,  0, 16, 69, [31m 4[0m) — Done with "rm".
+2024-01-24T11:19:07.480684 ( 0,  0, 15, 70, [31m 4[0m) — Done with "pathchk".
+2024-01-24T11:19:23.092601 ( 0,  0, 14, 71, [31m 4[0m) — Done with "tr".
+2024-01-24T11:19:26.122236 ( 0,  0, 13, 72, [31m 4[0m) — Done with "seq".
+2024-01-24T11:19:28.122708 ( 0,  0, 12, 73, [31m 4[0m) — Done with "tail".
+2024-01-24T11:19:28.808234 ( 0,  0, 11, 74, [31m 4[0m) — Done with "rmdir".
+2024-01-24T11:19:28.808845 ( 0,  0, 10, 75, [31m 4[0m) — Done with "uniq".
+2024-01-24T11:19:28.859446 ( 0,  0,  9, 76, [31m 4[0m) — Done with "shuf".
+2024-01-24T11:19:28.866754 ( 0,  0,  8, 77, [31m 4[0m) — Done with "sleep".
+2024-01-24T11:19:32.913598 ( 0,  0,  7, 78, [31m 4[0m) — Done with "whoami".
+2024-01-24T11:19:36.152460 ( 0,  0,  6, 79, [31m 4[0m) — Done with "ptx".
+2024-01-24T11:19:41.269664 ( 0,  0,  5, 80, [31m 4[0m) — Done with "tsort".
+2024-01-24T11:19:41.289840 ( 0,  0,  4, 81, [31m 4[0m) — Done with "unlink".
+2024-01-24T11:19:42.459353 ( 0,  0,  3, 82, [31m 4[0m) — Done with "tty".
+2024-01-24T11:19:42.778010 ( 0,  0,  2, 83, [31m 4[0m) — Done with "who".
+2024-01-24T11:19:42.897679 ( 0,  0,  1, 84, [31m 4[0m) — Done with "sync".
+2024-01-24T11:19:43.701966 ( 0,  0,  0, 85, [31m 4[0m) — Done with "yes".
+2024-01-24T11:19:43.702890 All tasks completed. Successes/Errors: 85/4.
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h[01;32mubuntu@vt-huberval-2[00m:[01;34m~/klee-coreutils-experiments[00m$ [?2004l
+exit

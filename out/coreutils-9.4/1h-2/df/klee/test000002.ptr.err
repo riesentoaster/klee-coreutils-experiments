@@ -1,0 +1,17 @@
+Error: memory error: out of bound pointer
+File: klee_src/runtime/POSIX/fd_32.c
+Line: 44
+assembly.ll line: 2606
+State: 5
+Stack: 
+	#000002606 in __stat64_to_stat(a=94446506060176, b=94446498914896) at klee_src/runtime/POSIX/fd_32.c:44
+	#100002680 in fstat(fd=3, buf=94446498914896) at klee_src/runtime/POSIX/fd_32.c:137
+	#200005997 in automount_stat_err(94446549430736, 94446498914896) at ../src/df.c:292
+	#300005523 in __klee_posix_wrapped_main(4, 94446550585952) at ../src/df.c:1780
+	#400003388 in __user_main(argcPtr=15, argvPtr=94446529750192, envp=94446529750320) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#500000787 in __uClibc_main(15, 94446529750192) at libc/misc/internals/__uClibc_main.c:401
+	#600000953 in main(15, 94446529750192)
+Info: 
+	address: 94446498914896
+	next: object at 94446498741568 of size 410
+		MO500[410] allocated at global:.str.3.79

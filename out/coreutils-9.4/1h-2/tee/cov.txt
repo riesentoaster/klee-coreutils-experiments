@@ -1,0 +1,21 @@
+File '../src/tee.c'
+Lines executed:64.39% of 132
+Creating 'tee.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:50.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/unistd.h'
+Lines executed:100.00% of 2
+Creating 'unistd.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:93.75% of 16
+Creating 'system.h.gcov'
+
+Lines executed:68.35% of 158

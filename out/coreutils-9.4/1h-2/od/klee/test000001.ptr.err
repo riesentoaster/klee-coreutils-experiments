@@ -1,0 +1,21 @@
+Error: memory error: out of bound pointer
+File: libc/string/memcpy.c
+Line: 29
+assembly.ll line: 4564
+State: 6
+Stack: 
+	#000004564 in memcpy(93834669192464, 93834702346897, 3) at libc/string/memcpy.c:29
+	#100025210 in __stdio_fwrite(93834702346897, 3, 93834670846656) at libc/stdio/_fwrite.c:39
+	#200025955 in vfprintf(93834670846656, 93834702346896, 93834717980256) at libc/stdio/_vfprintf.c:1904
+	#300027256 in vsnprintf(93834669192464, 18446744073709551615, 93834702346896, 93834717980256) at libc/stdio/vsnprintf.c:64
+	#400021547 in sprintf(93834669192464, 93834702346896) at libc/stdio/sprintf.c:24
+	#500010771 in decode_one_format(93834705019880, 93834705019880, 93834705024296, 93834669192448) at ../src/od.c:717
+	#600006174 in decode_format_string(93834705019880) at ../src/od.c:982
+	#700005442 in __klee_posix_wrapped_main(2, 93834717033792) at ../src/od.c:1891
+	#800003022 in __user_main(argcPtr=11, argvPtr=93834671443824, envp=93834671443920) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#900000722 in __uClibc_main(11, 93834671443824) at libc/misc/internals/__uClibc_main.c:401
+	#1000000888 in main(11, 93834671443824)
+Info: 
+	address: 93834669192464
+	next: object at 93834668607744 of size 264
+		MO394[264] allocated at global:_stdio_streams

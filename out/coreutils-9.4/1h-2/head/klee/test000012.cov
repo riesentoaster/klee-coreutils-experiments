@@ -1,0 +1,11 @@
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1111
+libc/unistd/getopt.c:1134
+libc/unistd/getopt.c:1136
+libc/unistd/getopt.c:1138
+libc/unistd/getopt.c:1139
+libc/unistd/getopt.c:1140
+libc/unistd/getopt.c:1143
+libc/unistd/getopt.c:1144
+../src/head.c:1067
+../src/head.c:1069

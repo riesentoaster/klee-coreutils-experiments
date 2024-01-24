@@ -1,0 +1,4 @@
+libc/string/__xpg_strerror_r.c:222
+libc/string/__xpg_strerror_r.c:223
+libc/string/__xpg_strerror_r.c:228
+libc/string/__xpg_strerror_r.c:229

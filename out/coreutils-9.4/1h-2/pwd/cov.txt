@@ -1,0 +1,21 @@
+File '../src/pwd.c'
+Lines executed:32.03% of 153
+Creating 'pwd.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:80.00% of 5
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:0.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:60.00% of 25
+Creating 'system.h.gcov'
+
+Lines executed:38.10% of 189

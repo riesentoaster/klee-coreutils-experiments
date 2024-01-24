@@ -1,0 +1,16 @@
+Error: memory error: invalid pointer: free
+File: ../src/users.c
+Line: 76
+assembly.ll line: 6938
+State: 14
+Stack: 
+	#000006938 in list_entries_users(0, 0) at ../src/users.c:76
+	#100004825 in users(94868677175816, 0) at ../src/users.c:91
+	#200004660 in __klee_posix_wrapped_main(2, 94868678069952) at ../src/users.c:139
+	#300002907 in __user_main(argcPtr=15, argvPtr=94868641475632, envp=94868641475760) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000589 in __uClibc_main(15, 94868641475632) at libc/misc/internals/__uClibc_main.c:401
+	#500000755 in main(15, 94868641475632)
+Info: 
+	address: 94868677178712
+	next: object at 94868637588800 of size 400
+		MO450[400] allocated at global:static_utmp

@@ -1,0 +1,21 @@
+File '../src/unexpand.c'
+Lines executed:92.04% of 113
+Creating 'unexpand.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:0.00% of 3
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:66.67% of 6
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:75.00% of 28
+Creating 'system.h.gcov'
+
+Lines executed:86.36% of 154

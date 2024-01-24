@@ -1,0 +1,16 @@
+Error: memory error: out of bound pointer
+File: ../src/set-fields.c
+Line: 50
+assembly.ll line: 9163
+State: 53
+Stack: 
+	#000009163 in add_range_pair(symbolic, 18446744073709551615) at ../src/set-fields.c:50
+	#100005185 in set_fields(94102685578000, 4) at ../src/set-fields.c:201
+	#200004867 in __klee_posix_wrapped_main(4, 94102686699312) at ../src/cut.c:572
+	#300002932 in __user_main(argcPtr=15, argvPtr=94102647786304, envp=94102647786432) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000632 in __uClibc_main(15, 94102647786304) at libc/misc/internals/__uClibc_main.c:401
+	#500000798 in main(15, 94102647786304)
+Info: 
+	address: 94102649241472
+	next: object at 94102645549024 of size 210
+		MO351[210] allocated at global:.str.6.83

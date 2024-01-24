@@ -1,0 +1,18 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: increased time budget from 5.000000 to 8.348326
+
+KLEE: increased time budget from 8.348326 to 13.987478
+
+KLEE: increased time budget from 13.987478 to 22.662424
+
+KLEE: increased time budget from 22.662424 to 31.825569
+
+KLEE: increased time budget from 31.825569 to 47.841802
+
+KLEE: increased time budget from 47.841802 to 52.711583
+
+KLEE: ERROR: libc/misc/dirent/opendir.c:74: concretized symbolic size
+KLEE: NOTE: now ignoring this error at this location
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

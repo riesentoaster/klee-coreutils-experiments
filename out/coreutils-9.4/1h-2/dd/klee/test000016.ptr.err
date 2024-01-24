@@ -1,0 +1,17 @@
+Error: check_memory_access: memory error
+File: klee_src/runtime/POSIX/fd.c
+Line: 379
+assembly.ll line: 1505
+State: 55
+Stack: 
+	#000001505 in read(fd=0, buf=94077123506176, count=512) at klee_src/runtime/POSIX/fd.c:379
+	#100017968 in iread(0, 94077123506176, 512) at ../src/dd.c:1116
+	#200006632 in dd_copy() at ../src/dd.c:2199
+	#300005201 in __klee_posix_wrapped_main(2, 94077138943040) at ../src/dd.c:2534
+	#400003186 in __user_main(argcPtr=11, argvPtr=94077092722784, envp=94077092722880) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#500000739 in __uClibc_main(11, 94077092722784) at libc/misc/internals/__uClibc_main.c:401
+	#600000905 in main(11, 94077092722784)
+Info: 
+	address: 94077123506176
+	next: object at 94077090337152 of size 448
+		MO656[448] allocated at global:hr_locale

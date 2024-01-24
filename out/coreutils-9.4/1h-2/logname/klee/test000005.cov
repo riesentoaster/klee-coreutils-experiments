@@ -1,0 +1,6 @@
+../src/logname.c:0
+../src/logname.c:74
+../src/logname.c:75
+../src/logname.c:76
+libc/misc/error/error.c:65
+libc/unistd/getlogin.c:26

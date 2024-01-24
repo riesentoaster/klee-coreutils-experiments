@@ -1,0 +1,3 @@
+libc/stdlib/_strtod.c:480
+libc/stdlib/_strtod.c:481
+libc/stdio/_fpmaxtostr.c:296

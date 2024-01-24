@@ -1,0 +1,9 @@
+../src/seq.c:147
+../src/seq.c:197
+../src/seq.c:206
+../src/seq.c:208
+../src/seq.c:213
+../src/seq.c:214
+libc/stdlib/stdlib.c:533
+libc/stdlib/stdlib.c:598
+libc/stdlib/_strtod.c:411

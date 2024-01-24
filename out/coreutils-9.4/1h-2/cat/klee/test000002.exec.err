@@ -1,0 +1,11 @@
+Error: illegal instruction
+File: ../src/cat.c
+Line: 526
+assembly.ll line: 5421
+State: 39
+Stack: 
+	#000005421 in copy_cat() at ../src/cat.c:526
+	#100005047 in __klee_posix_wrapped_main(1, 94767916850832) at ../src/cat.c:729
+	#200003023 in __user_main(argcPtr=15, argvPtr=94767885014176, envp=94767885014304) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000606 in __uClibc_main(15, 94767885014176) at libc/misc/internals/__uClibc_main.c:401
+	#400000772 in main(15, 94767885014176)

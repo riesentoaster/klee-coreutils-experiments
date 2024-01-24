@@ -1,0 +1,7 @@
+klee_src/runtime/POSIX/fd.c:0
+klee_src/runtime/POSIX/fd.c:587
+klee_src/runtime/POSIX/fd_32.c:0
+klee_src/runtime/POSIX/fd_32.c:120
+klee_src/runtime/POSIX/fd_32.c:121
+klee_src/runtime/POSIX/fd_32.c:122
+../src/touch.c:347

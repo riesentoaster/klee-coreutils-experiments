@@ -1,0 +1,4 @@
+libc/unistd/getopt.c:478
+../src/mknod.c:187
+../src/mknod.c:188
+../src/mknod.c:190

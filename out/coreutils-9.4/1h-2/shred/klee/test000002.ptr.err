@@ -1,0 +1,17 @@
+Error: memory error: out of bound pointer
+File: ../src/shred.c
+Line: 796
+assembly.ll line: 6713
+State: 51
+Stack: 
+	#000006713 in genpattern(94590945081104, 3, 94590946062944) at ../src/shred.c:796
+	#100005856 in do_wipefd(1, 94590946250720, 94590946062944, 94590945937440) at ../src/shred.c:896
+	#200005558 in wipefd(94590946250720, 94590946062944, 94590945937440) at ../src/shred.c:973
+	#300005239 in __klee_posix_wrapped_main(2, 94590945941792) at ../src/shred.c:1259
+	#400003307 in __user_main(argcPtr=15, argvPtr=94590904447440, envp=94590904447568) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#500000658 in __uClibc_main(15, 94590904447440) at libc/misc/internals/__uClibc_main.c:401
+	#600000824 in main(15, 94590904447440)
+Info: 
+	address: 94590945081104
+	next: object at 94590901072000 of size 367
+		MO416[367] allocated at global:.str.5.81

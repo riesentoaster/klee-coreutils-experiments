@@ -1,0 +1,9 @@
+../src/chroot.c:0
+../src/chroot.c:94
+../src/chroot.c:104
+../src/chroot.c:105
+../src/chroot.c:109
+../src/chroot.c:110
+../src/chroot.c:126
+../src/chroot.c:138
+libc/string/strtok_r.c:32

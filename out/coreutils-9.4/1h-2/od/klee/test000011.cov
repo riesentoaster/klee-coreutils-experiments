@@ -1,0 +1,12 @@
+libc/stdio/_vfprintf.c:1674
+libc/stdio/_vfprintf.c:1675
+libc/stdio/_vfprintf.c:1679
+libc/stdio/_vfprintf.c:1681
+libc/stdio/_vfprintf.c:1688
+libc/string/strnlen.c:0
+libc/string/strnlen.c:20
+libc/string/strnlen.c:22
+libc/string/strnlen.c:30
+libc/string/strnlen.c:31
+libc/string/strnlen.c:32
+libc/string/strnlen.c:35

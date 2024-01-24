@@ -1,0 +1,4 @@
+../src/ptx.c:1826
+../src/ptx.c:1827
+libc/unistd/getopt.c:633
+libc/unistd/getopt.c:696

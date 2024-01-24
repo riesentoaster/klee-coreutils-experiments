@@ -1,0 +1,17 @@
+../src/od.c:1561
+../src/od.c:1618
+../src/od.c:1766
+../src/od.c:1768
+../src/od.c:1769
+../src/od.c:1770
+../lib/xstrtol.c:0
+../lib/xstrtol.c:78
+../lib/xstrtol.c:90
+../lib/xstrtol.c:102
+../lib/xstrtol.c:104
+../lib/xstrtol.c:108
+../lib/xstrtol.c:247
+libc/stdlib/stdlib.c:329
+libc/stdlib/stdlib.c:330
+libc/stdlib/stdlib.c:332
+libc/stdlib/stdlib.c:592

@@ -1,0 +1,12 @@
+libc/string/_collate.c:65
+libc/string/_collate.c:67
+libc/string/_collate.c:517
+libc/string/_collate.c:519
+libc/string/_collate.c:520
+libc/string/_collate.c:522
+libc/string/_collate.c:526
+libc/string/_collate.c:549
+../src/expr.c:909
+../src/expr.c:918
+../src/expr.c:919
+../src/expr.c:921

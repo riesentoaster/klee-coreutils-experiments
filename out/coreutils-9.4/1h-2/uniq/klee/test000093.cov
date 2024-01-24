@@ -1,0 +1,12 @@
+libc/stdio/fputc.c:31
+libc/stdio/fputc.c:32
+libc/stdio/putchar.c:16
+libc/stdio/putchar.c:18
+libc/stdio/putchar.c:20
+../lib/argmatch.c:95
+../lib/argmatch.c:98
+../lib/argmatch.c:210
+../src/uniq.c:321
+../src/uniq.c:379
+../src/uniq.c:479
+../src/uniq.c:595

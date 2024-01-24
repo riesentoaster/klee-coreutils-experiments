@@ -1,0 +1,5 @@
+libc/stdio/fwrite.c:27
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+../lib/readtokens.c:114
+../lib/readtokens.c:115

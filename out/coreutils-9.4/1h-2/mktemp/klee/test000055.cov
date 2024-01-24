@@ -1,0 +1,15 @@
+libc/unistd/getopt.c:700
+libc/unistd/getopt.c:735
+../src/mktemp.c:0
+../src/mktemp.c:192
+../src/mktemp.c:193
+../src/mktemp.c:223
+../src/mktemp.c:224
+../src/mktemp.c:225
+../src/mktemp.c:231
+../src/mktemp.c:232
+../src/mktemp.c:233
+../src/mktemp.c:234
+../src/mktemp.c:237
+../lib/xmalloc.c:0
+../lib/xmalloc.c:57

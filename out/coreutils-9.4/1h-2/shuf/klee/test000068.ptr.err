@@ -1,0 +1,16 @@
+Error: memory error: out of bound pointer
+File: libc/string/memset.c
+Line: 28
+assembly.ll line: 4545
+State: 23220
+Stack: 
+	#000004545 in memset(94822028421144, 0, 24576) at libc/string/memset.c:28
+	#100006040 in read_input_reservoir_sampling(94822012964800, 10, symbolic, 94822428059008, 94822058142192) at ../src/shuf.c:195
+	#200005094 in __klee_posix_wrapped_main(3, 94822058683168) at ../src/shuf.c:555
+	#300002964 in __user_main(argcPtr=15, argvPtr=94822012957616, envp=94822012957744) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000621 in __uClibc_main(15, 94822012957616) at libc/misc/internals/__uClibc_main.c:401
+	#500000787 in main(15, 94822012957616)
+Info: 
+	address: 94822028421144
+	next: object at 94822012739072 of size 256
+		MO468[256] allocated at global:slot0

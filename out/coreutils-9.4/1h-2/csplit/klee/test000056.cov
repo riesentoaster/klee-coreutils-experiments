@@ -1,0 +1,9 @@
+../src/csplit.c:530
+../src/csplit.c:533
+libc/misc/regex/regex_old.c:5353
+libc/misc/regex/regex_old.c:5354
+libc/misc/regex/regex_old.c:5977
+libc/misc/regex/regex_old.c:6017
+libc/misc/regex/regex_old.c:6018
+libc/misc/regex/regex_old.c:6019
+libc/misc/regex/regex_old.c:6088

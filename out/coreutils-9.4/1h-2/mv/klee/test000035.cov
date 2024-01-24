@@ -1,0 +1,6 @@
+../src/mv.c:0
+../src/mv.c:368
+../src/mv.c:370
+../src/mv.c:371
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148

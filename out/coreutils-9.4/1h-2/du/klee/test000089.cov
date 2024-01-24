@@ -1,0 +1,15 @@
+../src/du.c:0
+../src/du.c:808
+../src/du.c:814
+../src/du.c:815
+../lib/xstrtol.c:0
+../lib/xstrtol.c:84
+../lib/xstrtol.c:113
+../lib/xstrtol.c:123
+../lib/xstrtol.c:129
+../lib/xstrtol.c:245
+../lib/xstrtol.c:246
+libc/stdlib/stdlib.c:540
+libc/stdlib/stdlib.c:541
+libc/stdlib/stdlib.c:542
+libc/stdlib/stdlib.c:546

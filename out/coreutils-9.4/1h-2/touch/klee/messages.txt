@@ -1,0 +1,14 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: parse-datetime.y:1419: illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 6.142512
+
+KLEE: increased time budget from 6.142512 to 8.067801
+
+KLEE: increased time budget from 8.067801 to 14.109458
+
+KLEE: increased time budget from 14.109458 to 16.036163
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

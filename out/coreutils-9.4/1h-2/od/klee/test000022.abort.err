@@ -1,0 +1,12 @@
+Error: abort failure
+File: ../lib/xstrtol-error.c
+Line: 60
+assembly.ll line: 17951
+State: 5906
+Stack: 
+	#000017951 in xstrtol_error(0, 7, 119, 93834716917652, 1) at ../lib/xstrtol-error.c:60
+	#100006124 in xstrtol_fatal(0, 7, 119, 93834716917652) at ../lib/xstrtol-error.c:96
+	#200005147 in __klee_posix_wrapped_main(2, 93834717033792) at ../src/od.c:1770
+	#300003022 in __user_main(argcPtr=11, argvPtr=93834671443824, envp=93834671443920) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000722 in __uClibc_main(11, 93834671443824) at libc/misc/internals/__uClibc_main.c:401
+	#500000888 in main(11, 93834671443824)

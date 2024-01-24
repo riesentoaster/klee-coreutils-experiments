@@ -1,0 +1,52 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Eq false (Slt 0 N1))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq 45 (Read w8 1 arg00))
+         (Eq 61 (Read w8 5 arg00))
+         (Eq 98 (Read w8 2 arg00))
+         (Eq 121 (Read w8 3 arg00))
+         (Eq 116 (Read w8 4 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 N3:(Read w8 9 arg00)))
+         (Eq 45 (Read w8 7 arg00))
+         (Eq false
+             (Sle (ZExt w32 (Extract w8 0 (Add w32 4294967248 N4:(SExt w32 N3))))
+                  9))
+         (Sle 65 N4)
+         (Sle 10
+              (ZExt w32 (Extract w8 0 (Add w32 4294967209 (Or w32 N4 32)))))
+         (Eq 69 (Extract w8 0 N4))
+         (Eq 1
+             (Extract w8 0 (Add w32 4294967248 (SExt w32 N2))))
+         (Eq 32 (Read w8 6 arg00))]
+        false)

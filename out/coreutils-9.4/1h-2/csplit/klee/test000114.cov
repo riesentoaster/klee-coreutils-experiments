@@ -1,0 +1,14 @@
+../src/csplit.c:900
+../src/csplit.c:925
+../src/csplit.c:927
+../lib/quotearg.c:0
+../lib/quotearg.c:248
+../lib/quotearg.c:759
+../lib/quotearg.c:762
+../lib/quotearg.c:764
+../lib/quotearg.c:766
+libc/stdio/_fopen.c:58
+libc/stdio/_fopen.c:60
+libc/stdio/_fopen.c:61
+libc/stdio/_fopen.c:62
+libc/stdio/_fopen.c:148

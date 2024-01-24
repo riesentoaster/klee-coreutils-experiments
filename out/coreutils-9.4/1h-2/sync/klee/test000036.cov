@@ -1,0 +1,16 @@
+libc/string/strcmp.c:0
+libc/string/strcmp.c:20
+libc/string/strcmp.c:32
+libc/string/strcmp.c:34
+libc/string/strcmp.c:35
+libc/string/strcmp.c:37
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:488
+libc/unistd/getopt.c:490
+libc/unistd/getopt.c:492
+libc/unistd/getopt.c:493
+libc/unistd/getopt.c:495
+libc/unistd/getopt.c:496
+libc/unistd/getopt.c:497
+libc/unistd/getopt.c:499
+libc/unistd/getopt.c:500

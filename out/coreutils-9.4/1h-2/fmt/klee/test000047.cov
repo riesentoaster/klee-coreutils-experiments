@@ -1,0 +1,14 @@
+../src/fmt.c:0
+../src/fmt.c:264
+../src/fmt.c:265
+../src/fmt.c:296
+../src/fmt.c:353
+../src/fmt.c:354
+../src/fmt.c:357
+libc/stdio/_vfprintf.c:668
+libc/stdio/_vfprintf.c:669
+libc/stdio/_vfprintf.c:1438
+libc/stdio/_vfprintf.c:1689
+libc/stdio/_vfprintf.c:1690
+libc/stdio/_vfprintf.c:1691
+libc/stdio/_vfprintf.c:1692
