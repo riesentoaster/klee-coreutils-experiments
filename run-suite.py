@@ -235,7 +235,7 @@ def run_klee_coreutils(image_name, util, env_vars):
 
     # Execute the command using subprocess.run
     with open(stdout_file, "w") as stdout_f, open(stderr_file, "w") as stderr_f:
-        print_with_counter(util, f'Starting run for util "{util}".')
+        print_with_counter(util, State.STARTED, f'Starting run for util "{util}".')
         process = subprocess.run(
             exec_command, stdout=stdout_f, stderr=stderr_f, text=True
         )
