@@ -2,7 +2,7 @@
 
 [KLEE](https://klee.github.io) is an open-source, symbolic execution-based, advanced fuzzing tool. The [paper introducing it in OSDI 2008](http://www.doc.ic.ac.uk/~cristic/papers/klee-osdi-08.pdf) is one of the most-cited works in the space of symbolic execution-based fuzzing. I wanted to see if I can reproduce their findings with the current version of KLEE and perform some additional experiments. This repository contains all code and results from these experiments.
 
-> WARNING: I kept fairly expensive records of each experiment, so this repository is >50GB.
+> WARNING: I kept fairly expensive records of each experiment, so this repository is >30GB.
 
 All experiments were run on a virtuallized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
 
