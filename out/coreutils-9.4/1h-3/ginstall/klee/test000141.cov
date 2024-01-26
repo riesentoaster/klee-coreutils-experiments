@@ -1,0 +1,16 @@
+../src/install.c:0
+../src/install.c:526
+../src/install.c:553
+../src/install.c:563
+../src/install.c:564
+../src/install.c:565
+libc/pwd_grp/pwd_grp.c:401
+libc/pwd_grp/pwd_grp.c:524
+libc/pwd_grp/pwd_grp.c:532
+libc/stdio/fclose.c:92
+libc/stdio/fclose.c:101
+libc/pwd_grp/pwd_grp_internal.c:59
+libc/pwd_grp/pwd_grp_internal.c:78
+libc/pwd_grp/pwd_grp_internal.c:79
+libc/pwd_grp/pwd_grp_internal.c:88
+libc/pwd_grp/pwd_grp_internal.c:91

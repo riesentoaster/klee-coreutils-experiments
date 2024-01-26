@@ -1,0 +1,24 @@
+Testing util "chcon"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Assuming input directory for llvm files ./coreutils-llvm/obj-llvm/src
+Setting KLEE's timeout to 60
+
+Running KLEE as follows:
+    klee --simplify-sym-indices --write-cvcs --write-cov --output-module     --max-memory=1000 --disable-inlining --optimize --use-forked-solver     --use-cex-cache --libc=uclibc --posix-runtime     --external-calls=all --only-output-states-covering-new     --env-file=test.env --run-in-dir=/tmp/sandbox     --max-sym-array-size=4096 --max-solver-time=30s --max-time=60min     --watchdog --max-memory-inhibit=false --max-static-fork-pct=1     --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal     --search=random-path --search=nurs:covnew     --use-batching-search --batch-instructions=10000     --output-dir=./out/klee     ./coreutils-llvm/obj-llvm/src/chcon.bc     --sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout
+
+Exporting args for crashing test cases using ktest-tool
+Found 0 errors: 
+Exporting stats about the test run
+Collecting coverage data
+zipping large text files
+Done
+Starting coverage gathering
+Copying coverage files
+Running gcov
+Cannot open source file ../src/chcon.c
+Cannot open source file lib/selinux/selinux.h
+Cannot open source file lib/selinux/context.h
+Cannot open source file ../src/system.h
+Coverage gathering done
+tar: Removing leading `/' from member names

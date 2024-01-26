@@ -1,0 +1,17 @@
+../src/stty.c:0
+../src/stty.c:1287
+../src/stty.c:1375
+../src/stty.c:1376
+../src/stty.c:1901
+../src/stty.c:2009
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:453
+libc/unistd/getopt.c:572
+libc/unistd/getopt.c:573
+libc/unistd/getopt.c:574
+libc/unistd/getopt.c:575
+libc/unistd/getopt.c:697
+libc/unistd/getopt.c:736
+libc/unistd/getopt.c:737
+libc/unistd/getopt.c:739
+libc/unistd/getopt.c:744

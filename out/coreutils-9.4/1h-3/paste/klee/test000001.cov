@@ -1,0 +1,6 @@
+../src/paste.c:196
+../src/paste.c:197
+libc/string/strcmp.c:20
+libc/string/strcmp.c:34
+libc/string/strcmp.c:35
+libc/unistd/getopt.c:478

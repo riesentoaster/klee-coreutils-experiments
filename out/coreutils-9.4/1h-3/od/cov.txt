@@ -1,0 +1,29 @@
+File '../src/od.c'
+Lines executed:49.34% of 758
+Creating 'od.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio.h'
+Lines executed:40.00% of 10
+Creating 'stdio.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:100.00% of 2
+Creating 'string_fortified.h.gcov'
+
+File '../src/system.h'
+Lines executed:88.24% of 34
+Creating 'system.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:48.00% of 25
+Creating 'stdio2.h.gcov'
+
+File '../lib/xbinary-io.h'
+Lines executed:100.00% of 3
+Creating 'xbinary-io.h.gcov'
+
+Lines executed:51.32% of 836

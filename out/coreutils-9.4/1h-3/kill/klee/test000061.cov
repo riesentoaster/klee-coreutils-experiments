@@ -1,0 +1,12 @@
+../src/kill.c:0
+../src/kill.c:209
+../lib/quotearg.c:393
+../lib/quotearg.c:418
+../lib/quotearg.c:487
+../lib/quotearg.c:504
+../lib/quotearg.c:506
+libc/stdio/_vfprintf.c:1899
+libc/stdio/_vfprintf.c:1900
+libc/stdio/_vfprintf.c:1904
+libc/stdio/_vfprintf.c:1908
+libc/stdio/_vfprintf.c:1909

@@ -1,0 +1,11 @@
+../src/copy.c:0
+../src/copy.c:834
+../lib/savedir.c:0
+../lib/savedir.c:179
+../lib/opendir-safer.c:0
+../lib/opendir-safer.c:33
+libc/misc/dirent/opendir.c:27
+libc/misc/dirent/opendir.c:29
+libc/misc/dirent/opendir.c:30
+libc/misc/dirent/opendir.c:31
+libc/misc/dirent/opendir.c:43

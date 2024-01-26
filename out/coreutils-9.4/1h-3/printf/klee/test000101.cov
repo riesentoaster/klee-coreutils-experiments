@@ -1,0 +1,7 @@
+libc/stdio/_uintmaxtostr.c:99
+libc/stdio/_uintmaxtostr.c:100
+libc/stdio/_uintmaxtostr.c:101
+../src/printf.c:412
+../src/printf.c:413
+../lib/vasnprintf.c:6107
+../lib/vasnprintf.c:6207

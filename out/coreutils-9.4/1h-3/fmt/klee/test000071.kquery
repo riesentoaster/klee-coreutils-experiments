@@ -1,0 +1,168 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Ult N2:(Add w32 4294967248
+                          (SExt w32 N3:(Read w8 1 arg00)))
+              10)
+         (Eq 45 (Read w8 0 arg01))
+         (Eq 0 (Read w8 1 arg01))
+         (Eq false
+             (Eq 45 (Read w8 0 arg02)))
+         (Eq false (Eq 43 N3))
+         (Eq false (Eq 45 N3))
+         (Sle (ZExt w32 N4:(Extract w8 0 (Add w32 4294967248
+                                                  (SExt w32 N5:(Read w8 2 arg00)))))
+              9)
+         (Sle (ZExt w32 N6:(Extract w8 0 (Add w32 4294967248
+                                                  (SExt w32 N7:(Read w8 3 arg00)))))
+              9)
+         (Sle (ZExt w32 N8:(Extract w8 0 (Add w32 4294967248
+                                                  (SExt w32 N9:(Read w8 4 arg00)))))
+              9)
+         (Sle (ZExt w32 N10:(Extract w8 0 (Add w32 4294967248
+                                                   (SExt w32 N11:(Read w8 5 arg00)))))
+              9)
+         (Sle (ZExt w32 N12:(Extract w8 0 (Add w32 4294967248
+                                                   (SExt w32 N13:(Read w8 6 arg00)))))
+              9)
+         (Sle (ZExt w32 N14:(Extract w8 0 (Add w32 4294967248
+                                                   (SExt w32 N15:(Read w8 7 arg00)))))
+              9)
+         (Sle (ZExt w32 N16:(Extract w8 0 (Add w32 4294967248
+                                                   (SExt w32 N17:(Read w8 8 arg00)))))
+              9)
+         (Sle (ZExt w32 N18:(Extract w8 0 (Add w32 4294967248
+                                                   (SExt w32 N19:(Read w8 9 arg00)))))
+              9)
+         (Ult 2500
+              (Add w64 (Mul w64 10
+                                (Add w64 (Mul w64 10
+                                                  (Add w64 (Mul w64 10
+                                                                    (Add w64 (Mul w64 10
+                                                                                      (Add w64 (Mul w64 10
+                                                                                                        (Add w64 (Mul w64 10
+                                                                                                                          (Add w64 (Mul w64 10
+                                                                                                                                            (Add w64 (Mul w64 10
+                                                                                                                                                              (ZExt w64 (Extract w8 0 N2)))
+                                                                                                                                                     (ZExt w64 N4)))
+                                                                                                                                   (ZExt w64 N6)))
+                                                                                                                 (ZExt w64 N8)))
+                                                                                               (ZExt w64 N10)))
+                                                                             (ZExt w64 N12)))
+                                                           (ZExt w64 N14)))
+                                         (ZExt w64 N16)))
+                       (ZExt w64 N18)))
+         (Or (Eq 55 N3)
+             (Or (Eq 54 N3)
+                 (Or (Eq 53 N3)
+                     (Or (Eq 52 N3)
+                         (Or (Eq 51 N3)
+                             (Or (Eq 50 N3)
+                                 (Or (Eq 49 N3)
+                                     (Or (Eq 48 N3)
+                                         (Or (Eq 57 N3) (Eq 56 N3))))))))))
+         (Or (Eq 55 N5)
+             (Or (Eq 54 N5)
+                 (Or (Eq 53 N5)
+                     (Or (Eq 52 N5)
+                         (Or (Eq 51 N5)
+                             (Or (Eq 50 N5)
+                                 (Or (Eq 49 N5)
+                                     (Or (Eq 48 N5)
+                                         (Or (Eq 57 N5) (Eq 56 N5))))))))))
+         (Or (Eq 55 N7)
+             (Or (Eq 54 N7)
+                 (Or (Eq 53 N7)
+                     (Or (Eq 52 N7)
+                         (Or (Eq 51 N7)
+                             (Or (Eq 50 N7)
+                                 (Or (Eq 49 N7)
+                                     (Or (Eq 48 N7)
+                                         (Or (Eq 57 N7) (Eq 56 N7))))))))))
+         (Or (Eq 55 N9)
+             (Or (Eq 54 N9)
+                 (Or (Eq 53 N9)
+                     (Or (Eq 52 N9)
+                         (Or (Eq 51 N9)
+                             (Or (Eq 50 N9)
+                                 (Or (Eq 49 N9)
+                                     (Or (Eq 48 N9)
+                                         (Or (Eq 57 N9) (Eq 56 N9))))))))))
+         (Or (Eq 55 N11)
+             (Or (Eq 54 N11)
+                 (Or (Eq 53 N11)
+                     (Or (Eq 52 N11)
+                         (Or (Eq 51 N11)
+                             (Or (Eq 50 N11)
+                                 (Or (Eq 49 N11)
+                                     (Or (Eq 48 N11)
+                                         (Or (Eq 57 N11) (Eq 56 N11))))))))))
+         (Or (Eq 55 N13)
+             (Or (Eq 54 N13)
+                 (Or (Eq 53 N13)
+                     (Or (Eq 52 N13)
+                         (Or (Eq 51 N13)
+                             (Or (Eq 50 N13)
+                                 (Or (Eq 49 N13)
+                                     (Or (Eq 48 N13)
+                                         (Or (Eq 57 N13) (Eq 56 N13))))))))))
+         (Or (Eq 55 N15)
+             (Or (Eq 54 N15)
+                 (Or (Eq 53 N15)
+                     (Or (Eq 52 N15)
+                         (Or (Eq 51 N15)
+                             (Or (Eq 50 N15)
+                                 (Or (Eq 49 N15)
+                                     (Or (Eq 48 N15)
+                                         (Or (Eq 57 N15) (Eq 56 N15))))))))))
+         (Or (Eq 55 N17)
+             (Or (Eq 54 N17)
+                 (Or (Eq 53 N17)
+                     (Or (Eq 52 N17)
+                         (Or (Eq 51 N17)
+                             (Or (Eq 50 N17)
+                                 (Or (Eq 49 N17)
+                                     (Or (Eq 48 N17)
+                                         (Or (Eq 57 N17) (Eq 56 N17))))))))))
+         (Or (Eq 55 N19)
+             (Or (Eq 54 N19)
+                 (Or (Eq 53 N19)
+                     (Or (Eq 52 N19)
+                         (Or (Eq 51 N19)
+                             (Or (Eq 50 N19)
+                                 (Or (Eq 49 N19)
+                                     (Or (Eq 48 N19)
+                                         (Or (Eq 57 N19) (Eq 56 N19))))))))))]
+        false)

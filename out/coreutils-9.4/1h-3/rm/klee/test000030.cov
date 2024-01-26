@@ -1,0 +1,4 @@
+../src/remove.c:396
+../src/remove.c:637
+klee_src/runtime/POSIX/fd.c:1217
+klee_src/runtime/POSIX/fd.c:1218

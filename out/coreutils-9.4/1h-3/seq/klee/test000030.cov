@@ -1,0 +1,10 @@
+../src/seq.c:0
+../src/seq.c:242
+../src/seq.c:245
+../src/seq.c:247
+../src/seq.c:603
+../src/seq.c:604
+../src/seq.c:637
+libc/misc/error/error.c:65
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:1148

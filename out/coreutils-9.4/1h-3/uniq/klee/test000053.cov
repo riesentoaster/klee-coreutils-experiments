@@ -1,0 +1,7 @@
+../lib/xstrtol.c:108
+libc/string/__xpg_strerror_r.c:207
+libc/string/__xpg_strerror_r.c:208
+libc/string/__xpg_strerror_r.c:209
+libc/string/__xpg_strerror_r.c:218
+libc/string/__xpg_strerror_r.c:219
+libc/string/__xpg_strerror_r.c:222

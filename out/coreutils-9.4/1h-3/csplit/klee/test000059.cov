@@ -1,0 +1,10 @@
+../src/csplit.c:0
+../src/csplit.c:1264
+../src/csplit.c:1268
+../src/csplit.c:1269
+../src/csplit.c:1285
+../src/csplit.c:1286
+../src/csplit.c:1370
+libc/stdio/_vfprintf.c:1864
+libc/stdio/_vfprintf.c:1925
+libc/stdio/_vfprintf.c:1926

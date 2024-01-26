@@ -1,0 +1,17 @@
+Error: external call with errno value symbolic: __ctype_get_mb_cur_max
+File: ../lib/quotearg.c
+Line: 261
+assembly.ll line: 8184
+State: 75283
+Stack: 
+	#000008184 in quotearg_buffer_restyled(94758356894208, 256, 94758531257856, 18446744073709551615, 4, 1, 94759318257160, 0, 0) at ../lib/quotearg.c:261
+	#100008009 in quotearg_n_options(0, 94758531257856, 94759318257152) at ../lib/quotearg.c:902
+	#200007536 in quotearg_n_style(0, 4, 94758531257856) at ../lib/quotearg.c:953
+	#300005841 in quotearg_style(94758531257856) at ../lib/quotearg.c:967
+	#400007707 in prompt(94758334407936, 94758531127488, false, 94758375525696, 3, 94759276169744) at ../src/remove.c:264
+	#500006926 in rm_fts(94758334407936, 94758531127488, 94758375525696) at ../src/remove.c:571
+	#600006016 in rm(94758375667440, 94758375525696) at ../src/remove.c:634
+	#700005673 in __klee_posix_wrapped_main(3, 94758375667424) at ../src/rm.c:366
+	#800003678 in __user_main(argcPtr=15, argvPtr=94758329972592, envp=94758329972720) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#900000688 in __uClibc_main(15, 94758329972592) at libc/misc/internals/__uClibc_main.c:401
+	#1000000854 in main(15, 94758329972592)

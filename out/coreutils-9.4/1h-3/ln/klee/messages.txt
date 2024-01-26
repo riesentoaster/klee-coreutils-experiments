@@ -1,0 +1,20 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../src/ln.c:605: illegal instruction
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 6.855124
+
+KLEE: increased time budget from 6.855124 to 8.537557
+
+KLEE: increased time budget from 8.537557 to 14.595994
+
+KLEE: increased time budget from 14.595994 to 17.085556
+
+KLEE: increased time budget from 17.085556 to 22.388336
+
+KLEE: increased time budget from 22.388336 to 31.687349
+
+KLEE: increased time budget from 31.687349 to 40.654159
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

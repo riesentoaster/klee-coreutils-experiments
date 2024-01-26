@@ -1,0 +1,14 @@
+Error: memory error: invalid pointer: free
+File: ../src/sort.c
+Line: 4686
+assembly.ll line: 6012
+State: 532
+Stack: 
+	#000006012 in __klee_posix_wrapped_main(4, 94669711035584) at ../src/sort.c:4686
+	#100003380 in __user_main(argcPtr=15, argvPtr=94669672600976, envp=94669672601104) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#200000846 in __uClibc_main(15, 94669672600976) at libc/misc/internals/__uClibc_main.c:401
+	#300001012 in main(15, 94669672600976)
+Info: 
+	address: 94669711054944
+	next: object at 94669654459136 of size 256
+		MO690[256] allocated at global:blanks

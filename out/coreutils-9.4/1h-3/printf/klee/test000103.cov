@@ -1,0 +1,15 @@
+../src/printf.c:350
+../src/printf.c:371
+../src/printf.c:462
+../src/printf.c:471
+../src/printf.c:472
+../lib/vasnprintf.c:6107
+../lib/vasnprintf.c:6345
+../lib/vasnprintf.c:6346
+../lib/vasnprintf.c:6347
+../lib/printf-parse.c:74
+../lib/printf-parse.c:601
+../lib/printf-args.c:39
+../lib/printf-args.c:46
+../lib/printf-args.c:194
+../lib/printf-args.c:198

@@ -1,0 +1,5 @@
+../src/cp.c:0
+../src/cp.c:641
+../src/cp.c:642
+libc/unistd/getopt.c:700
+libc/unistd/getopt.c:735

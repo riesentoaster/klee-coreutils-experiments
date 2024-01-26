@@ -1,0 +1,17 @@
+libc/string/strspn.c:18
+libc/string/strspn.c:20
+libc/string/strspn.c:21
+libc/string/strspn.c:23
+libc/string/strspn.c:24
+libc/string/strspn.c:25
+libc/string/strspn.c:26
+libc/string/strspn.c:27
+libc/string/strspn.c:29
+../src/split.c:174
+../src/split.c:177
+../src/split.c:1516
+../src/split.c:1528
+../src/split.c:1529
+../src/split.c:1530
+../src/split.c:1532
+../src/split.c:1603

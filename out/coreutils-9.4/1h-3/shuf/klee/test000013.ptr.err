@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../lib/randperm.c
+Line: 221
+assembly.ll line: 6250
+State: 116
+Stack: 
+	#000006250 in randperm_new(93878307680512, 2, 2) at ../lib/randperm.c:221
+	#100005124 in __klee_posix_wrapped_main(4, 93878303196432) at ../src/shuf.c:567
+	#200002964 in __user_main(argcPtr=15, argvPtr=93878258496432, envp=93878258496560) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000621 in __uClibc_main(15, 93878258496432) at libc/misc/internals/__uClibc_main.c:401
+	#400000787 in main(15, 93878258496432)
+Info: 
+	address: 93878305707216
+	next: object at 93878258176512 of size 4152
+		MO232493[4152] allocated at xmalloc():  %2 = tail call noalias align 16 i8* @malloc(i64 %0) #47, !dbg !2691

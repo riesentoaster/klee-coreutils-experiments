@@ -1,0 +1,21 @@
+File '../src/mkdir.c'
+Lines executed:87.13% of 101
+Creating 'mkdir.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:100.00% of 5
+Creating 'error.h.gcov'
+
+File '../src/selinux.h'
+Lines executed:0.00% of 4
+Creating 'selinux.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 4
+Creating 'stdio2.h.gcov'
+
+File '../src/system.h'
+Lines executed:94.74% of 19
+Creating 'system.h.gcov'
+
+Lines executed:86.47% of 133

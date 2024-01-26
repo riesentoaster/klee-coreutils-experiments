@@ -1,0 +1,5 @@
+../src/fmt.c:0
+../src/fmt.c:447
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:495
+libc/unistd/getopt.c:496

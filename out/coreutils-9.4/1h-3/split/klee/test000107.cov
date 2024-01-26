@@ -1,0 +1,16 @@
+../lib/xstrtol.c:0
+../lib/xstrtol.c:84
+../lib/xstrtol.c:102
+../lib/xstrtol.c:104
+../lib/xstrtol.c:113
+../lib/xstrtol.c:129
+../lib/xstrtol.c:245
+../lib/xstrtol.c:246
+libc/stdlib/stdlib.c:382
+libc/stdlib/stdlib.c:383
+libc/stdlib/stdlib.c:386
+../lib/xdectoint.c:0
+../lib/xdectoint.c:37
+../lib/xdectoint.c:47
+../lib/xdectoint.c:52
+../lib/xdectoint.c:59

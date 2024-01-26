@@ -1,0 +1,45 @@
+Error: concretized symbolic size
+File: ../lib/xmalloc.c
+Line: 298
+assembly.ll line: 8495
+State: 5316
+Stack: 
+	#000008495 in xcalloc(symbolic) at ../lib/xmalloc.c:298
+	#100006003 in read_input_reservoir_sampling(93878258500160, 10, symbolic, 93878370565888, 93878302007168) at ../src/shuf.c:181
+	#200005094 in __klee_posix_wrapped_main(2, 93878303622304) at ../src/shuf.c:555
+	#300002964 in __user_main(argcPtr=15, argvPtr=93878258496432, envp=93878258496560) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#400000621 in __uClibc_main(15, 93878258496432) at libc/misc/internals/__uClibc_main.c:401
+	#500000787 in main(15, 93878258496432)
+Info: 
+  size expr: (Mul w64 24
+                       (Select w64 (Ult N0:(Select w64 (Ult N1:(Select w64 (Ult 18446744073709551615
+                                                                                N2:(Add w64 (Mul w64 10
+                                                                                                     (Add w64 (Mul w64 10
+                                                                                                                       (Add w64 (Mul w64 10
+                                                                                                                                         (Add w64 (Mul w64 10
+                                                                                                                                                           (Add w64 (Mul w64 10
+                                                                                                                                                                             (Add w64 (Mul w64 10
+                                                                                                                                                                                               (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                                                                                                (SExt w32 (Read w8 3 arg00))))))
+                                                                                                                                                                                      (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                                                                                       (SExt w32 (Read w8 4 arg00)))))))
+                                                                                                                                                                    (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                                                                     (SExt w32 (Read w8 5 arg00)))))))
+                                                                                                                                                  (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                                                   (SExt w32 (Read w8 6 arg00)))))))
+                                                                                                                                (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                                                 (SExt w32 (Read w8 7 arg00)))))))
+                                                                                                              (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                                               (SExt w32 (Read w8 8 arg00)))))))
+                                                                                            (ZExt w64 (Extract w8 0 (Add w32 4294967248
+                                                                                                                             (SExt w32 (Read w8 9 arg00)))))))
+                                                                           18446744073709551615
+                                                                           N2)
+                                                            18446744073709551615)
+                                                       N1
+                                                       18446744073709551615)
+                                        1024)
+                                   N0
+                                   1024))
+  concretization : 96
+  unbound example: 24576

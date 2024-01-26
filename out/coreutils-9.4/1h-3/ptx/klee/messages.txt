@@ -1,0 +1,32 @@
+KLEE: Using STP solver backend
+KLEE: SAT solver: MiniSat
+KLEE: ERROR: ../src/ptx.c:1944: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: ../src/ptx.c:1946: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.000000 to 5.627568
+
+KLEE: ERROR: libc/string/memcpy.c:29: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 5.627568 to 6.476787
+
+KLEE: increased time budget from 6.476787 to 7.651157
+
+KLEE: increased time budget from 7.651157 to 10.277494
+
+KLEE: increased time budget from 10.277494 to 11.838734
+
+KLEE: increased time budget from 11.838734 to 13.783596
+
+KLEE: increased time budget from 13.783596 to 15.735250
+
+KLEE: increased time budget from 15.735250 to 17.672224
+
+KLEE: increased time budget from 17.672224 to 19.791856
+
+KLEE: ERROR: ../src/ptx.c:976: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: increased time budget from 19.791856 to 21.815581
+
+KLEE: HaltTimer invoked
+KLEE: halting execution, dumping remaining states

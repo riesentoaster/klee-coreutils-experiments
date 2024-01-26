@@ -1,0 +1,16 @@
+Error: Query timed out (fork).
+File: ../lib/mini-gmp.c
+Line: 680
+assembly.ll line: 5840
+State: 41675
+Stack: 
+	#000005840 in mpn_lshift(94499760793384, 94499760793384, symbolic, 60) at ../lib/mini-gmp.c:680
+	#100005455 in mpn_div_qr_1_preinv(94499760793384, 94499760793384, symbolic, 94499943218080) at ../lib/mini-gmp.c:988
+	#200005129 in mpz_sizeinbase(94498841339080) at ../lib/mini-gmp.c:4234
+	#300004998 in mpz_get_str(94498841339080) at ../lib/mini-gmp.c:4268
+	#400004973 in mpz_out_str(94498785978712, 94498841339080) at ../lib/mini-gmp.c:4437
+	#500004892 in printv(94498841339072) at ../src/expr.c:402
+	#600004639 in __klee_posix_wrapped_main(5, 94498841034144) at ../src/expr.c:355
+	#700002853 in __user_main(argcPtr=10, argvPtr=94498789789440, envp=94498789789528) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#800000697 in __uClibc_main(10, 94498789789440) at libc/misc/internals/__uClibc_main.c:401
+	#900000863 in main(10, 94498789789440)

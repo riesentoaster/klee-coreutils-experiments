@@ -1,0 +1,30 @@
+Testing util "hostname"
+Assuming input directory for gcov instrumented files ./coreutils-gcov/obj-cov/src
+Setting output directory: ./out
+Assuming input directory for llvm files ./coreutils-llvm/obj-llvm/src
+Setting KLEE's timeout to 60
+
+Running KLEE as follows:
+    klee --simplify-sym-indices --write-cvcs --write-cov --output-module     --max-memory=1000 --disable-inlining --optimize --use-forked-solver     --use-cex-cache --libc=uclibc --posix-runtime     --external-calls=all --only-output-states-covering-new     --env-file=test.env --run-in-dir=/tmp/sandbox     --max-sym-array-size=4096 --max-solver-time=30s --max-time=60min     --watchdog --max-memory-inhibit=false --max-static-fork-pct=1     --max-static-solve-pct=1 --max-static-cpfork-pct=1 --switch-type=internal     --search=random-path --search=nurs:covnew     --use-batching-search --batch-instructions=10000     --output-dir=./out/klee     ./coreutils-llvm/obj-llvm/src/hostname.bc     --sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout
+
+WARNING: KLEE failed, check logs in ./out/klee-stderr.log
+Here are the last few lines of the logs:
+
+
+KLEE: KLEE: WATCHDOG: watching 10
+
+KLEE: ERROR: Loading file ./coreutils-llvm/obj-llvm/src/hostname.bc failed: No such file or directory
+Exporting args for crashing test cases using ktest-tool
+ls: cannot access './out/klee': No such file or directory
+Found 0 errors: 
+Exporting stats about the test run
+No KLEE output directory found
+Collecting coverage data
+find: './out/klee': No such file or directory
+gzip: ./out/klee-replay-stdout.log: No such file or directory
+gzip: ./out/klee-replay-stderr.log: No such file or directory
+zipping large text files
+Done
+Starting coverage gathering
+Copying coverage files
+cp: cannot stat '/out/cov/src/*': No such file or directory

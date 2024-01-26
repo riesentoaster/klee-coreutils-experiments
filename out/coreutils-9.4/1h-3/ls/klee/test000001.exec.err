@@ -1,0 +1,10 @@
+Error: illegal instruction
+File: ../src/ls.c
+Line: 1644
+assembly.ll line: 5620
+State: 11
+Stack: 
+	#000005620 in __klee_posix_wrapped_main(2, 94683556180960) at ../src/ls.c:1644
+	#100003724 in __user_main(argcPtr=15, argvPtr=94683512489856, envp=94683512489984) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#200001015 in __uClibc_main(15, 94683512489856) at libc/misc/internals/__uClibc_main.c:401
+	#300001181 in main(15, 94683512489856)

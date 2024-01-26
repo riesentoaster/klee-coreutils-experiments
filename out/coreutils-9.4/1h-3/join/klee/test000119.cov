@@ -1,0 +1,10 @@
+../src/join.c:190
+../src/join.c:193
+../src/join.c:194
+../src/join.c:199
+../src/join.c:203
+../src/join.c:1127
+libc/unistd/getopt.c:572
+libc/unistd/getopt.c:573
+libc/unistd/getopt.c:574
+libc/unistd/getopt.c:575

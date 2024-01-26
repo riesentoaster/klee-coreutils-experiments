@@ -1,0 +1,14 @@
+Error: memory error: out of bound pointer
+File: ../src/ptx.c
+Line: 1944
+assembly.ll line: 5044
+State: 4
+Stack: 
+	#000005044 in __klee_posix_wrapped_main(4, 93862422477856) at ../src/ptx.c:1944
+	#100003045 in __user_main(argcPtr=15, argvPtr=93862375122816, envp=93862375122944) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#200000702 in __uClibc_main(15, 93862375122816) at libc/misc/internals/__uClibc_main.c:401
+	#300000868 in main(15, 93862375122816)
+Info: 
+	address: 93862422355200
+	next: object at 93862370833152 of size 256
+		MO473[256] allocated at global:folded_chars

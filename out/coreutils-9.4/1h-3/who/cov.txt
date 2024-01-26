@@ -1,0 +1,29 @@
+File '../src/who.c'
+Lines executed:57.89% of 342
+Creating 'who.c.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/error.h'
+Lines executed:75.00% of 4
+Creating 'error.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/stdio2.h'
+Lines executed:100.00% of 6
+Creating 'stdio2.h.gcov'
+
+File '../lib/c-ctype.h'
+Lines executed:0.00% of 2
+Creating 'c-ctype.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/string_fortified.h'
+Lines executed:0.00% of 6
+Creating 'string_fortified.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/bits/fcntl2.h'
+Lines executed:0.00% of 5
+Creating 'fcntl2.h.gcov'
+
+File '../src/system.h'
+Lines executed:78.95% of 19
+Creating 'system.h.gcov'
+
+Lines executed:57.81% of 384

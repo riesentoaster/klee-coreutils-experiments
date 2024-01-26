@@ -1,0 +1,15 @@
+libc/stdio/_fpmaxtostr.c:205
+libc/stdio/_fpmaxtostr.c:676
+libc/stdio/_fpmaxtostr.c:681
+libc/stdio/_fpmaxtostr.c:684
+libc/stdio/_fpmaxtostr.c:686
+../lib/printf-parse.c:0
+../lib/printf-parse.c:74
+../lib/printf-parse.c:126
+../lib/printf-parse.c:254
+../lib/printf-parse.c:257
+../lib/printf-parse.c:258
+../lib/printf-parse.c:260
+../lib/printf-parse.c:261
+../lib/printf-parse.c:262
+../lib/printf-parse.c:264

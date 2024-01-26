@@ -1,0 +1,13 @@
+../src/head.c:0
+../src/head.c:105
+../src/head.c:106
+../src/head.c:147
+../src/head.c:1005
+../src/head.c:1006
+libc/stdio/_vfprintf.c:668
+libc/stdio/_vfprintf.c:669
+libc/stdio/_vfprintf.c:1438
+libc/stdio/_vfprintf.c:1689
+libc/stdio/_vfprintf.c:1690
+libc/stdio/_vfprintf.c:1691
+libc/stdio/_vfprintf.c:1692

@@ -1,0 +1,13 @@
+../lib/xstrtol.c:0
+../lib/xstrtol.c:78
+../lib/xstrtol.c:130
+../lib/xstrtol.c:135
+../lib/xstrtol.c:137
+../lib/xstrtol.c:138
+libc/stdio/_vfprintf.c:668
+libc/stdio/_vfprintf.c:669
+libc/stdio/_vfprintf.c:1438
+libc/stdio/_vfprintf.c:1689
+libc/stdio/_vfprintf.c:1690
+libc/stdio/_vfprintf.c:1691
+libc/stdio/_vfprintf.c:1692

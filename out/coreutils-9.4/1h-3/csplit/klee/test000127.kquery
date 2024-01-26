@@ -1,0 +1,111 @@
+array A_data_stat[144] : w32 -> w8 = symbolic
+array arg00[11] : w32 -> w8 = symbolic
+array arg01[3] : w32 -> w8 = symbolic
+array arg02[3] : w32 -> w8 = symbolic
+array n_args[4] : w32 -> w8 = symbolic
+array n_args_1[4] : w32 -> w8 = symbolic
+array stdin_stat[144] : w32 -> w8 = symbolic
+array stdout_stat[144] : w32 -> w8 = symbolic
+(query [(Ult N0:(ReadLSB w32 0 n_args)
+              2)
+         (Slt 0 N0)
+         (Ult N1:(ReadLSB w32 0 n_args_1)
+              3)
+         (Slt 0 N1)
+         (Eq false
+             (Eq (Add w32 1 N0) (Add w32 N1 N0)))
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 A_data_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 A_data_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin_stat)
+              65536)
+         (Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdout_stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdout_stat)
+              65536)
+         (Eq 45 (Read w8 0 arg00))
+         (Eq false
+             (Eq 0 N2:(Read w8 1 arg00)))
+         (Eq false (Eq 45 N2))
+         (Eq 98
+             (Extract w8 0 (SExt w32 N2)))
+         (Eq false
+             (Eq 45 (Read w8 0 arg01)))
+         (Eq false
+             (Eq 45 (Read w8 0 arg02)))
+         (Eq 37 (Read w8 2 arg00))
+         (Eq false
+             (Eq 37 N3:(Read w8 3 arg00)))
+         (Eq false (Eq 35 N3))
+         (Eq false (Eq 39 N3))
+         (Eq false (Eq 45 N3))
+         (Eq false (Eq 48 N3))
+         (Ult (Add w32 4294967248 (SExt w32 N3))
+              10)
+         (Eq 46 (Read w8 4 arg00))
+         (Ult N4:(Add w32 4294967248
+                          (SExt w32 (Read w8 5 arg00)))
+              10)
+         (Ult (Add w32 4294967248
+                       N5:(SExt w32 (Read w8 6 arg00)))
+              10)
+         (Ult (Add w32 4294967248
+                       N6:(SExt w32 (Read w8 7 arg00)))
+              10)
+         (Eq 117 (Read w8 8 arg00))
+         (Eq 0 (Read w8 9 arg00))
+         (Ult 10
+              N7:(SExt w64 (Add w32 4294967248
+                                    (Add w32 (Mul w32 10
+                                                      (Add w32 4294967248
+                                                               (Add w32 (Mul w32 10 N4) N5)))
+                                             N6))))
+         (Eq false
+             (Eq 1
+                 N8:(Extract w32 0 (Add w64 18446744073709551606 N7))))
+         (Eq false (Eq 2 N8))
+         (Eq false (Eq 3 N8))
+         (Eq false (Eq 4 N8))
+         (Eq false (Eq 5 N8))
+         (Eq false (Eq 6 N8))
+         (Eq false (Eq 7 N8))
+         (Eq false (Eq 8 N8))
+         (Eq false (Eq 9 N8))
+         (Eq false (Eq 10 N8))
+         (Eq false (Eq 11 N8))
+         (Eq false (Eq 12 N8))
+         (Eq false (Eq 13 N8))
+         (Eq false (Eq 14 N8))
+         (Eq false (Eq 15 N8))
+         (Eq false (Eq 16 N8))
+         (Eq false (Eq 17 N8))
+         (Eq false (Eq 18 N8))
+         (Eq false (Eq 19 N8))
+         (Eq false (Eq 20 N8))
+         (Eq false (Eq 21 N8))
+         (Eq false (Eq 22 N8))
+         (Eq false (Eq 23 N8))
+         (Eq false (Eq 24 N8))
+         (Eq false (Eq 25 N8))
+         (Eq false (Eq 26 N8))
+         (Eq false (Eq 27 N8))
+         (Eq false (Eq 28 N8))
+         (Eq false (Eq 29 N8))
+         (Eq false (Eq 30 N8))
+         (Eq false (Eq 31 N8))
+         (Eq false (Eq 32 N8))
+         (Eq false (Eq 33 N8))
+         (Eq false (Eq 34 N8))
+         (Eq false (Eq 35 N8))
+         (Eq false (Eq 36 N8))
+         (Eq false (Eq 37 N8))]
+        false)

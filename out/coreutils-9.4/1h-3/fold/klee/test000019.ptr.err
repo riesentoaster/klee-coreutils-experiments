@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: ../src/fold.c
+Line: 203
+assembly.ll line: 5063
+State: 1682
+Stack: 
+	#000005063 in fold_file(94121882543656, 1) at ../src/fold.c:203
+	#100004731 in __klee_posix_wrapped_main(2, 94121890909632) at ../src/fold.c:295
+	#200002888 in __user_main(argcPtr=15, argvPtr=94121854158480, envp=94121854158608) at klee_src/runtime/POSIX/klee_init_env.c:245
+	#300000588 in __uClibc_main(15, 94121854158480) at libc/misc/internals/__uClibc_main.c:401
+	#400000754 in main(15, 94121854158480)
+Info: 
+	address: 94121853661440
+	next: object at 94121850978048 of size 256
+		MO381[256] allocated at global:slot0

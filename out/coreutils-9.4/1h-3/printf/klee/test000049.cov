@@ -1,0 +1,12 @@
+libc/stdio/_vfprintf.c:1544
+libc/stdio/_vfprintf.c:1545
+libc/stdio/_uintmaxtostr.c:135
+libc/stdio/_uintmaxtostr.c:136
+libc/stdio/_uintmaxtostr.c:137
+libc/stdio/_uintmaxtostr.c:138
+libc/stdio/_uintmaxtostr.c:139
+../lib/vasnprintf.c:5622
+../lib/vasnprintf.c:5815
+../lib/printf-parse.c:0
+../lib/printf-parse.c:74
+../lib/printf-parse.c:204

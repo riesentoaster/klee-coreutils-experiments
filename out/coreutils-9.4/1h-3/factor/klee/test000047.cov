@@ -1,0 +1,16 @@
+libc/stdio/fwrite.c:23
+libc/stdio/fwrite.c:24
+libc/stdio/fwrite.c:27
+libc/stdio/fwrite.c:28
+libc/stdio/fwrite.c:29
+../src/factor.c:2551
+../src/factor.c:2554
+../src/factor.c:2555
+../src/factor.c:2560
+../src/factor.c:2563
+../src/factor.c:2564
+../src/factor.c:2565
+../src/factor.c:2622
+../src/system.h:0
+../src/system.h:658
+../src/system.h:660

@@ -1,0 +1,5 @@
+../src/mknod.c:0
+../src/mknod.c:109
+../src/mknod.c:134
+libc/unistd/getopt.c:453
+libc/unistd/getopt.c:473

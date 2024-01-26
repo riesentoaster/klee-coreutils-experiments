@@ -1,0 +1,15 @@
+libc/stdio/_stdio.c:258
+libc/stdio/_stdio.c:261
+libc/stdio/_stdio.c:271
+../src/digest.c:0
+../src/digest.c:411
+../src/digest.c:412
+../src/digest.c:560
+../src/digest.c:1468
+libc/unistd/getopt.c:420
+libc/unistd/getopt.c:820
+libc/unistd/getopt.c:827
+libc/unistd/getopt.c:843
+libc/unistd/getopt.c:863
+libc/unistd/getopt.c:864
+libc/unistd/getopt.c:865

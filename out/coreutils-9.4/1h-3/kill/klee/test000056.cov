@@ -1,0 +1,4 @@
+../src/kill.c:207
+libc/unistd/getopt.c:478
+libc/stdio/_vfprintf.c:515
+libc/stdio/_vfprintf.c:580

@@ -1,0 +1,11 @@
+../src/ln.c:636
+../src/ln.c:637
+../lib/backup-find.c:0
+../lib/backup-find.c:73
+../lib/backup-find.c:77
+../lib/backup-find.c:89
+../lib/backup-find.c:92
+../lib/backup-find.c:93
+libc/unistd/getopt.c:469
+libc/unistd/getopt.c:470
+libc/unistd/getopt.c:471

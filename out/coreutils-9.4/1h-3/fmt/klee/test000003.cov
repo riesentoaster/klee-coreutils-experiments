@@ -1,0 +1,9 @@
+../src/fmt.c:0
+../src/fmt.c:562
+../src/fmt.c:572
+../src/fmt.c:573
+../src/fmt.c:635
+libc/stdio/fflush.c:106
+libc/stdio/fflush.c:107
+libc/stdio/fflush.c:108
+libc/stdio/fflush.c:118
