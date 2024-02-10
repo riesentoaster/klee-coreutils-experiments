@@ -4,7 +4,7 @@
 
 > WARNING: I kept fairly expensive records of each experiment, so this repository is >30GB.
 
-All experiments were run on a virtuallized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+All experiments were run on a virtualized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
 
 ## Running KLEE on the Correct Coreutils Version
 

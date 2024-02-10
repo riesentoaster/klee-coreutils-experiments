@@ -26,17 +26,15 @@ RUN sed -i \
 
 FROM klee-coreutils-base as klee-coreutils-llvm
 
+# installing dependencies
 RUN apt-get install -y \
     clang \
     llvm \
     python3-pip
 
-# Newer versions do not work with python 3.4 (which is the most recent version
-# available through apt for ubuntu 14.04)
+# Newer versions are no longer compatible with the latest python version available on Ubuntu 14.04
 RUN pip3 install --upgrade -v "wllvm==1.1.5" 
 
-# The version using -O1 etc. proposed in the tutorial does not work for this version of llvm
-# and does not seem necessary either (since the most recent version of clang is based on LLVM 3.4)
 ENV LLVM_COMPILER clang
 ENV CC wllvm
 
@@ -51,6 +49,7 @@ RUN ../configure \
     && make \
     && make -C src arch hostname
 
+# extracting llvm bytecode from object files
 WORKDIR /coreutils/obj-llvm/src
 RUN find . -executable -type f | xargs -I '{}' extract-bc '{}'
 
@@ -80,8 +79,7 @@ CMD echo "Starting coverage gathering" \
     && cp -r "$COVERAGE_DATA_DIR"/* "/coreutils/obj-cov/src/" \
     && echo "Running gcov" \
     && gcov "$UTIL" > "/out/cov.txt" \
-    && echo "Coverage gathering done" \
-    && tar czf "/out/src-gcov.tar.gz" "/coreutils/obj-cov/src"
+    && echo "Coverage gathering done"
 
 # ========================================
 # exec
@@ -116,8 +114,7 @@ CMD bash ./analyze.sh \
     --skip-klee-analysis "${SKIP_KLEE_ANALYSIS}" \
     --klee-max-time "${KLEE_MAX_TIME_MIN}" \
     --out-dir ./out \
-    "${UTIL}" \
-    && tar czf ./out/src-llvm.tar.gz ./coreutils-llvm/obj-llvm/src
+    "${UTIL}"
 
 # to keep files output by klee, run the container as follows:
 # `docker run [docker_args] \

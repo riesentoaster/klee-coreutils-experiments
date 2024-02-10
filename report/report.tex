@@ -1,8 +1,40 @@
 \documentclass{article}
 \usepackage[hidelinks]{hyperref}
-% \usepackage{csquotes}
+\usepackage{csquotes}
 \usepackage[vmargin=25mm, hmargin=20mm]{geometry}
+\usepackage{amsmath}  % for \hookrightarrow
+\usepackage{xcolor}   % for \textcolor
 \usepackage{listings}
+\lstset{
+    backgroundcolor=\color[RGB]{240, 240, 240},   
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    %    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+}
+
+\lstdefinelanguage{docker}{
+  keywords={FROM, RUN, COPY, ADD, ENTRYPOINT, CMD,  ENV, ARG, WORKDIR, EXPOSE, LABEL, USER, VOLUME, STOPSIGNAL, ONBUILD, MAINTAINER, HEALTHCHECK},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+
 % \usepackage{longtable}
 % \usepackage{array}
 \usepackage[
@@ -98,10 +130,125 @@
     I'm basing my experiment setup on the original paper\cite{KLEE}, the FAQs in the project's documentation\cite{KLEEFAQ} and the tutorial on testing coreutils version 6.11\cite{KLEETutorial}.
 
     \subsection{Project Setup}
-    \subsubsection{Building coreutils 6.10 on a Current Version of Ubuntu}
+    KLEE is a complex system including complex dependencies such as the SMT solvers. The maintainers provide a Dockerfile and the corresponding Docker image. Using Docker as an intermediate form of virtualization adds a layer of indirection and a performance penalty. However, since I'm not necessarily interested in maximizing performance in this project, but instead focus on comparing different setups, this is a tradeoff worth taking. It further makes complex build steps reproducible and acts as documentation.
+
+    However, the Docker image provided at this time is based on Ubuntu 22 (Jammy), and no longer builds coreutils 6.10 with the GNU Compiler (GCC). This is because its build system checks attempts to detect what system it is running on, and the variable the detection is based on is no longer defined. Specifically, in \lstinline{freadahead.c} the following check is performed:
+
+    \lstinputlisting[firstline=25, lastline=25, language=C, consecutivenumbers=false]{assets/freadahead.c}
+
+    The error message and the full \lstinline{freadahead.c} can be found in Appendix~\ref{AppendixErrorBuildOldInNew}.
+
     \subsubsection{Using an Old Version of Ubuntu}
+    \label{OldVersion}
+
+    One attempt to mitigate this issue would be to rewrite this check to allow the version of GCC installed on KLEE's Docker image to compile coreutils 6.10. However, I opted to pursue a different avenue, because of two reasons:
+    \begin{enumerate}
+        \item Build systems are not my area of expertise and I do not know how many other issues would appear once the first was solved.
+        \item Changing code always adds risk of introducing additional software errors, which would distort my findings.
+    \end{enumerate}
+
+    Therefore, I attempted to build the binaries on an old version of Ubuntu, and then move the binaries to KLEE's Docker image. Specifically, I chose the latest LTS version which was available when version 6.10 of coreutils was current. This approach worked without any additional changes to the code nor the build system. The setup of the Docker image then used to build coreutils can be seen in Listing~\ref{dockerfile1}.
+
+\end{multicols}
+\lstinputlisting[
+    language=docker,
+    lastline=21,
+    consecutivenumbers=false,
+    caption=Dockerfile content to prepare a system for building coreutils 6.10,
+    label=dockerfile1
+]{../Dockerfile}
+\lstinputlisting[
+    language=docker,
+    firstline=23,
+    lastline=54,
+    consecutivenumbers=false,
+    caption=Dockerfile content to build coreutils to LLVM bytecode using WLLVM,
+    label=dockerfile2
+]{../Dockerfile}
+\begin{multicols}{2}
+
     \subsubsection{LLVM}
+    \label{LLVM}
+
+    Building binaries themselves is unfortunately not enough, since KLEE does not take pure binaries as its input, but instead requires LLVM bytecode. Compiling an ordinary \lstinline{.c} file to LLVM can easily be done using \lstinline{clang}. However, again, coreutils use a complex build system which means to just use \lstinline{clang}, I'd have to deeply understand and modify it, with the drawbacks listed above.
+
+    Simply passing \lstinline{clang} as the C compiler to the build system does not work, since the produced output is not a runnable binary, and the build system requires the compiler's output to be executable.
+
+    Fortunately, there exists Whole Program LLVM (WLLVM)\cite{WLLVM}, a tool specifically designed to work with complex build systems while still producing LLVM bytecode as one of its outputs. This is achieved by injecting its compiler into the build system. The compiler creates executable binaries and additionally injects LLVM bytecode into a dedicated section of the object files. In a second step, these then get extracted and linked together to produce LLVM bytecode files.
+
+    Since I'm running WLLVM on an old version of Ubuntu, I was forced to use an old version of WLLVM as well, because newer versions require a version of python which is not available on Ubuntu 14.04. To create proper input files for KLEE, I added two options, to reduce warnings (\lstinline{--build}) and to turn off premature optimizations according to the KLEE documentation (\lstinline{CFLAGS})\cite{KLEETutorial}.
+
+    The Dockerfile section to build the LLVM bytecode can be found in Listing~\ref{dockerfile2}.
+
+    \subsubsection{Coverage Data Gathering}
+    \label{gcov}
+
+    A simple way to compare what these experiments accomplish compared to the experiments documented in the original paper is to look at coverage data, specifically coverage as measured by \lstinline{gcov}. To gather this information, one needs to compile the binaries using GCC, and tell the compiler to add coverage gathering instrumentation. Along with the binaries, a note document (\lstinline{<executable-name>.gcno}) is created. When the binary is executed, the added instrumentation records which path through the code is taken and, together
+
+\end{multicols}
+\lstinputlisting[
+    language=docker,
+    firstline=56,
+    lastline=70,
+    consecutivenumbers=false,
+    caption=Dockerfile content to build coreutils instrumented to record coverage,
+    label=dockerfile3
+]{../Dockerfile}
+\begin{multicols}{2}
+
+    with information from the notes file, stores its results in a coverage data file (\lstinline{<executable-name>.gcda}). This file can then be analyzed with \lstinline{gcov} to get human-readable coverage data.
+
+    With this step however, I ran into the same issue as before: Recent versions of GCC no longer build coreutils 6.10. I adopted the same approach and used the same base image as described in Section~\ref{OldVersion}. The Dockerfile excerpt with the build step can be found in Listing~\ref{dockerfile3}.
+
+    I made two changes compared to building the LLVM bytecode files, to increase the accuracy of the measurements:
+    \begin{itemize}
+        \item I replaced all calls to \lstinline{_exit} with calls to \lstinline{exit}, so that those instructions are also included in the measurements. This was done according to the instructions in the FAQ\cite{KLEEFAQ}.
+        \item The original paper mentions that coverage is measured only on executable lines of code. Specifically, Section 5.1 of the original paper says
+              \begin{displayquote}
+                  We measure size in terms of executable lines if code (ELOC) by counting the total number of executable lines in the final executable after global optimization, which eliminates uncalled functions and other dead code.\cite{KLEE}
+              \end{displayquote}
+              I am not sure how \citeauthor{KLEE} calculated the executable lines of code, since this is not trivial. I did enable normal global optimization (\lstinline{-O2}), but this may still result in a considerable underestimation of coverage.
+    \end{itemize}
+
+
+    \subsubsection{Preparing KLEE}
+
+    Finally, the bytecode files can be passed to KLEE for the actual fuzzing. To prepare KLEE's Docker image, the environment and sandbox are prepared according to the documentation\cite{KLEEFAQ}. Then, the bytecode files from the step outlined in Section~\ref{LLVM} and the binaries instrumented with \lstinline{gcov} along with their notes files are copied to the analysis image. The analysis step itself is an involved process itself and is done by executing a shell script (\lstinline{analyze.sh}). This step is explained in Section~\ref{analyze.sh}. The analysis script is copied into the image and executed on container start. To allow passing certain settings to the analysis step, environment variables are used,which can be set in the \lstinline{docker run} command.
+
+    The Dockerfile excerpt for this step can be found in Listing~\ref{dockerfile4}.
+
+\end{multicols}
+\lstinputlisting[
+    language=docker,
+    firstline=84,
+    lastline=117,
+    consecutivenumbers=false,
+    caption=Dockerfile content to prepare the fuzzing stage,
+    label=dockerfile4
+]{../Dockerfile}
+\begin{multicols}{2}
+
     \subsubsection{Running KLEE}
+    \label{analyze.sh}
+    When starting the Docker image built with the steps outlined before, a shell script is executed. This script handles the evaluation settings, input and output files, and collects metrics. Specifically, the following steps are performed:
+
+    \begin{enumerate}
+        \item The input including the passed settings are parsed. The script allows setting input and output directories (\lstinline{--llvm-dir}, \lstinline{--cov-dir}, \lstinline{--out-dir}), KLEE's timeout (\lstinline{--klee-max-time}), and skipping the fuzzing step (\lstinline{--skip-klee-analysis}). The latter allows gathering additional metrics without based on the output from a previous fuzzing run without having to perform additional, computationally expensive analysis.
+        \item To run KLEE, the analyst is required to pass arguments setting the size and number of inputs and input files to be tested. For most coreutils, this is the same, however (as mentioned in Section 5.2 of the original paper\cite{KLEE} and explained in the FAQs\cite{KLEEFAQ}) some utils need different settings to achieve a decent coverage. The analysis script assembles the command to run KLEE, including the constant settings, util-dependant settings, and the timeout set in the script arguments.
+        \item Then, the actual fuzzing is performed.
+        \item KLEE's output is examined in a few ways:\begin{enumerate}
+                  \item For each found error, human readable outputs are created using \lstinline{ktest-tool}.
+                  \item \lstinline{klee-stats} is invoked to export metrics collected by KLEE.
+                  \item All test cases generated by KLEE are used as input for \lstinline{klee-replay} pointed at the binary instrumented with coverage gathering instructions. This ensures that each instruction analyzed by KLEE during its fuzzing is also executed and thus recorded in the coverage results. Since the instrumented binaries were not compiled on the same system as they are executed on, the environment variables \lstinline{GCOV_PREFIX} and \lstinline{GCOV_PREFIX_STRIP} need to be set appropriately.
+              \end{enumerate}
+        \item Finally, certain large output text files are compressed to minimize disk usage.
+    \end{enumerate}
+
+    \subsubsection{Extracting Human-Readable Coverage Data}
+
+    As a last step, the output of the binaries instrumented to gather coverage metrics needs to be fed back into \lstinline{gcov}. Unfortunately, the format of these output files changed at some point and the version of \lstinline{gcov} installed in KLEE's Docker image is no longer able to read them. They are therefore fed back into the Docker image that created them, where an obviously compatible version of \lstinline{gcov} is available.
+
+    \pagebreak
 
     \subsection{Analyzing a Single Run}
     \subsubsection{Gathered Metrics}
@@ -127,12 +274,20 @@
     \addcontentsline{toc}{section}{\bibname}
     \printbibliography
 
-    % \renewcommand{\thesubsection}{\arabic{subsection}}
-    % \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
-    % \setcounter{subsection}{0}
-    % \setcounter{subsubsection}{0}
-    % \section*{Appendix}
-    % \addcontentsline{toc}{section}{Appendix}
+    \renewcommand{\thesubsection}{\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \section*{Appendix}
+    \addcontentsline{toc}{section}{Appendix}
+    \subsection{Error When Attempting to Build coreutils 6.10 on KLEE's Docker image}
+    \label{AppendixErrorBuildOldInNew}
+    \subsubsection{Error}
+    \lstinputlisting[firstline=1130, consecutivenumbers=false]{assets/build-coreutils-6.10-on-klee-image.txt}
+    \subsubsection{\texorpdfstring{\lstinline{freadahead.c}}{freadahead.c}}
+    The license has been cut for brevity's sake.
+    \lstinputlisting[firstline=17, language=C, consecutivenumbers=false]{assets/freadahead.c}
+
 \end{multicols}
 
 \end{document}
