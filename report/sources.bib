@@ -32,6 +32,12 @@
   url     = {https://klee.github.io/tutorials/testing-coreutils/},
   urldate = {2024-01-24}
 }
+@online{KLEEIssue,
+  title   = {{KLEE}: {-O0} is not a recommended option for clang},
+  year    = {2024},
+  url     = {https://github.com/klee/klee/issues/902},
+  urldate = {2024-01-24}
+}
 
 @online{STP,
   title   = {The Simple Theorem Prover},
@@ -64,4 +70,34 @@
   month  = {06},
   day    = {09},
   url    = {https://valentinhuber.me/assets/ghidrion.pdf}
+}
+
+@inproceedings{UNIFUZZ,
+  author    = {Yuwei Li and Shouling Ji and Yuan Chen and Sizhuang Liang and Wei-Han Lee and Yueyao Chen and Chenyang Lyu and Chunming Wu and Raheem Beyah and Peng Cheng and Kangjie Lu and Ting Wang},
+  title     = {{UNIFUZZ}: A Holistic and Pragmatic {Metrics-Driven} Platform for Evaluating Fuzzers},
+  booktitle = {30th USENIX Security Symposium (USENIX Security 21)},
+  year      = {2021},
+  isbn      = {978-1-939133-24-3},
+  pages     = {2777--2794},
+  url       = {https://www.usenix.org/conference/usenixsecurity21/presentation/li-yuwei},
+  publisher = {USENIX Association},
+  month     = aug
+}
+
+@inproceedings{EvaluatingFuzzTesting,
+  author    = {Klees, George and Ruef, Andrew and Cooper, Benji and Wei, Shiyi and Hicks, Michael},
+  title     = {Evaluating Fuzz Testing},
+  year      = {2018},
+  isbn      = {9781450356930},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3243734.3243804},
+  doi       = {10.1145/3243734.3243804},
+  abstract  = {Fuzz testing has enjoyed great success at discovering security critical bugs in real software. Recently, researchers have devoted significant effort to devising new fuzzing techniques, strategies, and algorithms. Such new ideas are primarily evaluated experimentally so an important question is: What experimental setup is needed to produce trustworthy results? We surveyed the recent research literature and assessed the experimental evaluations carried out by 32 fuzzing papers. We found problems in every evaluation we considered. We then performed our own extensive experimental evaluation using an existing fuzzer. Our results showed that the general problems we found in existing experimental evaluations can indeed translate to actual wrong or misleading assessments. We conclude with some guidelines that we hope will help improve experimental evaluations of fuzz testing algorithms, making reported results more robust.},
+  booktitle = {Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security},
+  pages     = {2123–2138},
+  numpages  = {16},
+  keywords  = {security, fuzzing, evaluation},
+  location  = {Toronto, Canada},
+  series    = {CCS '18}
 }
