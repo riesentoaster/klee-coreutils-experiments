@@ -59,7 +59,7 @@
 \hfuzz=50px
 \hbadness=10000
 
-\title{Running KLEE on GNU coreutils}
+\title{Running KLEE on GNU coreutils\break—\break Report\vspace{2em}}
 
 \begin{document}
 
@@ -71,13 +71,18 @@
     \vspace{10px}
 }
 
-\date{\today\vspace{5px}}
-
 \maketitle
 
+\begin{abstract}
+    In \citeyear{KLEE}, \citeauthor{KLEE} presented KLEE: a symbolic execution based fuzzer. In their report\cite{KLEE}, they evaluate the performance of KLEE by running it against 89 programs from the GNU coreutils suite. In this work, I attempted to reproduce these results along with further experiments. Specifically~— after a short introduction to KLEE and symbolic execution based fuzzing in general~— I examined the statistical variance introduced by the inherent randomness of KLEE's design, along with how changing the timeout passed to KLEE changes the measured outputs. I further ran the same experiments on two additional more recent versions of coreutils to see how KLEE performs on current software and to get a sense of how software develops over time. I then discuss how the results obtained in these experiments are analyzed and visualized. Finally, I reflect on this project, including a presentation of the produced artifacts and ideas for future work.
+\end{abstract}
+
+\clearpage\newpage
 \tableofcontents
+\clearpage\newpage
 
 \section{Introduction}
+\label{Introduction}
 KLEE\cite{KLEEWebsite} is an open source, symbolic execution based, advanced fuzzing platform. It was introduced in the seminal paper titled \citetitle{KLEE} in \citeyear{KLEE}. In their article, \citeauthor{KLEE} present their work and evaluate it on a diverse set of programs. The most prominent of those is the GNU coreutils suite, in which ten fatal errors were found.
 
 Ever since then, KLEE has not only matured as a fuzzer, it has also been used extensively as a platform for other researchers to build on top of, as I have discovered in\cite{EVA}. As an introduction to the practical side of fuzzing, I attempted to answer the following questions about KLEE:
@@ -101,7 +106,8 @@ Ever since then, KLEE has not only matured as a fuzzer, it has also been used ex
           \end{enumerate}
 \end{enumerate}
 
-All experiments were run on a virtualized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet.
+All experiments were run on a virtualized server with the following specs: AMD EPYC 7713 64C 225W 2.0GHz Processor, 1 TiB RAM, 2x 25GiB/s Ethernet. The hardware was graciously provided by the Institute of Applied Information Technology at Zürich University of Applied Sciences\cite{InIT}.
+
 \section{Background}
 
 What follows is a short explanation of the application of symbolic execution in fuzzing. For more extensive background, I refer to some of my previous work\cite{EVA, BA}.
@@ -276,9 +282,11 @@ In each run on each util of the experiment as discussed above, the following met
 \section{Comparing Runs}
 \label{Timeouts}
 
+In the following sections, only a small subset of all produced plots are discussed. Summary plots showing the spread and empirical cumulative distribution function (ECDF) of all measurements across timeouts and versions, and plots showing the results of individual utils are available in the repository of this experiment\cite{GitHub}.
+
 Figure~\ref{fig:spread_60min_6.10} shows the spread of the measurements between four runs of the experiments with the same parameters. The non-deterministic nature of the results is due to the inherent non-determinism of the fuzzing process in KLEE (refer to Section~\ref{SymbexPractice}). Specifically, the standard deviations for code coverage by branch (according to KLEE), instruction (according to KLEE) and line (according to \lstinline{gcov}) are 0.37\%, 0.48\%, and 1.56\% respectively.
 
-\begin{figure}[hb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{assets/spread_60min_6.10.png}
     \caption{Spread of values normalized to the mean by util for coreutils 6.10 and a timeout of 60 minutes}
@@ -289,7 +297,7 @@ Purely looking at the number of errors in each category is a very broad and impr
 
 \subsection{Comparison to the Original Paper}
 
-Figure~\ref{fig:KLEE_ecdf} is taken from the original KLEE paper\cite{KLEE} and shows the empirical cumulative distribution function (ECDF) of the coverage measured in their experiments. Figure~\ref{fig:ecdf_60min_6.10} shows the same measurements from the four runs done with the same settings as in the original paper.
+Figure~\ref{fig:KLEE_ecdf} is taken from the original KLEE paper\cite{KLEE} and shows the ECDF of the coverage measured in their experiments. Figure~\ref{fig:ecdf_60min_6.10} shows the same measurements from the four runs done with the same settings as in the original paper.
 
 It is important to note that the settings proposed by the documentation\cite{KLEEFAQ} do not include failing system calls, thus need to be compared to \textquote{Base} (white) elements of the graph in Figure~\ref{fig:KLEE_ecdf} only.
 
@@ -299,7 +307,7 @@ However, there clearly is a difference visible between the two graphs, namely th
 
 I do not have a definitive answer for the discrepancies, but the explanation might include differences in measurements, specifically in the calculation of executable lines of code (as discussed in Section~\ref{gcov}), changes in the version of KLEE the original experiments were performed with and the current version of KLEE, and performance differences between the machines the experiments were run on. The latter would either require that the performance penalty incurred by using Docker is greater than the speedup gained by 15 years of hardware developments or be based on bottlenecks during the experiments, such as I/O bandwidth.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \begin{minipage}[b]{0.48\linewidth}
         \includegraphics[width=\linewidth]{assets/KLEE_ecdf.png}
@@ -326,15 +334,14 @@ I chose three additional durations to conduct experiments at, with a large enoug
 
 Figure~\ref{fig:ecdf_across_times} shows the ECDF of at least three runs across the different timeouts. Predictively, the coverage increases with increased timeouts. The difference between the timeouts does not seem too big, and this is confirmed by Figure~\ref{fig:spread_across_times_gcov}.
 
-
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{../plots/gcov_cov/ecdf_by_time.png}
     \caption{Coverage measured by \lstinline{gcov} across different timeouts}
     \label{fig:ecdf_across_times}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/gcov_cov/changes-by-time.png}
     \captionsetup{width=0.6\textwidth}
@@ -342,11 +349,123 @@ Figure~\ref{fig:ecdf_across_times} shows the ECDF of at least three runs across 
     \label{fig:spread_across_times_gcov}
 \end{figure}
 
+While the average of the coverage measured by \lstinline{gcov} increases slightly as the timeout increases, this is not necessarily true for individual utils. Their behavior regarding the number of distinct result values they produce can broadly ge grouped as follows:
+
+\begin{itemize}
+    \item 34 utils showed a fixed, constant coverage across all runs at all timeouts.
+    \item 10 utils showed four or fewer discrete values that the measurements jumped between.
+    \item The remaining utils showed a result on a more continuous scale.
+\end{itemize}
+
+The trends they show across different timeouts vary wildly. The run results of 12 utils contain values that are lower than any value measured with a lower timeout. The same is true of 23 utils when it comes to the averages.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{assets/plots-by-util/csplit.png}
+        \captionsetup{width=0.9\linewidth}
+        \caption{Coverage across times on \lstinline{csplit}}
+        \label{fig:cov_csplit}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{assets/plots-by-util/expand.png}
+        \captionsetup{width=0.9\linewidth}
+        \caption{Coverage across times on \lstinline{expand}}
+        \label{fig:cov_expand}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{assets/plots-by-util/du.png}
+        \captionsetup{width=0.9\linewidth}
+        \caption{Coverage across times on \lstinline{du}}
+        \label{fig:cov_du}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{assets/plots-by-util/chown.png}
+        \captionsetup{width=0.9\linewidth}
+        \caption{Coverage across times on \lstinline{chown}}
+        \label{fig:cov_chown}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{assets/plots-by-util/dircolors.png}
+        \captionsetup{width=0.9\linewidth}
+        \caption{Coverage across times on \lstinline{dircolors}}
+        \label{fig:cov_dircolors}
+    \end{minipage}
+    \hfill
+    \begin {minipage}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{assets/plots-by-util/mkfifo.png}
+    \captionsetup{width=0.9\linewidth}
+    \caption{Coverage across times on \lstinline{mkfifo}}
+    \label{fig:cov_mkfifo}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin {minipage}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{assets/plots-by-util/sleep.png}
+    \captionsetup{width=0.9\linewidth}
+    \caption{Coverage across times on \lstinline{sleep}}
+    \label{fig:cov_sleep}
+    \end{minipage}
+    \hfill
+    \begin {minipage}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{assets/plots-by-util/sort.png}
+    \captionsetup{width=0.9\linewidth}
+    \caption{Coverage across times on \lstinline{sort}}
+    \label{fig:cov_sort}
+    \end{minipage}
+    \hfill
+    \begin {minipage}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{assets/plots-by-util/tac.png}
+    \captionsetup{width=0.9\linewidth}
+    \caption{Coverage across times on \lstinline{tac}}
+    \label{fig:cov_tac}
+    \end{minipage}
+\end{figure}
+
+I selected a few utils to discuss here to give an introduction on the kinds of different outcomes produced.
+
+\begin{itemize}
+    \item Figure~\ref{fig:cov_csplit} represents the norm and what would be expected. With increased analysis time, the minimum, maximum, and average of the results increase.
+    \item Figure~\ref{fig:cov_expand} is an example of what I called discrete values above. It still represents a strict increase in value across times.
+    \item Figure~\ref{fig:cov_du} shows an effect that can be observed for multiple measurements and multiple utils: As the time increases, a threshold is reached and further increasing time no longer increases the recorded value.
+    \item Figure~\ref{fig:cov_chown} represents an util from where the minimum value no longer strictly increases. This is likely due to statistical randomness (although this can not be said definitively without additional data points).
+    \item Figure~\ref{fig:cov_dircolors} and Figure~\ref{fig:cov_mkfifo} show two utils that produced unexpected outliers. While a single run for \lstinline{dircolors} with a timeout of 24 hours suddenly produces only half the coverage, a single run with just 10 minutes on \lstinline{mkfifo} managed to cover approximately two thirds of the missing code. The latter can be explained by the randomness inherent to KLEE's input selector (refer to Section~\ref{SymbexPractice}).
+    \item Figure~\ref{fig:cov_sleep} shows a counterintuitive result: With increased time, the reached coverage seems to decrease. I do not have an explanation for this effect, but additional data points might reduce the likeliness of this appearing due to statistical randomness.
+    \item Figure~\ref{fig:cov_sort} seems to no longer show any dependency between lines covered by KLEE's analysis and the timeout passed to KLEE. Just as above, this might be due to statistical randomness.
+    \item Figure~\ref{fig:cov_tac} finally shows a similar seeming non-dependence between time and coverage, but with discrete values and a seeming approach to a number different from the maximum. This again might be due to statistical randomness.
+\end{itemize}
+
 \subsubsection{Changes in Number of Errors}
 
-Looking at changes in the number of errors in Figure~\ref{fig:spread_across_times_errors} paints an incomplete picture: While the number of errors increases with the additional analysis time, looking at the changes in individual utils shows that there exist no utils where no issues were found with more than one hour of analysis but where lower timeouts produced findings. There are utils where runs with longer timeouts only sometimes found the same number of errors as the one hour runs, which can be explained by overall variance in the test setup. There are multiple instances of utils where additional analysis time produced significantly more errors. As an example, the average number of total errors found in the util \lstinline{ptx} in one hour was 5. However, the runs with a timeout of 24 hours produced 16, 16, and 21 errors. For most utils however, as the figure suggests, the number of errors did not change based on timeouts.
+Looking at changes in the number of errors in Figure~\ref{fig:spread_across_times_errors} paints an incomplete picture: While the number of errors increases with the additional analysis time, looking at the changes in individual utils shows that there exist no utils where no issues were found with more than one hour of analysis but where lower timeouts produced findings.
 
-\begin{figure}[ht]
+The graphs for the number of each error across time for each util can be found in the repository\cite{GitHub}. Their behavior can be categorized as follows:
+\begin{itemize}
+    \item KLEE found a constant number of errors in most utils.
+          \begin{itemize}
+              \item For most that number was zero.
+              \item In \lstinline{cat}, \lstinline{csplit}, \lstinline{dd}, \lstinline{md5sum}, \lstinline{mkdir}, \lstinline{mkfifo}, \lstinline{mknod}, \lstinline{od}, \lstinline{seq}, \lstinline{split}, and \lstinline{unexpand} KLEE found a single pointer error in all runs.
+              \item In \lstinline{ls}, it found a single error of type exec in all runs.
+          \end{itemize}
+    \item For 19 utils, strict increases in number of errors across utils were recorded. This means that the number of errors found at a timeout is equal or larger compared to what was found at a shorter timeout. As an example, the average number of total errors found in the util \lstinline{ptx} in one hour was 5. However, the runs with a timeout of 24 hours produced 16, 16, and 21 errors.
+    \item The three remaining utils show a different graph:
+          \begin{itemize}
+              \item \lstinline{expr} produced a query timeout (so an error of type solver) in one run with a timeout of one hour only. Other than that, the number of total errors found was a constant zero.
+              \item \lstinline{shred} continually produced one error of type exec, a strict increase between zero and one errors of type model and pointer each, and a strict increase for errors of type solver. However, because of the distribution of those across runs, the total is not a strict increase, because the only run to only have produced one error in total has a timeout of one hour.
+              \item \lstinline{chgrp} only showed errors of type model. All four hours with a timeout of one hour produced the error, but only two out of three runs with a timeout of six hours and one out of three with a timeout of 24 hours showed the same error.
+          \end{itemize}
+\end{itemize}
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/num_errors (total)/changes-by-time.png}
     \captionsetup{width=0.6\textwidth}
@@ -380,7 +499,7 @@ I chose a fixed timeout of 60 minutes as a constant to compare the different ver
 
 Figure~\ref{fig:spread_across_versions_gcov} shows the coverage changes measured. The results indicate that the variance compared to version 6.10 predictively increases between the versions, as the code incrementally changes. Certain utils seem to become better penetrable by KLEE, while the coverage of others decreases, at times catastrophically. The overall average decreases across versions, which could be explained by increased complexity in the software as features are added.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/gcov_cov/changes-by-version.png}
     \captionsetup{width=0.6\textwidth}
@@ -395,7 +514,7 @@ The number of errors found by KLEE remains fairly constant across the software v
 
 However, this speculation is difficult to maintain in the face of my inability to crash any util by manually replaying the inputs created by \lstinline{ktest-tool} for a sample of errors reported on version 9.4. This would indicate that many (if not all) of the reported errors are in fact false positives. However, to draw definitive conclusions about this, one would need to go through every error reported and manually check them. And, as argued in Section~\ref{Timeouts}, this could not be done as part of this project.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/num_errors (total)/changes-by-version.png}
     \captionsetup{width=0.6\textwidth}
@@ -405,22 +524,53 @@ However, this speculation is difficult to maintain in the face of my inability t
 
 
 \section{Discussion}
+
+In this project, I successfully recreated the experiments outlined in the seminal work by \citeauthor{KLEE} in \citedate{KLEE}. I presented the project setup and specific results along possible interpretations. In this section, I will discuss the results in a greater context, what questions could be answered and what work remains.
+
 \subsection{Research Questions}
 
-Section~\ref{Reproducing} showed that it is possible to run the current version of KLEE on coreutils 6.10, even though it requires multiple assembly steps across different Docker images to resolve version incompatibilities. The original paper provided two forms of measurements: coverage as reported by \lstinline{gcov} on executable lines of code and number of errors. Examining the specific errors found by KLEE is too complex and big a task to be included in this project. In the face of this, I opted to using the number of errors as an easier to calculate if inaccurate proxy.
+Section~\ref{Introduction} introduced a series of research questions to be answered in this report. Here, I summarize the answers discussed in Sections~\ref{Reproducing},~\ref{Timeouts}, and~\ref{SoftwareEvolution}.
 
-Section~\ref{Timeouts} goes into further detail on the variance between test runs. It then continues by contrasting the results reported by the original KLEE paper with the results measured in the experiments done during this project. For code coverage, my test results were similar to what was reported by \citeauthor{KLEE}, validating the experiments. However, there still remain unexplained minor differences. Finally, the influence of different timeouts on the results is examined. Additional analysis time predictively leads to an increased coverage and number of errors found.
+Section~\ref{Reproducing} showed that it is possible to run the current version of KLEE on coreutils 6.10, even though it requires multiple assembly steps across different Docker images to resolve version incompatibilities. The original paper provided two forms of measurements: coverage as reported by \lstinline{gcov} on executable lines of code and number of errors. Examining the specific errors found by KLEE is too complex and big a task to be included in this project. In the face of this, I opted to using the number of errors as an easier to calculate if inaccurate proxy. With additional steps during each run, \lstinline{gcov} can be employed to measure coverage. Since no documentation is available on how exactly the authors of the original paper measured executable lines of code, comparing these measurements might not be valid.
+
+Section~\ref{Timeouts} goes into further detail on the variance between test runs. It then continues by contrasting the results reported by the original KLEE paper with the results measured in the experiments done during this project. For code coverage, my test results were similar to what was reported by \citeauthor{KLEE}, validating the experiments. However, there still remain unexplained minor differences. Finally, the influence of different timeouts on the results is examined. Additional analysis time predictively leads to an increased coverage and number of errors found, however certain utils behave unpredictably when looked at individually. Additional experiments might reduce statistical randomness and thus create better clarity.
 
 Section~\ref{SoftwareEvolution} discusses the results of the same experiment on different versions of coreutils. It introduces the changes necessary to run the test suite built in this project on versions 8.25 and 9.4. The results show a slightly decreasing code coverage with increased version number and a steady number of errors found. However, it also discusses how those errors might be largely false positives.
 
 \subsection{Produced Artifacts}
+
+Since all code used for this project is publicly available\cite{GitHub}, it can be used for further experiments. Specifically, the following artifacts have been created:
+\begin{enumerate}
+    \item A framework for running KLEE-based analysis on coreutils. This includes:
+          \begin{itemize}
+              \item Dockerfiles for three different versions of coreutils (6.10, 8.25, and 9.4), which document the steps necessary to build all required artifacts to run KLEE and gather extensive metrics.
+              \item \lstinline{analyze.sh}, a shell script responsible for the actual analysis, including arguments assembly, input and output handling, and metrics collection.
+              \item \lstinline{run-suite.py}, a python script allowing to run experiments on all (or only a subset of) coreutils efficiently, including handling of arguments and output files.
+          \end{itemize}
+    \item Extensive scripts analyzing the results of the above framework in \lstinline{analyze.ipynb} and the corresponding plots:
+          \begin{itemize}
+              \item For each measurement spread (like Figures~\ref{fig:spread_across_times_gcov}, \ref{fig:spread_across_times_errors}, \ref{fig:spread_across_versions_gcov}, and~\ref{fig:spread_across_version_errors}) and ECDF (like Figures~\ref{fig:ecdf_60min_6.10} and~\ref{fig:ecdf_across_times}) plots, displaying the development of the value over KLEE timeouts and coreutils versions.
+              \item For each measurement and util plots displaying the results (similar to Figures~\ref{fig:cov_csplit}, \ref{fig:cov_expand}, \ref{fig:cov_du}, \ref{fig:cov_chown}, \ref{fig:cov_dircolors}, \ref{fig:cov_mkfifo}, \ref{fig:cov_sleep}, \ref{fig:cov_sort}, and~\ref{fig:cov_tac}).
+          \end{itemize}
+\end{enumerate}
+
 \subsection{Future Work}
 
-\clearpage
-% \columnbreak
+Future work can be broadly categorized into two three parts:
+
+First, additional runs with the same setup will improve the reliability of the results measured by reducing statistical randomness. This is further discussed in Section~\ref{Timeouts}.
+
+Second, the results could be improved by ensuring that both the project setup (such as compilation arguments) and the way measurements are done are exactly the same as in the original paper. The latter is especially important since the way coverage is measured with \lstinline{gcov} is not described precisely enough in the original paper (refer to Section~\ref{gcov} for details).
+
+Finally, the errors found in the different runs need to be examined further to allow further validation of the experiment setup by checking if the same software defects were found by the original authors and in my experiments. Further, it might provide additional insight into the comparison of different coreutils versions. To start, one might analyze two consecutive versions and check if bugs mentioned in the patch notes can be found in KLEE's output.
+
+\clearpage\newpage
+
 \defbibheading{bibliography}[\bibname]{\section*{#1}}
 \addcontentsline{toc}{section}{\bibname}
 \printbibliography
+
+\clearpage\newpage
 
 \renewcommand{\thesubsection}{\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
@@ -430,9 +580,141 @@ Section~\ref{SoftwareEvolution} discusses the results of the same experiment on 
 \addcontentsline{toc}{section}{Appendix}
 \subsection{Building coreutils 6.10 on KLEE's Docker image}
 \label{AppendixErrorBuildOldInNew}
+
 \subsubsection{Error}
-\lstinputlisting[firstline=1130, consecutivenumbers=false]{assets/build-coreutils-6.10-on-klee-image.txt}
+\lstinputlisting[
+    firstline=1130,
+    consecutivenumbers=false
+]{assets/build-coreutils-6.10-on-klee-image.txt}
+
 \subsubsection{\texorpdfstring{\lstinline{freadahead.c}}{freadahead.c}}
-The license has been cut for brevity's sake.
-\lstinputlisting[firstline=17, language=C, consecutivenumbers=false]{assets/freadahead.c}
+\lstinputlisting[
+    language=C,
+    consecutivenumbers=false
+]{assets/freadahead.c}
+
+\clearpage
+\subsection{Spread Plots of All Measurements}
+\label{AppendixPlots}
+
+Plots for individual utils are available in the project repository\cite{GitHub}.
+
+\subsubsection{By Timeout}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/gcov_cov/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of coverage as measured by \lstinline{gcov} by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/klee_BCov/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of branch coverage as measured by KLEE by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/klee_ICov/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of instruction coverage as measured by KLEE by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (abort)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type abort by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (exec)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type exec by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (model)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type model by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (ptr)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type ptr by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (solver)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type solver by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (total)/changes-by-time.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of total number of errors by run, normalized to the mean of the util at a timeout of 60 minutes, across different timeouts}
+\end{figure}
+
+\clearpage
+\subsubsection{By Version}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/gcov_cov/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of coverage as measured by \lstinline{gcov} by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/klee_BCov/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of branch coverage as measured by KLEE by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/klee_ICov/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of instruction coverage as measured by KLEE by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (abort)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type abort by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (exec)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type exec by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (model)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type model by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (ptr)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type ptr by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (solver)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of number of errors of type solver by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/num_errors (total)/changes-by-version.png}
+    \captionsetup{width=0.6\textwidth}
+    \caption{Spread of total number of errors by run, normalized to the mean of the util at version 6.10, across different versions}
+\end{figure}
+
+
+
+
 \end{document}
