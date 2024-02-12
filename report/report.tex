@@ -59,27 +59,40 @@
 \hfuzz=50px
 \hbadness=10000
 
-\title{Running KLEE on GNU coreutils\break—\break Report\vspace{2em}}
-
-\begin{document}
-
-\author{%
-    Valentin Huber\vspace{5px}\\%
-    \small \href{https://www.zhaw.ch/en/engineering/institutes-centres/init/}{Institute of Applied Information Technology}\\%
-    \small \href{https://www.zhaw.ch/en}{Zürich University of Applied Sciences ZHAW}\\%
-    \small \href{mailto://contact@valentinhuber.me}{contact@valentinhuber.me}%
-    \vspace{10px}
+\title{%
+    \vspace{50px}%
+    \Huge Running KLEE on GNU coreutils\break%
+    —\break%
+    Report%
+    \vspace{250px}%
 }
 
+\author{%
+    \large Valentin Huber\vspace{5px}\\%
+    \normalsize\href{https://www.zhaw.ch/en/engineering/institutes-centres/init/}{Institute of Applied Information Technology}\\%
+    \normalsize\href{https://www.zhaw.ch/en}{Zürich University of Applied Sciences ZHAW}\\%
+    \normalsize\href{mailto://contact@valentinhuber.me}{contact@valentinhuber.me}%
+    \vspace{50px}
+}
+
+\begin{document}
+\pagenumbering{gobble}
 \maketitle
 
-\begin{abstract}
-    In \citeyear{KLEE}, \citeauthor{KLEE} presented KLEE: a symbolic execution based fuzzer. In their report\cite{KLEE}, they evaluate the performance of KLEE by running it against 89 programs from the GNU coreutils suite. In this work, I attempted to reproduce these results along with further experiments. Specifically~— after a short introduction to KLEE and symbolic execution based fuzzing in general~— I examined the statistical variance introduced by the inherent randomness of KLEE's design, along with how changing the timeout passed to KLEE changes the measured outputs. I further ran the same experiments on two additional more recent versions of coreutils to see how KLEE performs on current software and to get a sense of how software develops over time. I then discuss how the results obtained in these experiments are analyzed and visualized. Finally, I reflect on this project, including a presentation of the produced artifacts and ideas for future work.
-\end{abstract}
+\clearpage\newpage
+\begin{center}
+    \begin{minipage}{0.8\textwidth}
+        \vspace{70px}
+        \begin{abstract}
+            In \citeyear{KLEE}, \citeauthor{KLEE} presented KLEE: a symbolic execution based fuzzer. In their report\cite{KLEE}, they evaluate the performance of KLEE by running it against 89 programs from the GNU coreutils suite. In this work, I attempted to reproduce these results along with further experiments. Specifically~— after a short introduction to KLEE and symbolic execution based fuzzing in general~— I examined the statistical variance introduced by the inherent randomness of KLEE's design, along with how changing the timeout passed to KLEE changes the measured outputs. I further ran the same experiments on two additional more recent versions of coreutils to see how KLEE performs on current software and to get a sense of how software develops over time. I then discuss how the results obtained in these experiments are analyzed and visualized. Finally, I reflect on this project, including a presentation of the produced artifacts and ideas for future work.
+        \end{abstract}
+    \end{minipage}
+\end{center}
 
 \clearpage\newpage
 \tableofcontents
 \clearpage\newpage
+\pagenumbering{arabic}
 
 \section{Introduction}
 \label{Introduction}
